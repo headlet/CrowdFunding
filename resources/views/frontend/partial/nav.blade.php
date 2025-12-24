@@ -14,12 +14,12 @@
     <div class="th-menu-area text-center">
         <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
         <div class="mobile-logo">
-            <a href="index.html"><img src="{{asset('img/logo.svg')}}" alt="Donat"></a>
+            <a href="{{route('index')}}"><img src="{{asset('img/logo.svg')}}" alt="Donat"></a>
         </div>
         <div class="th-mobile-menu">
             <ul>
                 <li>
-                    <a href="index.html">Home</a>
+                    <a href="{{route('index')}}">Home</a>
                 </li>
 
                 <li><a href="{{route('about')}}">About Us</a></li>
@@ -34,35 +34,19 @@
                 <li class="menu-item-has-children">
                     <a href="home-4.html#">Pages</a>
                     <ul class="sub-menu">
-                        <li class="menu-item-has-children">
-                            <a href="home-4.html#">Shop</a>
-                            <ul class="sub-menu">
-                                <li><a href="shop.html">Shop</a></li>
-                                <li><a href="shop-details.html">Shop Details</a></li>
-                                <li><a href="cart.html">Cart Page</a></li>
-                                <li><a href="checkout.html">Checkout</a></li>
-                                <li><a href="wishlist.html">Wishlist</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="team.html">Volunteers</a></li>
-                        <li><a href="team-details.html">Volunteer Details</a></li>
-                        <li><a href="add-team.html">Become A Volunteer</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="faq.html">FAQS</a></li>
-                        <li><a href="testimonial.html">Testimonials</a></li>
-                        <li><a href="error.html">Error Page</a></li>
-                    </ul>
-                </li>
-                <li class="menu-item-has-children">
-                    <a href="home-4.html#">Blog</a>
-                    <ul class="sub-menu">
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="blog-details.html">Blog Details</a></li>
+                        <li><a href="{{route('team')}}">Volunteers</a></
+                                <li><a href="{{route('add-team')}}">Become A Volunteer</a></li>
+                        <li><a href="{{route('gallery')}}">Gallery</a></li>
+                        <li><a href="{{route('faq')}}">FAQS</a></li>
+                        <li><a href="{{route('testimonial')}}">Testimonials</a></li>
+
                     </ul>
                 </li>
                 <li>
-                    <a href="contact.html">Contact Us</a>
+                    <a href="{{route('blog')}}">Blog</a>
+                </li>
+                <li>
+                    <a href="{{route('contact')}}">Contact Us</a>
                 </li>
             </ul>
         </div>
@@ -96,13 +80,13 @@
         <div class="container">
             <div class="menu-area">
                 <div class="header-logo">
-                    <a href="index.html"><img src="{{asset('img/logo.svg')}}" alt="Donat"></a>
+                    <a href="{{route('index')}}"><img src="{{asset('img/logo.svg')}}" alt="Donat"></a>
                 </div>
                 <div class="menu-area-wrap">
                     <nav class="main-menu d-none d-lg-block">
                         <ul>
                             <li>
-                                <a href="index.html">Home</a>
+                                <a href="{{route('index')}}">Home</a>
                             </li>
                             <li><a href="{{route('about')}}">About Us</a></li>
                             <li>
@@ -111,23 +95,18 @@
                             <li class="menu-item-has-children">
                                 <a href="home-4.html#">Pages</a>
                                 <ul class="sub-menu">
-                                    <li><a href="team.html">Volunteers</a></li>
-                                    <li><a href="team-details.html">Volunteer Details</a></li>
-                                    <li><a href="add-team.html">Become A Volunteer</a></li>
-                                    <li><a href="gallery.html">Gallery</a></li>
-                                    <li><a href="faq.html">FAQS</a></li>
-                                    <li><a href="testimonial.html">Testimonials</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="home-4.html#">Blog</a>
-                                <ul class="sub-menu">
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="blog-details.html">Blog Details</a></li>
+                                    <li><a href="{{route('team')}}">Volunteers</a></li>
+                                    <li><a href="{{route('add-team')}}">Become A Volunteer</a></li>
+                                    <li><a href="{{route('gallery')}}">Gallery</a></li>
+                                    <li><a href="{{route('faq')}}">FAQS</a></li>
+                                    <li><a href="{{route('testimonial')}}">Testimonials</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="contact.html">Contact Us</a>
+                                <a href="{{route('blog')}}">Blog</a>
+                            </li>
+                            <li>
+                                <a href="{{route('contact')}}">Contact Us</a>
                             </li>
                         </ul>
                     </nav>

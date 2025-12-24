@@ -4,8 +4,24 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('frontend.index');
-});
+})->name('index');
 
-Route::view('/about', 'frontend.about')->name('about');
-Route::view('/donation', 'frontend.donation')->name('donation');
-Route::view('/donation-details', 'frontend.donation-details')->name('donation-details');
+$pages = [
+    'about',
+    'donation',
+    'donation-details',
+    'donate-now',
+    'gallery',
+    'contact',
+    'team',
+    'team-details',
+    'add-team',
+    'faq',
+    'testimonial',
+    'blog',
+    'blog-detail'
+];
+
+foreach ($pages as $page) {
+    Route::view("/{$page}", "frontend.{$page}")->name($page);
+}
