@@ -9,7 +9,7 @@ Donate Now
 <!--==============================
     Breadcumb
 ============================== -->
-<div class="breadcumb-wrapper " data-bg-src="assets/img/bg/breadcumb-bg.jpg" data-overlay="theme">
+<div class="breadcumb-wrapper " data-bg-src="{{asset('img/bg/breadcumb-bg.jpg')}}" data-overlay="theme">
     <div class="container">
         <div class="breadcumb-content">
             <h1 class="breadcumb-title">Donate Now</h1>
@@ -103,7 +103,7 @@ Donate Now
                         <div class="widget-donation-card">
                             <div class="box-content">
                                 <div class="box-thumb">
-                                    <a href="blog-details.html"><img src="assets/img/widget/widget-donation_card1_1.jpg" alt="Blog Image"></a>
+                                    <a href="blog-details.html"><img src="{{asset('img/widget/widget-donation_card1_1.jpg')}}" alt="Blog Image"></a>
                                 </div>
                                 <h4 class="box-title"><a class="text-inherit" href="blog-details.html">Give health support for every
                                         homeless poor children</a></h4>
@@ -125,11 +125,11 @@ Donate Now
                             </div>
                         </div>
                     </div>
-                    <div class="widget  " data-bg-src="assets/img/bg/gray-bg2.png" data-overlay="gray" data-opacity="5">
+                    <div class="widget  " data-bg-src="{{asset('img/bg/gray-bg2.png')}}" data-overlay="gray" data-opacity="5">
                         <div class="author-widget-wrap">
                             <div class="author-tag">Organizer:</div>
                             <div class="avater">
-                                <img src="assets/img/blog/blog-author.jpg" alt="avater">
+                                <img src="{{asset('img/blog/blog-author.jpg')}}" alt="avater">
                             </div>
                             <div class="author-info">
                                 <h4 class="name"><a class="text-inherit" href="blog.html">Emanuel Marko</a></h4>

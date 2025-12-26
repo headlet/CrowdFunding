@@ -8,7 +8,7 @@ Contact Us
 <!--==============================
     Breadcumb
 ============================== -->
-<div class="breadcumb-wrapper " data-bg-src="assets/img/bg/breadcumb-bg.jpg" data-overlay="theme">
+<div class="breadcumb-wrapper " data-bg-src="{{asset('img/bg/breadcumb-bg.jpg')}}" data-overlay="theme">
     <div class="container">
         <div class="breadcumb-content">
             <h1 class="breadcumb-title">Contact us</h1>
@@ -78,7 +78,7 @@ Contact Area
             <div class="row gy-40">
                 <div class="col-xl-6 align-self-end">
                     <div class="contact-thumb1-1">
-                        <img src="assets/img/normal/contact_1_1.png" alt="img">
+                        <img src="{{asset('img/normal/contact_1_1.png')}}" alt="img">
                     </div>
                 </div>
                 <div class="col-xl-6">

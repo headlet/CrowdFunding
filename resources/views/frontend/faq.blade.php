@@ -7,7 +7,7 @@ FAQ
    <!--==============================
     Breadcumb
 ============================== -->
-    <div class="breadcumb-wrapper " data-bg-src="assets/img/bg/breadcumb-bg.jpg" data-overlay="theme">
+    <div class="breadcumb-wrapper " data-bg-src="{{asset('img/bg/breadcumb-bg.jpg')}}" data-overlay="theme">
         <div class="container">
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">FAQ’S</h1>
@@ -30,7 +30,7 @@ Faq Area
                             Question For Us?</h2>
                         <p>Partner with us to make a greater impact. Our corporate sponsorship program offers businesses the opportunity to support our mission while gaining visibility and fulfilling corporate social responsibility goals.</p>
                     </div>
-                    <div class="widget  " data-bg-src="assets/img/bg/gray-bg2.png" data-overlay="gray" data-opacity="5">
+                    <div class="widget  " data-bg-src="{{asset('img/bg/gray-bg2.png')}}" data-overlay="gray" data-opacity="5">
                         <h3 class="widget_title">Have any Question</h3>
                         <form action="https://html.themehour.net/donat/demo/mail.php" method="POST" class="widget-contact-form ajax-contact">
                             <div class="row">
@@ -140,52 +140,52 @@ Brand Area
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-1.svg" alt="Brand Logo">
+                                <img src="{{asset('img/brand/brand1-1.svg')}}" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-2.svg" alt="Brand Logo">
+                                <img src="{{asset('img/brand/brand1-2.svg')}}" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-3.svg" alt="Brand Logo">
+                                <img src="{{asset('img/brand/brand1-3.svg')}}" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-4.svg" alt="Brand Logo">
+                                <img src="{{asset('img/brand/brand1-4.svg')}}" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-5.svg" alt="Brand Logo">
+                                <img src="{{asset('img/brand/brand1-5.svg')}}" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-1.svg" alt="Brand Logo">
+                                <img src="{{asset('img/brand/brand1-1.svg')}}" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-2.svg" alt="Brand Logo">
+                                <img src="{{asset('img/brand/brand1-2.svg')}}" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-3.svg" alt="Brand Logo">
+                                <img src="{{asset('img/brand/brand1-3.svg')}}" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-4.svg" alt="Brand Logo">
+                                <img src="{{asset('img/brand/brand1-4.svg')}}" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-5.svg" alt="Brand Logo">
+                                <img src="{{asset('img/brand/brand1-5.svg')}}" alt="Brand Logo">
                             </a>
                         </div>
                     </div>

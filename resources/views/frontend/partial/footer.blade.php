@@ -1,12 +1,12 @@
 <!--==============================
 	Footer Area
     ==============================-->
-<footer class="footer-wrapper footer-default" data-bg-src="assets/img/bg/footer-default-bg-mask.png">
+<footer class="footer-wrapper footer-default" data-bg-src="{{asset('img/bg/footer-default-bg-mask.png')}}">
     <div class="footer-bg-shape2 shape-mockup jump" data-top="20%" data-right="0">
-        <img src="assets/img/shape/footer-bg-shape3.png" alt="img">
+        <img src="{{asset('img/shape/footer-bg-shape3.png')}}" alt="img">
     </div>
     <div class="footer-bg-shape3 shape-mockup d-none" data-bottom="0" data-right="0">
-        <img src="assets/img/shape/footer-bg-shape2.png" alt="img">
+        <img src="{{asset('img/shape/footer-bg-shape2.png')}}" alt="img">
     </div>
     <div class="footer-top">
         <div class="container">
@@ -35,7 +35,7 @@
                     <div class="widget footer-widget">
                         <div class="th-widget-about">
                             <div class="about-logo">
-                                <a href="index.html"><img src="assets/img/logo-white.svg" alt="Donat"></a>
+                                <a href="index.html"><img src="{{asset('img/logo-white.svg')}}" alt="Donat"></a>
                             </div>
                             <p class="about-text"> Our secure online donation platform allows you to make contributions quickly and safely. Choose from various.</p>
                             <a href="contact.html" class="th-btn"><i class="fas fa-heart me-2"></i> Donate Now</a>
@@ -77,8 +77,8 @@
                             <div class="info-card">
                                 <div class="box-icon">
                                     <i class="fal fa-phone"></i>
-                                    <div class="bg-shape1" data-mask-src="assets/img/shape/info_card_icon_bg_shape_1_1.png"></div>
-                                    <div class="bg-shape2" data-mask-src="assets/img/shape/info_card_icon_bg_shape_1_1.png"></div>
+                                    <div class="bg-shape1" data-mask-src="{{asset('img/shape/info_card_icon_bg_shape_1_1.png')}}"></div>
+                                    <div class="bg-shape2" data-mask-src="{{asset('img/shape/info_card_icon_bg_shape_1_1.png')}}"></div>
                                 </div>
                                 <div class="box-content">
                                     <p class="box-text">Call us any time:</p>
@@ -88,8 +88,8 @@
                             <div class="info-card">
                                 <div class="box-icon">
                                     <i class="fal fa-envelope-open"></i>
-                                    <div class="bg-shape1" data-mask-src="assets/img/shape/info_card_icon_bg_shape_1_1.png"></div>
-                                    <div class="bg-shape2" data-mask-src="assets/img/shape/info_card_icon_bg_shape_1_1.png"></div>
+                                    <div class="bg-shape1" data-mask-src="{{asset('img/shape/info_card_icon_bg_shape_1_1.png')}}"></div>
+                                    <div class="bg-shape2" data-mask-src="{{asset('img/shape/info_card_icon_bg_shape_1_1.png')}}"></div>
                                 </div>
                                 <div class="box-content">
                                     <p class="box-text">Email us any time:</p>

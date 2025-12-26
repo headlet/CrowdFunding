@@ -8,7 +8,7 @@ Register
 <section class="bg-[#f6f8f7] text-gray-800">
 
   <!-- HERO -->
-  <section class="relative bg-gradient-to-br from-[#0a2f2a] via-[#0b3d36] to-[#06201d] py-32">
+  <section class="relative bg-gradient-to-br from-[#0a2f2a] via-[#02221e] to-[#000000] py-32">
     <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top,white,transparent_60%)]"></div>
     <div class="relative text-center text-white px-4">
       <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight">Register</h1>

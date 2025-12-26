@@ -8,7 +8,7 @@ Blog Details
 <!--==============================
     Breadcumb
 ============================== -->
-<div class="breadcumb-wrapper " data-bg-src="assets/img/bg/breadcumb-bg.jpg" data-overlay="theme">
+<div class="breadcumb-wrapper " data-bg-src="{{asset('img/bg/breadcumb-bg.jpg')}}" data-overlay="theme">
     <div class="container">
         <div class="breadcumb-content">
             <h1 class="breadcumb-title">Blog Details</h1>
@@ -27,7 +27,7 @@ Blog Details
             <div class="col-xxl-8 col-lg-7">
                 <div class="th-blog blog-single">
                     <div class="blog-img">
-                        <img src="assets/img/blog/blog-s-1-1.jpg" alt="Blog Image">
+                        <img src="{{asset('img/blog/blog-s-1-1.jpg')}}" alt="Blog Image">
                     </div>
                     <div class="blog-content">
                         <div class="blog-meta">
@@ -45,12 +45,12 @@ Blog Details
                         <div class="row gx-30 mt-30">
                             <div class="col-md-6 mb-30">
                                 <div class="blog-radius-img">
-                                    <img class="w-100" src="assets/img/blog/blog_inner_1.jpg" alt="Blog Image">
+                                    <img class="w-100" src="{{asset('img/blog/blog_inner_1.jpg')}}" alt="Blog Image">
                                 </div>
                             </div>
                             <div class="col-md-6 mb-30">
                                 <div class="blog-radius-img">
-                                    <img class="w-100" src="assets/img/blog/blog_inner_2.jpg" alt="Blog Image">
+                                    <img class="w-100" src="{{asset('img/blog/blog_inner_2.jpg')}}" alt="Blog Image">
                                 </div>
                             </div>
                         </div>
@@ -83,7 +83,7 @@ Blog Details
                         <li class="th-comment-item">
                             <div class="th-post-comment">
                                 <div class="comment-avater">
-                                    <img src="assets/img/blog/comment-author-1.jpg" alt="Comment Author">
+                                    <img src="{{asset('img/blog/comment-author-1.jpg')}}" alt="Comment Author">
                                 </div>
                                 <div class="comment-content">
                                     <h3 class="name">Mariya Dsuza</h3>
@@ -98,7 +98,7 @@ Blog Details
                                 <li class="th-comment-item">
                                     <div class="th-post-comment">
                                         <div class="comment-avater">
-                                            <img src="assets/img/blog/comment-author-2.jpg" alt="Comment Author">
+                                            <img src="{{asset('img/blog/comment-author-2.jpg')}}" alt="Comment Author">
                                         </div>
                                         <div class="comment-content">
                                             <h3 class="name">Michel Phelops</h3>
@@ -115,7 +115,7 @@ Blog Details
                         <li class="th-comment-item">
                             <div class="th-post-comment">
                                 <div class="comment-avater">
-                                    <img src="assets/img/blog/comment-author-3.jpg" alt="Comment Author">
+                                    <img src="{{asset('img/blog/comment-author-3.jpg')}}" alt="Comment Author">
                                 </div>
                                 <div class="comment-content">
                                     <h3 class="name">Hamilton Barason</h3>
@@ -195,7 +195,7 @@ Blog Details
                         <div class="recent-post-wrap">
                             <div class="recent-post">
                                 <div class="media-img">
-                                    <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-1.jpg" alt="Blog Image"></a>
+                                    <a href="blog-details.html"><img src="{{asset('img/blog/recent-post-1-1.jpg')}}" alt="Blog Image"></a>
                                 </div>
                                 <div class="media-body">
                                     <div class="recent-post-meta">
@@ -206,7 +206,7 @@ Blog Details
                             </div>
                             <div class="recent-post">
                                 <div class="media-img">
-                                    <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-2.jpg" alt="Blog Image"></a>
+                                    <a href="blog-details.html"><img src="{{asset('img/blog/recent-post-1-2.jpg')}}" alt="Blog Image"></a>
                                 </div>
                                 <div class="media-body">
                                     <div class="recent-post-meta">
@@ -217,7 +217,7 @@ Blog Details
                             </div>
                             <div class="recent-post">
                                 <div class="media-img">
-                                    <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-3.jpg" alt="Blog Image"></a>
+                                    <a href="blog-details.html"><img src="{{asset('img/blog/recent-post-1-3.jpg')}}" alt="Blog Image"></a>
                                 </div>
                                 <div class="media-body">
                                     <div class="recent-post-meta">

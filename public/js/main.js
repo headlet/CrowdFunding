@@ -242,13 +242,20 @@
       
     if ($('[data-mask-src]').length > 0) {
         $('[data-mask-src]').each(function () {
-          var mask = $(this).attr('data-mask-src');
-          $(this).css({
-            'mask-image': 'url(' + mask + ')',
-            '-webkit-mask-image': 'url(' + mask + ')'
-          });
-          $(this).addClass('bg-mask');
-          $(this).removeAttr('data-mask-src');
+          var $this = $(this);
+          var mask = $this.attr('data-mask-src');
+          var img = new Image();
+          img.onload = function() {
+            $this.css({
+              'mask-image': 'url("' + mask + '")',
+              '-webkit-mask-image': 'url("' + mask + '")'
+            });
+            $this.addClass('bg-mask');
+          };
+          img.onerror = function() {
+            $this.removeAttr('data-mask-src');
+          };
+          img.src = mask;
         });
     };
 

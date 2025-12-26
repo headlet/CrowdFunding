@@ -114,7 +114,7 @@
                 </div>
                 <div class="header-button">
                     <button type="button" class="icon-btn style2 searchBoxToggler d-lg-block d-none"><i class="far fa-search"></i></button>
-                    <a href="contact.html" class="th-btn style3 d-xl-block d-none"><i class="fas fa-heart me-2"></i> Donate Now</a>
+                    <a href="{{route('login')}}" class="th-btn style3 d-xl-block d-none"><i class="fas fa-sign-in me-2"></i> Login</a>
                     <button type="button" class="icon-btn th-menu-toggle d-lg-none"><i class="far fa-bars"></i></button>
                 </div>
             </div>

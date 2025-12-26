@@ -7,7 +7,7 @@ Gallery
 <!--==============================
     Breadcumb
 ============================== -->
-<div class="breadcumb-wrapper " data-bg-src="assets/img/bg/breadcumb-bg.jpg" data-overlay="theme">
+<div class="breadcumb-wrapper " data-bg-src="{{asset('img/bg/breadcumb-bg.jpg')}}" data-overlay="theme">
     <div class="container">
         <div class="breadcumb-content">
             <h1 class="breadcumb-title">Gallery</h1>
@@ -50,7 +50,7 @@ Gallery Area
             <div class="col-md-6 col-xxl-auto col-lg-4 filter-item">
                 <div class="gallery-card">
                     <div class="gallery-img">
-                        <img src="assets/img/gallery/gallery_1_4.png" alt="gallery image">
+                        <img src="{{asset('img/gallery/gallery_1_4.png')}}" alt="gallery image">
                         <a href="assets/img/gallery/gallery_1_4.png" class="icon-btn popup-image"><i class="fas fa-eye"></i></a>
                     </div>
                 </div>
@@ -58,7 +58,7 @@ Gallery Area
             <div class="col-md-6 col-xxl-auto col-lg-4 filter-item">
                 <div class="gallery-card">
                     <div class="gallery-img">
-                        <img src="assets/img/gallery/gallery_1_6.png" alt="gallery image">
+                        <img src="{{asset('img/gallery/gallery_1_6.png')}}" alt="gallery image">
                         <a href="assets/img/gallery/gallery_1_6.png" class="icon-btn popup-image"><i class="fas fa-eye"></i></a>
                     </div>
                 </div>
@@ -66,7 +66,7 @@ Gallery Area
             <div class="col-md-6 col-xxl-auto col-lg-4 filter-item">
                 <div class="gallery-card">
                     <div class="gallery-img">
-                        <img src="assets/img/gallery/gallery_1_5.png" alt="gallery image">
+                        <img src="{{asset('img/gallery/gallery_1_5.png')}}" alt="gallery image">
                         <a href="assets/img/gallery/gallery_1_5.png" class="icon-btn popup-image"><i class="fas fa-eye"></i></a>
                     </div>
                 </div>
@@ -74,7 +74,7 @@ Gallery Area
             <div class="col-md-6 col-xxl-auto col-lg-4 filter-item">
                 <div class="gallery-card">
                     <div class="gallery-img">
-                        <img src="assets/img/gallery/gallery_1_7.png" alt="gallery image">
+                        <img src="{{asset('img/gallery/gallery_1_7.png')}}" alt="gallery image">
                         <a href="assets/img/gallery/gallery_1_7.png" class="icon-btn popup-image"><i class="fas fa-eye"></i></a>
                     </div>
                 </div>
@@ -82,7 +82,7 @@ Gallery Area
             <div class="col-md-6 col-xxl-auto col-lg-4 filter-item">
                 <div class="gallery-card">
                     <div class="gallery-img">
-                        <img src="assets/img/gallery/gallery_1_9.png" alt="gallery image">
+                        <img src="{{asset('img/gallery/gallery_1_9.png')}}" alt="gallery image">
                         <a href="assets/img/gallery/gallery_1_9.png" class="icon-btn popup-image"><i class="fas fa-eye"></i></a>
                     </div>
                 </div>
@@ -90,7 +90,7 @@ Gallery Area
             <div class="col-md-6 col-xxl-auto col-lg-4 filter-item">
                 <div class="gallery-card">
                     <div class="gallery-img">
-                        <img src="assets/img/gallery/gallery_1_8.png" alt="gallery image">
+                        <img src="{{asset('img/gallery/gallery_1_8.png')}}" alt="gallery image">
                         <a href="assets/img/gallery/gallery_1_8.png" class="icon-btn popup-image"><i class="fas fa-eye"></i></a>
                     </div>
                 </div>

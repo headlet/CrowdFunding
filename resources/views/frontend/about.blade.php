@@ -8,7 +8,7 @@ About Us
     <!--==============================
     Breadcumb
 ============================== -->
-    <div class="breadcumb-wrapper " data-bg-src="assets/img/bg/breadcumb-bg.jpg" data-overlay="theme">
+    <div class="breadcumb-wrapper " data-bg-src="{{asset('img/bg/breadcumb-bg.jpg')}}" data-overlay="theme">
         <div class="container">
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">About Us</h1>
@@ -27,10 +27,10 @@ Feature Area
                 <div class="col-lg-3 col-md-6">
                     <div class="feature-card">
                         <div class="feature-card-bg-shape">
-                            <img src="assets/img/shape/feature-card-bg-shape1-1.png" alt="img">
+                            <img src="{{asset('img/shape/feature-card-bg-shape1-1.png')}}" alt="img">
                         </div>
                         <div class="box-icon">
-                            <img src="assets/img/icon/feature-icon1-2.svg" alt="icon">
+                            <img src="{{asset('img/icon/feature-icon1-2.svg')}}" alt="icon">
                         </div>
                         <h3 class="box-title">Donor Friendly</h3>
                         <p class="box-text">Stay updated with the latest news, events, and impact stories from our organization. Subscribe to our newsletter.</p>
@@ -40,10 +40,10 @@ Feature Area
                 <div class="col-lg-3 col-md-6">
                     <div class="feature-card">
                         <div class="feature-card-bg-shape">
-                            <img src="assets/img/shape/feature-card-bg-shape1-1.png" alt="img">
+                            <img src="{{asset('img/shape/feature-card-bg-shape1-1.png')}}" alt="img">
                         </div>
                         <div class="box-icon">
-                            <img src="assets/img/icon/feature-icon1-1.svg" alt="icon">
+                            <img src="{{asset('img/icon/feature-icon1-1.svg')}}" alt="icon">
                         </div>
                         <h3 class="box-title">Fundraising Trust</h3>
                         <p class="box-text">Stay updated with the latest news, events, and impact stories from our organization. Subscribe to our newsletter.</p>
@@ -53,10 +53,10 @@ Feature Area
                 <div class="col-lg-3 col-md-6">
                     <div class="feature-card">
                         <div class="feature-card-bg-shape">
-                            <img src="assets/img/shape/feature-card-bg-shape1-1.png" alt="img">
+                            <img src="{{asset('img/shape/feature-card-bg-shape1-1.png')}}" alt="img">
                         </div>
                         <div class="box-icon">
-                            <img src="assets/img/icon/feature-icon1-2.svg" alt="icon">
+                            <img src="{{asset('img/icon/feature-icon1-2.svg')}}" alt="icon">
                         </div>
                         <h3 class="box-title">Charity Donate</h3>
                         <p class="box-text">Stay updated with the latest news, events, and impact stories from our organization. Subscribe to our newsletter.</p>
@@ -66,10 +66,10 @@ Feature Area
                 <div class="col-lg-3 col-md-6">
                     <div class="feature-card">
                         <div class="feature-card-bg-shape">
-                            <img src="assets/img/shape/feature-card-bg-shape1-1.png" alt="img">
+                            <img src="{{asset('img/shape/feature-card-bg-shape1-1.png')}}" alt="img">
                         </div>
                         <div class="box-icon">
-                            <img src="assets/img/icon/feature-icon1-1.svg" alt="icon">
+                            <img src="{{asset('img/icon/feature-icon1-1.svg')}}" alt="icon">
                         </div>
                         <h3 class="box-title">Treatment Help</h3>
                         <p class="box-text">Stay updated with the latest news, events, and impact stories from our organization. Subscribe to our newsletter.</p>
@@ -83,17 +83,17 @@ About Area
 ==============================-->
     <div class="overflow-hidden space" id="about-sec">
         <div class="shape-mockup about-bg-shape1-1 jump-reverse" data-top="10%" data-right="5%">
-            <img src="assets/img/shape/heart-shape1.png" alt="shape">
+            <img src="{{asset('img/shape/heart-shape1.png')}}" alt="shape">
         </div>
         <div class="container">
             <div class="row gy-4 align-items-center">
                 <div class="col-xl-7">
                     <div class="img-box1">
-                        <div class="img1" data-mask-src="assets/img/normal/about_1_1-mask.png">
-                            <img src="assets/img/normal/about_1_1.png" alt="About">
+                        <div class="img1">
+                            <img src="{{asset('img/normal/about_1_1.png')}}" alt="About">
                         </div>
                         <div class="about-shape1-1 jump">
-                            <img src="assets/img/shape/about_shape1_1.png" alt="img">
+                            <img src="{{asset('img/shape/about_shape1_1.png')}}" alt="img">
                         </div>
                     </div>
                 </div>
@@ -123,25 +123,25 @@ About Area
     </div><!--==============================
 Team Area  
 ==============================-->
-    <section class="space" id="team-sec" data-bg-src="assets/img/bg/gray-bg2.png">
-        <div class="shape-mockup team-bg-shape3-1 d-xxl-block d-none" data-top="0%" data-left="0%" data-bottom="0"><img src="assets/img/shape/team_bg_shape3_1.png" alt="img"></div>
-        <div class="shape-mockup team-bg-shape3-2 d-xxl-block d-none" data-top="0%" data-right="0%" data-bottom="0"><img src="assets/img/shape/team_bg_shape3_2.png" alt="img"></div>
+    <section class="space" id="team-sec" data-bg-src="{{asset('img/bg/gray-bg2.png')}}">
+        <div class="shape-mockup team-bg-shape3-1 d-xxl-block d-none" data-top="0%" data-left="0%" data-bottom="0"><img src="{{asset('img/shape/team_bg_shape3_1.png')}}" alt="img"></div>
+        <div class="shape-mockup team-bg-shape3-2 d-xxl-block d-none" data-top="0%" data-right="0%" data-bottom="0"><img src="{{asset('img/shape/team_bg_shape3_2.png')}}" alt="img"></div>
         <div class="shape-mockup team-bg-shape3-3 spin d-xxl-block d-none" data-top="15%" data-left="20%">
             <div class="color-masking2">
-                <div class="masking-src" data-mask-src="assets/img/shape/team_bg_shape3_3.png"></div>
-                <img src="assets/img/shape/team_bg_shape3_3.png" alt="img">
+                <div class="masking-src" data-mask-src="{{asset('img/shape/team_bg_shape3_3.png')}}"></div>
+                <img src="{{asset('img/shape/team_bg_shape3_3.png')}}" alt="img">
             </div>
         </div>
         <div class="shape-mockup team-bg-shape3-4 jump d-xxl-block d-none" data-top="18%" data-right="10%">
-            <img src="assets/img/shape/team_bg_shape3_4.png" alt="img">
+            <img src="{{asset('img/shape/team_bg_shape3_4.png')}}" alt="img">
         </div>
         <div class="shape-mockup team-bg-shape3-5 spin d-xxl-block d-none" data-bottom="18%" data-left="10%">
-            <img src="assets/img/shape/team_bg_shape3_5.png" alt="img">
+            <img src="{{asset('img/shape/team_bg_shape3_5.png')}}" alt="img">
         </div>
         <div class="shape-mockup team-bg-shape3-6 spin d-xxl-block d-none" data-bottom="10%" data-right="10%">
             <div class="color-masking">
-                <div class="masking-src" data-mask-src="assets/img/shape/team_bg_shape3_6.png"></div>
-                <img src="assets/img/shape/team_bg_shape3_6.png" alt="img">
+                <div class="masking-src" data-mask-src="{{asset('img/shape/team_bg_shape3_6.png')}}"></div>
+                <img src="{{asset('img/shape/team_bg_shape3_6.png')}}" alt="img">
             </div>
         </div>
         <div class="container">
@@ -156,7 +156,7 @@ Team Area
                         <div class="swiper-slide">
                             <div class="th-team team-card3">
                                 <div class="team-img">
-                                    <img src="assets/img/team/team_3_1.png" alt="Team">
+                                    <img src="{{asset('img/team/team_3_1.png')}}" alt="Team">
                                 </div>
                                 <div class="team-card-content">
                                     <h3 class="box-title"><a href="team-details.html">Michel Connor</a></h3>
@@ -175,7 +175,7 @@ Team Area
                         <div class="swiper-slide">
                             <div class="th-team team-card3">
                                 <div class="team-img">
-                                    <img src="assets/img/team/team_3_2.png" alt="Team">
+                                    <img src="{{asset('img/team/team_3_2.png')}}" alt="Team">
                                 </div>
                                 <div class="team-card-content">
                                     <h3 class="box-title"><a href="team-details.html">Jessica Lauren</a></h3>
@@ -194,7 +194,7 @@ Team Area
                         <div class="swiper-slide">
                             <div class="th-team team-card3">
                                 <div class="team-img">
-                                    <img src="assets/img/team/team_3_3.png" alt="Team">
+                                    <img src="{{asset('img/team/team_3_3.png')}}" alt="Team">
                                 </div>
                                 <div class="team-card-content">
                                     <h3 class="box-title"><a href="team-details.html">Daniel Thomas</a></h3>
@@ -213,7 +213,7 @@ Team Area
                         <div class="swiper-slide">
                             <div class="th-team team-card3">
                                 <div class="team-img">
-                                    <img src="assets/img/team/team_3_4.png" alt="Team">
+                                    <img src="{{asset('img/team/team_3_4.png')}}" alt="Team">
                                 </div>
                                 <div class="team-card-content">
                                     <h3 class="box-title"><a href="team-details.html">Michel Vetory</a></h3>
@@ -232,7 +232,7 @@ Team Area
                         <div class="swiper-slide">
                             <div class="th-team team-card3">
                                 <div class="team-img">
-                                    <img src="assets/img/team/team_3_5.png" alt="Team">
+                                    <img src="{{asset('img/team/team_3_5.png')}}" alt="Team">
                                 </div>
                                 <div class="team-card-content">
                                     <h3 class="box-title"><a href="team-details.html">Emma Mary</a></h3>
@@ -251,7 +251,7 @@ Team Area
                         <div class="swiper-slide">
                             <div class="th-team team-card3">
                                 <div class="team-img">
-                                    <img src="assets/img/team/team_3_6.png" alt="Team">
+                                    <img src="{{asset('img/team/team_3_6.png')}}" alt="Team">
                                 </div>
                                 <div class="team-card-content">
                                     <h3 class="box-title"><a href="team-details.html">Alexander Joseph</a></h3>
@@ -270,7 +270,7 @@ Team Area
                         <div class="swiper-slide">
                             <div class="th-team team-card3">
                                 <div class="team-img">
-                                    <img src="assets/img/team/team_3_7.png" alt="Team">
+                                    <img src="{{asset('img/team/team_3_7.png')}}" alt="Team">
                                 </div>
                                 <div class="team-card-content">
                                     <h3 class="box-title"><a href="team-details.html">Olivia Patricia</a></h3>
@@ -289,7 +289,7 @@ Team Area
                         <div class="swiper-slide">
                             <div class="th-team team-card3">
                                 <div class="team-img">
-                                    <img src="assets/img/team/team_3_8.png" alt="Team">
+                                    <img src="{{asset('img/team/team_3_8.png')}}" alt="Team">
                                 </div>
                                 <div class="team-card-content">
                                     <h3 class="box-title"><a href="team-details.html">Ethan David</a></h3>
@@ -315,13 +315,13 @@ Video Area
 ==============================-->
     <div class="video-area-3">
         <div class="shape-mockup video-bg-shape3-1" data-top="0" data-left="0" data-bottom="0">
-            <img src="assets/img/shape/video_bg_shape3_1.png" alt="img">
+            <img src="{{asset('img/shape/video_bg_shape3_1.png')}}" alt="img">
         </div>
         <div class="shape-mockup video-bg-shape3-2" data-top="0" data-right="0" data-bottom="0">
-            <img src="assets/img/shape/video_bg_shape3_2.png" alt="img">
+            <img src="{{asset('img/shape/video_bg_shape3_2.png')}}" alt="img">
         </div>
         <div class="video-thumb3-1 video-box-center">
-            <img src="assets/img/normal/video-thumb3-1.png" alt="img">
+            <img src="{{asset('img/normal/video-thumb3-1.png')}}" alt="img">
             <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" class="play-btn style7 popup-video"><i class="fa-sharp fa-solid fa-play"></i></a>
         </div>
     </div>
@@ -365,7 +365,7 @@ Counter Area
 Process Area  
 ==============================-->
     <section class="space-top">
-        <div class="shape-mockup process-shape1-1 jump-reverse d-xxl-block d-none" data-top="20%" data-left="0"><img src="assets/img/shape/hand-bg-shape2-1.png" alt="img"></div>
+        <div class="shape-mockup process-shape1-1 jump-reverse d-xxl-block d-none" data-top="20%" data-left="0"><img src="{{asset('img/shape/hand-bg-shape2-1.png')}}" alt="img"></div>
         <div class="container">
             <div class="title-area text-center">
                 <span class="sub-title after-none before-none">Work Process</span>
@@ -375,14 +375,14 @@ Process Area
                 <div class="col-lg-4 col-md-6 process-card-wrap">
                     <div class="process-card">
                         <div class="process-card-thumb-wrap">
-                            <div class="process-card-thumb" data-mask-src="assets/img/process/process-card-shape.png">
-                                <img src="assets/img/process/process-card-1-1.png" alt="img">
+                            <div class="process-card-thumb" data-mask-src="{{asset('img/process/process-card-shape.png')}}">
+                                <img src="{{asset('img/process/process-card-1-1.png')}}" alt="img">
                             </div>
                             <div class="process-card-icon">
-                                <img src="assets/img/icon/process-icon1-1.svg" alt="img">
+                                <img src="{{asset('img/icon/process-icon1-1.svg')}}" alt="img">
                             </div>
                             <div class="process-card-shape">
-                                <img src="assets/img/process/process-card-shape2.png" alt="img">
+                                <img src="{{asset('img/process/process-card-shape2.png')}}" alt="img">
                             </div>
                         </div>
                         <div class="box-content">
@@ -394,14 +394,14 @@ Process Area
                 <div class="col-lg-4 col-md-6 process-card-wrap">
                     <div class="process-card">
                         <div class="process-card-thumb-wrap">
-                            <div class="process-card-thumb" data-mask-src="assets/img/process/process-card-shape.png">
-                                <img src="assets/img/process/process-card-1-1.png" alt="img">
+                            <div class="process-card-thumb" data-mask-src="{{asset('img/process/process-card-shape.png')}}">
+                                <img src="{{asset('img/process/process-card-1-1.png')}}" alt="img">
                             </div>
                             <div class="process-card-icon">
-                                <img src="assets/img/icon/process-icon1-2.svg" alt="img">
+                                <img src="{{asset('img/icon/process-icon1-2.svg')}}" alt="img">
                             </div>
                             <div class="process-card-shape">
-                                <img src="assets/img/process/process-card-shape2.png" alt="img">
+                                <img src="{{asset('img/process/process-card-shape2.png')}}" alt="img">
                             </div>
                         </div>
                         <div class="box-content">
@@ -413,14 +413,14 @@ Process Area
                 <div class="col-lg-4 col-md-6 process-card-wrap">
                     <div class="process-card">
                         <div class="process-card-thumb-wrap">
-                            <div class="process-card-thumb" data-mask-src="assets/img/process/process-card-shape.png">
-                                <img src="assets/img/process/process-card-1-1.png" alt="img">
+                            <div class="process-card-thumb" data-mask-src="{{asset('img/process/process-card-shape.png')}}">
+                                <img src="{{asset('img/process/process-card-1-1.png')}}" alt="img">
                             </div>
                             <div class="process-card-icon">
-                                <img src="assets/img/icon/process-icon1-3.svg" alt="img">
+                                <img src="{{asset('img/icon/process-icon1-3.svg')}}" alt="img">
                             </div>
                             <div class="process-card-shape">
-                                <img src="assets/img/process/process-card-shape2.png" alt="img">
+                                <img src="{{asset('img/process/process-card-shape2.png')}}" alt="img">
                             </div>
                         </div>
                         <div class="box-content">
@@ -437,10 +437,10 @@ Testimonial Area
 ==============================-->
     <section class="testi-area-1 space" id="testi-sec">
         <div class="shape-mockup testi-bg-shape1-1 jump-reverse d-xl-block d-none" data-top="5%" data-right="0">
-            <img src="assets/img/shape/footer-bg-shape3.png" alt="img">
+            <img src="{{asset('img/shape/footer-bg-shape3.png')}}" alt="img">
         </div>
         <div class="shape-mockup testi-bg-shape1-2" data-top="28%" data-left="5%">
-            <img src="assets/img/shape/testimonial_shape1_1.png" alt="img">
+            <img src="{{asset('img/shape/testimonial_shape1_1.png')}}" alt="img">
         </div>
         <div class="container">
             <div class="row justify-content-center">
@@ -458,7 +458,7 @@ Testimonial Area
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="testi-box-img">
-                                    <img class="testi-img" src="assets/img/testimonial/testi_1_1.png" alt="img">
+                                    <img class="testi-img" src="{{asset('img/testimonial/testi_1_1.png')}}" alt="img">
                                     <div class="testi-card_review">
                                         <i class="fas fa-star"></i>
                                         5.0
@@ -467,7 +467,7 @@ Testimonial Area
                             </div>
                             <div class="swiper-slide">
                                 <div class="testi-box-img">
-                                    <img class="testi-img" src="assets/img/testimonial/testi_1_2.png" alt="img">
+                                    <img class="testi-img" src="{{asset('img/testimonial/testi_1_2.png')}}" alt="img">
                                     <div class="testi-card_review">
                                         <i class="fas fa-star"></i>
                                         5.0
@@ -476,7 +476,7 @@ Testimonial Area
                             </div>
                             <div class="swiper-slide">
                                 <div class="testi-box-img">
-                                    <img class="testi-img" src="assets/img/testimonial/testi_1_1.png" alt="img">
+                                    <img class="testi-img" src="{{asset('img/testimonial/testi_1_1.png')}}" alt="img">
                                     <div class="testi-card_review">
                                         <i class="fas fa-star"></i>
                                         5.0
@@ -485,7 +485,7 @@ Testimonial Area
                             </div>
                             <div class="swiper-slide">
                                 <div class="testi-box-img">
-                                    <img class="testi-img" src="assets/img/testimonial/testi_1_2.png" alt="img">
+                                    <img class="testi-img" src="{{asset('img/testimonial/testi_1_2.png')}}" alt="img">
                                     <div class="testi-card_review">
                                         <i class="fas fa-star"></i>
                                         5.0
@@ -504,7 +504,7 @@ Testimonial Area
                                         <p class="box-text">“Stay informed about our upcoming events and campaigns. Whether it's a fundraising gala, a charity run, or a community outreach program, there are plenty of ways to get involved and support our cause. Check our event calendar for details. We prioritize your security. Our donation process uses the latest encryption technology to protect your personal and financial information. Donate with confidence knowing”</p>
                                         <h3 class="box-title">Alex Furnandes</h3>
                                         <p class="box-desig">CEO, Founder</p>
-                                        <div class="quote-icon" data-mask-src="assets/img/icon/quote2.svg"></div>
+                                        <div class="quote-icon" data-mask-src="{{asset('img/icon/quote2.svg')}}"></div>
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
@@ -512,7 +512,7 @@ Testimonial Area
                                         <p class="box-text">“Our donation process uses the latest encryption technology to protect your personal and financial information. Donate with confidence knowing Stay informed about our upcoming events and campaigns. Whether it's a fundraising gala, a charity run, or a community outreach program, there are plenty of ways to get involved and support our cause. Check our event calendar for details. We prioritize your security.”</p>
                                         <h3 class="box-title">Mustafa Kamal</h3>
                                         <p class="box-desig">CEO, Founder</p>
-                                        <div class="quote-icon" data-mask-src="assets/img/icon/quote2.svg"></div>
+                                        <div class="quote-icon" data-mask-src="{{asset('img/icon/quote2.svg')}}"></div>
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
@@ -520,7 +520,7 @@ Testimonial Area
                                         <p class="box-text">“Stay informed about our upcoming events and campaigns. Whether it's a fundraising gala, a charity run, or a community outreach program, there are plenty of ways to get involved and support our cause. Check our event calendar for details. We prioritize your security. Our donation process uses the latest encryption technology to protect your personal and financial information. Donate with confidence knowing”</p>
                                         <h3 class="box-title">Alex Furnandes</h3>
                                         <p class="box-desig">CEO, Founder</p>
-                                        <div class="quote-icon" data-mask-src="assets/img/icon/quote2.svg"></div>
+                                        <div class="quote-icon" data-mask-src="{{asset('img/icon/quote2.svg')}}"></div>
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
@@ -528,7 +528,7 @@ Testimonial Area
                                         <p class="box-text">“Our donation process uses the latest encryption technology to protect your personal and financial information. Donate with confidence knowing Stay informed about our upcoming events and campaigns. Whether it's a fundraising gala, a charity run, or a community outreach program, there are plenty of ways to get involved and support our cause. Check our event calendar for details. We prioritize your security.”</p>
                                         <h3 class="box-title">Mustafa Kamal</h3>
                                         <p class="box-desig">CEO, Founder</p>
-                                        <div class="quote-icon" data-mask-src="assets/img/icon/quote2.svg"></div>
+                                        <div class="quote-icon" data-mask-src="{{asset('img/icon/quote2.svg')}}"></div>
                                     </div>
                                 </div>
                             </div>
@@ -556,52 +556,52 @@ Brand Area
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-1.svg" alt="Brand Logo">
+                                <img src="{{asset('img/brand/brand1-1.svg')}}" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-2.svg" alt="Brand Logo">
+                                <img src="{{asset('img/brand/brand1-2.svg')}}" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-3.svg" alt="Brand Logo">
+                                <img src="{{asset('img/brand/brand1-3.svg')}}" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-4.svg" alt="Brand Logo">
+                                <img src="{{asset('img/brand/brand1-4.svg')}}" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-5.svg" alt="Brand Logo">
+                                <img src="{{asset('img/brand/brand1-5.svg')}}" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-1.svg" alt="Brand Logo">
+                                <img src="{{asset('img/brand/brand1-1.svg')}}" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-2.svg" alt="Brand Logo">
+                                <img src="{{asset('img/brand/brand1-2.svg')}}" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-3.svg" alt="Brand Logo">
+                                <img src="{{asset('img/brand/brand1-3.svg')}}" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-4.svg" alt="Brand Logo">
+                                <img src="{{asset('img/brand/brand1-4.svg')}}" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-5.svg" alt="Brand Logo">
+                                <img src="{{asset('img/brand/brand1-5.svg')}}" alt="Brand Logo">
                             </a>
                         </div>
                     </div>

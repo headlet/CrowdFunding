@@ -27,5 +27,7 @@ foreach ($pages as $page) {
 }
 
 
- Route::view("/login", "backend.public.auth.login")->name('login');
- Route::view("/register", "backend.public.auth.register")->name('register');
+Route::view("/login", "backend.public.auth.login")->name('login');
+Route::view("/register", "backend.public.auth.register")->name('register');
+Route::view("/forgot-password", "backend.public.auth.forgot-password")->name('forgot-password');
+Route::view("/reset-password", "backend.public.auth.reset-password")->name('reset-password');

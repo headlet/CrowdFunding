@@ -8,7 +8,7 @@ Donatiion
 <!--==============================
     Breadcumb
 ============================== -->
-<div class="breadcumb-wrapper " data-bg-src="assets/img/bg/breadcumb-bg.jpg" data-overlay="theme">
+<div class="breadcumb-wrapper " data-bg-src="{{asset('img/bg/breadcumb-bg.jpg')}}" data-overlay="theme">
     <div class="container">
         <div class="breadcumb-content">
             <h1 class="breadcumb-title">Donations</h1>
@@ -36,9 +36,9 @@ Donation Area
             <div class="col-xl-6">
                 <div class="donation-card style3">
                     <div class="box-thumb">
-                        <img src="assets/img/donation/donation2-1.png" alt="image">
+                        <img src="{{asset('img/donation/donation2-1.png')}}" alt="image">
                         <div class="donation-card-tag">85%</div>
-                        <div class="donation-card-shape" data-mask-src="assets/img/donation/donation-card-shape2-1.png"></div>
+                        <div class="donation-card-shape" data-mask-src="{{asset('img/donation/donation-card-shape2-1.png')}}"></div>
                     </div>
                     <div class="box-content">
                         <h3 class="box-title"><a href="blog-details.html">Your Little Help Can Heal Their Helps</a></h3>
@@ -62,9 +62,9 @@ Donation Area
             <div class="col-xl-6">
                 <div class="donation-card style3">
                     <div class="box-thumb">
-                        <img src="assets/img/donation/donation2-2.png" alt="image">
+                        <img src="{{asset('img/donation/donation2-2.png')}}" alt="image">
                         <div class="donation-card-tag bg-theme2">85%</div>
-                        <div class="donation-card-shape" data-mask-src="assets/img/donation/donation-card-shape2-1.png"></div>
+                        <div class="donation-card-shape" data-mask-src="{{asset('img/donation/donation-card-shape2-1.png')}}"></div>
                     </div>
                     <div class="box-content">
                         <h3 class="box-title"><a href="blog-details.html">Help Children poor Insurance & Medical</a></h3>
@@ -88,9 +88,9 @@ Donation Area
             <div class="col-xl-6">
                 <div class="donation-card style3">
                     <div class="box-thumb">
-                        <img src="assets/img/donation/donation2-3.png" alt="image">
+                        <img src="{{asset('img/donation/donation2-3.png')}}" alt="image">
                         <div class="donation-card-tag">85%</div>
-                        <div class="donation-card-shape" data-mask-src="assets/img/donation/donation-card-shape2-1.png"></div>
+                        <div class="donation-card-shape" data-mask-src="{{asset('img/donation/donation-card-shape2-1.png')}}"></div>
                     </div>
                     <div class="box-content">
                         <h3 class="box-title"><a href="blog-details.html">Help us touch their lives of these youths</a></h3>
@@ -114,9 +114,9 @@ Donation Area
             <div class="col-xl-6">
                 <div class="donation-card style3">
                     <div class="box-thumb">
-                        <img src="assets/img/donation/donation2-4.png" alt="image">
+                        <img src="{{asset('img/donation/donation2-4.png')}}" alt="image">
                         <div class="donation-card-tag bg-theme2">85%</div>
-                        <div class="donation-card-shape" data-mask-src="assets/img/donation/donation-card-shape2-1.png"></div>
+                        <div class="donation-card-shape" data-mask-src="{{asset('img/donation/donation-card-shape2-1.png')}}"></div>
                     </div>
                     <div class="box-content">
                         <h3 class="box-title"><a href="blog-details.html">Raise Fund for Clean & Healthy Water</a></h3>
@@ -140,9 +140,9 @@ Donation Area
             <div class="col-xl-6">
                 <div class="donation-card style3">
                     <div class="box-thumb">
-                        <img src="assets/img/donation/donation2-5.png" alt="image">
+                        <img src="{{asset('img/donation/donation2-5.png')}}" alt="image">
                         <div class="donation-card-tag">85%</div>
-                        <div class="donation-card-shape" data-mask-src="assets/img/donation/donation-card-shape2-1.png"></div>
+                        <div class="donation-card-shape" data-mask-src="{{asset('img/donation/donation-card-shape2-1.png')}}"></div>
                     </div>
                     <div class="box-content">
                         <h3 class="box-title"><a href="blog-details.html">Be hungry no more & Leave no one behind</a></h3>
@@ -166,9 +166,9 @@ Donation Area
             <div class="col-xl-6">
                 <div class="donation-card style3">
                     <div class="box-thumb">
-                        <img src="assets/img/donation/donation2-6.png" alt="image">
+                        <img src="{{asset('img/donation/donation2-6.png')}}" alt="image">
                         <div class="donation-card-tag bg-theme2">85%</div>
-                        <div class="donation-card-shape" data-mask-src="assets/img/donation/donation-card-shape2-1.png"></div>
+                        <div class="donation-card-shape" data-mask-src="{{asset('img/donation/donation-card-shape2-1.png')}}"></div>
                     </div>
                     <div class="box-content">
                         <h3 class="box-title"><a href="blog-details.html">Medical Health or People React Acuter.</a></h3>
@@ -203,52 +203,52 @@ Brand Area
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <a href="blog.html" class="brand-box">
-                            <img src="assets/img/brand/brand1-1.svg" alt="Brand Logo">
+                            <img src="{{asset('img/brand/brand1-1.svg')}}" alt="Brand Logo">
                         </a>
                     </div>
                     <div class="swiper-slide">
                         <a href="blog.html" class="brand-box">
-                            <img src="assets/img/brand/brand1-2.svg" alt="Brand Logo">
+                            <img src="{{asset('img/brand/brand1-2.svg')}}" alt="Brand Logo">
                         </a>
                     </div>
                     <div class="swiper-slide">
                         <a href="blog.html" class="brand-box">
-                            <img src="assets/img/brand/brand1-3.svg" alt="Brand Logo">
+                            <img src="{{asset('img/brand/brand1-3.svg')}}" alt="Brand Logo">
                         </a>
                     </div>
                     <div class="swiper-slide">
                         <a href="blog.html" class="brand-box">
-                            <img src="assets/img/brand/brand1-4.svg" alt="Brand Logo">
+                            <img src="{{asset('img/brand/brand1-4.svg')}}" alt="Brand Logo">
                         </a>
                     </div>
                     <div class="swiper-slide">
                         <a href="blog.html" class="brand-box">
-                            <img src="assets/img/brand/brand1-5.svg" alt="Brand Logo">
+                            <img src="{{asset('img/brand/brand1-5.svg')}}" alt="Brand Logo">
                         </a>
                     </div>
                     <div class="swiper-slide">
                         <a href="blog.html" class="brand-box">
-                            <img src="assets/img/brand/brand1-1.svg" alt="Brand Logo">
+                            <img src="{{asset('img/brand/brand1-1.svg')}}" alt="Brand Logo">
                         </a>
                     </div>
                     <div class="swiper-slide">
                         <a href="blog.html" class="brand-box">
-                            <img src="assets/img/brand/brand1-2.svg" alt="Brand Logo">
+                            <img src="{{asset('img/brand/brand1-2.svg')}}" alt="Brand Logo">
                         </a>
                     </div>
                     <div class="swiper-slide">
                         <a href="blog.html" class="brand-box">
-                            <img src="assets/img/brand/brand1-3.svg" alt="Brand Logo">
+                            <img src="{{asset('img/brand/brand1-3.svg')}}" alt="Brand Logo">
                         </a>
                     </div>
                     <div class="swiper-slide">
                         <a href="blog.html" class="brand-box">
-                            <img src="assets/img/brand/brand1-4.svg" alt="Brand Logo">
+                            <img src="{{asset('img/brand/brand1-4.svg')}}" alt="Brand Logo">
                         </a>
                     </div>
                     <div class="swiper-slide">
                         <a href="blog.html" class="brand-box">
-                            <img src="assets/img/brand/brand1-5.svg" alt="Brand Logo">
+                            <img src="{{asset('img/brand/brand1-5.svg')}}" alt="Brand Logo">
                         </a>
                     </div>
                 </div>

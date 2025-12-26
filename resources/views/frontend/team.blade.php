@@ -8,7 +8,7 @@ Teams
    <!--==============================
     Breadcumb
 ============================== -->
-    <div class="breadcumb-wrapper " data-bg-src="assets/img/bg/breadcumb-bg.jpg" data-overlay="theme">
+    <div class="breadcumb-wrapper " data-bg-src="{{asset('img/bg/breadcumb-bg.jpg')}}" data-overlay="theme">
         <div class="container">
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Volunteers</h1>
@@ -32,7 +32,7 @@ Team Area
                 <div class="col-lg-3 col-md-6">
                     <div class="th-team team-card3">
                         <div class="team-img">
-                            <img src="assets/img/team/team_3_1.png" alt="Team">
+                            <img src="{{asset('img/team/team_3_1.png')}}" alt="Team">
                         </div>
                         <div class="team-card-content">
                             <h3 class="box-title"><a href="team-details.html">Michel Connor</a></h3>
@@ -51,7 +51,7 @@ Team Area
                 <div class="col-lg-3 col-md-6">
                     <div class="th-team team-card3">
                         <div class="team-img">
-                            <img src="assets/img/team/team_3_2.png" alt="Team">
+                            <img src="{{asset('img/team/team_3_2.png')}}" alt="Team">
                         </div>
                         <div class="team-card-content">
                             <h3 class="box-title"><a href="team-details.html">Jessica Lauren</a></h3>
@@ -70,7 +70,7 @@ Team Area
                 <div class="col-lg-3 col-md-6">
                     <div class="th-team team-card3">
                         <div class="team-img">
-                            <img src="assets/img/team/team_3_3.png" alt="Team">
+                            <img src="{{asset('img/team/team_3_3.png')}}" alt="Team">
                         </div>
                         <div class="team-card-content">
                             <h3 class="box-title"><a href="team-details.html">Daniel Thomas</a></h3>
@@ -89,7 +89,7 @@ Team Area
                 <div class="col-lg-3 col-md-6">
                     <div class="th-team team-card3">
                         <div class="team-img">
-                            <img src="assets/img/team/team_3_4.png" alt="Team">
+                            <img src="{{asset('img/team/team_3_4.png')}}" alt="Team">
                         </div>
                         <div class="team-card-content">
                             <h3 class="box-title"><a href="team-details.html">Michel Vetory</a></h3>
@@ -108,7 +108,7 @@ Team Area
                 <div class="col-lg-3 col-md-6">
                     <div class="th-team team-card3">
                         <div class="team-img">
-                            <img src="assets/img/team/team_3_5.png" alt="Team">
+                            <img src="{{asset('img/team/team_3_5.png')}}" alt="Team">
                         </div>
                         <div class="team-card-content">
                             <h3 class="box-title"><a href="team-details.html">Emma Mary</a></h3>
@@ -127,7 +127,7 @@ Team Area
                 <div class="col-lg-3 col-md-6">
                     <div class="th-team team-card3">
                         <div class="team-img">
-                            <img src="assets/img/team/team_3_6.png" alt="Team">
+                            <img src="{{asset('img/team/team_3_6.png')}}" alt="Team">
                         </div>
                         <div class="team-card-content">
                             <h3 class="box-title"><a href="team-details.html">Alexander Joseph</a></h3>
@@ -146,7 +146,7 @@ Team Area
                 <div class="col-lg-3 col-md-6">
                     <div class="th-team team-card3">
                         <div class="team-img">
-                            <img src="assets/img/team/team_3_7.png" alt="Team">
+                            <img src="{{asset('img/team/team_3_7.png')}}" alt="Team">
                         </div>
                         <div class="team-card-content">
                             <h3 class="box-title"><a href="team-details.html">Olivia Patricia</a></h3>
@@ -165,7 +165,7 @@ Team Area
                 <div class="col-lg-3 col-md-6">
                     <div class="th-team team-card3">
                         <div class="team-img">
-                            <img src="assets/img/team/team_3_8.png" alt="Team">
+                            <img src="{{asset('img/team/team_3_8.png')}}" alt="Team">
                         </div>
                         <div class="team-card-content">
                             <h3 class="box-title"><a href="team-details.html">Ethan David</a></h3>

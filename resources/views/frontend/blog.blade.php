@@ -8,7 +8,7 @@ Blogs
    <!--==============================
     Breadcumb
 ============================== -->
-    <div class="breadcumb-wrapper " data-bg-src="assets/img/bg/breadcumb-bg.jpg" data-overlay="theme">
+    <div class="breadcumb-wrapper " data-bg-src="{{asset('img/bg/breadcumb-bg.jpg')}}" data-overlay="theme">
         <div class="container">
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Our Blog</h1>
@@ -27,7 +27,7 @@ Blog Area
                 <div class="col-xxl-8 col-lg-7">
                     <div class="th-blog blog-single has-post-thumbnail">
                         <div class="blog-img">
-                            <a href="blog-details.html"><img src="assets/img/blog/blog-s-1-1.jpg" alt="Blog Image"></a>
+                            <a href="blog-details.html"><img src="{{asset('img/blog/blog-s-1-1.jpg')}}" alt="Blog Image"></a>
                         </div>
                         <div class="blog-content">
                             <div class="blog-meta">
@@ -46,10 +46,10 @@ Blog Area
                         <div class="blog-img th-slider" data-slider-options='{"effect":"fade"}'>
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <a href="blog-details.html"><img src="assets/img/blog/blog-s-1-2.jpg" alt="Blog Image"></a>
+                                    <a href="blog-details.html"><img src="{{asset('img/blog/blog-s-1-2.jpg')}}" alt="Blog Image"></a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <a href="blog-details.html"><img src="assets/img/blog/blog-s-1-4.jpg" alt="Blog Image"></a>
+                                    <a href="blog-details.html"><img src="{{asset('img/blog/blog-s-1-4.jpg')}}" alt="Blog Image"></a>
                                 </div>
                             </div>
                             <button class="slider-arrow slider-prev"><i class="far fa-arrow-left"></i></button>
@@ -84,7 +84,7 @@ Blog Area
 
                     <div class="th-blog blog-single has-post-thumbnail">
                         <div class="blog-img" data-overlay="black" data-opacity="5">
-                            <a href="blog-details.html"><img src="assets/img/blog/blog-s-1-3.jpg" alt="Blog Image"></a>
+                            <a href="blog-details.html"><img src="{{asset('img/blog/blog-s-1-3.jpg')}}" alt="Blog Image"></a>
                             <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" class="play-btn popup-video"><i class="fas fa-play"></i></a>
                         </div>
                         <div class="blog-content">
@@ -167,7 +167,7 @@ Blog Area
                             <div class="recent-post-wrap">
                                 <div class="recent-post">
                                     <div class="media-img">
-                                        <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-1.jpg" alt="Blog Image"></a>
+                                        <a href="blog-details.html"><img src="{{asset('img/blog/recent-post-1-1.jpg')}}" alt="Blog Image"></a>
                                     </div>
                                     <div class="media-body">
                                         <div class="recent-post-meta">
@@ -178,7 +178,7 @@ Blog Area
                                 </div>
                                 <div class="recent-post">
                                     <div class="media-img">
-                                        <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-2.jpg" alt="Blog Image"></a>
+                                        <a href="blog-details.html"><img src="{{asset('img/blog/recent-post-1-2.jpg')}}" alt="Blog Image"></a>
                                     </div>
                                     <div class="media-body">
                                         <div class="recent-post-meta">
@@ -189,7 +189,7 @@ Blog Area
                                 </div>
                                 <div class="recent-post">
                                     <div class="media-img">
-                                        <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-3.jpg" alt="Blog Image"></a>
+                                        <a href="blog-details.html"><img src="{{asset('img/blog/recent-post-1-3.jpg')}}" alt="Blog Image"></a>
                                     </div>
                                     <div class="media-body">
                                         <div class="recent-post-meta">

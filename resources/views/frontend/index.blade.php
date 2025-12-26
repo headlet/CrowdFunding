@@ -12,7 +12,7 @@ Hero Area
     <div class="swiper th-slider hero-slider4" id="heroSlider4" data-slider-options='{"effect":"fade","autoHeight": "true"}'>
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <div class="hero-inner" data-bg-src="assets/img/hero/hero_bg_4_1.jpg">
+                <div class="hero-inner" data-bg-src="{{asset('img/hero/hero_bg_4_1.jpg')}}">
                     <div class="hero-bg-shape4-1">
                         <img src="{{asset('img/hero/hero-bg-shape4-1.png')}}" alt="img">
                     </div>
@@ -53,19 +53,19 @@ Hero Area
             <div class="swiper-slide">
                 <div class="hero-inner" data-bg-src="{{asset('img/hero/hero_bg_4_2.jpg')}}">
                     <div class="hero-bg-shape4-1">
-                        <img src="assets/img/hero/hero-bg-shape4-1.png" alt="img">
+                        <img src="{{asset('img/hero/hero-bg-shape4-1.png')}}" alt="img">
                     </div>
                     <div class="hero-bg-shape4-2 shake">
-                        <img src="assets/img/hero/hero-bg-shape4-2.png" alt="img">
+                        <img src="{{asset('img/hero/hero-bg-shape4-2.png')}}" alt="img">
                     </div>
                     <div class="hero-bg-shape4-3 jump d-xl-inline-block d-none">
-                        <img src="assets/img/hero/hero-bg-shape4-3.png" alt="img">
+                        <img src="{{asset('img/hero/hero-bg-shape4-3.png')}}" alt="img">
                     </div>
                     <div class="hero-bg-shape4-4 jump-reverse">
-                        <img src="assets/img/hero/hero-bg-shape4-4.png" alt="img">
+                        <img src="{{asset('img/hero/hero-bg-shape4-4.png')}}" alt="img">
                     </div>
                     <div class="hero-bg-shape4-5">
-                        <img src="assets/img/hero/hero-bg-shape4-5.png" alt="img">
+                        <img src="{{asset('img/hero/hero-bg-shape4-5.png')}}" alt="img">
                     </div>
                     <div class="container">
                         <div class="row">
@@ -90,21 +90,21 @@ Hero Area
                 </div>
             </div>
             <div class="swiper-slide">
-                <div class="hero-inner" data-bg-src="assets/img/hero/hero_bg_4_3.jpg">
+                <div class="hero-inner" data-bg-src="{{asset('img/hero/hero_bg_4_3.jpg')}}">
                     <div class="hero-bg-shape4-1">
-                        <img src="assets/img/hero/hero-bg-shape4-1.png" alt="img">
+                        <img src="{{asset('img/hero/hero-bg-shape4-1.png')}}" alt="img">
                     </div>
                     <div class="hero-bg-shape4-2 shake">
-                        <img src="assets/img/hero/hero-bg-shape4-2.png" alt="img">
+                        <img src="{{asset('img/hero/hero-bg-shape4-2.png')}}" alt="img">
                     </div>
                     <div class="hero-bg-shape4-3 jump d-xl-inline-block d-none">
-                        <img src="assets/img/hero/hero-bg-shape4-3.png" alt="img">
+                        <img src="{{asset('img/hero/hero-bg-shape4-3.png')}}" alt="img">
                     </div>
                     <div class="hero-bg-shape4-4 jump-reverse">
-                        <img src="assets/img/hero/hero-bg-shape4-4.png" alt="img">
+                        <img src="{{asset('img/hero/hero-bg-shape4-4.png')}}" alt="img">
                     </div>
                     <div class="hero-bg-shape4-5">
-                        <img src="assets/img/hero/hero-bg-shape4-5.png" alt="img">
+                        <img src="{{asset('img/hero/hero-bg-shape4-5.png')}}" alt="img">
                     </div>
                     <div class="container">
                         <div class="row">
@@ -132,13 +132,13 @@ Hero Area
     </div>
     <div class="hero-thumb-tab" data-slider-tab=".hero-slider4">
         <div class="tab-btn active">
-            <img src="assets/img/hero/hero_bg_4_1.jpg" alt="thumb">
+            <img src="{{asset('img/hero/hero_bg_4_1.jpg')}}" alt="thumb">
         </div>
         <div class="tab-btn">
-            <img src="assets/img/hero/hero_bg_4_2.jpg" alt="thumb">
+            <img src="{{asset('img/hero/hero_bg_4_2.jpg')}}" alt="thumb">
         </div>
         <div class="tab-btn">
-            <img src="assets/img/hero/hero_bg_4_3.jpg" alt="thumb">
+            <img src="{{asset('img/hero/hero_bg_4_3.jpg')}}" alt="thumb">
         </div>
     </div>
 </div>
@@ -186,7 +186,7 @@ About Area
     <div class="shape-mockup about-bg-shape4-1 d-xxl-block d-none jump-reverse" data-bottom="0" data-left="0%">
         <img src="{{asset('img/shape/about_shape4_1.png')}}" alt="shape">
     </div>
-  
+
     <div class="container">
         <div class="row align-items-center">
             <div class="col-xl-6 mb-50 mb-xl-0">
@@ -206,7 +206,7 @@ About Area
                     <div class="about-feature-grid-wrap">
                         <div class="about-feature-grid style2 mb-0">
                             <div class="box-icon">
-                                <img src="assets/img/icon/about-icon4-1.svg" alt="icon">
+                                <img src="{{asset('img/icon/about-icon4-1.svg')}}" alt="icon">
                             </div>
                             <div class="media-body">
                                 <h4 class="box-title">Be a Hero, Contribute Now</h4>
@@ -214,7 +214,7 @@ About Area
                         </div>
                         <div class="about-feature-grid style2 mb-0">
                             <div class="box-icon" data-theme-color="var(--theme-color2)">
-                                <img src="assets/img/icon/about-icon4-2.svg" alt="icon">
+                                <img src="{{asset('img/icon/about-icon4-2.svg')}}" alt="icon">
                             </div>
                             <div class="media-body">
                                 <h4 class="box-title">Help Children with Donations</h4>
@@ -223,9 +223,9 @@ About Area
                     </div>
                     <div class="checklist mt-30">
                         <ul>
-                            <li><img src="assets/img/icon/checklist-icon.svg" alt="icon">Providing essential resources to underserved communities.</li>
-                            <li><img src="assets/img/icon/checklist-icon.svg" alt="icon">Offering support through educational and health programs.</li>
-                            <li><img src="assets/img/icon/checklist-icon.svg" alt="icon">Facilitating volunteer opportunities for community involvement.</li>
+                            <li><img src="{{asset('img/icon/checklist-icon.svg')}}" alt="icon">Providing essential resources to underserved communities.</li>
+                            <li><img src="{{asset('img/icon/checklist-icon.svg')}}" alt="icon">Offering support through educational and health programs.</li>
+                            <li><img src="{{asset('img/icon/checklist-icon.svg')}}" alt="icon">Facilitating volunteer opportunities for community involvement.</li>
                         </ul>
                     </div>
                     <div class="btn-wrap style2 mt-40">
@@ -238,7 +238,7 @@ About Area
 </div><!--==============================
 Donation Area  
 ==============================-->
-<section class="space overflow-hidden" data-bg-src="assets/img/bg/gray-bg3.png" id="donation-sec">
+<section class=" overflow-hidden" data-bg-src="{{asset('img/bg/gray-bg3.png')}}" id="donation-sec">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-7">
@@ -256,7 +256,7 @@ Donation Area
                     <div class="swiper-slide">
                         <div class="donation-card style4" data-theme-color="">
                             <div class="box-thumb">
-                                <img src="assets/img/donation/donation4-1.png" alt="image">
+                                <img src="{{asset('img/donation/donation4-1.png')}}" alt="image">
                             </div>
                             <h3 class="box-title"><a href="blog-details.html">Big charity: build school for poor children</a></h3>
                             <div class="box-content">
@@ -281,7 +281,7 @@ Donation Area
                     <div class="swiper-slide">
                         <div class="donation-card style4" data-theme-color="var(--theme-color2)">
                             <div class="box-thumb">
-                                <img src="assets/img/donation/donation4-2.png" alt="image">
+                                <img src="{{asset('img/donation/donation4-2.png')}}" alt="image">
                             </div>
                             <h3 class="box-title"><a href="blog-details.html">Providing Medical Aid to Undeserved Areas</a></h3>
                             <div class="box-content">
@@ -306,7 +306,7 @@ Donation Area
                     <div class="swiper-slide">
                         <div class="donation-card style4" data-theme-color="#FF5528">
                             <div class="box-thumb">
-                                <img src="assets/img/donation/donation4-3.png" alt="image">
+                                <img src="{{asset('img/donation/donation4-3.png')}}" alt="image">
                             </div>
                             <h3 class="box-title"><a href="{{route('donation-details')}}">Fighting Hunger with Food Distribution Drives</a></h3>
                             <div class="box-content">
@@ -331,7 +331,7 @@ Donation Area
                     <div class="swiper-slide">
                         <div class="donation-card style4" data-theme-color="#122F2A">
                             <div class="box-thumb">
-                                <img src="assets/img/donation/donation4-4.png" alt="image">
+                                <img src="{{asset('img/donation/donation4-4.png')}}" alt="image">
                             </div>
                             <h3 class="box-title"><a href="{{route('donation-details')}}">Supporting Mental Health Awareness Initiatives</a></h3>
                             <div class="box-content">
@@ -356,7 +356,7 @@ Donation Area
                     <div class="swiper-slide">
                         <div class="donation-card style4" data-theme-color="">
                             <div class="box-thumb">
-                                <img src="assets/img/donation/donation4-1.png" alt="image">
+                                <img src="{{asset('img/donation/donation4-1.png')}}" alt="image">
                             </div>
                             <h3 class="box-title"><a href="{{route('donation-details')}}">Big charity: build school for poor children</a></h3>
                             <div class="box-content">
@@ -381,7 +381,7 @@ Donation Area
                     <div class="swiper-slide">
                         <div class="donation-card style4" data-theme-color="var(--theme-color2)">
                             <div class="box-thumb">
-                                <img src="assets/img/donation/donation4-2.png" alt="image">
+                                <img src="{{asset('img/donation/donation4-2.png')}}" alt="image">
                             </div>
                             <h3 class="box-title"><a href="{{route('donation-details')}}">Providing Medical Aid to Undeserved Areas</a></h3>
                             <div class="box-content">
@@ -406,7 +406,7 @@ Donation Area
                     <div class="swiper-slide">
                         <div class="donation-card style4" data-theme-color="#FF5528">
                             <div class="box-thumb">
-                                <img src="assets/img/donation/donation4-3.png" alt="image">
+                                <img src="{{asset('img/donation/donation4-3.png')}}" alt="image">
                             </div>
                             <h3 class="box-title"><a href="{{route('donation-details')}}">Fighting Hunger with Food Distribution Drives</a></h3>
                             <div class="box-content">
@@ -431,7 +431,7 @@ Donation Area
                     <div class="swiper-slide">
                         <div class="donation-card style4" data-theme-color="#122F2A">
                             <div class="box-thumb">
-                                <img src="assets/img/donation/donation4-4.png" alt="image">
+                                <img src="{{asset('img/donation/donation4-4.png')}}" alt="image">
                             </div>
                             <h3 class="box-title"><a href="{{route('donation-details')}}">Supporting Mental Health Awareness Initiatives</a></h3>
                             <div class="box-content">
@@ -460,7 +460,7 @@ Donation Area
     <div class="container">
         <div class="donation4-btn-wrap mt-60">
             <div class="thumb">
-                <img src="assets/img/donation/donation4-btn-wrap-thumb.png" alt="img">
+                <img src="{{asset('img/donation/donation4-btn-wrap-thumb.png')}}" alt="img">
             </div>
             <h4 class="title">We are supporting over 10+ additional causes to aid people worldwide.</h4>
             <a href="{{route('donation')}}" class="th-btn">More Cause <i class="fas fa-arrow-up-right ms-2"></i></a>
@@ -473,13 +473,13 @@ Service Area
 <section class="service-area-3 space" id="service-sec">
     <div class="shape-mockup service-shape-3-1 jump d-lg-block d-none" data-left="3%" data-top="15%">
         <div class="color-masking">
-            <div class="masking-src bg-mask" data-mask-src="assets/img/hero/hero-bg-shape2-1.png"></div>
-            <img src="assets/img/hero/hero-bg-shape2-1.png" alt="shape">
+            <div class="masking-src bg-mask" data-mask-src="{{asset('img/hero/hero-bg-shape2-1.png')}}"></div>
+            <img src="{{asset('img/hero/hero-bg-shape2-1.png')}}" alt="shape">
         </div>
     </div>
 
     <div class="shape-mockup service-shape-3-2 jump-reverse d-lg-block d-none" data-right="3%" data-bottom="5%">
-        <img src="assets/img/shape/service_bg_shape4_1.png" alt="shape">
+        <img src="{{asset('img/shape/service_bg_shape4_1.png')}}" alt="shape">
     </div>
     <div class="container">
         <div class="row justify-content-center align-items-center">
@@ -494,10 +494,10 @@ Service Area
             <div class="col-lg-4 col-md-6">
                 <div class="service-card style3">
                     <div class="box-thumb">
-                        <img src="assets/img/service/service_card_3_1.png" alt="icon">
+                        <img src="{{asset('img/service/service_card_3_1.png')}}" alt="icon">
                     </div>
                     <div class="box-icon">
-                        <img src="assets/img/icon/service-icon/service-card-icon1-1.svg" alt="Icon">
+                        <img src="{{asset('img/icon/service-icon/service-card-icon1-1.svg')}}" alt="Icon">
                     </div>
                     <div class="box-content">
                         <h3 class="box-title"><a href="about.html">Fund Poor Raised</a></h3>
@@ -508,10 +508,10 @@ Service Area
             <div class="col-lg-4 col-md-6">
                 <div class="service-card style3">
                     <div class="box-thumb">
-                        <img src="assets/img/service/service_card_3_2.png" alt="icon">
+                        <img src="{{asset('img/service/service_card_3_2.png')}}" alt="icon">
                     </div>
                     <div class="box-icon">
-                        <img src="assets/img/icon/service-icon/service-card-icon1-3.svg" alt="Icon">
+                        <img src="{{asset('img/icon/service-icon/service-card-icon1-3.svg')}}" alt="Icon">
                     </div>
                     <div class="box-content">
                         <h3 class="box-title"><a href="about.html">Money This Treatment</a></h3>
@@ -522,10 +522,10 @@ Service Area
             <div class="col-lg-4 col-md-6">
                 <div class="service-card style3">
                     <div class="box-thumb">
-                        <img src="assets/img/service/service_card_3_3.png" alt="icon">
+                        <img src="{{asset('img/service/service_card_3_3.png')}}" alt="icon">
                     </div>
                     <div class="box-icon">
-                        <img src="assets/img/icon/service-icon/service-card-icon1-2.svg" alt="Icon">
+                        <img src="{{asset('img/icon/service-icon/service-card-icon1-2.svg')}}" alt="Icon">
                     </div>
                     <div class="box-content">
                         <h3 class="box-title"><a href="about.html">Child Education Raised</a></h3>
@@ -546,73 +546,73 @@ Marquee Area
                 <div class="swiper-slide">
                     <div class="marquee-card">
                         <a target="_blank" href="home-4.html#"><span class="text-stroke">Medical</span></a>
-                        <span><img src="assets/img/icon/marquee-circle-icon.svg" alt="img"></span>
+                        <span><img src="{{asset('img/icon/marquee-circle-icon.svg')}}" alt="img"></span>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="marquee-card">
                         <a target="_blank" href="home-4.html#"><span class="text-theme">Education</span></a>
-                        <span><img src="assets/img/icon/marquee-circle-icon.svg" alt="img"></span>
+                        <span><img src="{{asset('img/icon/marquee-circle-icon.svg')}}" alt="img"></span>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="marquee-card">
                         <a target="_blank" href="home-4.html#"><span class="text-stroke">Foods</span></a>
-                        <span><img src="assets/img/icon/marquee-circle-icon.svg" alt="img"></span>
+                        <span><img src="{{asset('img/icon/marquee-circle-icon.svg')}}" alt="img"></span>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="marquee-card">
                         <a target="_blank" href="home-4.html#"><span class="text-theme">Health</span></a>
-                        <span><img src="assets/img/icon/marquee-circle-icon.svg" alt="img"></span>
+                        <span><img src="{{asset('img/icon/marquee-circle-icon.svg')}}" alt="img"></span>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="marquee-card">
                         <a target="_blank" href="home-4.html#"><span class="text-stroke">Support</span></a>
-                        <span><img src="assets/img/icon/marquee-circle-icon.svg" alt="img"></span>
+                        <span><img src="{{asset('img/icon/marquee-circle-icon.svg')}}" alt="img"></span>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="marquee-card">
                         <a target="_blank" href="home-4.html#"><span class="text-theme">Donation</span></a>
-                        <span><img src="assets/img/icon/marquee-circle-icon.svg" alt="img"></span>
+                        <span><img src="{{asset('img/icon/marquee-circle-icon.svg')}}" alt="img"></span>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="marquee-card">
                         <a target="_blank" href="home-4.html#"><span class="text-stroke">Medical</span></a>
-                        <span><img src="assets/img/icon/marquee-circle-icon.svg" alt="img"></span>
+                        <span><img src="{{asset('img/icon/marquee-circle-icon.svg')}}" alt="img"></span>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="marquee-card">
                         <a target="_blank" href="home-4.html#"><span class="text-theme">Education</span></a>
-                        <span><img src="assets/img/icon/marquee-circle-icon.svg" alt="img"></span>
+                        <span><img src="{{asset('img/icon/marquee-circle-icon.svg')}}" alt="img"></span>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="marquee-card">
                         <a target="_blank" href="home-4.html#"><span class="text-stroke">Foods</span></a>
-                        <span><img src="assets/img/icon/marquee-circle-icon.svg" alt="img"></span>
+                        <span><img src="{{asset('img/icon/marquee-circle-icon.svg')}}" alt="img"></span>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="marquee-card">
                         <a target="_blank" href="home-4.html#"><span class="text-theme">Health</span></a>
-                        <span><img src="assets/img/icon/marquee-circle-icon.svg" alt="img"></span>
+                        <span><img src="{{asset('img/icon/marquee-circle-icon.svg')}}" alt="img"></span>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="marquee-card">
                         <a target="_blank" href="home-4.html#"><span class="text-stroke">Support</span></a>
-                        <span><img src="assets/img/icon/marquee-circle-icon.svg" alt="img"></span>
+                        <span><img src="{{asset('img/icon/marquee-circle-icon.svg')}}" alt="img"></span>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="marquee-card">
                         <a target="_blank" href="home-4.html#"><span class="text-theme">Donation</span></a>
-                        <span><img src="assets/img/icon/marquee-circle-icon.svg" alt="img"></span>
+                        <span><img src="{{asset('img/icon/marquee-circle-icon.svg')}}" alt="img"></span>
                     </div>
                 </div>
             </div>
@@ -622,15 +622,15 @@ Marquee Area
 <!--==============================
 Campaign Area  
 ==============================-->
-<div class="overflow-hidden campaign-area-1 space-top bg-gray" data-bg-src="assets/img/bg/gray-bg4.png">
+<div class="overflow-hidden campaign-area-1 space-top bg-gray" data-bg-src="{{asset('img/bg/gray-bg4.png')}}">
     <div class="shape-mockup d-xl-block d-none campaign-bg-shape1-1 jump-reverse" data-bottom="10%" data-right="0">
-        <img src="assets/img/shape/campaign-shape1-1.png" alt="shape">
+        <img src="{{asset('img/shape/campaign-shape1-1.png')}}" alt="shape">
     </div>
     <div class="shape-mockup d-xl-block d-none campaign-bg-shape1-2" data-top="0" data-right="0">
-        <img src="assets/img/shape/campaign-bg-shape1-1.png" alt="shape">
+        <img src="{{asset('img/shape/campaign-bg-shape1-1.png')}}" alt="shape">
     </div>
     <div class="shape-mockup d-xl-block d-none campaign-bg-shape1-3" data-bottom="0" data-right="0" data-left="0">
-        <img class="w-100" src="assets/img/shape/campaign-bg-shape1-2.png" alt="shape">
+        <img class="w-100" src="{{asset('img/shape/campaign-bg-shape1-2.png')}}" alt="shape">
     </div>
     <div class="container">
         <div class="row align-items-center justify-content-between">
@@ -648,8 +648,8 @@ Campaign Area
         </div>
         <div class="campaign-wrap1">
             <div class="campaign-thumb">
-                <div class="campaign-thumb-bg" data-bg-src="assets/img/shape/campaign-thumb-shape1-1.png"></div>
-                <img src="assets/img/normal/campaign-thumb1-1.png" alt="img">
+                <div class="campaign-thumb-bg" data-bg-src="{{asset('img/shape/campaign-thumb-shape1-1.png')}}"></div>
+                <img src="{{asset('img/normal/campaign-thumb1-1.png')}}" alt="img">
             </div>
             <div class="donation-form-v1">
                 <h3 class="title mb-10">Help Children by Collecting Priceless Contributions</h3>
@@ -703,7 +703,7 @@ Campaign Area
 Team Area  
 ==============================-->
 <section class="space team-area-2">
-    <div class="shape-mockup team-bg-shape2-1 spin d-xxl-block d-none" data-top="20%" data-right="3%"><img src="assets/img/shape/hand-group-shape1.png" alt="img"></div>
+    <div class="shape-mockup team-bg-shape2-1 spin d-xxl-block d-none" data-top="20%" data-right="3%"><img src="{{asset('img/shape/hand-group-shape1.png')}}" alt="img"></div>
     <div class="container">
         <div class="title-area text-center">
             <span class="sub-title after-none before-none">Our Volunteer</span>
@@ -717,7 +717,7 @@ Team Area
                         <div class="th-team team-card2">
                             <div class="img-wrap">
                                 <div class="team-img">
-                                    <img src="assets/img/team/team_2_1.png" alt="Team">
+                                    <img src="{{asset('img/team/team_2_1.png')}}" alt="Team">
                                 </div>
                                 <div class="team-social-hover">
                                     <a href="home-4.html#" class="team-social-hover_btn">
@@ -743,7 +743,7 @@ Team Area
                         <div class="th-team team-card2">
                             <div class="img-wrap">
                                 <div class="team-img">
-                                    <img src="assets/img/team/team_2_2.png" alt="Team">
+                                    <img src="{{asset('img/team/team_2_2.png')}}" alt="Team">
                                 </div>
                                 <div class="team-social-hover">
                                     <a href="home-4.html#" class="team-social-hover_btn">
@@ -769,7 +769,7 @@ Team Area
                         <div class="th-team team-card2">
                             <div class="img-wrap">
                                 <div class="team-img">
-                                    <img src="assets/img/team/team_2_3.png" alt="Team">
+                                    <img src="{{asset('img/team/team_2_3.png')}}" alt="Team">
                                 </div>
                                 <div class="team-social-hover">
                                     <a href="home-4.html#" class="team-social-hover_btn">
@@ -795,7 +795,7 @@ Team Area
                         <div class="th-team team-card2">
                             <div class="img-wrap">
                                 <div class="team-img">
-                                    <img src="assets/img/team/team_2_1.png" alt="Team">
+                                    <img src="{{asset('img/team/team_2_1.png')}}" alt="Team">
                                 </div>
                                 <div class="team-social-hover">
                                     <a href="home-4.html#" class="team-social-hover_btn">
@@ -821,7 +821,7 @@ Team Area
                         <div class="th-team team-card2">
                             <div class="img-wrap">
                                 <div class="team-img">
-                                    <img src="assets/img/team/team_2_2.png" alt="Team">
+                                    <img src="{{asset('img/team/team_2_2.png')}}" alt="Team">
                                 </div>
                                 <div class="team-social-hover">
                                     <a href="home-4.html#" class="team-social-hover_btn">
@@ -847,7 +847,7 @@ Team Area
                         <div class="th-team team-card2">
                             <div class="img-wrap">
                                 <div class="team-img">
-                                    <img src="assets/img/team/team_2_3.png" alt="Team">
+                                    <img src="{{asset('img/team/team_2_3.png')}}" alt="Team">
                                 </div>
                                 <div class="team-social-hover">
                                     <a href="home-4.html#" class="team-social-hover_btn">
@@ -884,10 +884,10 @@ Story Area
                 <div class="story-img-box1">
                     <div class="box-wrap d-inline-block">
                         <div class="img1">
-                            <img src="assets/img/normal/story_1_1.png" alt="img">
+                            <img src="{{asset('img/normal/story_1_1.png')}}" alt="img">
                         </div>
                         <div class="story-shape1-1 jump-reverse">
-                            <img src="assets/img/shape/story_shape1_1.png" alt="img">
+                            <img src="{{asset('img/shape/story_shape1_1.png')}}" alt="img">
                         </div>
                         <div class="story-card movingX">
                             <h5 class="box-title">Adam Cruz</h5>
@@ -896,7 +896,7 @@ Story Area
                                 the resilience of those we help.
                                 These narratives showcase the
                                 power of compassion.</p>
-                            <div class="quote-icon" data-mask-src="assets/img/icon/quote.svg"></div>
+                            <div class="quote-icon" data-mask-src="{{asset('img/icon/quote.svg')}}"></div>
                         </div>
                         <div class="year-counter">
                             <p class="year-counter_text">Years of <span>Experience</span></p>
@@ -926,13 +926,13 @@ Testimonial Area
 ==============================-->
 <section class="testi-area-4 space bg-theme-dark overflow-hidden">
     <div class="shape-mockup testi-bg-shape4-1 jump-reverse d-xl-block d-none" data-top="5%" data-left="3%">
-        <img src="assets/img/hero/hero-bg-shape4-4.png" alt="img">
+        <img src="{{asset('img/hero/hero-bg-shape4-4.png')}}" alt="img">
     </div>
     <div class="shape-mockup shake testi-bg-shape4-2 d-xl-block d-none" data-top="7%" data-right="5%">
-        <img src="assets/img/shape/team_bg_shape3_4.png" alt="img">
+        <img src="{{asset('img/shape/team_bg_shape3_4.png')}}" alt="img">
     </div>
     <div class="shape-mockup shake testi-bg-shape4-3 d-xl-block d-none" data-bottom="7%" data-left="4%">
-        <img src="assets/img/shape/team_bg_shape3_5.png" alt="img">
+        <img src="{{asset('img/shape/team_bg_shape3_5.png')}}" alt="img">
     </div>
     <div class="container">
         <div class="row gy-40 gx-80">
@@ -941,7 +941,7 @@ Testimonial Area
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="testi-box-img">
-                                <img class="testi-img" src="assets/img/testimonial/testi_4_1.png" alt="img">
+                                <img class="testi-img" src="{{asset('img/testimonial/testi_4_1.png')}}" alt="img">
                                 <div class="testi-card_review">
                                     <i class="fas fa-star"></i>
                                     5.0
@@ -950,7 +950,7 @@ Testimonial Area
                         </div>
                         <div class="swiper-slide">
                             <div class="testi-box-img">
-                                <img class="testi-img" src="assets/img/testimonial/testi_4_2.png" alt="img">
+                                <img class="testi-img" src="{{asset('img/testimonial/testi_4_2.png')}}" alt="img">
                                 <div class="testi-card_review">
                                     <i class="fas fa-star"></i>
                                     5.0
@@ -959,7 +959,7 @@ Testimonial Area
                         </div>
                         <div class="swiper-slide">
                             <div class="testi-box-img">
-                                <img class="testi-img" src="assets/img/testimonial/testi_4_3.png" alt="img">
+                                <img class="testi-img" src="{{asset('img/testimonial/testi_4_3.png')}}" alt="img">
                                 <div class="testi-card_review">
                                     <i class="fas fa-star"></i>
                                     5.0
@@ -1022,7 +1022,7 @@ Event Area
             <div class="col-12">
                 <div class="event-card2">
                     <div class="box-thumb">
-                        <img src="assets/img/event/event2-1.png" alt="event">
+                        <img src="{{asset('img/event/event2-1.png')}}" alt="event">
                     </div>
                     <div class="box-content">
                         <div class="event-card-meta">
@@ -1039,7 +1039,7 @@ Event Area
                             </div>
                             <div class="event-speakers">
                                 <div class="thumb">
-                                    <img src="assets/img/event/event-speakers.png" alt="img">
+                                    <img src="{{asset('img/event/event-speakers.png')}}" alt="img">
                                 </div>
                                 <span class="event-speaker-text"><span>Spe</span>akers</span>
                             </div>
@@ -1051,7 +1051,7 @@ Event Area
             <div class="col-12">
                 <div class="event-card2">
                     <div class="box-thumb">
-                        <img src="assets/img/event/event2-2.png" alt="event">
+                        <img src="{{asset('img/event/event2-2.png')}}" alt="event">
                     </div>
                     <div class="box-content">
                         <div class="event-card-meta">
@@ -1068,7 +1068,7 @@ Event Area
                             </div>
                             <div class="event-speakers">
                                 <div class="thumb">
-                                    <img src="assets/img/event/event-speakers.png" alt="img">
+                                    <img src="{{asset('img/event/event-speakers.png')}}" alt="img">
                                 </div>
                                 <span class="event-speaker-text"><span>Spe</span>akers</span>
                             </div>
@@ -1138,12 +1138,10 @@ Blog Area
                         <div class="blog-card">
                             <div class="blog-img">
                                 <a href="blog-details.html">
-                                    <div class="blog-img-shape1" data-mask-src="assets/img/blog/blog-card-bg-shape1-2.png"></div>
-                                    <img src="assets/img/blog/blog_1_1.jpg" alt="blog image">
+                                    <img src="{{asset('img/blog/blog_1_1.jpg')}}" alt="blog image">
                                 </a>
                             </div>
                             <div class="blog-content">
-                                <div class="blog-card-shape" data-mask-src="assets/img/blog/blog-card-bg-shape1-1.png"></div>
                                 <div class="blog-meta">
                                     <a href="blog.html"><i class="fas fa-calendar"></i>July 16, 2025</a>
                                     <a href="blog.html"><i class="fas fa-tags"></i>Education</a>
@@ -1158,12 +1156,11 @@ Blog Area
                         <div class="blog-card">
                             <div class="blog-img">
                                 <a href="blog-details.html">
-                                    <div class="blog-img-shape1" data-mask-src="assets/img/blog/blog-card-bg-shape1-2.png"></div>
-                                    <img src="assets/img/blog/blog_1_2.jpg" alt="blog image">
+                                    <img src="{{asset('img/blog/blog_1_2.jpg')}}" alt="blog image">
                                 </a>
                             </div>
                             <div class="blog-content">
-                                <div class="blog-card-shape" data-mask-src="assets/img/blog/blog-card-bg-shape1-1.png"></div>
+                                <div class="blog-card-shape" data-mask-src="{{asset('img/blog/blog-card-bg-shape1-1.png')}}"></div>
                                 <div class="blog-meta">
                                     <a href="blog.html"><i class="fas fa-calendar"></i>March 24, 2025</a>
                                     <a href="blog.html"><i class="fas fa-tags"></i>Education</a>
@@ -1178,12 +1175,11 @@ Blog Area
                         <div class="blog-card">
                             <div class="blog-img">
                                 <a href="blog-details.html">
-                                    <div class="blog-img-shape1" data-mask-src="assets/img/blog/blog-card-bg-shape1-2.png"></div>
-                                    <img src="assets/img/blog/blog_1_3.jpg" alt="blog image">
+                                    <img src="{{asset('img/blog/blog_1_3.jpg')}}" alt="blog image">
                                 </a>
                             </div>
                             <div class="blog-content">
-                                <div class="blog-card-shape" data-mask-src="assets/img/blog/blog-card-bg-shape1-1.png"></div>
+                                <div class="blog-card-shape" data-mask-src="{{asset('img/blog/blog-card-bg-shape1-1.png')}}"></div>
                                 <div class="blog-meta">
                                     <a href="blog.html"><i class="fas fa-calendar"></i>June 30, 2025</a>
                                     <a href="blog.html"><i class="fas fa-tags"></i>Education</a>
@@ -1198,12 +1194,12 @@ Blog Area
                         <div class="blog-card">
                             <div class="blog-img">
                                 <a href="blog-details.html">
-                                    <div class="blog-img-shape1" data-mask-src="assets/img/blog/blog-card-bg-shape1-2.png"></div>
-                                    <img src="assets/img/blog/blog_1_1.jpg" alt="blog image">
+
+                                    <img src="{{asset('img/blog/blog_1_1.jpg')}}" alt="blog image">
                                 </a>
                             </div>
                             <div class="blog-content">
-                                <div class="blog-card-shape" data-mask-src="assets/img/blog/blog-card-bg-shape1-1.png"></div>
+                                <div class="blog-card-shape" data-mask-src="{{asset('img/blog/blog-card-bg-shape1-1.png')}}"></div>
                                 <div class="blog-meta">
                                     <a href="blog.html"><i class="fas fa-calendar"></i>July 16, 2025</a>
                                     <a href="blog.html"><i class="fas fa-tags"></i>Education</a>
@@ -1218,12 +1214,12 @@ Blog Area
                         <div class="blog-card">
                             <div class="blog-img">
                                 <a href="blog-details.html">
-                                    <div class="blog-img-shape1" data-mask-src="assets/img/blog/blog-card-bg-shape1-2.png"></div>
-                                    <img src="assets/img/blog/blog_1_2.jpg" alt="blog image">
+
+                                    <img src="{{asset('img/blog/blog_1_2.jpg')}}" alt="blog image">
                                 </a>
                             </div>
                             <div class="blog-content">
-                                <div class="blog-card-shape" data-mask-src="assets/img/blog/blog-card-bg-shape1-1.png"></div>
+                                <div class="blog-card-shape" data-mask-src="{{asset('img/blog/blog-card-bg-shape1-1.png')}}"></div>
                                 <div class="blog-meta">
                                     <a href="blog.html"><i class="fas fa-calendar"></i>March 24, 2025</a>
                                     <a href="blog.html"><i class="fas fa-tags"></i>Education</a>
@@ -1238,12 +1234,12 @@ Blog Area
                         <div class="blog-card">
                             <div class="blog-img">
                                 <a href="blog-details.html">
-                                    <div class="blog-img-shape1" data-mask-src="assets/img/blog/blog-card-bg-shape1-2.png"></div>
-                                    <img src="assets/img/blog/blog_1_3.jpg" alt="blog image">
+
+                                    <img src="{{asset('img/blog/blog_1_3.jpg')}}" alt="blog image">
                                 </a>
                             </div>
                             <div class="blog-content">
-                                <div class="blog-card-shape" data-mask-src="assets/img/blog/blog-card-bg-shape1-1.png"></div>
+                                <div class="blog-card-shape" data-mask-src="{{asset('img/blog/blog-card-bg-shape1-1.png')}}"></div>
                                 <div class="blog-meta">
                                     <a href="blog.html"><i class="fas fa-calendar"></i>June 30, 2025</a>
                                     <a href="blog.html"><i class="fas fa-tags"></i>Education</a>

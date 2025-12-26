@@ -9,7 +9,7 @@ Donate Details
  <!--==============================
     Breadcumb
 ============================== -->
-    <div class="breadcumb-wrapper " data-bg-src="assets/img/bg/breadcumb-bg.jpg" data-overlay="theme">
+    <div class="breadcumb-wrapper " data-bg-src="{{asset('img/bg/breadcumb-bg.jpg')}}" data-overlay="theme">
         <div class="container">
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Donation Details</h1>
@@ -27,7 +27,7 @@ Donate Details
             <div class="row gx-40">
                 <div class="col-xxl-8 col-lg-7">
                     <div class="page-img">
-                        <img src="assets/img/donation/donation-s-1-1.png" alt="Blog Image">
+                        <img src="{{asset('img/donation/donation-s-1-1.png')}}" alt="Blog Image">
                         <div class="tag">Educations</div>
                     </div>
                     <div class="blog-content">
@@ -58,7 +58,7 @@ Donate Details
                         <div class="row gx-40 gy-30 align-items-center">
                             <div class="col-xl-6">
                                 <div class="page-img mb-0">
-                                    <img src="assets/img/donation/donation-s-1-2.png" alt="Blog Image">
+                                    <img src="{{asset('img/donation/donation-s-1-2.png')}}" alt="Blog Image">
                                 </div>
                             </div>
                             <div class="col-xl-6">
@@ -83,7 +83,7 @@ Donate Details
                             <li class="th-comment-item">
                                 <div class="th-post-comment">
                                     <div class="comment-avater">
-                                        <img src="assets/img/blog/comment-author-1.jpg" alt="Comment Author">
+                                        <img src="{{asset('img/blog/comment-author-1.jpg')}}" alt="Comment Author">
                                     </div>
                                     <div class="comment-content">
                                         <h3 class="name">Mariya Dsuza</h3>
@@ -98,7 +98,7 @@ Donate Details
                                     <li class="th-comment-item">
                                         <div class="th-post-comment">
                                             <div class="comment-avater">
-                                                <img src="assets/img/blog/comment-author-2.jpg" alt="Comment Author">
+                                                <img src="{{asset('img/blog/comment-author-2.jpg')}}" alt="Comment Author">
                                             </div>
                                             <div class="comment-content">
                                                 <h3 class="name">Michel Phelops</h3>
@@ -115,7 +115,7 @@ Donate Details
                             <li class="th-comment-item">
                                 <div class="th-post-comment">
                                     <div class="comment-avater">
-                                        <img src="assets/img/blog/comment-author-3.jpg" alt="Comment Author">
+                                        <img src="{{asset('img/blog/comment-author-3.jpg')}}" alt="Comment Author">
                                     </div>
                                     <div class="comment-content">
                                         <h3 class="name">Hamilton Barason</h3>
@@ -155,11 +155,11 @@ Donate Details
                 </div>
                 <div class="col-xxl-4 col-lg-5">
                     <aside class="sidebar-area donation-sidebar">
-                        <div class="widget  " data-bg-src="assets/img/bg/gray-bg2.png" data-overlay="gray" data-opacity="5">
+                        <div class="widget  " data-bg-src="{{asset('img/bg/gray-bg2.png')}}" data-overlay="gray" data-opacity="5">
                             <div class="author-widget-wrap">
                                 <div class="author-tag">Organizer:</div>
                                 <div class="avater">
-                                    <img src="assets/img/blog/blog-author.jpg" alt="avater">
+                                    <img src="{{asset('img/blog/blog-author.jpg')}}" alt="avater">
                                 </div>
                                 <div class="author-info">
                                     <h4 class="name"><a class="text-inherit" href="blog.html">Emanuel Marko</a></h4>
@@ -172,19 +172,19 @@ Donate Details
                                 </div>
                             </div>
                         </div>
-                        <div class="widget  " data-bg-src="assets/img/bg/gray-bg2.png" data-overlay="gray" data-opacity="5">
+                        <div class="widget  " data-bg-src="{{asset('img/bg/gray-bg2.png')}}" data-overlay="gray" data-opacity="5">
                             <div class="widget-donation-wrap">
                                 <div class="donate-price">$50</div>
                                 <h4 class="title">How Your Donation Makes A Difference</h4>
                                 <a class="th-btn" href="donation.html">Donation $50</a>
                             </div>
                         </div>
-                        <div class="widget  " data-bg-src="assets/img/bg/gray-bg2.png" data-overlay="gray" data-opacity="5">
+                        <div class="widget  " data-bg-src="{{asset('img/bg/gray-bg2.png')}}" data-overlay="gray" data-opacity="5">
                             <h3 class="widget_title">Recent Donors</h3>
                             <div class="recent-donate-wrap">
                                 <div class="recent-post">
                                     <div class="media-img">
-                                        <a href="blog-details.html"><img src="assets/img/widget/donor_1_1.jpg" alt="Blog Image"></a>
+                                        <a href="blog-details.html"><img src="{{asset('img/widget/donor_1_1.jpg')}}" alt="Blog Image"></a>
                                     </div>
                                     <div class="media-body">
                                         <h4 class="post-title"><a class="text-inherit" href="blog-details.html">Oliver Jake</a></h4>
@@ -195,7 +195,7 @@ Donate Details
                                 </div>
                                 <div class="recent-post">
                                     <div class="media-img">
-                                        <a href="blog-details.html"><img src="assets/img/widget/donor_1_2.jpg" alt="Blog Image"></a>
+                                        <a href="blog-details.html"><img src="{{asset('img/widget/donor_1_2.jpg')}}" alt="Blog Image"></a>
                                     </div>
                                     <div class="media-body">
                                         <h4 class="post-title"><a class="text-inherit" href="blog-details.html">Emily Susan</a></h4>
@@ -206,7 +206,7 @@ Donate Details
                                 </div>
                                 <div class="recent-post">
                                     <div class="media-img">
-                                        <a href="blog-details.html"><img src="assets/img/widget/donor_1_3.jpg" alt="Blog Image"></a>
+                                        <a href="blog-details.html"><img src="{{asset('img/widget/donor_1_3.jpg')}}" alt="Blog Image"></a>
                                     </div>
                                     <div class="media-body">
                                         <h4 class="post-title"><a class="text-inherit" href="blog-details.html">Harry Callum</a></h4>
@@ -217,7 +217,7 @@ Donate Details
                                 </div>
                                 <div class="recent-post">
                                     <div class="media-img">
-                                        <a href="blog-details.html"><img src="assets/img/widget/donor_1_4.jpg" alt="Blog Image"></a>
+                                        <a href="blog-details.html"><img src="{{asset('img/widget/donor_1_4.jpg')}}" alt="Blog Image"></a>
                                     </div>
                                     <div class="media-body">
                                         <h4 class="post-title"><a class="text-inherit" href="blog-details.html">Charlie Kyle</a></h4>
@@ -228,7 +228,7 @@ Donate Details
                                 </div>
                                 <div class="recent-post">
                                     <div class="media-img">
-                                        <a href="blog-details.html"><img src="assets/img/widget/donor_1_5.jpg" alt="Blog Image"></a>
+                                        <a href="blog-details.html"><img src="{{asset('img/widget/donor_1_5.jpg')}}" alt="Blog Image"></a>
                                     </div>
                                     <div class="media-body">
                                         <h4 class="post-title"><a class="text-inherit" href="blog-details.html">Jessica Lauren</a></h4>

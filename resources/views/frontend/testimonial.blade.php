@@ -9,7 +9,7 @@ Testimonial
     <!--==============================
     Breadcumb
 ============================== -->
-    <div class="breadcumb-wrapper " data-bg-src="assets/img/bg/breadcumb-bg.jpg" data-overlay="theme">
+    <div class="breadcumb-wrapper " data-bg-src="{{asset('img/bg/breadcumb-bg.jpg')}}" data-overlay="theme">
         <div class="container">
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Testimonials</h1>
@@ -32,14 +32,14 @@ Testimonial Area
             <div class="row gy-30">
                 <div class="col-lg-6">
                     <div class="testi-card3">
-                        <div class="testi-card-shape" data-mask-src="assets/img/shape/testi-card-bg-shape3-1.png"></div>
+                        <div class="testi-card-shape" data-mask-src="{{asset('img/shape/testi-card-bg-shape3-1.png')}}"></div>
                         <div class="testi-card_review">
                             <i class="fas fa-star"></i>
                             5.0
                         </div>
                         <div class="testi-card_profile">
                             <div class="box-thumb">
-                                <img src="assets/img/testimonial/testi_3_1.png" alt="img">
+                                <img src="{{asset('img/testimonial/testi_3_1.png')}}" alt="img">
                                 <div class="quote-icon">
                                     <i class="fal fa-quote-right"></i>
                                 </div>
@@ -54,14 +54,14 @@ Testimonial Area
                 </div>
                 <div class="col-lg-6">
                     <div class="testi-card3">
-                        <div class="testi-card-shape" data-mask-src="assets/img/shape/testi-card-bg-shape3-1.png"></div>
+                        <div class="testi-card-shape" data-mask-src="{{asset('img/shape/testi-card-bg-shape3-1.png')}}"></div>
                         <div class="testi-card_review">
                             <i class="fas fa-star"></i>
                             5.0
                         </div>
                         <div class="testi-card_profile">
                             <div class="box-thumb">
-                                <img src="assets/img/testimonial/testi_3_2.png" alt="img">
+                                <img src="{{asset('img/testimonial/testi_3_2.png')}}" alt="img">
                                 <div class="quote-icon">
                                     <i class="fal fa-quote-right"></i>
                                 </div>
@@ -76,14 +76,14 @@ Testimonial Area
                 </div>
                 <div class="col-lg-6">
                     <div class="testi-card3">
-                        <div class="testi-card-shape" data-mask-src="assets/img/shape/testi-card-bg-shape3-1.png"></div>
+                        <div class="testi-card-shape" data-mask-src="{{asset('img/shape/testi-card-bg-shape3-1.png')}}"></div>
                         <div class="testi-card_review">
                             <i class="fas fa-star"></i>
                             5.0
                         </div>
                         <div class="testi-card_profile">
                             <div class="box-thumb">
-                                <img src="assets/img/testimonial/testi_3_2.png" alt="img">
+                                <img src="{{asset('img/testimonial/testi_3_2.png')}}" alt="img">
                                 <div class="quote-icon">
                                     <i class="fal fa-quote-right"></i>
                                 </div>
@@ -98,14 +98,14 @@ Testimonial Area
                 </div>
                 <div class="col-lg-6">
                     <div class="testi-card3">
-                        <div class="testi-card-shape" data-mask-src="assets/img/shape/testi-card-bg-shape3-1.png"></div>
+                        <div class="testi-card-shape" data-mask-src="{{asset('img/shape/testi-card-bg-shape3-1.png')}}"></div>
                         <div class="testi-card_review">
                             <i class="fas fa-star"></i>
                             5.0
                         </div>
                         <div class="testi-card_profile">
                             <div class="box-thumb">
-                                <img src="assets/img/testimonial/testi_3_1.png" alt="img">
+                                <img src="{{asset('img/testimonial/testi_3_1.png')}}" alt="img">
                                 <div class="quote-icon">
                                     <i class="fal fa-quote-right"></i>
                                 </div>
@@ -120,14 +120,14 @@ Testimonial Area
                 </div>
                 <div class="col-lg-6">
                     <div class="testi-card3">
-                        <div class="testi-card-shape" data-mask-src="assets/img/shape/testi-card-bg-shape3-1.png"></div>
+                        <div class="testi-card-shape" data-mask-src="{{asset('img/shape/testi-card-bg-shape3-1.png')}}"></div>
                         <div class="testi-card_review">
                             <i class="fas fa-star"></i>
                             5.0
                         </div>
                         <div class="testi-card_profile">
                             <div class="box-thumb">
-                                <img src="assets/img/testimonial/testi_3_1.png" alt="img">
+                                <img src="{{asset('img/testimonial/testi_3_1.png')}}" alt="img">
                                 <div class="quote-icon">
                                     <i class="fal fa-quote-right"></i>
                                 </div>
@@ -142,14 +142,14 @@ Testimonial Area
                 </div>
                 <div class="col-lg-6">
                     <div class="testi-card3">
-                        <div class="testi-card-shape" data-mask-src="assets/img/shape/testi-card-bg-shape3-1.png"></div>
+                        <div class="testi-card-shape" data-mask-src="{{asset('img/shape/testi-card-bg-shape3-1.png')}}"></div>
                         <div class="testi-card_review">
                             <i class="fas fa-star"></i>
                             5.0
                         </div>
                         <div class="testi-card_profile">
                             <div class="box-thumb">
-                                <img src="assets/img/testimonial/testi_3_2.png" alt="img">
+                                <img src="{{asset('img/testimonial/testi_3_2.png')}}" alt="img">
                                 <div class="quote-icon">
                                     <i class="fal fa-quote-right"></i>
                                 </div>
@@ -177,52 +177,52 @@ Brand Area
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-1.svg" alt="Brand Logo">
+                                <img src="{{asset('img/brand/brand1-1.svg')}}" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-2.svg" alt="Brand Logo">
+                                <img src="{{asset('img/brand/brand1-2.svg')}}" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-3.svg" alt="Brand Logo">
+                                <img src="{{asset('img/brand/brand1-3.svg')}}" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-4.svg" alt="Brand Logo">
+                                <img src="{{asset('img/brand/brand1-4.svg')}}" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-5.svg" alt="Brand Logo">
+                                <img src="{{asset('img/brand/brand1-5.svg')}}" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-1.svg" alt="Brand Logo">
+                                <img src="{{asset('img/brand/brand1-1.svg')}}" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-2.svg" alt="Brand Logo">
+                                <img src="{{asset('img/brand/brand1-2.svg')}}" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-3.svg" alt="Brand Logo">
+                                <img src="{{asset('img/brand/brand1-3.svg')}}" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-4.svg" alt="Brand Logo">
+                                <img src="{{asset('img/brand/brand1-4.svg')}}" alt="Brand Logo">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-5.svg" alt="Brand Logo">
+                                <img src="{{asset('img/brand/brand1-5.svg')}}" alt="Brand Logo">
                             </a>
                         </div>
                     </div>
