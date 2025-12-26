@@ -184,20 +184,15 @@ About Area
 ==============================-->
 <div class="overflow-hidden space" id="about-sec">
     <div class="shape-mockup about-bg-shape4-1 d-xxl-block d-none jump-reverse" data-bottom="0" data-left="0%">
-        <img src="assets/img/shape/about_shape4_1.png" alt="shape">
+        <img src="{{asset('img/shape/about_shape4_1.png')}}" alt="shape">
     </div>
-    <div class="shape-mockup about-bg-shape4-2 d-xxl-block d-none jump" data-bottom="5%" data-right="3%">
-        <img src="assets/img/shape/about_shape4_2.png" alt="shape">
-    </div>
+  
     <div class="container">
         <div class="row align-items-center">
             <div class="col-xl-6 mb-50 mb-xl-0">
                 <div class="img-box4">
-                    <div class="img1" data-mask-src="assets/img/shape/about_mask4_1.png">
-                        <img src="assets/img/normal/about_4_1.png" alt="About">
-                    </div>
-                    <div class="img2 jump" data-mask-src="assets/img/shape/about_mask4_2.png">
-                        <img data-mask-src="assets/img/shape/about_mask4_2.png" src="assets/img/normal/about_4_2.png" alt="img">
+                    <div class="img1">
+                        <img src="{{asset('img/normal/about_4_1.png')}}" alt="About">
                     </div>
                 </div>
             </div>
@@ -473,109 +468,6 @@ Donation Area
     </div>
 </section>
 <!--==============================
-Cta Area  
-==============================-->
-<section class="position-relative space overflow-hidden">
-    <div class="cta4-bg-thumb">
-        <img src="assets/img/bg/cta-bg4-1.jpg" alt="img">
-    </div>
-
-    <div class="cta-bg-shape4-1 shape-mockup jump" data-top="-22%" data-left="2%"><img src="assets/img/shape/cta_shape2_1.png" alt="img"></div>
-    <div class="cta-bg-shape4-2 shape-mockup jump-reverse" data-top="-12%" data-right="-5%"><img src="assets/img/shape/cta_shape2_2.png" alt="img"></div>
-    <div class="cta-bg-shape4-3 shape-mockup jump-reverse" data-bottom="0" data-left="0"><img src="assets/img/shape/cta_shape4_1.png" alt="img"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="cta-wrap4">
-                    <div class="cta-title-wrap">
-                        <div class="row justify-content-between">
-                            <div class="col-xxl-6 col-xl-7 col-lg-6 col-md-8">
-                                <h2 class="sec-title text-white">Support and contribute to their urgent needs</h2>
-                            </div>
-                            <div class="col-md-auto">
-                                <div class="cta-play-btn">
-                                    <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" class="play-btn style8 popup-video"><i class="fa-sharp fa-solid fa-play"></i></a>
-                                    <span class="title">Watch Video</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cta-content-wrap">
-                        <div class="box-icon">
-                            <img src="assets/img/icon/cta-icon4.png" alt="img">
-                        </div>
-                        <h4 class="title">Every small contribution can create a meaningful change.</h4>
-                        <a href="blog-details.html" class="th-btn style5">Get Involved <i class="fas fa-arrow-up-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--==============================
-Brand Area  
-==============================-->
-<div class="bg-smoke2 overflow-hidden pt-60 pb-60 brand-area-1">
-    <div class="container">
-        <div class="brand-wrap1 p-0 m-0 text-center">
-            <div class="swiper th-slider" id="brandSlider1" data-slider-options='{"breakpoints":{"0":{"slidesPerView":2},"576":{"slidesPerView":"2"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"4"},"1400":{"slidesPerView":"5", "spaceBetween": "90"}}}'>
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <a href="blog.html" class="brand-box">
-                            <img src="assets/img/brand/brand1-1.svg" alt="Brand Logo">
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="blog.html" class="brand-box">
-                            <img src="assets/img/brand/brand1-2.svg" alt="Brand Logo">
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="blog.html" class="brand-box">
-                            <img src="assets/img/brand/brand1-3.svg" alt="Brand Logo">
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="blog.html" class="brand-box">
-                            <img src="assets/img/brand/brand1-4.svg" alt="Brand Logo">
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="blog.html" class="brand-box">
-                            <img src="assets/img/brand/brand1-5.svg" alt="Brand Logo">
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="blog.html" class="brand-box">
-                            <img src="assets/img/brand/brand1-1.svg" alt="Brand Logo">
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="blog.html" class="brand-box">
-                            <img src="assets/img/brand/brand1-2.svg" alt="Brand Logo">
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="blog.html" class="brand-box">
-                            <img src="assets/img/brand/brand1-3.svg" alt="Brand Logo">
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="blog.html" class="brand-box">
-                            <img src="assets/img/brand/brand1-4.svg" alt="Brand Logo">
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="blog.html" class="brand-box">
-                            <img src="assets/img/brand/brand1-5.svg" alt="Brand Logo">
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div><!--==============================
 Service Area  
 ==============================-->
 <section class="service-area-3 space" id="service-sec">

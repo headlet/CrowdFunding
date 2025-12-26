@@ -1031,9 +1031,6 @@
 		return this;
 	};
 
-
-    $(".circle-title-anime").lettering();
-    
     
 })(jQuery);
 

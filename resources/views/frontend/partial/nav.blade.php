@@ -110,7 +110,7 @@
                             </li>
                         </ul>
                     </nav>
-                    <p class="header-notice"><img class="me-1" src="assets/img/icon/heart-icon.svg" alt="img">Are you ready to help them? Let’s become a volunteers...</p>
+                    <p class="header-notice"><img class="me-1" src="{{asset('img/icon/heart-icon.svg')}}" alt="img">Are you ready to help them? Let’s become a volunteers...</p>
                 </div>
                 <div class="header-button">
                     <button type="button" class="icon-btn style2 searchBoxToggler d-lg-block d-none"><i class="far fa-search"></i></button>

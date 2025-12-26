@@ -1,6 +1,7 @@
 @include('frontend.partial.header')
 
 <body>
+    @include('frontend.partial.loader')
     @include('frontend.partial.nav')
 
     @yield('content')

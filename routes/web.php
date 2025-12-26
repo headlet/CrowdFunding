@@ -25,3 +25,7 @@ $pages = [
 foreach ($pages as $page) {
     Route::view("/{$page}", "frontend.{$page}")->name($page);
 }
+
+
+ Route::view("/login", "backend.public.auth.login")->name('login');
+ Route::view("/register", "backend.public.auth.register")->name('register');
