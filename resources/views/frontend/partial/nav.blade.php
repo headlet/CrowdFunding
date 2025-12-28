@@ -114,8 +114,19 @@
                 </div>
                 <div class="header-button">
                     <button type="button" class="icon-btn style2 searchBoxToggler d-lg-block d-none"><i class="far fa-search"></i></button>
+                    @guest
                     <a href="{{route('login')}}" class="th-btn style3 d-xl-block d-none"><i class="fas fa-sign-in me-2"></i> Login</a>
-                    <button type="button" class="icon-btn th-menu-toggle d-lg-none"><i class="far fa-bars"></i></button>
+                    @endguest
+
+                    @auth
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit" class="th-btn style3 d-xl-block d-none">
+                            <i class="fas fa-sign-in me-2"></i>
+                            Logout
+                        </button>
+                    </form>
+                    @endauth
                 </div>
             </div>
         </div>

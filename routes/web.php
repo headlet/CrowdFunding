@@ -1,6 +1,11 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\LoginController;
 
 Route::get('/', function () {
     return view('frontend.index');
@@ -26,8 +31,18 @@ foreach ($pages as $page) {
     Route::view("/{$page}", "frontend.{$page}")->name($page);
 }
 
+Route::middleware('guest')->group(function () {
+    Route::get("login", [LoginController::class, 'show'])->name('login');
+    Route::post("login", [LoginController::class, 'login_auth'])->name('login_auth');
 
-Route::view("/login", "backend.public.auth.login")->name('login');
-Route::view("/register", "backend.public.auth.register")->name('register');
-Route::view("/forgot-password", "backend.public.auth.forgot-password")->name('forgot-password');
-Route::view("/reset-password", "backend.public.auth.reset-password")->name('reset-password');
+
+    Route::get("register", [RegisterController::class, 'show'])->name('register');
+    Route::post('register', [RegisterController::class, 'create'])->name('register_create');
+
+    Route::get('forgot-password', [ForgotPasswordController::class, 'show'])->name('password.request');
+    Route::post('forgot-password', [ForgotPasswordController::class, 'send'])->name('password.email');
+    Route::get('reset-password/{token}', [ResetPasswordController::class, 'show'])->name('password.reset');
+    Route::post('reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
+});
+
+Route::post('logout', [LoginController::class, 'destroy'])->name('logout');

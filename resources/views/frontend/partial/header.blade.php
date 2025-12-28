@@ -8,7 +8,7 @@
     <meta name="description" content="Donat - Charity & Donation HTML Template">
     <meta name="keywords" content="Donat - Charity & Donation HTML Template">
     <meta name="robots" content="INDEX,FOLLOW">
-
+    <title>@yield('title')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="{{asset('img/favicons/ms-icon-144x144.png')}}">

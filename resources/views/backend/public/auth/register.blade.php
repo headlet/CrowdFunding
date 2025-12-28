@@ -30,7 +30,7 @@ Register
       </div>
 
       <!-- FORM -->
-      <form action="" method="POST" class="space-y-5">
+      <form action="{{route('register_create')}}" method="POST" class="space-y-5">
         @csrf
         <input type="text" name="full_name" placeholder="Full Name" required
           class="w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0b3d36] text-lg">

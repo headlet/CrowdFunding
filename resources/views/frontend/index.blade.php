@@ -5,41 +5,78 @@ Donat - Charity
 @endsection
 
 @section('content')
+
+@php
+$des = ' Explore the variety of volunteer opportunities available. From event planning and fundraising to fieldwork and administrative support';
+$heroSlides = [
+    (object)[
+        'bg' => 'img/hero/hero_bg_4_1.jpg',
+        'subtitle' => 'Making a Difference',
+        'title1' => 'Changing Lives, One',
+        'title2' => 'Donation at a Time',
+    ],
+    (object)[
+        'bg' => 'img/hero/hero_bg_4_2.jpg',
+        'subtitle' => 'Give Hope For Homeless',
+        'title1' => 'Helping Each Other',
+        'title2' => 'Make World Better',
+    ],
+    (object)[
+        'bg' => 'img/hero/hero_bg_4_3.jpg',
+        'subtitle' => 'Making a Difference',
+        'title1' => 'Every Donation Counts',
+        'title2' => 'Help Us Change Lives',
+    ],
+];
+@endphp
 <!--==============================
 Hero Area
 ==============================-->
 <div class="th-hero-wrapper hero-4" id="hero">
+    {{-- Slider --}}
     <div class="swiper th-slider hero-slider4" id="heroSlider4" data-slider-options='{"effect":"fade","autoHeight": "true"}'>
         <div class="swiper-wrapper">
+
+            @foreach($heroSlides as $slide)
             <div class="swiper-slide">
-                <div class="hero-inner" data-bg-src="{{asset('img/hero/hero_bg_4_1.jpg')}}">
+                <div class="hero-inner" data-bg-src="{{ asset($slide->bg) }}">
+                    
+                    {{-- Shapes --}}
                     <div class="hero-bg-shape4-1">
-                        <img src="{{asset('img/hero/hero-bg-shape4-1.png')}}" alt="img">
+                        <img src="{{ asset('img/hero/hero-bg-shape4-1.png') }}" alt="img">
                     </div>
                     <div class="hero-bg-shape4-2 shake">
-                        <img src="{{asset('img/hero/hero-bg-shape4-2.png')}}" alt="img">
+                        <img src="{{ asset('img/hero/hero-bg-shape4-2.png') }}" alt="img">
                     </div>
                     <div class="hero-bg-shape4-3 jump d-xl-inline-block d-none">
-                        <img src="{{asset('img/hero/hero-bg-shape4-3.png')}}" alt="img">
+                        <img src="{{ asset('img/hero/hero-bg-shape4-3.png') }}" alt="img">
                     </div>
                     <div class="hero-bg-shape4-4 jump-reverse">
-                        <img src="{{asset('img/hero/hero-bg-shape4-4.png')}}" alt="img">
+                        <img src="{{ asset('img/hero/hero-bg-shape4-4.png') }}" alt="img">
                     </div>
                     <div class="hero-bg-shape4-5">
-                        <img src="{{asset('img/hero/hero-bg-shape4-5.png')}}" alt="img">
+                        <img src="{{ asset('img/hero/hero-bg-shape4-5.png') }}" alt="img">
                     </div>
+
+                    {{-- Content --}}
                     <div class="container">
                         <div class="row">
                             <div class="col-xl-9">
                                 <div class="hero-style4">
-                                    <span class="sub-title after-none" data-ani="slideinup" data-ani-delay="0.2s">Making a Difference</span>
+                                    <span class="sub-title after-none" data-ani="slideinup" data-ani-delay="0.2s">
+                                        {{ $slide->subtitle }}
+                                    </span>
                                     <h1 class="hero-title text-white">
                                         <span class="title1" data-ani="slideinup" data-ani-delay="0.4s">
-                                            Changing Lives, One </span>
+                                            {{ $slide->title1 }}
+                                        </span>
                                         <span class="title1" data-ani="slideinup" data-ani-delay="0.4s">
-                                            Donation at a Time </span>
+                                            {{ $slide->title2 }}
+                                        </span>
                                     </h1>
-                                    <p class="hero-text text-white" data-ani="slideinup" data-ani-delay="0.6s">Explore the variety of volunteer opportunities available. From event planning and fundraising to fieldwork and administrative support</p>
+                                    <p class="hero-text text-white" data-ani="slideinup" data-ani-delay="0.6s">
+                                       {{__($des)}}
+                                    </p>
                                     <div class="btn-wrap" data-ani="slideinup" data-ani-delay="0.7s">
                                         <a href="about.html" class="th-btn">Discover Now<i class="fa-solid fa-arrow-up-right ms-2"></i></a>
                                         <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" class="play-btn style3 popup-video"><i class="fas fa-play"></i></a>
@@ -48,99 +85,23 @@ Hero Area
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
-            <div class="swiper-slide">
-                <div class="hero-inner" data-bg-src="{{asset('img/hero/hero_bg_4_2.jpg')}}">
-                    <div class="hero-bg-shape4-1">
-                        <img src="{{asset('img/hero/hero-bg-shape4-1.png')}}" alt="img">
-                    </div>
-                    <div class="hero-bg-shape4-2 shake">
-                        <img src="{{asset('img/hero/hero-bg-shape4-2.png')}}" alt="img">
-                    </div>
-                    <div class="hero-bg-shape4-3 jump d-xl-inline-block d-none">
-                        <img src="{{asset('img/hero/hero-bg-shape4-3.png')}}" alt="img">
-                    </div>
-                    <div class="hero-bg-shape4-4 jump-reverse">
-                        <img src="{{asset('img/hero/hero-bg-shape4-4.png')}}" alt="img">
-                    </div>
-                    <div class="hero-bg-shape4-5">
-                        <img src="{{asset('img/hero/hero-bg-shape4-5.png')}}" alt="img">
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xl-9">
-                                <div class="hero-style4">
-                                    <span class="sub-title after-none" data-ani="slideinup" data-ani-delay="0.2s">Give Hope For Homeless</span>
-                                    <h1 class="hero-title text-white">
-                                        <span class="title1" data-ani="slideinup" data-ani-delay="0.4s">
-                                            Helping Each Other </span>
-                                        <span class="title1" data-ani="slideinup" data-ani-delay="0.4s">
-                                            Make World Better </span>
-                                    </h1>
-                                    <p class="hero-text text-white" data-ani="slideinup" data-ani-delay="0.6s">Explore the variety of volunteer opportunities available. From event planning and fundraising to fieldwork and administrative support</p>
-                                    <div class="btn-wrap" data-ani="slideinup" data-ani-delay="0.7s">
-                                        <a href="about.html" class="th-btn">Discover Now<i class="fa-solid fa-arrow-up-right ms-2"></i></a>
-                                        <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" class="play-btn style3 popup-video"><i class="fas fa-play"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="hero-inner" data-bg-src="{{asset('img/hero/hero_bg_4_3.jpg')}}">
-                    <div class="hero-bg-shape4-1">
-                        <img src="{{asset('img/hero/hero-bg-shape4-1.png')}}" alt="img">
-                    </div>
-                    <div class="hero-bg-shape4-2 shake">
-                        <img src="{{asset('img/hero/hero-bg-shape4-2.png')}}" alt="img">
-                    </div>
-                    <div class="hero-bg-shape4-3 jump d-xl-inline-block d-none">
-                        <img src="{{asset('img/hero/hero-bg-shape4-3.png')}}" alt="img">
-                    </div>
-                    <div class="hero-bg-shape4-4 jump-reverse">
-                        <img src="{{asset('img/hero/hero-bg-shape4-4.png')}}" alt="img">
-                    </div>
-                    <div class="hero-bg-shape4-5">
-                        <img src="{{asset('img/hero/hero-bg-shape4-5.png')}}" alt="img">
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xl-9">
-                                <div class="hero-style4">
-                                    <span class="sub-title after-none" data-ani="slideinup" data-ani-delay="0.2s">Making a Difference</span>
-                                    <h1 class="hero-title text-white">
-                                        <span class="title1" data-ani="slideinup" data-ani-delay="0.4s">
-                                            Every Donation Counts </span>
-                                        <span class="title1" data-ani="slideinup" data-ani-delay="0.4s">
-                                            Help Us Change Lives </span>
-                                    </h1>
-                                    <p class="hero-text text-white" data-ani="slideinup" data-ani-delay="0.6s">Explore the variety of volunteer opportunities available. From event planning and fundraising to fieldwork and administrative support</p>
-                                    <div class="btn-wrap" data-ani="slideinup" data-ani-delay="0.7s">
-                                        <a href="about.html" class="th-btn">Discover Now<i class="fa-solid fa-arrow-up-right ms-2"></i></a>
-                                        <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" class="play-btn style3 popup-video"><i class="fas fa-play"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+
         </div>
     </div>
+
+    {{-- Thumbnails --}}
     <div class="hero-thumb-tab" data-slider-tab=".hero-slider4">
-        <div class="tab-btn active">
-            <img src="{{asset('img/hero/hero_bg_4_1.jpg')}}" alt="thumb">
+        @foreach($heroSlides as $index => $slide)
+        <div class="tab-btn {{ $index === 0 ? 'active' : '' }}">
+            <img src="{{ asset($slide->bg) }}" alt="thumb">
         </div>
-        <div class="tab-btn">
-            <img src="{{asset('img/hero/hero_bg_4_2.jpg')}}" alt="thumb">
-        </div>
-        <div class="tab-btn">
-            <img src="{{asset('img/hero/hero_bg_4_3.jpg')}}" alt="thumb">
-        </div>
+        @endforeach
     </div>
+
 </div>
 <!--======== / Hero Section ========-->
 <!--==============================

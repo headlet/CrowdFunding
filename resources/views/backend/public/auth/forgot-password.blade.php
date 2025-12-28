@@ -36,9 +36,9 @@ Forgot Password
 
             <!-- STATUS MESSAGE -->
             @if (session('status'))
-                <div class="mb-4 text-green-700 bg-green-100 border border-green-200 rounded-xl px-4 py-3 text-sm">
-                    {{ session('status') }}
-                </div>
+            <div class="mb-4 text-green-700 bg-green-100 border border-green-200 rounded-xl px-4 py-3 text-sm">
+                {{ session('status') }}
+            </div>
             @endif
 
             <!-- FORM -->

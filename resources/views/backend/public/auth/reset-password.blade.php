@@ -6,8 +6,8 @@ Reset Password
 
 @section('content')
 
-<section class="bg-[#f6f8f7] text-gray-800">
-
+<section class="bg-[#c6f7de] text-gray-800">
+   
     <!-- HERO -->
     <section class="relative bg-gradient-to-br from-[#0a2f2a] via-[#02221e] to-[#000000] py-32">
         <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top,white,transparent_60%)]"></div>
@@ -33,13 +33,13 @@ Reset Password
                     Please enter your new password below
                 </p>
             </div>
-
+        
             <!-- FORM -->
-            <form method="POST" action="" class="space-y-5">
+            <form method="POST" action="{{route('password.update', $token)}}" class="space-y-5">
                 @csrf
 
                 <!-- TOKEN -->
-                <input type="hidden" name="token" value="">
+                <input type="hidden" name="token" value="{{$token}}">
 
                 <!-- EMAIL -->
                 <input

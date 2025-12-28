@@ -31,7 +31,7 @@ Login
             </div>
 
             <!-- FORM -->
-            <form class="space-y-5" action="" method="POST">
+            <form class="space-y-5" action="{{route('login_auth')}}" method="POST">
                 @csrf
                 <div>
                     <input type="email" name="email" placeholder="Email" required
@@ -45,12 +45,12 @@ Login
                 <!-- OPTIONS -->
                 <div class="flex items-center justify-between text-sm">
                     <label class="flex items-center gap-2 text-gray-700 bg-white/80 p-1 rounded">
-                        <input type="checkbox" class="w-5 h-5 border border-black rounded focus:ring-2 focus:ring-[#0b3d36]">
+                        <input type="checkbox" class="w-5 h-5 border border-black rounded focus:ring-2 focus:ring-[#0b3d36]" name='remember'>
                         Remember me
                     </label>
 
 
-                    <a href="{{route('forgot-password')}}" class="text-[#0b3d36] font-semibold hover:underline">
+                    <a href="{{route('password.request')}}" class="text-[#0b3d36] font-semibold hover:underline">
                         Forgot password?
                     </a>
                 </div>
