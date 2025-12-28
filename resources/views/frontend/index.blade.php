@@ -838,7 +838,7 @@ Team Area
 </section><!--==============================
 Story Area  
 ==============================-->
-<div class="story-area-1 overflow-hidden space overflow-hidden bg-smoke2">
+<div class="story-area-1 overflow-hidden space bg-smoke2">
     <div class="container">
         <div class="row gy-40 justify-content-between flex-row-reverse align-items-center">
             <div class="col-xl-7">

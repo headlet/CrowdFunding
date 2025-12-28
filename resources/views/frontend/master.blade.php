@@ -1,8 +1,8 @@
 @include('frontend.partial.header')
 
 <body>
-    @include('error')
-    <!-- @include('frontend.partial.loader') -->
+    @include('message')
+    @include('frontend.partial.loader')
     @include('frontend.partial.nav')
 
     @yield('content')
