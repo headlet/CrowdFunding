@@ -14,15 +14,15 @@
     <div class="th-menu-area text-center">
         <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
         <div class="mobile-logo">
-            <a href="{{route('index')}}"><img src="{{asset('img/logo.svg')}}" alt="Donat"></a>
+            <a href="{{ route('index') }}"><img src="{{ asset('img/logo.svg') }}" alt="Donat"></a>
         </div>
         <div class="th-mobile-menu">
             <ul>
                 <li>
-                    <a href="{{route('index')}}">Home</a>
+                    <a href="{{ route('index') }}">Home</a>
                 </li>
 
-                <li><a href="{{route('about')}}">About Us</a></li>
+                <li><a href="{{ route('about') }}">About Us</a></li>
                 <li class="menu-item-has-children">
                     <a href="home-4.html#">Donations</a>
                     <ul class="sub-menu">
@@ -34,19 +34,19 @@
                 <li class="menu-item-has-children">
                     <a href="home-4.html#">Pages</a>
                     <ul class="sub-menu">
-                        <li><a href="{{route('team')}}">Volunteers</a></
-                                <li><a href="{{route('add-team')}}">Become A Volunteer</a></li>
-                        <li><a href="{{route('gallery')}}">Gallery</a></li>
-                        <li><a href="{{route('faq')}}">FAQS</a></li>
-                        <li><a href="{{route('testimonial')}}">Testimonials</a></li>
+                        <li><a href="{{ route('team') }}">Volunteers</a></ <li><a href="{{ route('add-team') }}">Become
+                                A Volunteer</a></li>
+                        <li><a href="{{ route('gallery') }}">Gallery</a></li>
+                        <li><a href="{{ route('faq') }}">FAQS</a></li>
+                        <li><a href="{{ route('testimonial') }}">Testimonials</a></li>
 
                     </ul>
                 </li>
                 <li>
-                    <a href="{{route('blog')}}">Blog</a>
+                    <a href="{{ route('blog') }}">Blog</a>
                 </li>
                 <li>
-                    <a href="{{route('contact')}}">Contact Us</a>
+                    <a href="{{ route('contact') }}">Contact Us</a>
                 </li>
             </ul>
         </div>
@@ -72,7 +72,7 @@
         <button data-secondary-color="#3843C1"><i class="fa-solid fa-droplet"></i></button>
     </div>
 </div><!--==============================
-	Header Area
+ Header Area
 ==============================-->
 <header class="th-header header-layout3">
     <div class="sticky-wrapper">
@@ -80,52 +80,54 @@
         <div class="container">
             <div class="menu-area">
                 <div class="header-logo">
-                    <a href="{{route('index')}}"><img src="{{asset('img/logo.svg')}}" alt="Donat"></a>
+                    <a href="{{ route('index') }}"><img src="{{ asset('img/logo.svg') }}" alt="Donat"></a>
                 </div>
                 <div class="menu-area-wrap">
                     <nav class="main-menu d-none d-lg-block">
                         <ul>
                             <li>
-                                <a href="{{route('index')}}">Home</a>
+                                <a href="{{ route('index') }}">Home</a>
                             </li>
-                            <li><a href="{{route('about')}}">About Us</a></li>
+                            <li><a href="{{ route('about') }}">About Us</a></li>
                             <li>
-                                <a href="{{route('donation')}}">Donations</a>
+                                <a href="{{ route('donation') }}">Donations</a>
                             </li>
                             <li class="menu-item-has-children">
                                 <a href="home-4.html#">Pages</a>
                                 <ul class="sub-menu">
-                                    <li><a href="{{route('team')}}">Volunteers</a></li>
-                                    <li><a href="{{route('add-team')}}">Become A Volunteer</a></li>
-                                    <li><a href="{{route('gallery')}}">Gallery</a></li>
-                                    <li><a href="{{route('faq')}}">FAQS</a></li>
-                                    <li><a href="{{route('testimonial')}}">Testimonials</a></li>
+                                    <li><a href="{{ route('team') }}">Volunteers</a></li>
+                                    <li><a href="{{ route('add-team') }}">Become A Volunteer</a></li>
+                                    <li><a href="{{ route('gallery') }}">Gallery</a></li>
+                                    <li><a href="{{ route('faq') }}">FAQS</a></li>
+                                    <li><a href="{{ route('testimonial') }}">Testimonials</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="{{route('blog')}}">Blog</a>
+                                <a href="{{ route('blog') }}">Blog</a>
                             </li>
                             <li>
-                                <a href="{{route('contact')}}">Contact Us</a>
+                                <a href="{{ route('contact') }}">Contact Us</a>
                             </li>
                         </ul>
                     </nav>
-                    <p class="header-notice"><img class="me-1" src="{{asset('img/icon/heart-icon.svg')}}" alt="img">Are you ready to help them? Let’s become a volunteers...</p>
+                    <p class="header-notice"><img class="me-1" src="{{ asset('img/icon/heart-icon.svg') }}"
+                            alt="img">Are you ready to help them? Let’s become a volunteers...</p>
                 </div>
                 <div class="header-button">
-                    <button type="button" class="icon-btn style2 searchBoxToggler d-lg-block d-none"><i class="far fa-search"></i></button>
+                    <button type="button" class="icon-btn style2 searchBoxToggler d-lg-block d-none"><i
+                            class="far fa-search"></i></button>
                     @guest
-                    <a href="{{route('login')}}" class="th-btn style3 d-xl-block d-none"><i class="fas fa-sign-in me-2"></i> Login</a>
+                        <a href="{{ route('login') }}" class="th-btn style3 d-xl-block d-none"><i
+                                class="fas fa-sign-in me-2"></i> Login</a>
                     @endguest
 
                     @auth
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <button type="submit" class="th-btn style3 d-xl-block d-none">
+
+                        <a href="{{ route('logout') }}"class="th-btn style3 d-xl-block d-none">
                             <i class="fas fa-sign-in me-2"></i>
                             Logout
-                        </button>
-                    </form>
+                        </a>
+
                     @endauth
                 </div>
             </div>

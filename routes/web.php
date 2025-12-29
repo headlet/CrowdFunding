@@ -45,4 +45,6 @@ Route::middleware('guest')->group(function () {
     Route::post('reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
 });
 
-Route::post('logout', [LoginController::class, 'destroy'])->name('logout');
+Route::get('logout', [LoginController::class, 'destroy'])->name('logout');
+
+Route::view('admin', 'backend.system.dashboard')->name('dashboard');

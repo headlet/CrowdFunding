@@ -24,7 +24,7 @@ class LoginController extends Controller
         ]);
         if (Auth::attempt($validation, $request->boolean('remember'))) {
             $request->session()->regenerate();
-           return redirect('/')->with('success', 'Login successful');
+           return redirect()->route('dashboard')->with('success', 'Login successful');
         }
         return back()->withErrors(['email' => __('Failed to login')])->withInput($request->only('email'));
     }
@@ -42,7 +42,7 @@ class LoginController extends Controller
 
         return redirect()->route('index')->with('success', 'Logout Successful');
     } catch (\Throwable $th) {
-        return redirect('index')->withErrors(['error' => $th->getMessage()]);
+        return back()->withErrors(['error' => $th->getMessage()]);
     }
 }
 

@@ -345,7 +345,7 @@
     animationProperties();
     
     // Add click event handlers for external slider arrows based on data attributes
-    $('[data-slider-prev], [data-slider-next]').on('click', function () {
+    $('[t], [data-slider-next]').on('click', function () {
         var sliderSelector = $(this).data('slider-prev') || $(this).data('slider-next');
         var targetSlider = $(sliderSelector);
     
