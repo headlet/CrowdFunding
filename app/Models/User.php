@@ -33,8 +33,8 @@ class User extends Authenticatable
         'email_verified_at',
     ];
 
-    function roles (){
-        return $this->belongsTo(roles::class);
+    function role(){
+        return $this->belongsTo(roles::class, 'role_id');
     }
 
     /**

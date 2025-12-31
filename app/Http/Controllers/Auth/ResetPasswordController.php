@@ -35,7 +35,7 @@ class ResetPasswordController extends Controller
         );
 
         return $status === Password::PASSWORD_RESET
-            ? redirect('login')->with('status', __($status))
-            : back()->withErrors(['email' => [__($status)]]);
+            ? redirect('login')->with('success', __($status))
+            : back()->withErrors(['error' => [__($status)]]);
     }
 }

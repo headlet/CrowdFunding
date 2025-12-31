@@ -11,17 +11,11 @@ use Illuminate\Support\Facades\Password;
 class RegisterController extends Controller
 {
     
-    /**
-     * Display a listing of the resource.
-     */
     public function show()
     {
         return view('backend.public.auth.register');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create(Request $request)
     {
         $validation = $request->validate([
@@ -41,7 +35,7 @@ class RegisterController extends Controller
             return view('backend.public.auth.login')->with('success', 'Success. Please check your email...');
         } catch (\Throwable $th) {
             DB::rollback();
-            return redirect()->route('register')->withErrors(['error' => 'Something went wrong. Please try again later.'. $th]);
+            return redirect('register')->withErrors(['error' => 'Something went wrong. Please try again later.'. $th->getMessage()]);
         }
     }
 

@@ -25,8 +25,9 @@ class LoginController extends Controller
         if (Auth::attempt($validation, $request->boolean('remember'))) {
             $request->session()->regenerate();
            return redirect()->route('dashboard')->with('success', 'Login successful');
+           
         }
-        return back()->withErrors(['email' => __('Failed to login')])->withInput($request->only('email'));
+        return redirect('login')->withErrors(['error' => __('Failed to login')])->withInput($request->only('email'));
     }
 
     /**

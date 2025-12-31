@@ -10,19 +10,24 @@
 </head>
 
 <body class="font-[Roboto]">
-    <Section class="flex min-h-screen bg-gray-100">
-
-        @include('backend.system.layout.partial.sidebar')
+    @include('message')
+    <section class="flex min-h-screenbg-gray-100">
+        <aside class="w-64 transition-all duration-300 flex flex-col justify-between sidebars">
+            @include('backend.system.layout.partial.sidebar')
+        </aside>
 
         <!-- Main Content -->
-        <div class="flex-1 flex flex-col">
-
+        <div class="flex-1 flex flex-col contentss">
             @include('backend.system.layout.partial.nav')
-            @yield('content')
+            <main class="p-6 flex-1 overflow-y-auto ">
+                @yield('content')
+            </main>
         </div>
-    </Section>
+    </section>
 
     @yield('script')
+
+
 </body>
 
 </html>
