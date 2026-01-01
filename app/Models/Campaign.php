@@ -37,6 +37,6 @@ class Campaign extends Model
 
     public function category()
     {
-        return $this->belongsTo(campaign_categories::class, 'category_id');
+        return $this->belongsTo(CampaignCategories::class, 'category_id');
     }
 }

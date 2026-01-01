@@ -21,7 +21,7 @@ class ResourceController extends Controller
 
     public function getResourceNames()
     {
-       return '';
+        return '';
     }
 
     public function storeValidationRequest()
@@ -38,7 +38,7 @@ class ResourceController extends Controller
     {
         return ucfirst($this->getResourceNames());
     }
- 
+
 
     public function index()
     {
@@ -76,7 +76,7 @@ class ResourceController extends Controller
                     $validator->attributes() ?? []
                 );
             }
-
+          
             $response = $this->services->store($request);
 
             if (isset($response['error'])) {
@@ -111,7 +111,7 @@ class ResourceController extends Controller
     public function update(Request $request, string $id)
     {
         try {
-     
+
             $resource = $this->services->getById($id);
 
             if (!$resource) {
@@ -123,7 +123,7 @@ class ResourceController extends Controller
 
             if (!empty($validationRequestClass) && class_exists($validationRequestClass)) {
                 $validator = new $validationRequestClass();
-        
+
                 $request->validate(
                     $validator->rules(),
                     $validator->messages() ?? [],
@@ -181,5 +181,4 @@ class ResourceController extends Controller
                 ->withErrors(['error' => $th->getMessage()]);
         }
     }
-
 }

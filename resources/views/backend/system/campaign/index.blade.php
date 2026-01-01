@@ -127,10 +127,6 @@
                                     <span
                                         class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium
                                         {{ $campaign->status == 'active' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }}">
-                                        <span
-                                            class="w-1.5 h-1.5 rounded-full mr-1.5 
-                                            {{ $campaign->status == 'active' ? 'bg-green-500' : 'bg-red-500' }}">
-                                        </span>
                                         {{ ucfirst($campaign->status) }}
                                     </span>
                                 </td>

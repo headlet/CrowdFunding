@@ -4,7 +4,7 @@ namespace App\Services;
 
 use Illuminate\Http\Request;
 use App\Models\Campaign;
-use App\Models\campaign_categories;
+use App\Models\CampaignCategories;
 use App\Models\User;
 
 class CampaignServices extends Services
@@ -25,7 +25,7 @@ class CampaignServices extends Services
     {
         return [
             'users'      => User::orderBy('full_name')->get(),
-            'categories' => campaign_categories::orderBy('name')->get(),
+            'categories' => CampaignCategories::orderBy('name')->get(),
         ];
     }
 
@@ -37,7 +37,7 @@ class CampaignServices extends Services
                 ->findOrFail($id),
 
             'users' => User::select('id', 'full_name')->get(),
-            'categories' => campaign_categories::select('id', 'name')->get(),
+            'categories' => CampaignCategories::select('id', 'name')->get(),
         ];
     }
 
@@ -57,10 +57,7 @@ class CampaignServices extends Services
     public function update(string $id, Request $request)
     {
 
-        $campaign = $this->model->find($id);
-        if (!$campaign) {
-            return ['error' => 'Campaign not found.'];
-        }
+        $campaign = $this->model->findorFail($id);
 
         $data = $request->except('_token');
 
@@ -77,7 +74,7 @@ class CampaignServices extends Services
 
     public function delete(string $id)
     {
-        $campaign = $this->model->find($id);
+        $campaign = $this->model->findorFail($id);
         if (!$campaign) {
             return ['error' => 'Campaign not found.'];
         }

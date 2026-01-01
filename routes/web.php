@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\system\CampaignCategoryController;
 use App\Http\Controllers\system\CampaignController;
 
 Route::get('/', function () {
@@ -46,3 +47,5 @@ Route::get('logout', [LoginController::class, 'destroy'])->name('logout');
 
 Route::view('admin', 'backend.system.dashboard')->name('dashboard')->middleware('auth');
 Route::resource('campaigns', CampaignController::class)->except(['show']);
+
+Route::resource('campaign-category', CampaignCategoryController::class)->except(['show']);

@@ -15,7 +15,7 @@ class CampaignRequest extends FormRequest
 
     public function rules(): array
     {
-        $campaignId = request()->input('id') ?? request()->segment(2) ?? null;
+        $campaignId = request()->input('id') ?? request()->segment(2);
 
         return [
             'user_id'           => 'required|integer|exists:users,id',
@@ -31,7 +31,7 @@ class CampaignRequest extends FormRequest
             'country'           => 'required|string|max:100',
             'address'           => 'required|string|max:255',
             'image'             => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'status'            => 'required|in:active,inactive',
+            'status'            => 'required|in:draft,active,completed,cancelled',
             'is_featured'       => 'nullable|boolean',
         ];
     }

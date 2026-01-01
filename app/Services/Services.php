@@ -11,12 +11,9 @@ class Services{
 
        public function delete(string $id)
     {
-        $campaign = $this->model->find($id);
-        if (!$campaign) {
-            return ['error' => 'Campaign not found.'];
-        }
+        $data = $this->model->findorFail($id);
 
-        $campaign->delete();
+        $data->delete();
 
         return ['success' => true];
     }
