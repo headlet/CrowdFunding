@@ -15,14 +15,14 @@ class CampaignCategoryController extends ResourceController
 
     public function getResourceNames()
     {
-        return "campaign-category";
+        return "admin.campaign-category";
     }
 
     public function storeValidationRequest()
     {
         return CampaignCategoryRequest::class;
     }
-    
+
     public function viewsFolder()
     {
         return 'backend.system.campaign-categories';

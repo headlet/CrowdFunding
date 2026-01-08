@@ -24,8 +24,7 @@ class LoginController extends Controller
         ]);
         if (Auth::attempt($validation, $request->boolean('remember'))) {
             $request->session()->regenerate();
-           return redirect()->route('dashboard')->with('success', 'Login successful');
-           
+            return redirect()->route('admin.dashboard')->with('success', 'Login successful');
         }
         return redirect('login')->withErrors(['error' => __('Failed to login')])->withInput($request->only('email'));
     }
@@ -34,17 +33,16 @@ class LoginController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy(Request $request)
-{
-    try {
-        Auth::logout();
+    {
+        try {
+            Auth::logout();
 
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
 
-        return redirect()->route('index')->with('success', 'Logout Successful');
-    } catch (\Throwable $th) {
-        return back()->withErrors(['error' => $th->getMessage()]);
+            return redirect()->route('index')->with('success', 'Logout Successful');
+        } catch (\Throwable $th) {
+            return back()->withErrors(['error' => 'Unable to logout']);
+        }
     }
-}
-
 }

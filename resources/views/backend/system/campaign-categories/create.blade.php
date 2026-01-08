@@ -5,32 +5,32 @@
 @endsection
 
 @section('content')
-    <section class="bg-gray-100 min-h-screen p-4 md:p-8">
+    <section class="min-h-screen p-4 bg-gray-100 md:p-8">
         <div class="max-w-5xl mx-auto">
 
             <!-- Header -->
-            <div class="bg-white p-6 rounded-t-lg shadow-md border-b">
+            <div class="p-6 bg-white border-b rounded-t-lg shadow-md">
                 <div class="flex items-center justify-between">
                     <div>
                         <h2 class="text-2xl font-bold text-gray-800">Add New Campaign Category</h2>
                     </div>
-                    <a href="{{ route('campaign-category.index') }}"
-                        class="px-4 py-2 text-gray-600 hover:text-gray-800 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                        <i class="fas fa-arrow-left mr-2"></i>Back
+                    <a href="{{ route('admin.campaign-category.index') }}"
+                        class="px-4 py-2 text-gray-600 transition-colors border border-gray-300 rounded-lg hover:text-gray-800 hover:bg-gray-50">
+                        <i class="mr-2 fas fa-arrow-left"></i>Back
                     </a>
                 </div>
             </div>
 
             <!-- Form -->
-            <div class="bg-white p-6 md:p-8 rounded-b-lg shadow-md">
+            <div class="p-6 bg-white rounded-b-lg shadow-md md:p-8">
 
                 @if ($errors->any())
-                    <div class="mb-6 bg-red-50 border-l-4 border-red-500 p-4 rounded">
+                    <div class="p-4 mb-6 border-l-4 border-red-500 rounded bg-red-50">
                         <div class="flex">
                             <i class="fas fa-exclamation-circle text-red-500 mt-0.5 mr-3"></i>
                             <div>
-                                <h3 class="text-red-800 font-semibold">Please correct the following errors:</h3>
-                                <ul class="mt-2 text-sm text-red-700 list-disc list-inside space-y-1">
+                                <h3 class="font-semibold text-red-800">Please correct the following errors:</h3>
+                                <ul class="mt-2 space-y-1 text-sm text-red-700 list-disc list-inside">
                                     @foreach ($errors->all() as $error)
                                         <li>{{ $error }}</li>
                                     @endforeach
@@ -40,17 +40,17 @@
                     </div>
                 @endif
 
-                <form action="{{ route('campaign-category.store') }}" method="POST" enctype="multipart/form-data"
+                <form action="{{ route('admin.campaign-category.store') }}" method="POST" enctype="multipart/form-data"
                     class="space-y-6">
                     @csrf
 
                     <!-- Basic Information Section -->
-                    <div class="border-b pb-6">
+                    <div class="pb-6 border-b">
 
                         <!-- Title & Slug -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div class="grid grid-cols-1 gap-4 mb-4 md:grid-cols-2">
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                <label class="block mb-2 text-sm font-medium text-gray-700">
                                     Title <span class="text-red-500">*</span>
                                 </label>
                                 <input type="text" name="name" value="{{ old('name') }}"
@@ -61,7 +61,7 @@
                                 @enderror
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                <label class="block mb-2 text-sm font-medium text-gray-700">
                                     Slug <span class="text-red-500">*</span>
                                 </label>
                                 <input type="text" name="slug" value="{{ old('slug') }}"
@@ -74,14 +74,14 @@
                         </div>
 
                         <!-- Description Section -->
-                        <div class="border-b pb-6">
-                            <h3 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
-                                <i class="fas fa-align-left text-blue-500 mr-2"></i>
+                        <div class="pb-6 border-b">
+                            <h3 class="flex items-center mb-4 text-lg font-semibold text-gray-800">
+                                <i class="mr-2 text-blue-500 fas fa-align-left"></i>
                                 Description
                             </h3>
                             <!--Description -->
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                <label class="block mb-2 text-sm font-medium text-gray-700">
                                     Description <span class="text-red-500">*</span>
                                 </label>
                                 <textarea name="description" rows="6"
@@ -95,14 +95,14 @@
 
                         <!-- Settings Section -->
                         <div>
-                            <h3 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
-                                <i class="fas fa-cog text-blue-500 mr-2"></i>
+                            <h3 class="flex items-center mb-4 text-lg font-semibold text-gray-800">
+                                <i class="mr-2 text-blue-500 fas fa-cog"></i>
                                 Settings
                             </h3>
 
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
                                 <div>
-                                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    <label class="block mb-2 text-sm font-medium text-gray-700">
                                         Status <span class="text-red-500">*</span>
                                     </label>
                                     <select name="status"
@@ -126,13 +126,13 @@
             </div>
 
             <!-- Action Buttons -->
-            <div class="flex flex-col sm:flex-row gap-3 pt-6 border-t">
+            <div class="flex flex-col gap-3 pt-6 border-t sm:flex-row">
                 <button type="submit"
-                    class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center justify-center">
-                    <i class="fas fa-save mr-2"></i>Create Category
+                    class="flex items-center justify-center px-6 py-3 font-medium text-white transition-colors bg-blue-600 rounded-lg hover:bg-blue-700">
+                    <i class="mr-2 fas fa-save"></i>Create Category
                 </button>
-                <a href="{{ route('campaign-category.index') }}"
-                    class="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors font-medium text-center">
+                <a href="{{ route('admin.campaign-category.index') }}"
+                    class="px-6 py-3 font-medium text-center text-gray-700 transition-colors bg-gray-200 rounded-lg hover:bg-gray-300">
                     Cancel
                 </a>
             </div>

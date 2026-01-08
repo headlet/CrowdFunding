@@ -5,33 +5,33 @@
 @endsection
 
 @section('content')
-    <section class="bg-gray-100 min-h-screen p-4 md:p-8">
+    <section class="min-h-screen p-4 bg-gray-100 md:p-8">
         <div class="max-w-5xl mx-auto">
 
             <!-- Header -->
-            <div class="bg-white p-6 rounded-t-lg shadow-md border-b">
+            <div class="p-6 bg-white border-b rounded-t-lg shadow-md">
                 <div class="flex items-center justify-between">
                     <div>
                         <h2 class="text-2xl font-bold text-gray-800">Edit Campaign</h2>
-                        <p class="text-sm text-gray-500 mt-1">Update campaign details and settings</p>
+                        <p class="mt-1 text-sm text-gray-500">Update campaign details and settings</p>
                     </div>
-                    <a href="{{ route('campaigns.index') }}"
-                        class="px-4 py-2 text-gray-600 hover:text-gray-800 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                        <i class="fas fa-arrow-left mr-2"></i>Back
+                    <a href="{{ route('admin.campaigns.index') }}"
+                        class="px-4 py-2 text-gray-600 transition-colors border border-gray-300 rounded-lg hover:text-gray-800 hover:bg-gray-50">
+                        <i class="mr-2 fas fa-arrow-left"></i>Back
                     </a>
                 </div>
             </div>
 
             <!-- Form -->
-            <div class="bg-white p-6 md:p-8 rounded-b-lg shadow-md">
+            <div class="p-6 bg-white rounded-b-lg shadow-md md:p-8">
 
                 @if ($errors->any())
-                    <div class="mb-6 bg-red-50 border-l-4 border-red-500 p-4 rounded">
+                    <div class="p-4 mb-6 border-l-4 border-red-500 rounded bg-red-50">
                         <div class="flex">
                             <i class="fas fa-exclamation-circle text-red-500 mt-0.5 mr-3"></i>
                             <div>
-                                <h3 class="text-red-800 font-semibold">Please correct the following errors:</h3>
-                                <ul class="mt-2 text-sm text-red-700 list-disc list-inside space-y-1">
+                                <h3 class="font-semibold text-red-800">Please correct the following errors:</h3>
+                                <ul class="mt-2 space-y-1 text-sm text-red-700 list-disc list-inside">
                                     @foreach ($errors->all() as $error)
                                         <li>{{ $error }}</li>
                                     @endforeach
@@ -41,24 +41,24 @@
                     </div>
                 @endif
 
-                <form action="{{ route('campaigns.update', $campaign->id) }}" method="POST" enctype="multipart/form-data"
-                    class="space-y-6">
+                <form action="{{ route('admin.campaigns.update', $campaign->id) }}" method="POST"
+                    enctype="multipart/form-data" class="space-y-6">
                     @csrf
                     @method('PUT')
 
                     <input type="hidden" name="id" value="{{ $campaign->id }}">
 
                     <!-- Basic Information Section -->
-                    <div class="border-b pb-6">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
-                            <i class="fas fa-info-circle text-blue-500 mr-2"></i>
+                    <div class="pb-6 border-b">
+                        <h3 class="flex items-center mb-4 text-lg font-semibold text-gray-800">
+                            <i class="mr-2 text-blue-500 fas fa-info-circle"></i>
                             Basic Information
                         </h3>
 
                         <!-- Title & Slug -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div class="grid grid-cols-1 gap-4 mb-4 md:grid-cols-2">
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                <label class="block mb-2 text-sm font-medium text-gray-700">
                                     Title <span class="text-red-500">*</span>
                                 </label>
                                 <input type="text" name="title" value="{{ old('title', $campaign->title) }}"
@@ -69,7 +69,7 @@
                                 @enderror
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                <label class="block mb-2 text-sm font-medium text-gray-700">
                                     Slug <span class="text-red-500">*</span>
                                 </label>
                                 <input type="text" name="slug" value="{{ old('slug', $campaign->slug) }}"
@@ -82,9 +82,9 @@
                         </div>
 
                         <!-- User & Category -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                <label class="block mb-2 text-sm font-medium text-gray-700">
                                     Campaign Owner <span class="text-red-500">*</span>
                                 </label>
                                 <select name="user_id"
@@ -103,7 +103,7 @@
                                 @enderror
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                <label class="block mb-2 text-sm font-medium text-gray-700">
                                     Category <span class="text-red-500">*</span>
                                 </label>
                                 <select name="category_id"
@@ -125,15 +125,15 @@
                     </div>
 
                     <!-- Description Section -->
-                    <div class="border-b pb-6">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
-                            <i class="fas fa-align-left text-blue-500 mr-2"></i>
+                    <div class="pb-6 border-b">
+                        <h3 class="flex items-center mb-4 text-lg font-semibold text-gray-800">
+                            <i class="mr-2 text-blue-500 fas fa-align-left"></i>
                             Description
                         </h3>
 
                         <!-- Short Description -->
                         <div class="mb-4">
-                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                            <label class="block mb-2 text-sm font-medium text-gray-700">
                                 Short Description <span class="text-red-500">*</span>
                             </label>
                             <textarea name="short_description" rows="2"
@@ -146,7 +146,7 @@
 
                         <!-- Full Description -->
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                            <label class="block mb-2 text-sm font-medium text-gray-700">
                                 Full Description <span class="text-red-500">*</span>
                             </label>
                             <textarea name="description" rows="6"
@@ -159,19 +159,19 @@
                     </div>
 
                     <!-- Financial Details Section -->
-                    <div class="border-b pb-6">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
-                            <i class="fas fa-dollar-sign text-blue-500 mr-2"></i>
+                    <div class="pb-6 border-b">
+                        <h3 class="flex items-center mb-4 text-lg font-semibold text-gray-800">
+                            <i class="mr-2 text-blue-500 fas fa-dollar-sign"></i>
                             Financial Details
                         </h3>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                <label class="block mb-2 text-sm font-medium text-gray-700">
                                     Goal Amount <span class="text-red-500">*</span>
                                 </label>
                                 <div class="relative">
-                                    <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500">$</span>
+                                    <span class="absolute text-gray-500 transform -translate-y-1/2 left-4 top-1/2">$</span>
                                     <input type="number" name="goal_amount"
                                         value="{{ old('goal_amount', $campaign->goal_amount) }}"
                                         class="w-full border border-gray-300 rounded-lg pl-8 pr-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('goal_amount') border-red-500 @enderror"
@@ -185,15 +185,15 @@
                     </div>
 
                     <!-- Timeline Section -->
-                    <div class="border-b pb-6">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
-                            <i class="fas fa-calendar-alt text-blue-500 mr-2"></i>
+                    <div class="pb-6 border-b">
+                        <h3 class="flex items-center mb-4 text-lg font-semibold text-gray-800">
+                            <i class="mr-2 text-blue-500 fas fa-calendar-alt"></i>
                             Timeline
                         </h3>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                <label class="block mb-2 text-sm font-medium text-gray-700">
                                     Start Date <span class="text-red-500">*</span>
                                 </label>
                                 <input type="date" name="start_date"
@@ -205,7 +205,7 @@
                                 @enderror
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                <label class="block mb-2 text-sm font-medium text-gray-700">
                                     End Date <span class="text-red-500">*</span>
                                 </label>
                                 <input type="date" name="end_date"
@@ -220,15 +220,15 @@
                     </div>
 
                     <!-- Location Section -->
-                    <div class="border-b pb-6">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
-                            <i class="fas fa-map-marker-alt text-blue-500 mr-2"></i>
+                    <div class="pb-6 border-b">
+                        <h3 class="flex items-center mb-4 text-lg font-semibold text-gray-800">
+                            <i class="mr-2 text-blue-500 fas fa-map-marker-alt"></i>
                             Location
                         </h3>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                <label class="block mb-2 text-sm font-medium text-gray-700">
                                     Country <span class="text-red-500">*</span>
                                 </label>
                                 <input type="text" name="country" value="{{ old('country', $campaign->country) }}"
@@ -239,7 +239,7 @@
                                 @enderror
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                <label class="block mb-2 text-sm font-medium text-gray-700">
                                     Address <span class="text-red-500">*</span>
                                 </label>
                                 <input type="text" name="address" value="{{ old('address', $campaign->address) }}"
@@ -253,27 +253,27 @@
                     </div>
 
                     <!-- Media Section -->
-                    <div class="border-b pb-6">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
-                            <i class="fas fa-image text-blue-500 mr-2"></i>
+                    <div class="pb-6 border-b">
+                        <h3 class="flex items-center mb-4 text-lg font-semibold text-gray-800">
+                            <i class="mr-2 text-blue-500 fas fa-image"></i>
                             Campaign Image
                         </h3>
 
                         <div>
                             @if ($campaign->image)
                                 <div class="mb-4">
-                                    <label class="block text-sm font-medium text-gray-700 mb-2">Current Image</label>
+                                    <label class="block mb-2 text-sm font-medium text-gray-700">Current Image</label>
                                     <div class="relative inline-block">
                                         <img src="{{ asset('uploads/campaigns/' . $campaign->image) }}"
-                                            class="h-32 rounded-lg shadow-md border border-gray-200" alt="Campaign Image">
+                                            class="h-32 border border-gray-200 rounded-lg shadow-md" alt="Campaign Image">
                                         <div
-                                            class="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded">
-                                            <i class="fas fa-check mr-1"></i>Current
+                                            class="absolute px-2 py-1 text-xs text-white bg-green-500 rounded top-2 right-2">
+                                            <i class="mr-1 fas fa-check"></i>Current
                                         </div>
                                     </div>
                                 </div>
                             @endif
-                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                            <label class="block mb-2 text-sm font-medium text-gray-700">
                                 {{ $campaign->image ? 'Change Image' : 'Upload Image' }}
                             </label>
                             <input type="file" name="image" accept="image/*"
@@ -287,14 +287,14 @@
 
                     <!-- Settings Section -->
                     <div>
-                        <h3 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
-                            <i class="fas fa-cog text-blue-500 mr-2"></i>
+                        <h3 class="flex items-center mb-4 text-lg font-semibold text-gray-800">
+                            <i class="mr-2 text-blue-500 fas fa-cog"></i>
                             Settings
                         </h3>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                <label class="block mb-2 text-sm font-medium text-gray-700">
                                     Status <span class="text-red-500">*</span>
                                 </label>
                                 <select name="status"
@@ -314,14 +314,14 @@
                         </div>
 
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                            <label class="block mb-2 text-sm font-medium text-gray-700">
                                 Featured Campaign
                             </label>
                             <div class="flex items-center h-[42px] bg-gray-50 rounded-lg px-4 border border-gray-300">
                                 <input type="hidden" name="is_featured" value="0">
                                 <input type="checkbox" name="is_featured" value="1" id="is_featured"
                                     {{ old('is_featured', $campaign->is_featured) ? 'checked' : '' }}
-                                    class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-2 focus:ring-blue-500">
+                                    class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-2 focus:ring-blue-500">
                                 <label for="is_featured" class="ml-3 text-sm text-gray-700 cursor-pointer">
                                     Mark as featured campaign
                                 </label>
@@ -334,13 +334,13 @@
             </div>
 
             <!-- Action Buttons -->
-            <div class="flex flex-col sm:flex-row gap-3 pt-6 border-t">
+            <div class="flex flex-col gap-3 pt-6 border-t sm:flex-row">
                 <button type="submit"
-                    class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center justify-center">
-                    <i class="fas fa-save mr-2"></i>Update Campaign
+                    class="flex items-center justify-center px-6 py-3 font-medium text-white transition-colors bg-blue-600 rounded-lg hover:bg-blue-700">
+                    <i class="mr-2 fas fa-save"></i>Update Campaign
                 </button>
-                <a href="{{ route('campaigns.index') }}"
-                    class="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors font-medium text-center">
+                <a href="{{ route('admin.campaigns.index') }}"
+                    class="px-6 py-3 font-medium text-center text-gray-700 transition-colors bg-gray-200 rounded-lg hover:bg-gray-300">
                     Cancel
                 </a>
             </div>

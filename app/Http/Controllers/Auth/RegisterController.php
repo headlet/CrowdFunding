@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Password;
 
 class RegisterController extends Controller
 {
-    
+
     public function show()
     {
         return view('backend.public.auth.register');
@@ -35,9 +35,7 @@ class RegisterController extends Controller
             return view('backend.public.auth.login')->with('success', 'Success. Please check your email...');
         } catch (\Throwable $th) {
             DB::rollback();
-            return redirect('register')->withErrors(['error' => 'Something went wrong. Please try again later.'. $th->getMessage()]);
+            return redirect('register')->withErrors(['error' => 'Something went wrong. Please try again later.']);
         }
     }
-
-   
 }

@@ -28,16 +28,17 @@ class CampaignCategoryServices extends Services
         return $this->model::create($data);
     }
 
-    public function getById($id){
+    public function getById($id)
+    {
         return [
-           'category' => $this->model->findorFail($id),
+            'category' => $this->model->findorFail($id),
         ];
-
     }
 
-    public function update(string $id, Request $request){
-        $category = $this->model::FindorFail($id);
-       
+    public function update(string $id, Request $request)
+    {
+        $category = $this->model::findorFail($id);
+
         $data = $request->except('_token');
 
         $category->update($data);

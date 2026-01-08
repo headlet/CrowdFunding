@@ -4,43 +4,43 @@
 @endsection
 
 @section('content')
-    <section class="bg-gray-100 min-h-screen p-4 md:p-8">
+    <section class="min-h-screen p-4 bg-gray-100 md:p-8">
         <!-- Header -->
-        <div class="flex flex-col md:flex-row justify-end items-stretch md:items-center mb-6 gap-3">
-            <a href="{{ route('campaign-category.create') }}"
+        <div class="flex flex-col items-stretch justify-end gap-3 mb-6 md:flex-row md:items-center">
+            <a href="{{ route('admin.campaign-category.create') }}"
                 class="px-6 py-2.5 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors text-center font-medium whitespace-nowrap">
-                <i class="fas fa-plus mr-2"></i>Add Campaign Category
+                <i class="mr-2 fas fa-plus"></i>Add Campaign Category
             </a>
         </div>
 
-        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <div class="overflow-hidden bg-white rounded-lg shadow-md">
             <div class="overflow-x-auto">
                 <table class="min-w-full divide-y divide-gray-200">
                     <thead class="bg-gray-50">
                         <tr>
                             <th
-                                class="px-4 lg:px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                                class="px-4 py-4 text-xs font-semibold tracking-wider text-left text-gray-700 uppercase lg:px-6">
                                 Campaign Category
                             </th>
                             <th
-                                class="px-4 lg:px-6 py-4 text-center text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                                class="px-4 py-4 text-xs font-semibold tracking-wider text-center text-gray-700 uppercase lg:px-6">
                                 Status
                             </th>
                             <th
-                                class="px-4 lg:px-6 py-4 text-center text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                                class="px-4 py-4 text-xs font-semibold tracking-wider text-center text-gray-700 uppercase lg:px-6">
                                 Actions
                             </th>
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
                         @forelse($resources as $category)
-                            <tr class="hover:bg-gray-50 transition-colors ">
+                            <tr class="transition-colors hover:bg-gray-50 ">
                                 <!-- Campaign Catgories -->
-                                <td class="px-4 lg:px-6 py-4 ">
+                                <td class="px-4 py-4 lg:px-6 ">
                                     <div class="flex items-center gap-3">
-                                        <div class="min-w-0 flex-1">
+                                        <div class="flex-1 min-w-0">
                                             <div
-                                                class="text-sm font-semibold text-gray-900 truncate hover:text-blue-600 transition-colors w-48">
+                                                class="w-48 text-sm font-semibold text-gray-900 truncate transition-colors hover:text-blue-600">
                                                 {{ $category->name }}
                                             </div>
                                         </div>
@@ -48,7 +48,7 @@
                                 </td>
 
                                 <!-- Status -->
-                                <td class="px-4 lg:px-6 py-4 text-center">
+                                <td class="px-4 py-4 text-center lg:px-6">
                                     <span
                                         class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium
                                         {{ $category->status == '1' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }}">
@@ -61,22 +61,22 @@
                                 </td>
 
                                 <!-- Actions -->
-                                <td class="px-4 lg:px-6 py-4">
+                                <td class="px-4 py-4 lg:px-6">
                                     <div class="flex items-center justify-center gap-2">
-                                        <a href="{{ route('campaign-category.edit', $category->id) }}"
-                                            class="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                                        <a href="{{ route('admin.campaign-category.edit', $category->id) }}"
+                                            class="p-2 text-blue-600 transition-colors rounded-lg hover:bg-blue-50"
                                             title="Edit">
-                                            <i class="fas fa-edit text-lg"></i>
+                                            <i class="text-lg fas fa-edit"></i>
                                         </a>
-                                        <form action="{{ route('campaign-category.destroy', $category->id) }}"
+                                        <form action="{{ route('admin.campaign-category.destroy', $category->id) }}"
                                             method="POST" class="inline"
                                             onsubmit="return confirm('Are you sure you want to delete this campaign?');">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit"
-                                                class="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                                                class="p-2 text-red-600 transition-colors rounded-lg hover:bg-red-50"
                                                 title="Delete">
-                                                <i class="fas fa-trash text-lg"></i>
+                                                <i class="text-lg fas fa-trash"></i>
                                             </button>
                                         </form>
                                     </div>
@@ -86,8 +86,8 @@
                             <tr>
                                 <td colspan="6" class="px-4 py-12 text-center">
                                     <div class="flex flex-col items-center justify-center">
-                                        <i class="fas fa-folder-open text-gray-300 text-5xl mb-4"></i>
-                                        <p class="text-gray-500 text-lg font-medium">No campaigns Category found</p>
+                                        <i class="mb-4 text-5xl text-gray-300 fas fa-folder-open"></i>
+                                        <p class="text-lg font-medium text-gray-500">No campaigns Category found</p>
                                     </div>
                                 </td>
                             </tr>

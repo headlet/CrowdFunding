@@ -3,66 +3,74 @@
     Campaign
 @endsection
 @section('content')
-    <section class="bg-gray-100 min-h-screen p-4 md:p-8">
+    <section class="min-h-screen p-4 bg-gray-100 md:p-8">
 
         <!-- Header -->
-        <div class="flex flex-col md:flex-row justify-between items-stretch md:items-center mb-6 gap-3">
+        <div class="flex flex-col items-stretch justify-between gap-3 mb-6 md:flex-row md:items-center">
             <input type="text" placeholder="Search campaigns..."
                 class="border border-gray-300 rounded-lg px-4 py-2.5 w-full md:w-1/3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
-            <a href="{{ route('campaigns.create') }}"
-                class="px-6 py-2.5 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors text-center font-medium whitespace-nowrap">
-                <i class="fas fa-plus mr-2"></i>Add Campaign
-            </a>
+            <div>
+                <a href="{{ route('admin.campaigns.create') }}"
+                    class="px-6 py-2.5 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors text-center font-medium whitespace-nowrap">
+                    <i class="mr-2 fas fa-plus"></i>Add Campaign
+                </a>
+
+                <a href="{{ route('admin.campaign-category.index') }}"
+                    class="ml-1 px-6 py-2.5 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors text-center font-medium whitespace-nowrap">
+                    Category
+                </a>
+            </div>
+
         </div>
 
         <!-- Table Container -->
-        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <div class="overflow-hidden bg-white rounded-lg shadow-md">
             <div class="overflow-x-auto">
                 <table class="min-w-full divide-y divide-gray-200">
                     <thead class="bg-gray-50">
                         <tr>
                             <th
-                                class="px-4 lg:px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                                class="px-4 py-4 text-xs font-semibold tracking-wider text-left text-gray-700 uppercase lg:px-6">
                                 Campaign
                             </th>
                             <th
-                                class="px-4 lg:px-6 py-4 text-center text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                                class="px-4 py-4 text-xs font-semibold tracking-wider text-center text-gray-700 uppercase lg:px-6">
                                 Goal Progress
                             </th>
                             <th
-                                class="px-4 lg:px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                                class="px-4 py-4 text-xs font-semibold tracking-wider text-left text-gray-700 uppercase lg:px-6">
                                 Received Funds
                             </th>
                             <th
-                                class="px-4 lg:px-6 py-4 text-center text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                                class="px-4 py-4 text-xs font-semibold tracking-wider text-center text-gray-700 uppercase lg:px-6">
                                 Start & End
                             </th>
                             <th
-                                class="px-4 lg:px-6 py-4 text-center text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                                class="px-4 py-4 text-xs font-semibold tracking-wider text-center text-gray-700 uppercase lg:px-6">
                                 Status
                             </th>
                             <th
-                                class="px-4 lg:px-6 py-4 text-center text-xs font-semibold text-gray-700 uppercase tracking-wider hidden md:table-cell">
+                                class="hidden px-4 py-4 text-xs font-semibold tracking-wider text-center text-gray-700 uppercase lg:px-6 md:table-cell">
                                 Donors
                             </th>
                             <th
-                                class="px-4 lg:px-6 py-4 text-center text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                                class="px-4 py-4 text-xs font-semibold tracking-wider text-center text-gray-700 uppercase lg:px-6">
                                 Actions
                             </th>
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
                         @forelse($resources as $campaign)
-                            <tr class="hover:bg-gray-50 transition-colors ">
+                            <tr class="transition-colors hover:bg-gray-50 ">
                                 <!-- Campaign Info -->
-                                <td class="px-4 lg:px-6 py-4 ">
+                                <td class="px-4 py-4 lg:px-6 ">
                                     <div class="flex items-center gap-3">
                                         <img src="{{ $campaign->image ? asset('uploads/campaigns/' . $campaign->image) : 'https://via.placeholder.com/50' }}"
                                             alt="{{ $campaign->title }}"
-                                            class="w-12 h-12 rounded-lg object-cover flex-shrink-0">
-                                        <div class="min-w-0 flex-1">
+                                            class="flex-shrink-0 object-cover w-12 h-12 rounded-lg">
+                                        <div class="flex-1 min-w-0">
                                             <div
-                                                class="text-sm font-semibold text-gray-900 truncate hover:text-blue-600 transition-colors w-48">
+                                                class="w-48 text-sm font-semibold text-gray-900 truncate transition-colors hover:text-blue-600">
                                                 {{ $campaign->title }}
                                             </div>
                                             <div class="text-xs text-gray-500 truncate mt-0.5">
@@ -73,7 +81,7 @@
                                 </td>
 
                                 <!-- Goal Progress -->
-                                <td class="px-4 lg:px-6 py-4">
+                                <td class="px-4 py-4 lg:px-6">
                                     <div class="flex flex-col items-center justify-center">
                                         @php
                                             $percentage = $campaign->goal_amount
@@ -98,14 +106,14 @@
                                                 <span class="text-sm font-bold text-gray-700">{{ $percentage }}%</span>
                                             </div>
                                         </div>
-                                        <div class="text-xs text-gray-500 mt-1">
+                                        <div class="mt-1 text-xs text-gray-500">
                                             ${{ number_format($campaign->goal_amount ?? 0) }} goal
                                         </div>
                                     </div>
                                 </td>
 
                                 <!-- Received Funds -->
-                                <td class="px-4 lg:px-6 py-4">
+                                <td class="px-4 py-4 lg:px-6">
                                     <div class="text-sm font-semibold text-purple-600">
                                         ${{ number_format($campaign->raised_amount ?? 0, 2) }}
                                     </div>
@@ -114,16 +122,16 @@
                                     </div>
                                 </td>
 
-                                <td class="px-4 lg:px-6 py-4 text-center hidden md:table-cell">
+                                <td class="hidden px-4 py-4 text-center lg:px-6 md:table-cell">
                                     <span
-                                        class=" text-sm border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors font-medium">
+                                        class="text-sm font-medium transition-colors border border-gray-300 rounded-lg hover:bg-gray-50">
                                         <p>{{ $campaign->start_date->toDateString() }}</p>
                                         <p>{{ $campaign->end_date->toDateString() }}</p>
                                     </span>
                                 </td>
 
                                 <!-- Status -->
-                                <td class="px-4 lg:px-6 py-4 text-center">
+                                <td class="px-4 py-4 text-center lg:px-6">
                                     <span
                                         class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium
                                         {{ $campaign->status == 'active' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }}">
@@ -134,31 +142,31 @@
 
 
                                 <!-- Donors -->
-                                <td class="px-4 lg:px-6 py-4 text-center hidden md:table-cell">
+                                <td class="hidden px-4 py-4 text-center lg:px-6 md:table-cell">
                                     <button
                                         class="px-4 py-1.5 text-sm border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors font-medium">
-                                        <i class="fas fa-users mr-1 text-gray-500"></i>
+                                        <i class="mr-1 text-gray-500 fas fa-users"></i>
                                         View Donors
                                     </button>
                                 </td>
 
                                 <!-- Actions -->
-                                <td class="px-4 lg:px-6 py-4">
+                                <td class="px-4 py-4 lg:px-6">
                                     <div class="flex items-center justify-center gap-2">
-                                        <a href="{{ route('campaigns.edit', $campaign->id) }}"
-                                            class="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                                        <a href="{{ route('admin.campaigns.edit', $campaign->id) }}"
+                                            class="p-2 text-blue-600 transition-colors rounded-lg hover:bg-blue-50"
                                             title="Edit">
-                                            <i class="fas fa-edit text-lg"></i>
+                                            <i class="text-lg fas fa-edit"></i>
                                         </a>
-                                        <form action="{{ route('campaigns.destroy', $campaign->id) }}" method="POST"
+                                        <form action="{{ route('admin.campaigns.destroy', $campaign->id) }}" method="POST"
                                             class="inline"
                                             onsubmit="return confirm('Are you sure you want to delete this campaign?');">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit"
-                                                class="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                                                class="p-2 text-red-600 transition-colors rounded-lg hover:bg-red-50"
                                                 title="Delete">
-                                                <i class="fas fa-trash text-lg"></i>
+                                                <i class="text-lg fas fa-trash"></i>
                                             </button>
                                         </form>
                                     </div>
@@ -168,9 +176,9 @@
                             <tr>
                                 <td colspan="6" class="px-4 py-12 text-center">
                                     <div class="flex flex-col items-center justify-center">
-                                        <i class="fas fa-folder-open text-gray-300 text-5xl mb-4"></i>
-                                        <p class="text-gray-500 text-lg font-medium">No campaigns found</p>
-                                        <p class="text-gray-400 text-sm mt-1">Get started by creating your first campaign
+                                        <i class="mb-4 text-5xl text-gray-300 fas fa-folder-open"></i>
+                                        <p class="text-lg font-medium text-gray-500">No campaigns found</p>
+                                        <p class="mt-1 text-sm text-gray-400">Get started by creating your first campaign
                                         </p>
                                     </div>
                                 </td>

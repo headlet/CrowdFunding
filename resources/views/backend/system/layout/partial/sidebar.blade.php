@@ -1,72 +1,72 @@
 <div
-    class="sidebars w-64 h-screen fixed left-0 top-0 bg-gradient-to-b from-emerald-700 to-emerald-800 text-white transition-all duration-300 shadow-lime-100 flex flex-col">
+    class="fixed top-0 left-0 flex flex-col w-64 h-screen text-white transition-all duration-300 sidebars bg-gradient-to-b from-emerald-700 to-emerald-800 shadow-lime-100">
 
     <!-- Header Section -->
     <div class="p-6 border-b border-green-500/30">
         <div class="flex items-center justify-between">
             <div class="flex items-center gap-3 cmslogo">
                 <div
-                    class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-md">
+                    class="flex items-center justify-center w-10 h-10 text-lg font-bold text-white bg-green-500 rounded-full shadow-md">
                     F
                 </div>
                 <span class="text-xl font-semibold whitespace-nowrap">Fund</span>
             </div>
 
-            <button class="hover:bg-green-500/30 sidebtn p-2 rounded-lg transition-colors">
-                <i class="fa-solid fa-bars text-xl"></i>
+            <button class="p-2 transition-colors rounded-lg hover:bg-green-500/30 sidebtn">
+                <i class="text-xl fa-solid fa-bars"></i>
             </button>
         </div>
     </div>
 
     <!-- Menu Navigation -->
-    <nav class="flex flex-col gap-2 p-4 flex-1 overflow-y-auto">
+    <nav class="flex flex-col flex-1 gap-2 p-4 overflow-y-auto">
         <a href="{{ route('index') }}"
-            class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-green-500/30 transition-all">
-            <i class="fas fa-arrow-left text-lg w-5 flex-shrink-0"></i>
+            class="flex items-center gap-3 px-4 py-3 transition-all rounded-lg hover:bg-green-500/30">
+            <i class="flex-shrink-0 w-5 text-lg fas fa-arrow-left"></i>
             <span class="texts whitespace-nowrap">Visit Website</span>
         </a>
 
         <div class="my-2 border-t border-green-500/30"></div>
 
-        <a href="{{ route('dashboard') }}"
-            class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all {{ request()->routeIs('dashboard') ? 'bg-green-700' : 'hover:bg-green-700' }}">
-            <i class="fas fa-tachometer-alt text-lg w-5 flex-shrink-0"></i>
+        <a href="{{ route('admin.dashboard') }}"
+            class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all {{ request()->routeIs('admin.dashboard') ? 'bg-green-700' : 'hover:bg-green-700' }}">
+            <i class="flex-shrink-0 w-5 text-lg fas fa-tachometer-alt"></i>
             <span class="texts whitespace-nowrap">Overview</span>
         </a>
 
-        <a href="#"
-            class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all {{ request()->routeIs('') ? 'bg-green-700' : 'hover:bg-green-700' }}">
-            <i class="fas fa-hand-holding-heart text-lg w-5 flex-shrink-0"></i>
+        <a href="{{ route('admin.donation.index') }}"
+            class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all {{ request()->routeIs('admin.donation.*') ? 'bg-green-700' : 'hover:bg-green-700' }}">
+            <i class="flex-shrink-0 w-5 text-lg fas fa-hand-holding-heart"></i>
             <span class="texts whitespace-nowrap">Donation</span>
         </a>
 
-        <a href="{{ route('campaigns.index') }}"
-            class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all {{ request()->routeIs('campaigns.*') ? 'bg-green-700' : 'hover:bg-green-700' }}">
-            <i class="fa-solid fa-bullhorn text-lg w-5 flex-shrink-0"></i>
+        <a href="{{ route('admin.campaigns.index') }}"
+            class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all {{ request()->routeIs('admin.campaigns.*') ? 'bg-green-700' : 'hover:bg-green-700' }}">
+            <i class="flex-shrink-0 w-5 text-lg fa-solid fa-bullhorn"></i>
             <span class="texts whitespace-nowrap">Campaigns</span>
         </a>
 
         <a href="#"
             class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all {{ request()->routeIs() ? 'bg-green-700' : 'hover:bg-green-700' }}">
-            <i class="fas fa-users text-lg w-5 flex-shrink-0"></i>
+            <i class="flex-shrink-0 w-5 text-lg fas fa-users"></i>
             <span class="texts whitespace-nowrap">Community</span>
         </a>
     </nav>
 
     <!-- Bottom Section -->
-    <div class="p-4 flex flex-col gap-2 border-t border-green-500/30 bg-green-700/50">
-        <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-green-700 transition-all">
-            <i class="fas fa-cog text-lg w-5 flex-shrink-0"></i>
+    <div class="flex flex-col gap-2 p-4 border-t border-green-500/30 bg-green-700/50">
+        <a href="#" class="flex items-center gap-3 px-4 py-3 transition-all rounded-lg hover:bg-green-700">
+            <i class="flex-shrink-0 w-5 text-lg fas fa-cog"></i>
             <span class="texts whitespace-nowrap">Settings</span>
         </a>
 
-        <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-green-700 transition-all">
-            <i class="fas fa-question-circle text-lg w-5 flex-shrink-0"></i>
+        <a href="#" class="flex items-center gap-3 px-4 py-3 transition-all rounded-lg hover:bg-green-700">
+            <i class="flex-shrink-0 w-5 text-lg fas fa-question-circle"></i>
             <span class="texts whitespace-nowrap">Help Center</span>
         </a>
 
-        <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-green-700 transition-all">
-            <i class="fas fa-flag text-lg w-5 flex-shrink-0"></i>
+        <a href="#" class="flex items-center gap-3 px-4 py-3 transition-all rounded-lg hover:bg-green-700">
+            <i class="flex-shrink-0 w-5 text-lg fas fa-flag"></i>
             <span class="texts whitespace-nowrap">Report</span>
         </a>
     </div>

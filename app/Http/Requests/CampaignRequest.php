@@ -15,7 +15,7 @@ class CampaignRequest extends FormRequest
 
     public function rules(): array
     {
-        $campaignId = request()->input('id') ?? request()->segment(2);
+        $campaignId = request()->input('id') ?? request()->segment(3);
 
         return [
             'user_id'           => 'required|integer|exists:users,id',

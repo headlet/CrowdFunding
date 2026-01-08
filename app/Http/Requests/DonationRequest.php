@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CampaignCategoryRequest extends FormRequest
+class DonationRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -21,12 +21,12 @@ class CampaignCategoryRequest extends FormRequest
      */
     public function rules(): array
     {
-        $categoriesId = request()->input('id') ?? request()->segment(3);
         return [
-            'name'        => 'required|string',
-            'slug'        => 'required|string|max:255|unique:campaign_categories,slug,' . $categoriesId,
-            'description' => 'required|string',
-            'status'      => 'required|in:0,1'
+            'campaign_id'   => 'required|exists:campaigns,id',
+            'amount'        => 'required|numeric|min:1',
+            'donor_name'    => 'required|string|max:255',
+            'phone_number'  => 'nullable|string|max:20',
+            'donor_email'   => 'required|email|max:255',
         ];
     }
 }

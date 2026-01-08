@@ -47,7 +47,7 @@ class ResourceController extends Controller
 
             return view($this->viewsFolder() . '.index', ['resources' => $resources]);
         } catch (\Throwable $th) {
-            return redirect()->back()->withErrors(['error' => $th->getMessage()]);
+            return redirect()->back()->withErrors(['error' => 'Something went Wrong']);
         }
     }
 
@@ -58,7 +58,7 @@ class ResourceController extends Controller
 
             return view($this->viewsFolder() . '.create', $data);
         } catch (\Throwable $th) {
-            return redirect()->back()->withErrors(['error' => $th->getMessage()]);
+            return redirect()->back()->withErrors(['error' => 'Something Went wrong']);
         }
     }
 
@@ -76,7 +76,7 @@ class ResourceController extends Controller
                     $validator->attributes() ?? []
                 );
             }
-          
+
             $response = $this->services->store($request);
 
             if (isset($response['error'])) {
@@ -87,7 +87,7 @@ class ResourceController extends Controller
         } catch (ValidationException $e) {
             return redirect()->back()->withErrors($e->errors());
         } catch (\Throwable $th) {
-            return redirect()->back()->withInput()->withErrors(['error' => $th->getMessage()]);
+            return redirect()->back()->withInput()->withErrors(['error' => 'Something Went Wrong. Unable to store']);
         }
     }
 
@@ -103,7 +103,7 @@ class ResourceController extends Controller
 
             return view($this->viewsFolder() . '.edit', $resource)->render();
         } catch (\Throwable $th) {
-            return redirect()->back()->withErrors(['error' => $th->getMessage()]);
+            return redirect()->back()->withErrors(['error' => 'Something wrong with edit']);
         }
     }
 
@@ -151,7 +151,7 @@ class ResourceController extends Controller
             return redirect()
                 ->back()
                 ->withInput()
-                ->withErrors(['error' => $th->getMessage()]);
+                ->withErrors(['error' => "Something went wrong. Can't Update "]);
         }
     }
 
@@ -178,7 +178,7 @@ class ResourceController extends Controller
         } catch (\Throwable $th) {
             return redirect()
                 ->back()
-                ->withErrors(['error' => $th->getMessage()]);
+                ->withErrors(['error' => 'There is issues with delete']);
         }
     }
 }
