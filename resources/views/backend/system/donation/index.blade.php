@@ -12,32 +12,48 @@
 
         <div class="overflow-hidden bg-white rounded-lg shadow-md">
 
-            <form method="GET" class="grid grid-cols-1 gap-4 p-4 border-b bg-gray-50 md:grid-cols-5">
-                <select name="campaign" class="px-3 py-2 border rounded">
+            <form method="GET" class="flex flex-wrap items-center gap-3 px-4 py-2 bg-white border-b">
+
+                <!-- Campaign -->
+                <select name="campaign"
+                    class="px-3 text-sm border border-gray-300 rounded-md h-9 focus:outline-none focus:ring-1 focus:ring-indigo-500">
                     <option value="">All Campaigns</option>
-                    foreach (campaigns as campaign)
-                    <option value="campaign->id " request('campaign')==$campaign->id ? 'selected' : '' >
-                        $campaign->title
-                    </option>
-                    endforeach
+                    @foreach ($resources['campaigns'] as $campaign)
+                        <option value="{{ $campaign->id }}" {{ request('campaign') == $campaign->id ? 'selected' : '' }}>
+                            {{ $campaign->title }}
+                        </option>
+                    @endforeach
                 </select>
 
-                <select name="status" class="px-3 py-2 border rounded">
-                    <option value="">All Status</option>
+                <!-- Status -->
+                <select name="status"
+                    class="px-3 text-sm border border-gray-300 rounded-md h-9 focus:outline-none focus:ring-1 focus:ring-indigo-500">
+                    <option value="">Status</option>
                     <option value="pending" {{ request('status') == 'pending' ? 'selected' : '' }}>Pending</option>
                     <option value="completed" {{ request('status') == 'completed' ? 'selected' : '' }}>Completed</option>
                     <option value="failed" {{ request('status') == 'failed' ? 'selected' : '' }}>Failed</option>
                     <option value="cancelled" {{ request('status') == 'cancelled' ? 'selected' : '' }}>Cancelled</option>
                 </select>
 
-                <input type="date" name="from" value="{{ request('from') }}" class="px-3 py-2 border rounded">
-                <input type="date" name="to" value="{{ request('to') }}" class="px-3 py-2 border rounded">
+                <!-- Date range -->
+                <div class="flex items-center gap-2">
+                    <input type="date" name="from" value="{{ request('from') }}"
+                        class="px-2 text-sm border border-gray-300 rounded-md h-9 focus:outline-none focus:ring-1 focus:ring-indigo-500">
 
+                    <span class="text-sm text-gray-400">–</span>
+
+                    <input type="date" name="to" value="{{ request('to') }}"
+                        class="px-2 text-sm border border-gray-300 rounded-md h-9 focus:outline-none focus:ring-1 focus:ring-indigo-500">
+                </div>
+
+                <!-- Submit -->
                 <button type="submit"
-                    class="px-6 py-2 font-medium text-white transition-colors bg-indigo-600 rounded-lg hover:bg-indigo-700">
-                    Filter
+                    class="px-4 text-sm font-medium text-white transition bg-indigo-600 rounded-md h-9 hover:bg-indigo-700">
+                    Apply
                 </button>
+
             </form>
+
 
             <!-- Table -->
             <div class="overflow-x-auto">
@@ -66,7 +82,7 @@
                     </thead>
 
                     <tbody class="bg-white divide-y divide-gray-200">
-                        @forelse ($resources as $donation)
+                        @forelse ($resources['donation'] as $donation)
                             <tr class="transition-colors hover:bg-gray-50">
 
                                 <!-- Campaign -->
@@ -155,7 +171,7 @@
 
             <!-- Pagination -->
             <div class="p-4">
-                {{ $resources->withQueryString()->links() }}
+                {{ $resources['donation']->withQueryString()->links() }}
             </div>
 
         </div>

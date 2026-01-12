@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\Campaign;
 use App\Models\Donation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,10 +18,22 @@ class DonationServices extends Services
 
     public function getAll($perPage = 10)
     {
-        return $this->model
-            ->with(['user', 'campaign'])
-            ->orderBy('created_at', 'desc')
-            ->paginate($perPage);
+        return [
+
+            "donation" => $this->model
+                ->with(['user', 'campaign'])
+                ->orderBy('created_at', 'desc')
+                ->paginate($perPage),
+
+            'campaigns' => Campaign::get()
+        ];
+    }
+
+    public function getById(String $id)
+    {
+        return [
+            "Donation" => $this->model->findorFail($id),
+        ];
     }
 
     public function store(Request $request)

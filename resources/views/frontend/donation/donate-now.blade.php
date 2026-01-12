@@ -27,7 +27,7 @@
                         <p class="donation-form-notice"><i class="fa-solid fa-triangle-exclamation"></i><span
                                 class="text-title">Notice:</span> Test mode is enabled. While in test mode no live donations
                             are processed.</p>
-                        <form action="{{ route('donation.store') }}" method="POST" class="contact-form">
+                        <form action="{{ route('admin.donation.store') }}" method="POST" class="contact-form">
                             @csrf
 
                             <input type="hidden" name="campaign_id" value="{{ $campaign->id }}">

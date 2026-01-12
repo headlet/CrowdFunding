@@ -16,7 +16,7 @@ class DonationController extends ResourceController
 
     public function getResourceNames()
     {
-        return 'donation';
+        return 'admin.donation';
     }
 
     public function viewsFolder()

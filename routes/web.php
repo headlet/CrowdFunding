@@ -6,16 +6,17 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\public\HomeController;
+use App\Http\Controllers\system\BlogCategoryController;
+use App\Http\Controllers\system\BlogController;
 use App\Http\Controllers\system\CampaignCategoryController;
 use App\Http\Controllers\system\CampaignController;
 use App\Http\Controllers\system\DonationController;
-
+use App\Http\Controllers\system\TeamController;
 
 $pages = [
     'about',
     'gallery',
     'contact',
-    'team',
     'team-details',
     'add-team',
     'faq',
@@ -30,9 +31,10 @@ foreach ($pages as $page) {
 
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('index');
-    Route::get('/campaign-details/{campaign}', 'show')->name('campaign-details');
+    Route::get('/campaign-details/{campaign}', 'campaign_details')->name('campaign-details');
     Route::get('/donation-now/{campaign}', 'donation')->name('donate-now')->middleware('auth');
     Route::get('/all-campaigns', 'campaign')->name('campaign');
+    Route::get('/teams', 'team')->name('team');
 });
 
 Route::controller(DonationController::class)->group(function () {
@@ -60,4 +62,7 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('campaigns', CampaignController::class)->except(['show']);
     Route::resource('campaign-category', CampaignCategoryController::class)->except(['show']);
     Route::resource('donation', DonationController::class)->except(['show']);
+    Route::resource('team', TeamController::class)->except(['show']);
+    Route::resource('blog', BlogController::class)->except(['show']);
+    Route::resource('blog-category', BlogCategoryController::class)->except(['show']);
 });

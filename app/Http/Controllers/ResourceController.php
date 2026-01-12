@@ -47,7 +47,7 @@ class ResourceController extends Controller
 
             return view($this->viewsFolder() . '.index', ['resources' => $resources]);
         } catch (\Throwable $th) {
-            return redirect()->back()->withErrors(['error' => 'Something went Wrong']);
+            return redirect()->back()->withErrors(['error' => 'Something went Wrong' . $th->getMessage()]);
         }
     }
 
@@ -58,7 +58,7 @@ class ResourceController extends Controller
 
             return view($this->viewsFolder() . '.create', $data);
         } catch (\Throwable $th) {
-            return redirect()->back()->withErrors(['error' => 'Something Went wrong']);
+            return redirect()->back()->withErrors(['error' => 'Something Went wrong' . $th->getMessage()]);
         }
     }
 
@@ -178,7 +178,7 @@ class ResourceController extends Controller
         } catch (\Throwable $th) {
             return redirect()
                 ->back()
-                ->withErrors(['error' => 'There is issues with delete']);
+                ->withErrors(['error' => 'There is issues with delete' . $th->getMessage()]);
         }
     }
 }

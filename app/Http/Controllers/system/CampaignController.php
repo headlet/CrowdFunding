@@ -26,7 +26,6 @@ class CampaignController extends ResourceController
 
     public function getResourceNames()
     {
-        return 'campaigns';
+        return 'admin.campaigns';
     }
-
 }
