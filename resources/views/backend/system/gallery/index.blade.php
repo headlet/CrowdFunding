@@ -15,7 +15,7 @@
                     <h2 class="text-2xl font-bold text-gray-800">Gallery</h2>
                     <p class="mt-1 text-sm text-gray-500">Manage your media collection</p>
                 </div>
-               
+
                 <div class="flex items-center gap-2 ml-auto">
                     <button id="selectAllBtn"
                         class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-600 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors">
@@ -26,10 +26,10 @@
                         <i class="fas fa-trash"></i> Delete (<span id="selectedCount">0</span>)
                     </button>
 
-                     <a href="{{ route('admin.gallery.create') }}"
-                    class="block w-full md:w-auto text-center px-4 py-1.5 bg-gradient-to-b from-emerald-500 to-emerald-600 hover:from-emerald-800 hover:to-emerald-600 text-white rounded-lg transition-all duration-300 font-medium shadow-md">
-                    <i class="mr-2 fas fa-plus"></i>Upload Image
-                </a>
+                    <a href="{{ route('admin.gallery.create') }}"
+                        class="block w-full md:w-auto text-center px-4 py-1.5 bg-gradient-to-b from-emerald-500 to-emerald-600 hover:from-emerald-800 hover:to-emerald-600 text-white rounded-lg transition-all duration-300 font-medium shadow-md">
+                        <i class="mr-2 fas fa-plus"></i>Upload Image
+                    </a>
                 </div>
             </div>
         </div>
@@ -85,10 +85,10 @@
                                 <i class="fas fa-edit text-sm"></i>
                             </a>
                             <form action="{{ route('admin.gallery.destroy', $image->id) }}" method="POST"
-                                onclick="event.stopPropagation()" onsubmit="return confirm('Delete this image?')">
+                                class="delete-form" onclick="event.stopPropagation()">
                                 @csrf @method('DELETE')
-                                <button type="submit"
-                                    class="w-8 h-8 bg-red-500/80 hover:bg-red-500 rounded-lg flex items-center justify-center text-white transition-colors"
+                                <button type="button"
+                                    class="delete-btn w-8 h-8 bg-red-500/80 hover:bg-red-500 rounded-lg flex items-center justify-center text-white transition-colors"
                                     title="Delete">
                                     <i class="fas fa-trash text-sm"></i>
                                 </button>
@@ -198,10 +198,10 @@
                     success: function() {
                         ids.forEach(function(id) {
                             $(`.gallery-item[data-id="${id}"]`).fadeOut(300,
-                        function() {
-                                $(this).remove();
-                                updateUI();
-                            });
+                                function() {
+                                    $(this).remove();
+                                    updateUI();
+                                });
                         });
                     },
                     error: function() {
@@ -228,4 +228,6 @@
             $('#categoryFilter, #statusFilter').on('change', applyFilters);
         });
     </script>
+
+    @include('backend.component.delete-swal')
 @endsection

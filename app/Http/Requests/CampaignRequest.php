@@ -26,7 +26,7 @@ class CampaignRequest extends FormRequest
             'description'       => 'required|string',
             'goal_amount'       => 'required|numeric|min:0',
             'raised_amount'     => 'nullable|numeric|min:0',
-            'start_date'        => 'required|date|after:yesterday',
+            'start_date'        => 'required|date',
             'end_date'          => 'required|date|after_or_equal:start_date',
             'country'           => 'required|string|max:100',
             'address'           => 'required|string|max:255',

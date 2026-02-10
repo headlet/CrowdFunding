@@ -50,7 +50,7 @@
                                 </label>
                                 <input type="text" name="title" value="{{ old('title', $campaign->title) }}"
                                     class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('title') border-red-500 @enderror"
-                                    placeholder="Enter campaign title" required id='title'>
+                                    placeholder="Enter campaign title"  id='title'>
                                 @error('title')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
@@ -61,7 +61,7 @@
                                 </label>
                                 <input type="text" name="slug" value="{{ old('slug', $campaign->slug) }}"
                                     class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('slug') border-red-500 @enderror"
-                                    placeholder="campaign-slug" required id="slug" readonly>
+                                    placeholder="campaign-slug"  id="slug" readonly>
                                 @error('slug')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
@@ -76,7 +76,7 @@
                                 </label>
                                 <select name="user_id"
                                     class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('user_id') border-red-500 @enderror"
-                                    required>
+                                    >
                                     <option value="">Select User</option>
                                     @foreach ($users as $user)
                                         <option value="{{ $user->id }}"
@@ -95,7 +95,7 @@
                                 </label>
                                 <select name="category_id"
                                     class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('category_id') border-red-500 @enderror"
-                                    required>
+                                    >
                                     <option value="">Select Category</option>
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}"
@@ -125,7 +125,7 @@
                             </label>
                             <textarea name="short_description" rows="2"
                                 class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('short_description') border-red-500 @enderror"
-                                placeholder="Brief overview of the campaign (max 500 characters)" maxlength="500" required>{{ old('short_description', $campaign->short_description) }}</textarea>
+                                placeholder="Brief overview of the campaign (max 500 characters)" maxlength="500" >{{ old('short_description', $campaign->short_description) }}</textarea>
                             @error('short_description')
                                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                             @enderror
@@ -167,7 +167,7 @@
                                     <input type="number" name="goal_amount"
                                         value="{{ old('goal_amount', $campaign->goal_amount) }}"
                                         class="w-full border border-gray-300 rounded-lg pl-8 pr-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('goal_amount') border-red-500 @enderror"
-                                        placeholder="0.00" step="0.01" min="0" required>
+                                        placeholder="0.00" step="0.01" min="0" >
                                 </div>
                                 @error('goal_amount')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -191,7 +191,7 @@
                                 <input type="date" name="start_date"
                                     value="{{ old('start_date', $campaign->start_date?->format('Y-m-d')) }}"
                                     class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('start_date') border-red-500 @enderror"
-                                    required>
+                                    >
                                 @error('start_date')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
@@ -203,7 +203,7 @@
                                 <input type="date" name="end_date"
                                     value="{{ old('end_date', $campaign->end_date?->format('Y-m-d')) }}"
                                     class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('end_date') border-red-500 @enderror"
-                                    required>
+                                    >
                                 @error('end_date')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
@@ -225,7 +225,7 @@
                                 </label>
                                 <input type="text" name="country" value="{{ old('country', $campaign->country) }}"
                                     class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('country') border-red-500 @enderror"
-                                    placeholder="Enter country" required>
+                                    placeholder="Enter country" >
                                 @error('country')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
@@ -236,7 +236,7 @@
                                 </label>
                                 <input type="text" name="address" value="{{ old('address', $campaign->address) }}"
                                     class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('address') border-red-500 @enderror"
-                                    placeholder="Enter address" required>
+                                    placeholder="Enter address" >
                                 @error('address')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
@@ -291,7 +291,7 @@
                                 </label>
                                 <select name="status"
                                     class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('status') border-red-500 @enderror"
-                                    required>
+                                    >
                                     @foreach (['draft', 'active', 'completed', 'cancelled'] as $status)
                                         <option value="{{ $status }}"
                                             {{ old('status', $campaign->status ?? '') == $status ? 'selected' : '' }}>

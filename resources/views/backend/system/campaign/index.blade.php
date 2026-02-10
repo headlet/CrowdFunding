@@ -1,6 +1,6 @@
 @extends('backend.system.layout.master')
-@section('title', "Fund | Campaign")
-    
+@section('title', 'Fund | Campaign')
+
 
 @include('backend.component.campaign-type')
 
@@ -88,11 +88,11 @@
                                 class="hidden px-4 py-4 text-xs font-semibold tracking-wider text-center text-gray-700 uppercase lg:px-6 md:table-cell">
                                 Donors
                             </th>
-                             @permission('admin.campaigns.edit' , 'admin.campaigns.destroy')
-                            <th
-                                class="px-4 py-4 text-xs font-semibold tracking-wider text-center text-gray-700 uppercase lg:px-6">
-                                Actions
-                            </th>
+                            @permission('admin.campaigns.edit', 'admin.campaigns.destroy')
+                                <th
+                                    class="px-4 py-4 text-xs font-semibold tracking-wider text-center text-gray-700 uppercase lg:px-6">
+                                    Actions
+                                </th>
                             @endpermission
                         </tr>
                     </thead>
@@ -198,17 +198,18 @@
                                             </a>
                                         @endpermission
                                         @permission('admin.campaigns.destroy')
-                                            <form action="{{ route('admin.campaigns.destroy', $campaign->id) }}" method="POST"
-                                                class="inline"
-                                                onsubmit="return confirm('Are you sure you want to delete this campaign?');">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit"
-                                                    class="p-2 text-red-600 transition-colors rounded-lg hover:bg-red-50"
-                                                    title="Delete">
-                                                    <i class="text-lg fas fa-trash"></i>
-                                                </button>
-                                            </form>
+                                            @permission('admin.campaigns.destroy')
+                                                <form action="{{ route('admin.campaigns.destroy', $campaign->id) }}" method="POST"
+                                                    class="inline delete-form">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="button"
+                                                        class="p-2 text-red-600 transition-colors rounded-lg hover:bg-red-50 delete-btn"
+                                                        title="Delete">
+                                                        <i class="text-lg fas fa-trash"></i>
+                                                    </button>
+                                                </form>
+                                            @endpermission
                                         @endpermission
                                     </div>
                                 </td>
@@ -240,4 +241,5 @@
 
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    @include('backend.component.delete-swal')
 @endsection

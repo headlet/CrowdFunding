@@ -18,16 +18,16 @@
                 <div class="flex items-center gap-4">
 
                     @permission('admin.blog.destroy')
-                    <button id="deleteBtn"
-                        class="px-4 py-2 text-sm text-white bg-red-500 rounded-lg hover:bg-red-600 disabled:bg-gray-300 disabled:cursor-not-allowed"
-                        disabled>
-                        Delete(<span id="selectedCount">0</span>)
-                    </button>
+                        <button id="deleteBtn"
+                            class="px-4 py-2 text-sm text-white bg-red-500 rounded-lg hover:bg-red-600 disabled:bg-gray-300 disabled:cursor-not-allowed"
+                            disabled>
+                            Delete(<span id="selectedCount">0</span>)
+                        </button>
 
-                    <button id="selectAllBtn"
-                        class="px-4 py-2 text-sm bg-white border border-gray-300 rounded-lg hover:bg-gray-50">
-                        Select All
-                    </button>
+                        <button id="selectAllBtn"
+                            class="px-4 py-2 text-sm bg-white border border-gray-300 rounded-lg hover:bg-gray-50">
+                            Select All
+                        </button>
                     @endpermission
                     @permission('admin.blog.create')
                         <a href="{{ route('admin.blog.create') }}"
@@ -89,32 +89,19 @@
     <script>
         $(function() {
 
-            // Update delete button state based on checked checkboxes
             function updateDeleteBtn() {
                 const checkedCount = $('.article-checkbox:checked').length;
                 $('#selectedCount').text(checkedCount);
 
-                if (checkedCount > 0) {
-                    $('#deleteBtn').prop('disabled', false);
-                } else {
-                    $('#deleteBtn').prop('disabled', true);
-                }
+                $('#deleteBtn').prop('disabled', checkedCount === 0);
 
-                // Update Select All button label
                 const totalCount = $('.article-checkbox').length;
-                if (checkedCount === totalCount && totalCount > 0) {
-                    $('#selectAllBtn').text('Deselect All');
-                } else {
-                    $('#selectAllBtn').text('Select All');
-                }
+                $('#selectAllBtn').text(checkedCount === totalCount && totalCount > 0 ? 'Deselect All' :
+                    'Select All');
             }
 
-            // Individual checkbox change
-            $(document).on('change', '.article-checkbox', function() {
-                updateDeleteBtn();
-            });
+            $(document).on('change', '.article-checkbox', updateDeleteBtn);
 
-            // Select All / Deselect All toggle
             $('#selectAllBtn').on('click', function() {
                 const totalCount = $('.article-checkbox').length;
                 const checkedCount = $('.article-checkbox:checked').length;
@@ -124,7 +111,6 @@
                 updateDeleteBtn();
             });
 
-            // Delete Selected
             $('#deleteBtn').on('click', function() {
                 const selectedIds = $('.article-checkbox:checked').map(function() {
                     return $(this).val();
@@ -132,38 +118,61 @@
 
                 if (selectedIds.length === 0) return;
 
-                if (!confirm(
-                        `Are you sure you want to delete ${selectedIds.length} blog post(s)? This cannot be undone.`
-                    )) {
-                    return;
-                }
+                // Use SweetAlert instead of confirm
+                Swal.fire({
+                    title: `Are you sure?`,
+                    text: `You are about to delete ${selectedIds.length} blog post(s). This action cannot be undone!`,
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#10b981',
+                    cancelButtonColor: '#ef4444',
+                    confirmButtonText: 'Yes, delete them!',
+                    cancelButtonText: 'Cancel'
+                }).then((result) => {
+                    if (result.isConfirmed) {
 
-                // Join IDs as comma-separated and reuse the default destroy route
-                const ids = selectedIds.join(',');
-                const url = '{{ route('admin.blog.destroy', '__ids__') }}'.replace('__ids__', ids);
+                        const ids = selectedIds.join(',');
+                        const url = '{{ route('admin.blog.destroy', '__ids__') }}'.replace(
+                            '__ids__', ids);
 
-                $.ajax({
-                    url: url,
-                    method: 'DELETE',
-                    data: {
-                        _token: '{{ csrf_token() }}',
-                    },
-                    success: function(response) {
-                        // Remove deleted rows from DOM
-                        selectedIds.forEach(function(id) {
-                            $(`.article-checkbox[value="${id}"]`).closest(
-                                '.article-item').fadeOut(300, function() {
-                                $(this).remove();
-                                updateDeleteBtn();
-                            });
+                        $.ajax({
+                            url: url,
+                            method: 'DELETE',
+                            data: {
+                                _token: '{{ csrf_token() }}',
+                            },
+                            success: function(response) {
+                                selectedIds.forEach(function(id) {
+                                    $(`.article-checkbox[value="${id}"]`)
+                                        .closest('.article-item').fadeOut(300,
+                                            function() {
+                                                $(this).remove();
+                                                updateDeleteBtn();
+                                            });
+                                });
+
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Deleted!',
+                                    text: `${selectedIds.length} blog post(s) have been deleted.`,
+                                    timer: 2000,
+                                    showConfirmButton: false
+                                });
+                            },
+                            error: function(xhr) {
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Error!',
+                                    text: 'Something went wrong. Please try again.'
+                                });
+                            }
                         });
-                    },
-                    error: function(xhr) {
-                        alert('Something went wrong. Please try again.');
+
                     }
                 });
             });
 
         });
     </script>
+    @include('backend.component.delete-swal')
 @endsection

@@ -58,11 +58,11 @@ class CampaignServices extends Services
     public function getCreateData()
     {
         return [
+            'campaign'   => new Campaign(),
             'users'      => User::orderBy('full_name')->get(),
             'categories' => CampaignCategories::orderBy('name')->get(),
         ];
     }
-
     public function getById(string $id)
     {
         return [
