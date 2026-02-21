@@ -24,6 +24,7 @@ class RegisterController extends Controller
         ]);
         $validation['password'] = uniqid();
         $validation['role_id'] = 2;
+
         try {
             DB::beginTransaction();
             $response = User::create($validation);
@@ -32,7 +33,9 @@ class RegisterController extends Controller
                 Password::sendResetLink(['email' => $validation['email']]);
             }
             DB::commit();
-            return view('backend.public.auth.login')->with('success', 'Success. Please check your email...');
+
+            return redirect()->route('login')
+                ->with('success', 'Success. Please check your email...');
         } catch (\Throwable $th) {
             DB::rollback();
             return redirect('register')->withErrors(['error' => 'Something went wrong. Please try again later.']);
