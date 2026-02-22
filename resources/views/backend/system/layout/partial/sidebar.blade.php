@@ -46,6 +46,24 @@
             <span class="texts whitespace-nowrap">Campaigns</span>
         </a>
 
+         <a href="{{route('admin.blog.index')}}"
+            class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all {{ request()->routeIs('admin.blog.*') ? 'bg-green-700' : 'hover:bg-green-700' }}">
+            <i class="flex-shrink-0 w-5 text-lg fas fa-blog"></i>
+            <span class="texts whitespace-nowrap">Blog</span>
+        </a>
+
+        <a href="{{route('admin.team.index')}}"
+            class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all {{ request()->routeIs('admin.team.*') ? 'bg-green-700' : 'hover:bg-green-700' }}">
+            <i class="flex-shrink-0 w-5 text-lg fa-solid fa-people-group"></i>
+            <span class="texts whitespace-nowrap">Teams</span>
+        </a>
+
+        <a href="{{route('admin.gallery.index')}}"
+            class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all {{ request()->routeIs('admin.gallery.*') ? 'bg-green-700' : 'hover:bg-green-700' }}">
+            <i class="flex-shrink-0 w-5 text-lg fas fa-image"></i>
+            <span class="texts whitespace-nowrap">Gallery</span>
+        </a>
+
         <a href="#"
             class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all {{ request()->routeIs() ? 'bg-green-700' : 'hover:bg-green-700' }}">
             <i class="flex-shrink-0 w-5 text-lg fas fa-users"></i>
@@ -58,11 +76,6 @@
         <a href="#" class="flex items-center gap-3 px-4 py-3 transition-all rounded-lg hover:bg-green-700">
             <i class="flex-shrink-0 w-5 text-lg fas fa-cog"></i>
             <span class="texts whitespace-nowrap">Settings</span>
-        </a>
-
-        <a href="#" class="flex items-center gap-3 px-4 py-3 transition-all rounded-lg hover:bg-green-700">
-            <i class="flex-shrink-0 w-5 text-lg fas fa-question-circle"></i>
-            <span class="texts whitespace-nowrap">Help Center</span>
         </a>
 
         <a href="#" class="flex items-center gap-3 px-4 py-3 transition-all rounded-lg hover:bg-green-700">

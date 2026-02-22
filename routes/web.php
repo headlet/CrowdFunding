@@ -11,24 +11,24 @@ use App\Http\Controllers\system\BlogController;
 use App\Http\Controllers\system\CampaignCategoryController;
 use App\Http\Controllers\system\CampaignController;
 use App\Http\Controllers\system\DonationController;
+use App\Http\Controllers\system\GalleryController;
 use App\Http\Controllers\system\TeamController;
 
 $pages = [
     'about',
     'gallery',
     'contact',
-    'team-details',
-    'add-team',
+    'team-details',//
+    'add-team',//
     'faq',
     'testimonial',
-    'blog',
-    'blog-detail'
+    'blog',//
+    'blog-detail'//
 ];
-
 foreach ($pages as $page) {
     Route::view("/{$page}", "frontend.{$page}")->name($page);
 }
-
+// User Interface
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('/campaign-details/{campaign}', 'campaign_details')->name('campaign-details');
@@ -43,6 +43,7 @@ Route::controller(DonationController::class)->group(function () {
     Route::get('/donation-cancel', 'cancel')->name('donation.cancel');
 });
 
+//Auth login register....
 Route::middleware('guest')->group(function () {
     Route::get("/login", [LoginController::class, 'show'])->name('login');
     Route::post("/login", [LoginController::class, 'login_auth'])->name('login_auth');
@@ -65,4 +66,5 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('team', TeamController::class)->except(['show']);
     Route::resource('blog', BlogController::class)->except(['show']);
     Route::resource('blog-category', BlogCategoryController::class)->except(['show']);
+    Route::resource('gallery', GalleryController::class)->except('show');
 });

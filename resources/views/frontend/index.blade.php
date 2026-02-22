@@ -228,9 +228,9 @@
             <div class="slider-area">
                 <div class="swiper th-slider has-shadow" id="donationSlider4"
                     data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"},"1400":{"slidesPerView":"4"}}, "autoHeight": "true"}'>
-                    <div class="swiper-wrapper">
+                    <div class="swiper-wrapper w-full">
 
-                        @forelse ($campaigns as $campaign)
+                        @foreach($campaigns as $campaign)
                             <div class="swiper-slide">
                                 <div class="donation-card style4"
                                     data-theme-color="{{ $campaign->theme_color ?? 'var(--theme-color2)' }}">
@@ -567,7 +567,6 @@
                                 </div>
                             </div>
                         @empty
-
                         @endforelse
                     </div>
                 </div>

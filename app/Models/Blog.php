@@ -41,7 +41,7 @@ class Blog extends Model
 
     public function blogCategory()
     {
-        return $this->belongsTo(BlogCategory::class);
+        return $this->belongsTo(BlogCategory::class, 'category_id');
     }
 
     public function scopePublished($query)

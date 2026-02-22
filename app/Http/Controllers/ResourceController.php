@@ -87,7 +87,7 @@ class ResourceController extends Controller
         } catch (ValidationException $e) {
             return redirect()->back()->withErrors($e->errors());
         } catch (\Throwable $th) {
-            return redirect()->back()->withInput()->withErrors(['error' => 'Something Went Wrong. Unable to store']);
+            return redirect()->back()->withInput()->withErrors(['error' => 'Something Went Wrong. Unable to store'. $th->getMessage()]);
         }
     }
 
@@ -103,7 +103,7 @@ class ResourceController extends Controller
 
             return view($this->viewsFolder() . '.edit', $resource)->render();
         } catch (\Throwable $th) {
-            return redirect()->back()->withErrors(['error' => 'Something wrong with edit']);
+            return redirect()->back()->withErrors(['error' => 'Something wrong with edit'. $th->getMessage()]);
         }
     }
 

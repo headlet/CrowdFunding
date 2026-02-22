@@ -61,7 +61,7 @@
                                 </label>
                                 <input type="text" name="title" value="{{ old('title') }}"
                                     class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('title') border-red-500 @enderror"
-                                    placeholder="Enter campaign title" required>
+                                    placeholder="Enter campaign title" required id='title'>
                                 @error('title')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
@@ -72,7 +72,7 @@
                                 </label>
                                 <input type="text" name="slug" value="{{ old('slug') }}"
                                     class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('slug') border-red-500 @enderror"
-                                    placeholder="campaign-slug" required>
+                                    placeholder="campaign-slug" required id='slug'>
                                 @error('slug')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
@@ -334,4 +334,5 @@
 
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    @include('backend.component.slug')
 @endsection

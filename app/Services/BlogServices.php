@@ -44,4 +44,12 @@ class BlogServices extends Services
 
         return $this->model->create($data);
     }
+
+    public function destroy(string $id)
+    {
+        $ids = explode(',', $id);
+        $this->model::whereIn('id', $ids)->delete();
+
+        return response()->json(['success' => true]);
+    }
 }

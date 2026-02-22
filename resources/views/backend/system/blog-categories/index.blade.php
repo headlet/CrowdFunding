@@ -15,7 +15,7 @@
                         <h2 class="text-2xl font-bold text-gray-800">Blog Categories</h2>
                         <p class="mt-1 text-sm text-gray-500">Manage your blog categories</p>
                     </div>
-                    <a href="{{ route('admin.blog-categories.create') }}"
+                    <a href="{{ route('admin.blog-category.create') }}"
                         class="px-4 py-2 text-white transition-colors bg-blue-600 rounded-lg hover:bg-blue-700">
                         <i class="mr-2 fas fa-plus"></i>Add Category
                     </a>
@@ -40,7 +40,7 @@
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
-                        @forelse($categories as $category)
+                        @forelse($resources as $category)
                             <tr class="hover:bg-gray-50">
                                 <td class="px-6 py-4 text-sm text-gray-900 whitespace-nowrap">{{ $category->id }}</td>
                                 <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">
@@ -49,11 +49,11 @@
                                 <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
                                     {{ $category->created_at->format('M d, Y') }}</td>
                                 <td class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
-                                    <a href="{{ route('admin.blog-categories.edit', $category) }}"
+                                    <a href="{{ route('admin.blog-category.edit', $category) }}"
                                         class="text-blue-600 hover:text-blue-900">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <form action="{{ route('admin.blog-categories.destroy', $category) }}" method="POST"
+                                    <form action="{{ route('admin.blog-category.destroy', $category) }}" method="POST"
                                         class="inline-block ml-3">
                                         @csrf
                                         @method('DELETE')
@@ -77,7 +77,7 @@
 
             <!-- Pagination -->
             <div class="mt-6">
-                {{ $categories->links() }}
+                {{ $resources->links() }}
             </div>
         </div>
     </section>
