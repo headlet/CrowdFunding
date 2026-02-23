@@ -38,7 +38,7 @@
                             <button id="deleteBtn"
                                 class="px-4 py-2 text-sm text-white bg-red-500 rounded-lg hover:bg-red-600 disabled:bg-gray-300 disabled:cursor-not-allowed"
                                 disabled>
-                                Delete Selected (<span id="selectedCount">0</span>)
+                                Delete(<span id="selectedCount">0</span>)
                             </button>
 
                             <button id="selectAllBtn"
@@ -55,7 +55,7 @@
                             <div class="flex gap-6 p-6 transition border-b border-gray-100 hover:bg-gray-50 article-item">
                                 <input type="checkbox" class="w-5 h-5 mt-1 cursor-pointer article-checkbox"
                                     value="{{ $blog->id }}">
-                                <img src="{{ asset('uploads/blogs/' . $blog->image) }}"
+                                <img src="{{ asset('storage/' . $blog->image) }}"
                                     alt="Article" class="flex-shrink-0 object-cover w-40 rounded-lg h-28">
                                 <div class="flex-1">
                                     <div class="mb-1 text-sm font-medium text-blue-600">{{ $blog->title }}</div>

@@ -6,7 +6,7 @@ use App\Models\Blog;
 use App\Models\BlogCategory;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Testing\Fluent\Concerns\Has;
+use Illuminate\Support\Facades\Storage;
 
 class BlogServices extends Services
 {
@@ -45,10 +45,8 @@ class BlogServices extends Services
     {
         $data = $request->except('token');
 
-        if (isset($data['image']) && $data['image']->isValid()) {
-            $filename = time() . '_' . $data['image']->getClientOriginalName();
-            $data['image']->move(public_path('uploads/blogs'), $filename);
-            $data['image'] = $filename;
+        if ($request->hasFile('image')) {
+            $data['image'] = $request->file('image')->store('uploads/blog', 'public');
         }
 
         return $this->model->create($data);
@@ -60,14 +58,11 @@ class BlogServices extends Services
 
         $data = $request->except('_token');
 
-        if (isset($data['image']) && $data['image']->isValid()) {
-            if ($blog->image && file_exists(public_path('uploads/teams/' . $blog->image))) {
-                unlink(public_path('uploads/blogs/' . $blog->image));
+        if ($request->hasFile('image')) {
+            if ($blog->image && Storage::disk('public')->exists($blog->image)) {
+                Storage::disk('public')->delete($blog->image);
             }
-
-            $filename = time() . '_' . $data['image']->getClientOriginalName();
-            $data['image']->move(public_path('uploads/teams'), $filename);
-            $data['image'] = $filename;
+            $data['image'] = $request->file('image')->store('uploads/blog', 'public');
         }
 
         $blog->update($data);

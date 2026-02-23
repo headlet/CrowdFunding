@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Campaign;
 use App\Models\CampaignCategories;
 use App\Models\User;
+use Illuminate\Support\Facades\Storage;
 
 class CampaignServices extends Services
 {
@@ -45,10 +46,8 @@ class CampaignServices extends Services
     public function store(Request $request)
     {
         $data = $request->except('_token');
-        if (isset($data['image']) && $data['image']->isValid()) {
-            $filename = time() . '_' . $data['image']->getClientOriginalName();
-            $data['image']->move(public_path('uploads/campaigns'), $filename);
-            $data['image'] = $filename;
+        if ($request->hasFile('image')) {
+            $data['image'] = $request->file('image')->store('uploads/campaign', 'public');
         }
         return $this->model->create($data);
     }
@@ -60,15 +59,13 @@ class CampaignServices extends Services
 
         $data = $request->except('_token');
 
-        if (isset($data['image']) && $data['image']->isValid()) {
-            if ($campaign->image && file_exists(public_path('uploads/teams/' . $campaign->image))) {
-                unlink(public_path('uploads/campaigns/' . $campaign->image));
+        if ($request->hasFile('image')) {
+            if ($campaign->image && Storage::disk('public')->exists($campaign->image)) {
+                Storage::disk('public')->delete($campaign->image);
             }
-
-            $filename = time() . '_' . $data['image']->getClientOriginalName();
-            $data['image']->move(public_path('uploads/teams'), $filename);
-            $data['image'] = $filename;
+            $data['image'] = $request->file('image')->store('uploads/campaign', 'public');
         }
+
 
         $campaign->update($data);
 

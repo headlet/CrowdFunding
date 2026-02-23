@@ -164,7 +164,7 @@
 
                         @if (isset($blog) && $blog->image)
                             <div class="mt-3">
-                                <img src="{{ asset('uploads/blogs/' . $blog->image) }}"
+                                <img src="{{ asset('storage/' . $blog->image) }}"
                                     class="object-cover w-48 h-32 rounded-lg border">
                                 <p class="mt-1 text-xs text-gray-500">Current image</p>
                             </div>

@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TeamServices extends Services
 {
@@ -20,10 +21,8 @@ class TeamServices extends Services
     public function store(Request $request)
     {
         $data = $request->except('_token');
-        if (isset($data['image']) && $data['image']->isValid()) {
-            $filename = time() . '_' . $data['image']->getClientOriginalName();
-            $data['image']->move(public_path('uploads/teams'), $filename);
-            $data['image'] = $filename;
+        if ($request->hasFile('image')) {
+            $data['image'] = $request->file('image')->store('uploads/teams', 'public');
         }
         return $this->model->create($data);
     }
@@ -39,14 +38,11 @@ class TeamServices extends Services
 
         $data = $request->except('_token');
 
-        if (isset($data['image']) && $data['image']->isValid()) {
-            if ($team->image && file_exists(public_path('uploads/teams/' . $team->image))) {
-                unlink(public_path('uploads/teams/' . $team->image));
+        if ($request->hasFile('image')) {
+            if ($team->image && Storage::disk('public')->exists($team->image)) {
+                Storage::disk('public')->delete($team->image);
             }
-
-            $filename = time() . '_' . $data['image']->getClientOriginalName();
-            $data['image']->move(public_path('uploads/teams'), $filename);
-            $data['image'] = $filename;
+            $data['image'] = $request->file('image')->store('uploads/team', 'public');
         }
 
         $team->update($data);

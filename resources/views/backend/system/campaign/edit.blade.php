@@ -264,7 +264,7 @@
                                 <div class="mb-4">
                                     <label class="block mb-2 text-sm font-medium text-gray-700">Current Image</label>
                                     <div class="relative inline-block">
-                                        <img src="{{ asset('uploads/campaigns/' . $campaign->image) }}"
+                                        <img src="{{ asset('storage/' . $campaign->image) }}"
                                             class="h-32 border border-gray-200 rounded-lg shadow-md" alt="Campaign Image">
                                         <div
                                             class="absolute px-2 py-1 text-xs text-white bg-green-500 rounded top-2 right-2">

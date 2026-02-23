@@ -93,7 +93,7 @@
                                 @enderror
                                 @if ($team->image)
                                     <div class="mt-2">
-                                        <img src="{{ asset('uploads/teams/' . $team->image) }}" alt="{{ $team->name }}"
+                                        <img src="{{ asset('storage/' . $team->image) }}" alt="{{ $team->name }}"
                                             class="object-cover w-20 h-20 border border-gray-300 rounded-lg">
                                         <p class="mt-1 text-xs text-gray-500">Current image</p>
                                     </div>

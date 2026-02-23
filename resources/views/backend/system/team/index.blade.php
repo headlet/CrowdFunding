@@ -30,7 +30,7 @@
 
                         <!-- Profile Image -->
                         <div class="flex justify-center mb-3">
-                            <img src="{{ $member->image ? asset('uploads/teams/' . $member->image) : asset('images/default-avatar.png') }}"
+                            <img src="{{ $member->image ? asset('storage/' . $member->image) : asset('images/default-avatar.png') }}"
                                 alt="{{ $member->name }}"
                                 class="object-cover w-24 h-24 border-4 border-gray-100 rounded-full shadow-sm">
                         </div>

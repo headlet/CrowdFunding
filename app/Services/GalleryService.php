@@ -74,7 +74,7 @@ class GalleryService extends Services
                 if ($gallery->image && Storage::disk('public')->exists($gallery->image)) {
                     Storage::disk('public')->delete($gallery->image);
                 }
-                $data['image'] = $request->file('image')->store('gallery', 'public');
+                $data['image'] = $request->file('image')->store('uploads/gallery', 'public');
             }
 
             $gallery->update($data);

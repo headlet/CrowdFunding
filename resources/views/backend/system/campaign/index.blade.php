@@ -65,7 +65,7 @@
                                 <!-- Campaign Info -->
                                 <td class="px-4 py-4 lg:px-6 ">
                                     <div class="flex items-center gap-3">
-                                        <img src="{{ $campaign->image ? asset('uploads/campaigns/' . $campaign->image) : 'https://via.placeholder.com/50' }}"
+                                        <img src="{{ $campaign->image ? asset('storage/' . $campaign->image) : 'https://via.placeholder.com/50' }}"
                                             alt="{{ $campaign->title }}"
                                             class="flex-shrink-0 object-cover w-12 h-12 rounded-lg">
                                         <div class="flex-1 min-w-0">
