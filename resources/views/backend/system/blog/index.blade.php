@@ -55,7 +55,7 @@
                             <div class="flex gap-6 p-6 transition border-b border-gray-100 hover:bg-gray-50 article-item">
                                 <input type="checkbox" class="w-5 h-5 mt-1 cursor-pointer article-checkbox"
                                     value="{{ $blog->id }}">
-                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&h=200&fit=crop"
+                                <img src="{{ asset('uploads/blogs/' . $blog->image) }}"
                                     alt="Article" class="flex-shrink-0 object-cover w-40 rounded-lg h-28">
                                 <div class="flex-1">
                                     <div class="mb-1 text-sm font-medium text-blue-600">{{ $blog->title }}</div>

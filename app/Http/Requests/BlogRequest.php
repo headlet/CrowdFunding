@@ -21,9 +21,10 @@ class BlogRequest extends FormRequest
      */
     public function rules(): array
     {
+        $slug_id = request()->input('id') ?? request()->segment(3);
         return [
             'title' => 'required|string|max:255',
-            'slug' => 'required|string|max:255|unique:blogs,slug',
+            'slug' => 'required|string|max:255|unique:blogs,slug,' . $slug_id,
             'user_id' => 'required|exists:users,id',
             'category_id' => 'required|exists:blog_categories,id',
             'excerpt' => 'required|string',

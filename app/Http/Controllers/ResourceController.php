@@ -151,7 +151,7 @@ class ResourceController extends Controller
             return redirect()
                 ->back()
                 ->withInput()
-                ->withErrors(['error' => "Something went wrong. Can't Update "]);
+                ->withErrors(['error' => "Something went wrong. Can't Update ". $th->getMessage()]);
         }
     }
 

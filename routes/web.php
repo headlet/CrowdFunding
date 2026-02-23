@@ -59,7 +59,7 @@ Route::get('logout', [LoginController::class, 'destroy'])->name('logout');
 
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 
-    Route::view('admin', 'backend.system.dashboard')->name('dashboard');
+    Route::view('/', 'backend.system.dashboard')->name('dashboard');
     Route::resource('campaigns', CampaignController::class)->except(['show']);
     Route::resource('campaign-category', CampaignCategoryController::class)->except(['show']);
     Route::resource('donation', DonationController::class)->except(['show']);

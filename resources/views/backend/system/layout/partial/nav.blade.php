@@ -1,19 +1,11 @@
 <!-- Top Navbar -->
-<nav
-    class="sticky top-0 z-30 flex items-center justify-between h-16 px-4 bg-white border-b border-gray-200 shadow-md md:px-6">
+<nav class="sticky top-0 z-30 flex items-center h-16 px-4 bg-white border-b border-gray-200 shadow-md md:px-6">
 
-    <!-- Left Section - Search -->
-    <div class="flex-1 max-w-xs">
-        <form
-            class="flex items-center px-2 py-2 transition-all border border-gray-200 rounded-lg bg-gray-50 focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-transparent">
-            <i class="mr-3 text-gray-400 fa-solid fa-search"></i>
-            <input type="text" placeholder="Search campaigns, users..."
-                class="flex-grow text-sm text-gray-700 placeholder-gray-400 bg-transparent outline-none" />
-        </form>
-    </div>
+    <!-- Spacer (pushes right section to the end) -->
+    <div class="flex-1"></div>
 
     <!-- Right Section -->
-    <div class="flex items-center gap-4 ml-4 md:gap-6">
+    <div class="flex items-center justify-end gap-4 md:gap-6">
 
         <!-- Notification Icon -->
         <div class="relative cursor-pointer group">
@@ -83,7 +75,6 @@
                 <div class="my-1 border-t border-gray-200"></div>
 
                 <!-- Logout -->
-
                 <a href="{{ route('logout') }}" type="submit"
                     class="flex items-center gap-3 px-4 py-2.5 text-red-600 hover:bg-red-50 transition-colors w-full text-left">
                     <i class="w-4 fa-solid fa-right-from-bracket"></i>
