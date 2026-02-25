@@ -2,8 +2,8 @@
     <button class="th-btn style2 preloaderCls">Cancel Preloader </button>
     <div class="preloader-inner">
         <span class="loader">
-            Donat
-            <span class="loading-text">Donat</span>
+            Funding
+            <span class="loading-text">Funding</span>
         </span>
     </div>
 </div>

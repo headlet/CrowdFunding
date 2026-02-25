@@ -16,7 +16,7 @@ use App\Http\Controllers\system\TeamController;
 
 $pages = [
     'about',
-    'gallery',
+    'gallery',//
     'contact',
     'team-details',//
     'add-team',//

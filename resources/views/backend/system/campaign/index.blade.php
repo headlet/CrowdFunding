@@ -1,23 +1,43 @@
 @extends('backend.system.layout.master')
 @section('title')
-    Campaign
+    Fund | Campaign
 @endsection
+
+@include('backend.component.campaign-type')
+
 @section('content')
-    <section class="min-h-screen p-4 bg-gray-100 md:p-8">
+    <section class="min-h-screen p-2 bg-gray-100 md:p-2">
 
         <!-- Header -->
-        <div class="flex flex-col items-stretch justify-between gap-3 mb-6 md:flex-row md:items-center">
-            <input type="text" placeholder="Search campaigns..."
-                class="border border-gray-300 rounded-lg px-4 py-2.5 w-full md:w-1/3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
-            <div>
-                <a href="{{ route('admin.campaigns.create') }}"
-                    class="px-6 py-2.5 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors text-center font-medium whitespace-nowrap">
-                    <i class="mr-2 fas fa-plus"></i>Add Campaign
-                </a>
+        <div class="flex flex-col gap-4 mb-6 
+            md:flex-row md:items-center md:justify-between">
 
-                <a href="{{ route('admin.campaign-category.index') }}"
-                    class="ml-1 px-6 py-2.5 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors text-center font-medium whitespace-nowrap">
-                    Category
+            <!-- Search -->
+            <div class="w-full md:w-80">
+                <form action="{{ route('admin.campaigns.index') }}" method="GET"
+                    class="flex items-center bg-white border border-gray-200 rounded-lg  focus-within:border-emerald-600  focus-within:ring-1 focus-within:ring-emerald-600  transition-all duration-200 shadow-sm">
+                    <!-- Icon -->
+                    <span class="pl-3 text-gray-400 text-sm">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </span>
+
+                    <!-- Input -->
+                    <input type="text" name="search" value="{{ request('search') }}" placeholder="Search campaigns..."
+                        class="flex-1 px-2 py-2 text-sm text-gray-700 placeholder-gray-400 bg-transparent focus:outline-none">
+
+                    <!-- Button -->
+                    <button type="submit"
+                        class="px-4 py-2 text-sm font-medium text-white bg-emerald-600 hover:bg-emerald-800 transition-all duration-200  rounded-r-lg">
+                        Go
+                    </button>
+                </form>
+            </div>
+
+            <!-- Add Button -->
+            <div class="w-full md:w-auto">
+                <a href="{{ route('admin.campaigns.create') }}"
+                    class="block w-full md:w-auto text-center px-6 py-2.5 bg-gradient-to-b from-emerald-500 to-emerald-700 hover:from-emerald-800 hover:to-emerald-600 text-white rounded-lg transition-all duration-300 font-medium shadow-md">
+                    Add Campaign
                 </a>
             </div>
 
@@ -31,7 +51,23 @@
                         <tr>
                             <th
                                 class="px-4 py-4 text-xs font-semibold tracking-wider text-left text-gray-700 uppercase lg:px-6">
-                                Campaign
+                                <a href="{{ route('admin.campaigns.index', [
+                                    'sort' => 'title',
+                                    'direction' => request('direction') === 'asc' ? 'desc' : 'asc',
+                                ]) }}"
+                                    class="flex items-center gap-1">
+
+                                    Campaign <i class="fa-solid fa-arrows-up-down"></i>
+
+                                    @if (request('sort') === 'title')
+                                        @if (request('direction') === 'asc')
+                                            <i class="fas fa-arrow-up text-xs"></i>
+                                        @else
+                                            <i class="fas fa-arrow-down text-xs"></i>
+                                        @endif
+                                    @endif
+
+                                </a>
                             </th>
                             <th
                                 class="px-4 py-4 text-xs font-semibold tracking-wider text-center text-gray-700 uppercase lg:px-6">

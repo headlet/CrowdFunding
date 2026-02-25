@@ -1,12 +1,14 @@
 @extends('backend.system.layout.master')
 
 @section('title')
-    Edit Campaign
+    Fund | Edit Campaign
 @endsection
 
+@include('backend.component.campaign-type')
+
 @section('content')
-    <section class="min-h-screen p-4 bg-gray-100 md:p-8">
-        <div class="max-w-5xl mx-auto">
+    <section class="min-h-screen p-2 bg-gray-100 md:p-2">
+        <div class="max-w-6xl mx-auto">
 
             <!-- Header -->
             <div class="p-6 bg-white border-b rounded-t-lg shadow-md">
@@ -25,21 +27,6 @@
             <!-- Form -->
             <div class="p-6 bg-white rounded-b-lg shadow-md md:p-8">
 
-                @if ($errors->any())
-                    <div class="p-4 mb-6 border-l-4 border-red-500 rounded bg-red-50">
-                        <div class="flex">
-                            <i class="fas fa-exclamation-circle text-red-500 mt-0.5 mr-3"></i>
-                            <div>
-                                <h3 class="font-semibold text-red-800">Please correct the following errors:</h3>
-                                <ul class="mt-2 space-y-1 text-sm text-red-700 list-disc list-inside">
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                @endif
 
                 <form action="{{ route('admin.campaigns.update', $campaign->id) }}" method="POST"
                     enctype="multipart/form-data" class="space-y-6">
@@ -74,7 +61,7 @@
                                 </label>
                                 <input type="text" name="slug" value="{{ old('slug', $campaign->slug) }}"
                                     class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('slug') border-red-500 @enderror"
-                                    placeholder="campaign-slug" required id="slug">
+                                    placeholder="campaign-slug" required id="slug" readonly>
                                 @error('slug')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror

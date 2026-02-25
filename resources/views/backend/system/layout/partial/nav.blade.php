@@ -1,22 +1,13 @@
 <!-- Top Navbar -->
-<nav class="sticky top-0 z-30 flex items-center h-16 px-4 bg-white border-b border-gray-200 shadow-md md:px-6">
+<nav class="sticky top-0 z-30 flex items-center h-16 px-4 bg-white border-b border-gray-200 shadow-md md:px-6 w-full">
 
-    <!-- Spacer (pushes right section to the end) -->
-    <div class="flex-1"></div>
+    <div class="flex-1 flex text-gray-800 gap-x-4 m-1">
+        @yield('link')
+    </div>
 
     <!-- Right Section -->
     <div class="flex items-center justify-end gap-4 md:gap-6">
 
-        <!-- Notification Icon -->
-        <div class="relative cursor-pointer group">
-            <button class="relative p-2 transition-colors rounded-lg hover:bg-gray-100">
-                <i class="text-xl text-gray-600 transition-colors fa-solid fa-bell group-hover:text-blue-600"></i>
-                <span
-                    class="absolute flex items-center justify-center w-5 h-5 text-xs font-semibold text-white bg-red-500 rounded-full shadow-md top-1 right-1">
-                    4
-                </span>
-            </button>
-        </div>
 
         <!-- Divider (hidden on mobile) -->
         <div class="hidden w-px h-8 bg-gray-300 md:block"></div>

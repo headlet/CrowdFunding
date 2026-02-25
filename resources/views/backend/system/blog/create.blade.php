@@ -1,16 +1,16 @@
 @extends('backend.system.layout.master')
 
 @section('title')
-    {{ isset($resource) ? 'Edit Blog Post' : 'Add Blog Post' }}
+   Fund | Add Blog Post
 @endsection
-
+@include('backend.component.blog-type')
 @push('styles')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 @endpush
 
 @section('content')
-    <section class="min-h-screen p-4 bg-gray-100 md:p-8">
-        <div class="max-w-5xl mx-auto">
+    <section class="min-h-screen p-3 bg-gray-100 md:p-2">
+        <div class="mx-auto">
 
             <!-- Header -->
             <div class="p-6 bg-white border-b rounded-t-lg shadow-md">
@@ -87,7 +87,7 @@
                                 <input type="text" name="slug"
                                     value="{{ old('slug', $resource->slug ?? '') }}"
                                     class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('slug') border-red-500 @enderror"
-                                    placeholder="blog-post-slug" required>
+                                    placeholder="blog-post-slug" required readonly>
                                 @error('slug')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror

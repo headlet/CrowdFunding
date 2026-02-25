@@ -1,98 +1,86 @@
 @extends('backend.system.layout.master')
 @section('title')
-    Blogs
+    Fund | Blogs
 @endsection
+@include('backend.component.blog-type')
+
 @section('content')
     <!-- Blog Articles Page -->
     <div id="blogPage" class="page">
         <!-- Header -->
-        <div class="bg-white border-b border-gray-200">
-            <div class="relative px-8 py-8">
-                <div class="flex items-center justify-between">
-                    <div>
-                        <h1 class="mb-3 text-3xl font-bold text-green-500">Blog: List of Articles</h1>
-                    </div>
-                    <div class="flex justify-evenly items-center gap-x-2">
-                        <a href="{{ route('admin.blog.create') }}"
-                            class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700">
-                            Create New Blog
-                        </a>
-
-                        <a href="{{ route('admin.blog-category.index') }}"
-                            class="px-4 py-2 text-sm text-white bg-green-500 rounded-lg hover:bg-green-600">
-                            Article Category
-                        </a>
-                    </div>
+        <div class="p-6 mb-6 bg-white rounded-lg shadow-md">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-800">Blog</h2>
+                    <p class="mt-1 text-sm text-gray-500">List of Blog Articles</p>
                 </div>
+                
+                <div class="flex items-center gap-4">
 
-                <!-- Content Area -->
-                <div class="px-8 py-8">
-                    <!-- List Header -->
-                    <div class="flex items-center justify-between mb-6">
-                        <div class="flex items-center gap-4">
-                            <h2 class="text-lg text-gray-600">List of Blog Articles</h2>
-                        </div>
+                    <button id="deleteBtn"
+                        class="px-4 py-2 text-sm text-white bg-red-500 rounded-lg hover:bg-red-600 disabled:bg-gray-300 disabled:cursor-not-allowed"
+                        disabled>
+                        Delete(<span id="selectedCount">0</span>)
+                    </button>
 
-                        <div class="flex items-center gap-4">
+                    <button id="selectAllBtn"
+                        class="px-4 py-2 text-sm bg-white border border-gray-300 rounded-lg hover:bg-gray-50">
+                        Select All
+                    </button>
 
-                            <button id="deleteBtn"
-                                class="px-4 py-2 text-sm text-white bg-red-500 rounded-lg hover:bg-red-600 disabled:bg-gray-300 disabled:cursor-not-allowed"
-                                disabled>
-                                Delete(<span id="selectedCount">0</span>)
-                            </button>
+                    <a href="{{ route('admin.blog.create') }}"
+                        class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700">
+                        Create Blog
+                    </a>
 
-                            <button id="selectAllBtn"
-                                class="px-4 py-2 text-sm bg-white border border-gray-300 rounded-lg hover:bg-gray-50">
-                                Select All
-                            </button>
-
-                        </div>
-                    </div>
-
-                    <!-- Articles List -->
-                    <div class="overflow-hidden bg-white shadow-sm rounded-xl" id="articlesList">
-                        @forelse ($resources['blog'] as $blog)
-                            <div class="flex gap-6 p-6 transition border-b border-gray-100 hover:bg-gray-50 article-item">
-                                <input type="checkbox" class="w-5 h-5 mt-1 cursor-pointer article-checkbox"
-                                    value="{{ $blog->id }}">
-                                <img src="{{ asset('storage/' . $blog->image) }}"
-                                    alt="Article" class="flex-shrink-0 object-cover w-40 rounded-lg h-28">
-                                <div class="flex-1">
-                                    <div class="mb-1 text-sm font-medium text-blue-600">{{ $blog->title }}</div>
-                                    <div class="mb-2 font-semibold text-gray-900">
-                                        {{ $blog->blogCategory?->name ?? 'No Category' }}
-                                    </div>
-                                    <p class="text-sm leading-relaxed text-gray-500">{{ $blog->content }}</p>
-                                </div>
-                                <div class="flex flex-col gap-6 items-center">
-                                    <div class="text-sm text-gray-400">
-                                        {{ $blog->created_at }}
-                                    </div>
-
-                                    <a href="{{route('admin.blog.edit', $blog->id)}}"><i class="fas fa-edit pt-2 text-center w-12 h-12 bg-green-300 rounded-full text-2xl hover:bg-blue-400"></i></a>
-                                </div>
-                            </div>
-                        @empty
-                            <div class="flex flex-col items-center justify-center p-12 text-center">
-                                <svg class="w-16 h-16 mb-4 text-gray-300" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                        d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z" />
-                                </svg>
-                                <h3 class="mb-1 text-lg font-semibold text-gray-700">No Blogs Found</h3>
-                                <p class="mb-4 text-sm text-gray-500">
-                                    There are no blog posts available right now. Please check back later.
-                                </p>
-                                <a href="{{ route('admin.blog.create') }}"
-                                    class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700">
-                                    Create New Blog
-                                </a>
-                            </div>
-                        @endforelse
-                    </div>
                 </div>
             </div>
         </div>
+
+
+        <!-- Content Area -->
+        <div class="">
+
+            <!-- Articles List -->
+            <div class="overflow-hidden bg-white shadow-sm rounded-xl" id="articlesList">
+                @forelse ($resources['blog'] as $blog)
+                    <div class="flex gap-6 p-6 transition border-b border-gray-100 hover:bg-gray-50 article-item">
+                        <input type="checkbox" class="w-5 h-5 mt-1 cursor-pointer article-checkbox"
+                            value="{{ $blog->id }}">
+                        <img src="{{ asset('storage/' . $blog->image) }}" alt="Article"
+                            class="flex-shrink-0 object-cover w-40 rounded-lg h-28">
+                        <div class="flex-1">
+                            <div class="mb-1 text-sm font-medium text-blue-600">{{ $blog->title }}</div>
+                            <div class="mb-2 font-semibold text-gray-900">
+                                {{ $blog->blogCategory?->name ?? 'No Category' }}
+                            </div>
+                            <p class="text-sm leading-relaxed text-gray-500">{{ $blog->content }}</p>
+                        </div>
+                        <div class="flex flex-col gap-6 items-center">
+                            <div class="text-sm text-gray-400">
+                                {{ $blog->created_at }}
+                            </div>
+
+                            <a href="{{ route('admin.blog.edit', $blog->id) }}"><i
+                                    class="fas fa-edit pt-2 text-center w-12 h-12 bg-green-300 rounded-full text-2xl hover:bg-blue-400"></i></a>
+                        </div>
+                    </div>
+                @empty
+                    <div class="flex flex-col items-center justify-center p-12 text-center">
+                        <svg class="w-16 h-16 mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z" />
+                        </svg>
+                        <h3 class="mb-1 text-lg font-semibold text-gray-700">No Blogs Found</h3>
+                        <p class="mb-4 text-sm text-gray-500">
+                            There are no blog posts available right now. Please check back later.
+                        </p>
+                    </div>
+                @endforelse
+            </div>
+        </div>
+    </div>
+    </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

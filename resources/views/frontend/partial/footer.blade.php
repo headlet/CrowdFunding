@@ -35,7 +35,7 @@
                     <div class="widget footer-widget">
                         <div class="th-widget-about">
                             <div class="about-logo">
-                                <a href="index.html"><img src="{{asset('img/logo-white.svg')}}" alt="Donat"></a>
+                                <a href="index.html"><img src="{{asset('img/logo-white.png')}}" alt="Donat"></a>
                             </div>
                             <p class="about-text"> Our secure online donation platform allows you to make contributions quickly and safely. Choose from various.</p>
                             <a href="contact.html" class="th-btn"><i class="fas fa-heart me-2"></i> Donate Now</a>

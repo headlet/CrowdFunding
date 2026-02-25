@@ -1,12 +1,12 @@
 @extends('backend.system.layout.master')
 
 @section('title')
-    Blog Categories
+    Fund | Blog Categories
 @endsection
-
+@include('backend.component.blog-type')
 @section('content')
-    <section class="min-h-screen p-4 bg-gray-100 md:p-8">
-        <div class="max-w-6xl mx-auto">
+    <section class="min-h-screen p-3 bg-gray-100 md:p-3">
+        <div class=" mx-auto">
 
             <!-- Header -->
             <div class="p-6 mb-6 bg-white rounded-lg shadow-md">
@@ -16,7 +16,7 @@
                         <p class="mt-1 text-sm text-gray-500">Manage your blog categories</p>
                     </div>
                     <a href="{{ route('admin.blog-category.create') }}"
-                        class="px-4 py-2 text-white transition-colors bg-blue-600 rounded-lg hover:bg-blue-700">
+                        class="block w-full md:w-auto text-center px-6 py-2.5 bg-gradient-to-b from-emerald-500 to-emerald-600 hover:from-emerald-800 hover:to-emerald-600 text-white rounded-lg transition-all duration-300 font-medium shadow-md">
                         <i class="mr-2 fas fa-plus"></i>Add Category
                     </a>
                 </div>

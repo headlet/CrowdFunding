@@ -30,7 +30,7 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="th-team team-card3">
                             <div class="team-img">
-                                <img src="{{ asset('uploads/teams/' . '1768121542_829459_man_512x512.png' ?? $team->image) }}"
+                                <img src="{{ asset('storage/' .  $team->image) }}"
                                     alt="Team">
                             </div>
                             <div class="team-card-content">

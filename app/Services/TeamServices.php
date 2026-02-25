@@ -42,7 +42,7 @@ class TeamServices extends Services
             if ($team->image && Storage::disk('public')->exists($team->image)) {
                 Storage::disk('public')->delete($team->image);
             }
-            $data['image'] = $request->file('image')->store('uploads/team', 'public');
+            $data['image'] = $request->file('image')->store('uploads/teams', 'public');
         }
 
         $team->update($data);

@@ -1,9 +1,9 @@
 @extends('backend.system.layout.master')
 
 @section('title')
-    Add Category
+    Fund | Add Category
 @endsection
-
+@include('backend.component.blog-type')
 @section('content')
     <section class="min-h-screen p-4 bg-gray-100 md:p-8">
         <div class="max-w-3xl mx-auto">
@@ -62,7 +62,7 @@
                         </label>
                         <input type="text" name="slug" value="{{ old('slug') }}"
                             class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('slug') border-red-500 @enderror"
-                            placeholder="category-slug" required id='slug'>
+                            placeholder="category-slug" required id='slug' readonly>
                         @error('slug')
                             <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                         @enderror

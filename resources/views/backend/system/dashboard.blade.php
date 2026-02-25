@@ -1,20 +1,19 @@
 @extends('backend.system.layout.master')
 @section('title')
-    CMS|Dashboard
+    Fund | Dashboard
 @endsection
+
+@section('link')
+ <a @if (!request()->routeIs('admin.dashboard')) href="{{ route('admin.dashboard') }}" @endif
+            class="py-1 transition-all
+    {{ request()->routeIs('admin.dashboard')
+        ? 'border-b-2 border-black cursor-default pointer-events-none opacity-70'
+        : '' }}">
+            <span class="texts whitespace-nowrap">DashBoard</span>
+        </a>
+@endsection
+
 @section('content')
-    <!-- Dashboard Title -->
-    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
-        <h1 class="text-2xl font-semibold text-gray-700">Dashboard</h1>
-        <div class="flex flex-wrap gap-2">
-            <button class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-100">
-                Last Week
-            </button>
-            <button class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">
-                Export
-            </button>
-        </div>
-    </div>
 
     <!-- Stats Cards -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">

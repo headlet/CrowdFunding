@@ -18,7 +18,40 @@ class CampaignServices extends Services
 
     public function getAll($perPage = 10)
     {
-        return $this->model->with(['user', 'category'])->orderBy('created_at', 'desc')->paginate($perPage);
+        $sort = request('sort', 'created_at');
+        $direction = request('direction', 'desc');
+        $search = request('search');
+
+        $allowedSorts = ['title', 'status', 'created_at'];
+
+        if (!in_array($sort, $allowedSorts)) {
+            $sort = 'created_at';
+        }
+
+        if (!in_array($direction, ['asc', 'desc'])) {
+            $direction = 'desc';
+        }
+
+        $query = $this->model->with(['user', 'category']);
+
+        // 🔍 SEARCH LOGIC
+        if (!empty($search)) {
+            $query->where(function ($q) use ($search) {
+                $q->where('title', 'like', "%{$search}%")
+                    ->orWhere('status', 'like', "%{$search}%")
+                    ->orWhereHas('category', function ($cat) use ($search) {
+                        $cat->where('name', 'like', "%{$search}%");
+                    })
+                    ->orWhereHas('user', function ($user) use ($search) {
+                        $user->where('full_name', 'like', "%{$search}%");
+                    });
+            });
+        }
+
+        return $query
+            ->orderBy($sort, $direction)
+            ->paginate($perPage)
+            ->withQueryString(); // VERY IMPORTANT
     }
 
 

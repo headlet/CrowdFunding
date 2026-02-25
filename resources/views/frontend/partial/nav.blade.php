@@ -14,7 +14,7 @@
     <div class="text-center th-menu-area">
         <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
         <div class="mobile-logo">
-            <a href="{{ route('index') }}"><img src="{{ asset('img/logo.svg') }}" alt="Donat"></a>
+            <a href="{{ route('index') }}"><img src="{{ asset('img/logo.png') }}" alt="Donat"></a>
         </div>
         <div class="th-mobile-menu">
             <ul>
@@ -56,7 +56,7 @@
         <div class="container">
             <div class="menu-area">
                 <div class="header-logo">
-                    <a href="{{ route('index') }}"><img src="{{ asset('img/logo.svg') }}" alt="Donat"></a>
+                    <a href="{{ route('index') }}"><img src="{{ asset('img/logo.png') }}" alt="Donat"></a>
                 </div>
                 <div class="menu-area-wrap">
                     <nav class="main-menu d-none d-lg-block">

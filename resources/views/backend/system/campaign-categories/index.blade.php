@@ -1,17 +1,23 @@
 @extends('backend.system.layout.master')
 @section('title')
-    Campaign categories
+    Fund | Campaign categories
 @endsection
-
+@include('backend.component.campaign-type')
 @section('content')
-    <section class="min-h-screen p-4 bg-gray-100 md:p-8">
-        <!-- Header -->
-        <div class="flex flex-col items-stretch justify-end gap-3 mb-6 md:flex-row md:items-center">
-            <a href="{{ route('admin.campaign-category.create') }}"
-                class="px-6 py-2.5 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors text-center font-medium whitespace-nowrap">
-                <i class="mr-2 fas fa-plus"></i>Add Campaign Category
-            </a>
-        </div>
+    <section class="min-h-screen p-2 bg-gray-100 md:p-2">
+         <!-- Header -->
+            <div class="p-6 mb-6 bg-white rounded-lg shadow-md">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-800">Campaign Categories</h2>
+                        <p class="mt-1 text-sm text-gray-500">Manage your Campaign categories</p>
+                    </div>
+                    <a href="{{ route('admin.campaign-category.create') }}"
+                       class="block w-full md:w-auto text-center px-6 py-2.5 bg-gradient-to-b from-emerald-500 to-emerald-600 hover:from-emerald-800 hover:to-emerald-600 text-white rounded-lg transition-all duration-300 font-medium shadow-md">
+                        <i class="mr-2 fas fa-plus"></i>Add Campaign Category
+                    </a>
+                </div>
+            </div>
 
         <div class="overflow-hidden bg-white rounded-lg shadow-md">
             <div class="overflow-x-auto">
@@ -20,7 +26,23 @@
                         <tr>
                             <th
                                 class="px-4 py-4 text-xs font-semibold tracking-wider text-left text-gray-700 uppercase lg:px-6">
-                                Campaign Category
+                                <a href="{{ route('admin.campaign-category.index', [
+                                    'sort' => 'name',
+                                    'direction' => request('direction') === 'asc' ? 'desc' : 'asc',
+                                ]) }}"
+                                    class="flex items-center gap-1">
+
+                                    Campaign Category <i class="fa-solid fa-arrows-up-down"></i>
+
+                                    @if (request('sort') === 'name')
+                                        @if (request('direction') === 'asc')
+                                            <i class="fas fa-arrow-up text-xs"></i>
+                                        @else
+                                            <i class="fas fa-arrow-down text-xs"></i>
+                                        @endif
+                                    @endif
+
+                                </a>
                             </th>
                             <th
                                 class="px-4 py-4 text-xs font-semibold tracking-wider text-center text-gray-700 uppercase lg:px-6">

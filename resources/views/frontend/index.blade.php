@@ -541,7 +541,7 @@
                                 <div class="th-team team-card2">
                                     <div class="img-wrap">
                                         <div class="team-img">
-                                            <img src="{{ asset('uploads/teams/' . '1768121542_829459_man_512x512.png' ?? $team->image) }}"
+                                            <img src="{{ asset('storage/' . $team->image) }}"
                                                 alt="Team">
                                         </div>
                                         <div class="team-social-hover">

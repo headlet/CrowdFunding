@@ -12,9 +12,27 @@ class CampaignCategoryServices extends Services
         parent::__construct($model);
     }
 
-    public function getAll($pagenumber = 10)
+     public function getAll($perPage = 10)
     {
-        return $this->model::orderBy('name', 'asc')->paginate($pagenumber);
+        $sort = request('sort', 'created_at');
+        $direction = request('direction', 'desc');
+        $search = request('search');
+
+        $allowedSorts = ['name', 'created_at'];
+
+        if (!in_array($sort, $allowedSorts)) {
+            $sort = 'created_at';
+        }
+
+        if (!in_array($direction, ['asc', 'desc'])) {
+            $direction = 'desc';
+        }
+
+
+        return $this->model
+            ->orderBy($sort, $direction)
+            ->paginate($perPage)
+            ->withQueryString(); // VERY IMPORTANT
     }
 
     public function getCreateData()

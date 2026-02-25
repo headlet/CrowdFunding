@@ -1,9 +1,9 @@
 @extends('backend.system.layout.master')
 
 @section('title')
-    Add Team Member
+    Fund | Add Team Member
 @endsection
-
+@include('backend.component.team-type')
 @section('content')
     <section class="min-h-screen p-4 bg-gray-100 md:p-8">
         <div class="max-w-5xl mx-auto">
