@@ -6,12 +6,11 @@
     </form>
 </div>
 
-
-
-{{-- Mobile Menu --}}
-
+<!--==============================
+    Mobile Menu
+  ============================== -->
 <div class="th-menu-wrapper">
-    <div class="text-center th-menu-area">
+    <div class="th-menu-area text-center">
         <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
         <div class="mobile-logo">
             <a href="{{ route('index') }}"><img src="{{ asset('img/logo.png') }}" alt="Donat"></a>
@@ -19,6 +18,7 @@
         <div class="th-mobile-menu">
             <ul>
                 <li>
+
                     <a href="{{ route('index') }}">Home</a>
                 </li>
 
@@ -43,16 +43,18 @@
                 <li>
                     <a href="{{ route('contact') }}">Contact Us</a>
                 </li>
+
             </ul>
         </div>
     </div>
 </div>
 
-
-
-{{--  Main Menu Area --}}
+<!--==============================
+ Header Area
+==============================-->
 <header class="th-header header-layout3">
     <div class="sticky-wrapper">
+        <!-- Main Menu Area -->
         <div class="container">
             <div class="menu-area">
                 <div class="header-logo">
@@ -63,6 +65,7 @@
                         <ul>
                             <li>
                                 <a href="{{ route('index') }}">Home</a>
+
                             </li>
                             <li><a href="{{ route('about') }}">About Us</a></li>
                             <li>
@@ -84,54 +87,52 @@
                             <li>
                                 <a href="{{ route('contact') }}">Contact Us</a>
                             </li>
+
                         </ul>
                     </nav>
-                    <p class="header-notice"><img class="me-1" src="{{ asset('img/icon/heart-icon.svg') }}"
-                            alt="img">Are you ready to help them? Let’s become a volunteers...</p>
+                    <p class="header-notice"><img class="me-1" src="assets/img/icon/heart-icon.svg" alt="img">Are
+                        you ready to help them? Let’s become a volunteers...</p>
                 </div>
-
                 <div class="header-button">
-                    {{-- search button --}}
                     <button type="button" class="icon-btn style2 searchBoxToggler d-lg-block d-none"><i
                             class="far fa-search"></i></button>
-
                     @guest
                         <a href="{{ route('login') }}" class="th-btn style3 d-xl-block d-none"><i
                                 class="fas fa-sign-in me-2"></i> Login</a>
                     @endguest
-
                     @auth
                         <a href="{{ route('logout') }}"class="th-btn style3 d-xl-block d-none">
                             <i class="fas fa-sign-in me-2"></i>
                             Logout
                         </a>
                     @endauth
-
+                    <button type="button" class="icon-btn th-menu-toggle d-lg-none"><i
+                            class="far fa-bars"></i></button>
                 </div>
             </div>
         </div>
     </div>
-
-    {{-- color theme --}}
-    <div class="color-scheme-wrap active">
-        <button class="switchIcon"><i class="fa-solid fa-palette"></i></button>
-        <h3 class="text-center color-scheme-wrap-title">Color Switcher</h3>
-        <h4 class="text-center color-scheme-wrap-subtitle">Theme Color</h4>
-        <div class="color-switch-btns">
-            <button data-color="#1A685B"><i class="fa-solid fa-droplet"></i></button>
-            <button data-color="#f34e3a"><i class="fa-solid fa-droplet"></i></button>
-            <button data-color="#FF4857"><i class="fa-solid fa-droplet"></i></button>
-            <button data-color="#3843C1"><i class="fa-solid fa-droplet"></i></button>
-            <button data-color="#FF7E02"><i class="fa-solid fa-droplet"></i></button>
-        </div>
-        <h4 class="mt-20 text-center color-scheme-wrap-subtitle">Secondary Color</h4>
-        <div class="secondary-color-switch-btns">
-            <button data-secondary-color="#FFAC00"><i class="fa-solid fa-droplet"></i></button>
-            <button data-secondary-color="#F41E1E"><i class="fa-solid fa-droplet"></i></button>
-            <button data-secondary-color="#f34e3a"><i class="fa-solid fa-droplet"></i></button>
-            <button data-secondary-color="#FF4857"><i class="fa-solid fa-droplet"></i></button>
-            <button data-secondary-color="#3843C1"><i class="fa-solid fa-droplet"></i></button>
-        </div>
-    </div>
-
 </header>
+
+{{-- Color Schema --}}
+
+<div class="color-scheme-wrap active">
+    <button class="switchIcon"><i class="fa-solid fa-palette"></i></button>
+    <h3 class="color-scheme-wrap-title text-center">Color Switcher</h3>
+    <h4 class="color-scheme-wrap-subtitle text-center">Theme Color</h4>
+    <div class="color-switch-btns">
+        <button data-color="#1A685B"><i class="fa-solid fa-droplet"></i></button>
+        <button data-color="#f34e3a"><i class="fa-solid fa-droplet"></i></button>
+        <button data-color="#FF4857"><i class="fa-solid fa-droplet"></i></button>
+        <button data-color="#3843C1"><i class="fa-solid fa-droplet"></i></button>
+        <button data-color="#FF7E02"><i class="fa-solid fa-droplet"></i></button>
+    </div>
+    <h4 class="color-scheme-wrap-subtitle mt-20 text-center">Secondary Color</h4>
+    <div class="secondary-color-switch-btns">
+        <button data-secondary-color="#FFAC00"><i class="fa-solid fa-droplet"></i></button>
+        <button data-secondary-color="#F41E1E"><i class="fa-solid fa-droplet"></i></button>
+        <button data-secondary-color="#f34e3a"><i class="fa-solid fa-droplet"></i></button>
+        <button data-secondary-color="#FF4857"><i class="fa-solid fa-droplet"></i></button>
+        <button data-secondary-color="#3843C1"><i class="fa-solid fa-droplet"></i></button>
+    </div>
+</div>

@@ -211,4 +211,12 @@
     </script>
 
     @include('backend.component.slug')
+  
+    <script>
+        quill.on('text-change', function() {
+            document.getElementById('content').value = quill.root.innerHTML;
+        });
+
+        quill.root.innerHTML = `{!! old('content', $resource->content ?? '') !!}`;
+    </script>
 @endsection

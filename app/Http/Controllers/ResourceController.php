@@ -155,30 +155,76 @@ class ResourceController extends Controller
         }
     }
 
+    // public function destroy(string $id)
+    // {
+    //     try {
+    //         $resource = $this->services->getById($id);
+
+    //         if (!$resource) {
+    //             return redirect($this->getUrl())
+    //                 ->withErrors(['error' => $this->getName() . ' not found.']);
+    //         }
+
+    //         $response = $this->services->delete($id);
+
+    //         if (isset($response['error'])) {
+    //             return redirect()
+    //                 ->back()
+    //                 ->withErrors(['error' => $response['error']]);
+    //         }
+
+    //         return redirect($this->getUrl())
+    //             ->with('success', $this->getName() . ' deleted successfully.');
+    //     } catch (\Throwable $th) {
+    //         return redirect()
+    //             ->back()
+    //             ->withErrors(['error' => 'There is issues with delete' . $th->getMessage()]);
+    //     }
+    // }
+
     public function destroy(string $id)
-    {
-        try {
-            $resource = $this->services->getById($id);
+{
+    try {
+        $resource = $this->services->getById($id);
 
-            if (!$resource) {
-                return redirect($this->getUrl())
-                    ->withErrors(['error' => $this->getName() . ' not found.']);
-            }
-
-            $response = $this->services->delete($id);
-
-            if (isset($response['error'])) {
-                return redirect()
-                    ->back()
-                    ->withErrors(['error' => $response['error']]);
+        if (!$resource) {
+            if (request()->ajax()) {
+                return response()->json(['error' => 'Not found'], 404);
             }
 
             return redirect($this->getUrl())
-                ->with('success', $this->getName() . ' deleted successfully.');
-        } catch (\Throwable $th) {
+                ->withErrors(['error' => $this->getName() . ' not found.']);
+        }
+
+        $response = $this->services->delete($id);
+
+        if (isset($response['error'])) {
+            if (request()->ajax()) {
+                return response()->json(['error' => $response['error']], 400);
+            }
+
             return redirect()
                 ->back()
-                ->withErrors(['error' => 'There is issues with delete' . $th->getMessage()]);
+                ->withErrors(['error' => $response['error']]);
         }
+
+        // If AJAX request → return JSON
+        if (request()->ajax()) {
+            return response()->json(['success' => true]);
+        }
+
+        // If normal browser request → redirect
+        return redirect($this->getUrl())
+            ->with('success', $this->getName() . ' deleted successfully.');
+
+    } catch (\Throwable $th) {
+        if (request()->ajax()) {
+            return response()->json(['error' => 'Delete failed'], 500);
+        }
+
+        return redirect()
+            ->back()
+            ->withErrors(['error' => 'There is issues with delete']);
     }
+}
 }

@@ -59,7 +59,7 @@
                         </div>
                         <h3 class="mb-15">About The Charity</h3>
                         <p class="mb-45">
-                            {{ $campaign->description }}
+                            {!! $campaign->description !!}
                         </p>
                         <h3 class="mb-15">Summary</h3>
                         <p class="mb-45">Partner with us to make a greater impact. Our corporate sponsorship program offers

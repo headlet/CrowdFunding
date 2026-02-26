@@ -1,7 +1,7 @@
 @extends('backend.system.layout.master')
 
 @section('title')
-   Fund | Add Blog Post
+    Fund | Add Blog Post
 @endsection
 @include('backend.component.blog-type')
 @push('styles')
@@ -51,9 +51,7 @@
 
                 <form
                     action="{{ isset($resource) ? route('admin.blog.update', $resource->id) : route('admin.blog.store') }}"
-                    method="POST"
-                    enctype="multipart/form-data"
-                    class="space-y-6">
+                    method="POST" enctype="multipart/form-data" class="space-y-6">
                     @csrf
                     @if (isset($resource))
                         @method('PUT')
@@ -72,10 +70,9 @@
                                 <label class="block mb-2 text-sm font-medium text-gray-700">
                                     Title <span class="text-red-500">*</span>
                                 </label>
-                                <input type="text" name="title"
-                                    value="{{ old('title', $resource->title ?? '') }}"
+                                <input type="text" name="title" value="{{ old('title', $resource->title ?? '') }}"
                                     class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('title') border-red-500 @enderror"
-                                    placeholder="Enter blog post title" required>
+                                    placeholder="Enter blog post title" required id="title">
                                 @error('title')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
@@ -84,10 +81,9 @@
                                 <label class="block mb-2 text-sm font-medium text-gray-700">
                                     Slug <span class="text-red-500">*</span>
                                 </label>
-                                <input type="text" name="slug"
-                                    value="{{ old('slug', $resource->slug ?? '') }}"
+                                <input type="text" name="slug" value="{{ old('slug', $resource->slug ?? '') }}"
                                     class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('slug') border-red-500 @enderror"
-                                    placeholder="blog-post-slug" required readonly>
+                                    placeholder="blog-post-slug" required readonly id="slug">
                                 @error('slug')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
@@ -162,9 +158,11 @@
                             <label class="block mb-2 text-sm font-medium text-gray-700">
                                 Content <span class="text-red-500">*</span>
                             </label>
-                            <textarea name="content" rows="12"
-                                class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('content') border-red-500 @enderror"
-                                placeholder="Full blog post content" required>{{ old('content', $resource->content ?? '') }}</textarea>
+                            <div id="editor" class="w-full border border-gray-300 rounded-lg px-4 py-2.5"
+                                style="min-height: 200px;"></div>
+
+                            <!-- Hidden Input -->
+                            <input type="hidden" name="content" id="content">
                             @error('content')
                                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                             @enderror
@@ -186,15 +184,13 @@
                             {{-- Show existing image on edit --}}
                             @if (isset($resource) && $resource->image)
                                 <div class="mb-3">
-                                    <img src="{{ asset('storage/' . $resource->image) }}"
-                                        alt="Current featured image"
+                                    <img src="{{ asset('storage/' . $resource->image) }}" alt="Current featured image"
                                         class="object-cover w-48 h-32 rounded-lg border border-gray-200">
                                     <p class="mt-1 text-xs text-gray-500">Current image. Upload a new one to replace it.</p>
                                 </div>
                             @endif
 
-                            <input type="file" name="image" accept="image/*"
-                                id="imageInput"
+                            <input type="file" name="image" accept="image/*" id="imageInput"
                                 class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('image') border-red-500 @enderror">
 
                             {{-- New image preview --}}
@@ -268,21 +264,9 @@
     </section>
 
     <script>
-        // Auto-generate slug from title (create mode only)
-        @if (!isset($resource))
-            document.querySelector('[name="title"]').addEventListener('input', function () {
-                const slug = this.value
-                    .toLowerCase()
-                    .trim()
-                    .replace(/[^\w\s-]/g, '')
-                    .replace(/\s+/g, '-')
-                    .replace(/-+/g, '-');
-                document.querySelector('[name="slug"]').value = slug;
-            });
-        @endif
 
         // Image preview
-        document.getElementById('imageInput').addEventListener('change', function () {
+        document.getElementById('imageInput').addEventListener('change', function() {
             const preview = document.getElementById('imagePreview');
             if (this.files && this.files[0]) {
                 const reader = new FileReader();
@@ -293,5 +277,13 @@
                 reader.readAsDataURL(this.files[0]);
             }
         });
+    </script>
+    @include('backend.component.slug')
+    <script>
+        quill.on('text-change', function() {
+            document.getElementById('content').value = quill.root.innerHTML;
+        });
+
+        quill.root.innerHTML = `{!! old('content', $resource->content ?? '') !!}`;
     </script>
 @endsection

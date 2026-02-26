@@ -136,9 +136,14 @@
                             <label class="block mb-2 text-sm font-medium text-gray-700">
                                 Full Description <span class="text-red-500">*</span>
                             </label>
-                            <textarea name="description" rows="6"
-                                class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('description') border-red-500 @enderror"
-                                placeholder="Detailed description of the campaign" required>{{ old('description', $campaign->description) }}</textarea>
+
+                            <!-- Quill Editor -->
+                            <div id="editor" class="w-full border border-gray-300 rounded-lg px-4 py-2.5"
+                                style="min-height: 200px;"></div>
+
+                            <!-- Hidden Input -->
+                            <input type="hidden" name="description" id="description">
+
                             @error('description')
                                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                             @enderror
@@ -339,4 +344,12 @@
     @include('backend.component.slug')
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     
+    <script>
+        quill.on('text-change', function() {
+            document.getElementById('description').value = quill.root.innerHTML;
+        }); 
+        
+        quill.root.innerHTML = `{!! old('description', $campaign->description ?? '') !!}`;
+    </script>
 @endsection

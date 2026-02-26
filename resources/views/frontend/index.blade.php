@@ -231,11 +231,12 @@
                     <div class="swiper-wrapper w-full">
 
                         @foreach($campaigns as $campaign)
+                        
                             <div class="swiper-slide">
                                 <div class="donation-card style4"
                                     data-theme-color="{{ $campaign->theme_color ?? 'var(--theme-color2)' }}">
                                     <div class="box-thumb">
-                                        <img src="{{ asset('uploads/campaigns/' . $campaign->image) }}" alt="image">
+                                        <img src="{{ asset('storage/' . $campaign->image) }}" alt="image">
                                     </div>
                                     <h3 class="box-title"><a href="blog-details.html">{{ $campaign->title }}</a></h3>
                                     <div class="box-content">

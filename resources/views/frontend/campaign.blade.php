@@ -33,7 +33,7 @@
                     <div class="col-xl-6">
                         <div class="donation-card style3">
                             <div class="box-thumb">
-                                <img src="{{ asset('uploads/campaigns/' . $campaign->image) }}" alt="image">
+                                <img src="{{ asset('storage/' . $campaign->image) }}" alt="image">
                                 <div class="donation-card-tag">
                                     {{ number_format(($campaign->raised_amount / $campaign->goal_amount) * 100, 2) }}%
                                 </div>
@@ -41,11 +41,11 @@
                                     data-mask-src="{{ asset('img/donation/donation-card-shape2-1.png') }}"></div>
                             </div>
                             <div class="box-content">
-                                <h3 class="box-title"><a href="blog-details.html">{{ $campaign->short_description }}</a>
+                                <h3 class="box-title"><a href="blog-details.html">{{ $campaign->title }}</a>
                                 </h3>
                                 <p>
                                 <p>
-                                    {{ Str::limit($campaign->description, 50) }}
+                                    {{ Str::limit($campaign->short_description, 50) }}
 
                                 </p>
 
