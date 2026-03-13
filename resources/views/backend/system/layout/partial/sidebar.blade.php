@@ -8,7 +8,7 @@
     <!-- Full Logo -->
     <div class="h-10 w-auto overflow-hidden flex items-center justify-center rounded">
         <img 
-            src="{{ isset($generalSettings->footer_logo) ? asset('storage/' . $generalSettings->footer_logo) : asset('img/logo-white.png') }}" 
+            src="{{asset('img/logo-white.png') }}" 
             alt="Logo" 
             class="h-full object-contain">
     </div>

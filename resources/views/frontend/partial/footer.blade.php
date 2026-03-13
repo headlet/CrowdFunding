@@ -36,7 +36,7 @@
                     <div class="widget footer-widget">
                         <div class="th-widget-about">
                             <div class="about-logo">
-                                <a href="index.html"><img src="{{ isset($generalSettings->footer_logo) ? asset('storage/' . $generalSettings->footer_logo) : asset('img/logo-white.png') }}"
+                                <a href="index.html"><img src="{{asset('img/logo-white.png') }}"
                                         alt="Donat"></a>
                             </div>
                             <p class="about-text"> {{ $generalSettings->about_small_text }}.</p>
