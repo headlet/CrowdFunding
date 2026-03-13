@@ -21,20 +21,25 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-
+        // Blade directive for permissions
         Blade::if('permission', function ($permission) {
-            /** @var User|null $user */
+            /** @var \App\Models\User|null $user */
             $user = Auth::user();
-
             return $user && $user->hasPermission($permission);
         });
 
+        // Share general settings with all views
         \Illuminate\Support\Facades\View::composer('*', function ($view) {
-            try {
-                $generalSettings = \App\Models\GeneralSetting::first();
-            } catch (\Throwable $e) {
-                $generalSettings = null;
+            $generalSettings = \App\Models\GeneralSetting::first();
+
+            // Fallback to a "dummy" GeneralSetting if none exists
+            if (!$generalSettings) {
+                $generalSettings = new \App\Models\GeneralSetting([
+                    'header_logo' => 'default-logo.png', // replace with your default path
+                    'site_name' => 'My Site',
+                ]);
             }
+
             $view->with('generalSettings', $generalSettings);
         });
     }
