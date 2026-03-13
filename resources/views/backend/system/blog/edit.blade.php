@@ -128,11 +128,20 @@
                         <textarea name="excerpt" rows="3"
                             class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-blue-500" required>{{ old('excerpt', $blog->excerpt ?? '') }}</textarea>
 
-                        <label class="block mt-4 mb-2 text-sm font-medium text-gray-700">
-                            Full Content <span class="text-red-500">*</span>
-                        </label>
-                        <textarea name="content" rows="12"
-                            class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-blue-500" required>{{ old('content', $blog->content ?? '') }}</textarea>
+                        <!-- Full Content -->
+                        <div>
+                            <label class="block mb-2 text-sm font-medium text-gray-700">
+                                Content <span class="text-red-500">*</span>
+                            </label>
+                            <div id="editor" class="w-full border border-gray-300 rounded-lg px-4 py-2.5"
+                                style="min-height: 200px;"></div>
+
+                            <!-- Hidden Input -->
+                            <input type="hidden" name="content" id="content">
+                            @error('content')
+                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
                     </div>
 
                     <div>
@@ -211,12 +220,12 @@
     </script>
 
     @include('backend.component.slug')
-  
+
     <script>
         quill.on('text-change', function() {
             document.getElementById('content').value = quill.root.innerHTML;
         });
 
-        quill.root.innerHTML = `{!! old('content', $resource->content ?? '') !!}`;
+        quill.root.innerHTML = `{!! old('content', $blog->content ?? '') !!}`;
     </script>
 @endsection

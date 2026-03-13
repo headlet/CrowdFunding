@@ -6,35 +6,44 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\public\HomeController;
+use App\Http\Controllers\system\AboutCharityController;
+use App\Http\Controllers\system\AboutController;
 use App\Http\Controllers\system\BlogCategoryController;
 use App\Http\Controllers\system\BlogController;
 use App\Http\Controllers\system\CampaignCategoryController;
 use App\Http\Controllers\system\CampaignController;
+use App\Http\Controllers\system\ContactController;
+use App\Http\Controllers\system\DashboardController;
 use App\Http\Controllers\system\DonationController;
 use App\Http\Controllers\system\GalleryController;
+use App\Http\Controllers\system\GeneralSettingController;
+use App\Http\Controllers\system\RolePermissionController;
+use App\Http\Controllers\system\SliderController;
+use App\Http\Controllers\system\SuccessStoryController;
 use App\Http\Controllers\system\TeamController;
 
 $pages = [
-    'about',
-    'gallery',//
-    'contact',
-    'team-details',//
-    'add-team',//
+    'add-team', //
     'faq',
     'testimonial',
-    'blog',//
-    'blog-detail'//
 ];
 foreach ($pages as $page) {
     Route::view("/{$page}", "frontend.{$page}")->name($page);
 }
-// User Interface
+
+// frontend
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('/campaign-details/{campaign}', 'campaign_details')->name('campaign-details');
     Route::get('/donation-now/{campaign}', 'donation')->name('donate-now')->middleware('auth');
     Route::get('/all-campaigns', 'campaign')->name('campaign');
     Route::get('/teams', 'team')->name('team');
+    Route::get('/blog-details/{team}', 'team_details')->name('team-details');
+    Route::get('/blog', 'blog')->name('blog');
+    Route::get('/blog-details/{blog}', 'blog_details')->name('blog-details');
+    Route::get('/gallery', 'gallery')->name('gallery');
+    Route::get('/about', 'about')->name('about');
+    Route::get('/contact', 'contact')->name('contact');
 });
 
 Route::controller(DonationController::class)->group(function () {
@@ -59,7 +68,7 @@ Route::get('logout', [LoginController::class, 'destroy'])->name('logout');
 
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 
-    Route::view('/', 'backend.system.dashboard')->name('dashboard');
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('campaigns', CampaignController::class)->except(['show']);
     Route::resource('campaign-category', CampaignCategoryController::class)->except(['show']);
     Route::resource('donation', DonationController::class)->except(['show']);
@@ -67,4 +76,12 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('blog', BlogController::class)->except(['show']);
     Route::resource('blog-category', BlogCategoryController::class)->except(['show']);
     Route::resource('gallery', GalleryController::class)->except('show');
+
+    Route::resource('role-permission', RolePermissionController::class)->except(['show']); //
+    Route::resource('about', AboutController::class)->except(['show']); //
+    Route::resource('contact', ContactController::class)->except(['show']); //
+    Route::resource('slider', SliderController::class)->except(['show']); //
+    Route::resource('about-charity', AboutCharityController::class)->except(['show']); //
+    Route::resource('success-story', SuccessStoryController::class)->except(['show']);
+    Route::resource('general-setting', GeneralSettingController::class)->except(['show']);
 });

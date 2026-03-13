@@ -13,7 +13,7 @@
     <div class="th-menu-area text-center">
         <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
         <div class="mobile-logo">
-            <a href="{{ route('index') }}"><img src="{{ asset('img/logo.png') }}" alt="Donat"></a>
+            <a href="{{ route('index') }}"><img src="{{ asset('storage/' . $generalSettings->header_logo)}}" alt="Donat"></a>
         </div>
         <div class="th-mobile-menu">
             <ul>
@@ -32,8 +32,8 @@
                         <li><a href="{{ route('team') }}">Volunteers</a></li>
                         <li><a href="{{ route('add-team') }}">Become A Volunteer</a></li>
                         <li><a href="{{ route('gallery') }}">Gallery</a></li>
-                        <li><a href="{{ route('faq') }}">FAQS</a></li>
-                        <li><a href="{{ route('testimonial') }}">Testimonials</a></li>
+                        {{-- <li><a href="{{ route('faq') }}">FAQS</a></li>
+                        <li><a href="{{ route('testimonial') }}">Testimonials</a></li> --}}
 
                     </ul>
                 </li>
@@ -58,7 +58,7 @@
         <div class="container">
             <div class="menu-area">
                 <div class="header-logo">
-                    <a href="{{ route('index') }}"><img src="{{ asset('img/logo.png') }}" alt="Donat"></a>
+                    <a href="{{ route('index') }}"><img src="{{ asset('storage/' . $generalSettings->header_logo) }}" alt="Donat"></a>
                 </div>
                 <div class="menu-area-wrap">
                     <nav class="main-menu d-none d-lg-block">
@@ -77,8 +77,8 @@
                                     <li><a href="{{ route('team') }}">Volunteers</a></li>
                                     <li><a href="{{ route('add-team') }}">Become A Volunteer</a></li>
                                     <li><a href="{{ route('gallery') }}">Gallery</a></li>
-                                    <li><a href="{{ route('faq') }}">FAQS</a></li>
-                                    <li><a href="{{ route('testimonial') }}">Testimonials</a></li>
+                                    {{-- <li><a href="{{ route('faq') }}">FAQS</a></li>
+                                    <li><a href="{{ route('testimonial') }}">Testimonials</a></li> --}}
                                 </ul>
                             </li>
                             <li>
@@ -90,20 +90,22 @@
 
                         </ul>
                     </nav>
-                    <p class="header-notice"><img class="me-1" src="assets/img/icon/heart-icon.svg" alt="img">Are
+                    <p class="header-notice"><img class="me-1" src="{{ asset('img/icon/heart-icon.svg') }}"
+                            alt="img">Are
                         you ready to help them? Let’s become a volunteers...</p>
                 </div>
                 <div class="header-button">
-                    <button type="button" class="icon-btn style2 searchBoxToggler d-lg-block d-none"><i
-                            class="far fa-search"></i></button>
+                    <div>
+                        <div></div>
+                    </div>
                     @guest
                         <a href="{{ route('login') }}" class="th-btn style3 d-xl-block d-none"><i
                                 class="fas fa-sign-in me-2"></i> Login</a>
                     @endguest
                     @auth
-                        <a href="{{ route('logout') }}"class="th-btn style3 d-xl-block d-none">
+                        <a href="{{ route('admin.dashboard') }}"class="th-btn style3 d-xl-block d-none">
                             <i class="fas fa-sign-in me-2"></i>
-                            Logout
+                            Dashboard
                         </a>
                     @endauth
                     <button type="button" class="icon-btn th-menu-toggle d-lg-none"><i

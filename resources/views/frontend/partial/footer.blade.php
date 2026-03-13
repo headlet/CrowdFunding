@@ -1,12 +1,12 @@
 <!--==============================
-	Footer Area
+ Footer Area
     ==============================-->
-<footer class="footer-wrapper footer-default" data-bg-src="{{asset('img/bg/footer-default-bg-mask.png')}}">
+<footer class="footer-wrapper footer-default" data-bg-src="">
     <div class="footer-bg-shape2 shape-mockup jump" data-top="20%" data-right="0">
-        <img src="{{asset('img/shape/footer-bg-shape3.png')}}" alt="img">
+        <img src="{{ asset('img/shape/footer-bg-shape3.png') }}" alt="img">
     </div>
     <div class="footer-bg-shape3 shape-mockup d-none" data-bottom="0" data-right="0">
-        <img src="{{asset('img/shape/footer-bg-shape2.png')}}" alt="img">
+        <img src="{{ asset('img/shape/footer-bg-shape2.png') }}" alt="img">
     </div>
     <div class="footer-top">
         <div class="container">
@@ -19,7 +19,8 @@
                     <div class="col-xl-6 col-lg-8">
                         <form class="newsletter-form">
                             <div class="form-group">
-                                <input class="form-control" type="email" placeholder="Enter Email Address" required="">
+                                <input class="form-control" type="email" placeholder="Enter Email Address"
+                                    required="">
                             </div>
                             <button type="submit" class="th-btn style3"><i class="fas fa-paper-plane"></i></button>
                         </form>
@@ -35,10 +36,12 @@
                     <div class="widget footer-widget">
                         <div class="th-widget-about">
                             <div class="about-logo">
-                                <a href="index.html"><img src="{{asset('img/logo-white.png')}}" alt="Donat"></a>
+                                <a href="index.html"><img src="{{ asset('storage/' . $generalSettings->footer_logo) }}"
+                                        alt="Donat"></a>
                             </div>
-                            <p class="about-text"> Our secure online donation platform allows you to make contributions quickly and safely. Choose from various.</p>
-                            <a href="contact.html" class="th-btn"><i class="fas fa-heart me-2"></i> Donate Now</a>
+                            <p class="about-text"> {{ $generalSettings->about_small_text }}.</p>
+                            <a href="{{ route('campaign') }}" class="th-btn"><i class="fas fa-heart me-2"></i> Donate
+                                Now</a>
                         </div>
                     </div>
                 </div>
@@ -74,47 +77,39 @@
                     <div class="widget footer-widget">
                         <div class="th-widget-contact">
                             <h3 class="widget_title">Contact Us</h3>
-                            <div class="info-card">
-                                <div class="box-icon">
-                                    <i class="fal fa-phone"></i>
-                                    <div class="bg-shape1" data-mask-src="{{asset('img/shape/info_card_icon_bg_shape_1_1.png')}}"></div>
-                                    <div class="bg-shape2" data-mask-src="{{asset('img/shape/info_card_icon_bg_shape_1_1.png')}}"></div>
+                            @if (isset($contact))
+                                <div class="info-card">
+                                    <div class="box-icon">
+                                        <i class="fal fa-phone"></i>
+                                        <div class="bg-shape1" data-mask-src="{{ asset('') }}"></div>
+                                        <div class="bg-shape2" data-mask-src="{{ asset('') }}"></div>
+                                    </div>
+                                    <div class="box-content">
+                                        <p class="box-text">Call us any time:</p>
+                                        <h4 class="box-title"><a
+                                                href="tel:{{ $contact->phone }}">{{ $contact->phone }}</a></h4>
+                                    </div>
                                 </div>
-                                <div class="box-content">
-                                    <p class="box-text">Call us any time:</p>
-                                    <h4 class="box-title"><a href="tel:16336547896">+163-3654-7896</a></h4>
+                                <div class="info-card">
+                                    <div class="box-icon">
+                                        <i class="fal fa-envelope-open"></i>
+                                        <div class="bg-shape1" data-mask-src="{{ asset('') }}"></div>
+                                        <div class="bg-shape2" data-mask-src="{{ asset('') }}"></div>
+                                    </div>
+                                    <div class="box-content">
+                                        <p class="box-text">Email us any time:</p>
+                                        <h4 class="box-title"><a
+                                                href="mailto:{{ $contact->email }}">{{ $contact->email }}</a></h4>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="info-card">
-                                <div class="box-icon">
-                                    <i class="fal fa-envelope-open"></i>
-                                    <div class="bg-shape1" data-mask-src="{{asset('img/shape/info_card_icon_bg_shape_1_1.png')}}"></div>
-                                    <div class="bg-shape2" data-mask-src="{{asset('img/shape/info_card_icon_bg_shape_1_1.png')}}"></div>
-                                </div>
-                                <div class="box-content">
-                                    <p class="box-text">Email us any time:</p>
-                                    <h4 class="box-title"><a href="mailto:info@donat.com">info@donat.com</a></h4>
-                                </div>
-                            </div>
+                            @endif
                             <div class="th-social style2">
-                                <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                                <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
-                                <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
-                                <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="{{ $generalSettings->facebook }}"><i class="fab fa-facebook-f"></i></a>
+                                <a href="{{ $generalSettings->twitter }}"><i class="fab fa-twitter"></i></a>
+                                <a href="{{ $generalSettings->linkedin }}"><i class="fab fa-linkedin-in"></i></a>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="copyright-wrap">
-        <div class="container">
-            <div class="row justify-content-center gy-3 align-items-center">
-                <div class="col-lg-12">
-                    <p class="copyright-text text-center">
-                        <i class="fal fa-copyright"></i> Copyright 2025. All Rights Reserved.
-                    </p>
                 </div>
             </div>
         </div>
@@ -126,6 +121,8 @@
 <!-- Scroll To Top -->
 <div class="scroll-top">
     <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+            style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
+        </path>
     </svg>
 </div>

@@ -33,7 +33,7 @@ Contact Area
                         <div class="media-body">
                             <h3 class="box-title">Address</h3>
                             <p class="box-text">
-                                Kathmandu, Nepal
+                               {{$contact->address}}
                             </p>
                         </div>
                     </div>
@@ -43,8 +43,7 @@ Contact Area
                         </div>
                         <div class="media-body">
                             <h3 class="box-title">Phone</h3>
-                            <p class="box-text"><a href="tel:16363599852">(+58-125) 25-3158</a></p>
-                            <p class="box-text"><a href="tel:16363599852">+163-524-4521</a></p>
+                            <p class="box-text"><a href="tel:{{$contact->phone}}">{{$contact->phone}}</a></p>
                         </div>
                     </div>
                     <div class="contact-feature">
@@ -53,8 +52,7 @@ Contact Area
                         </div>
                         <div class="media-body">
                             <h3 class="box-title">Email</h3>
-                            <p class="box-text"><a href="mailto:info@donet.com">info@donet.com</a></p>
-                            <p class="box-text"><a href="mailto:allinfo@donet.com">allinfo@donet.com</a></p>
+                            <p class="box-text"><a href="mailto:{{$contact->email}}">{{$contact->email}}</a></p>
                         </div>
                     </div>
                     <div class="contact-feature" data-theme-color="#FF5528">
@@ -69,7 +67,7 @@ Contact Area
                 </div>
                 <div class="col-xl-8 col-lg-7">
                     <div class="contact-map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d27191.32753121778!2d85.34788046263006!3d27.684205181113366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2snp!4v1766548639629!5m2!1sen!2snp" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="{{ $contact->map }}" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>

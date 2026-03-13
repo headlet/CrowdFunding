@@ -55,11 +55,6 @@
                         <span class="text-sm font-medium">Change Password</span>
                     </a>
 
-                    <a href="#"
-                        class="flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
-                        <i class="w-4 fa-solid fa-gear"></i>
-                        <span class="text-sm font-medium">Preferences</span>
-                    </a>
                 </div>
 
                 <!-- Divider -->

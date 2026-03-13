@@ -1,7 +1,6 @@
 @extends('backend.system.layout.master')
-@section('title')
-    Fund | Campaign
-@endsection
+@section('title', "Fund | Campaign")
+    
 
 @include('backend.component.campaign-type')
 
@@ -32,15 +31,15 @@
                     </button>
                 </form>
             </div>
-
-            <!-- Add Button -->
-            <div class="w-full md:w-auto">
-                <a href="{{ route('admin.campaigns.create') }}"
-                    class="block w-full md:w-auto text-center px-6 py-2.5 bg-gradient-to-b from-emerald-500 to-emerald-700 hover:from-emerald-800 hover:to-emerald-600 text-white rounded-lg transition-all duration-300 font-medium shadow-md">
-                    Add Campaign
-                </a>
-            </div>
-
+            @permission('admin.campaigns.create')
+                <!-- Add Button -->
+                <div class="w-full md:w-auto">
+                    <a href="{{ route('admin.campaigns.create') }}"
+                        class="block w-full md:w-auto text-center px-6 py-2.5 bg-gradient-to-b from-emerald-500 to-emerald-700 hover:from-emerald-800 hover:to-emerald-600 text-white rounded-lg transition-all duration-300 font-medium shadow-md">
+                        Add Campaign
+                    </a>
+                </div>
+            @endpermission
         </div>
 
         <!-- Table Container -->
@@ -89,10 +88,12 @@
                                 class="hidden px-4 py-4 text-xs font-semibold tracking-wider text-center text-gray-700 uppercase lg:px-6 md:table-cell">
                                 Donors
                             </th>
+                             @permission('admin.campaigns.edit' , 'admin.campaigns.destroy')
                             <th
                                 class="px-4 py-4 text-xs font-semibold tracking-wider text-center text-gray-700 uppercase lg:px-6">
                                 Actions
                             </th>
+                            @endpermission
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
@@ -189,22 +190,26 @@
                                 <!-- Actions -->
                                 <td class="px-4 py-4 lg:px-6">
                                     <div class="flex items-center justify-center gap-2">
-                                        <a href="{{ route('admin.campaigns.edit', $campaign->id) }}"
-                                            class="p-2 text-blue-600 transition-colors rounded-lg hover:bg-blue-50"
-                                            title="Edit">
-                                            <i class="text-lg fas fa-edit"></i>
-                                        </a>
-                                        <form action="{{ route('admin.campaigns.destroy', $campaign->id) }}" method="POST"
-                                            class="inline"
-                                            onsubmit="return confirm('Are you sure you want to delete this campaign?');">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit"
-                                                class="p-2 text-red-600 transition-colors rounded-lg hover:bg-red-50"
-                                                title="Delete">
-                                                <i class="text-lg fas fa-trash"></i>
-                                            </button>
-                                        </form>
+                                        @permission('admin.campaigns.edit')
+                                            <a href="{{ route('admin.campaigns.edit', $campaign->id) }}"
+                                                class="p-2 text-blue-600 transition-colors rounded-lg hover:bg-blue-50"
+                                                title="Edit">
+                                                <i class="text-lg fas fa-edit"></i>
+                                            </a>
+                                        @endpermission
+                                        @permission('admin.campaigns.destroy')
+                                            <form action="{{ route('admin.campaigns.destroy', $campaign->id) }}" method="POST"
+                                                class="inline"
+                                                onsubmit="return confirm('Are you sure you want to delete this campaign?');">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit"
+                                                    class="p-2 text-red-600 transition-colors rounded-lg hover:bg-red-50"
+                                                    title="Delete">
+                                                    <i class="text-lg fas fa-trash"></i>
+                                                </button>
+                                            </form>
+                                        @endpermission
                                     </div>
                                 </td>
                             </tr>

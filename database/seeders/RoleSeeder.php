@@ -22,5 +22,10 @@ class RoleSeeder extends Seeder
             ['id' => 2],
             ['name' => 'user']
         );
+        
+        Role::updateOrCreate(
+            ['id' => 3],
+            ['name' => 'Super admin']
+        );
     }
 }

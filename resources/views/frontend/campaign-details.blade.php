@@ -26,7 +26,7 @@
             <div class="row gx-40">
                 <div class="col-xxl-8 col-lg-7">
                     <div class="page-img">
-                        <img src="{{ asset('uploads/campaigns/' . $campaign->image) }}" alt="Blog Image">
+                        <img src="{{ asset('storage/' . $campaign->image) }}" alt="Blog Image">
                         <div class="tag">{{ $campaign->category->name }}</div>
 
                     </div>
@@ -61,40 +61,6 @@
                         <p class="mb-45">
                             {!! $campaign->description !!}
                         </p>
-                        <h3 class="mb-15">Summary</h3>
-                        <p class="mb-45">Partner with us to make a greater impact. Our corporate sponsorship program offers
-                            businesses the opportunity to support our mission while gaining visibility and fulfilling
-                            corporate social responsibility goals. Learn about the benefits and how your company can get
-                            involved.</p>
-                        <h3 class="mb-15">Challenge</h3>
-                        <p class="mb-35">Explore the variety of volunteer opportunities available. From event planning and
-                            fundraising to fieldwork and administrative support, there are many ways to lend your talents.
-                            Find the perfect fit for your skills and interests.</p>
-                        <div class="row gx-40 gy-30 align-items-center">
-                            <div class="col-xl-6">
-                                <div class="mb-0 page-img">
-                                    <img src="{{ asset('img/donation/donation-s-1-2.png') }}" alt="Blog Image">
-                                </div>
-                            </div>
-                            <div class="col-xl-6">
-                                <div class="checklist">
-                                    <ul>
-                                        <li><i class="fas fa-check"></i>From the streets to safety</li>
-                                        <li><i class="fas fa-check"></i>I wish to feed the orangutansy</li>
-                                        <li><i class="fas fa-check"></i>Lorem ipsum dolor sit amet, adipiscing</li>
-                                        <li><i class="fas fa-check"></i>Nemo enim ipsam voluptatem quia</li>
-                                        <li><i class="fas fa-check"></i>Get Involved: Upcoming Events</li>
-                                        <li><i class="fas fa-check"></i>Safe and Secure Donations</li>
-                                        <li><i class="fas fa-check"></i>Help Us Spread the Word</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="mb-40 mt-30">Amplify our message by sharing our mission with your network. Use social
-                            media, word of mouth, and community engagement to raise awareness about our work. Every share
-                            brings us closer to achieving our mission and reaching more people in need. From signing
-                            petitions to contacting policymakers, your advocacy can drive meaningful change and amplify our
-                            impact.</p>
                     </div>
 
                     {{-- comments --}}

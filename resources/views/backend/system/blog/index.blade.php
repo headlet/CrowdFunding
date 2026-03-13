@@ -14,9 +14,10 @@
                     <h2 class="text-2xl font-bold text-gray-800">Blog</h2>
                     <p class="mt-1 text-sm text-gray-500">List of Blog Articles</p>
                 </div>
-                
+
                 <div class="flex items-center gap-4">
 
+                    @permission('admin.blog.destroy')
                     <button id="deleteBtn"
                         class="px-4 py-2 text-sm text-white bg-red-500 rounded-lg hover:bg-red-600 disabled:bg-gray-300 disabled:cursor-not-allowed"
                         disabled>
@@ -27,20 +28,20 @@
                         class="px-4 py-2 text-sm bg-white border border-gray-300 rounded-lg hover:bg-gray-50">
                         Select All
                     </button>
-
-                    <a href="{{ route('admin.blog.create') }}"
-                        class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700">
-                        Create Blog
-                    </a>
+                    @endpermission
+                    @permission('admin.blog.create')
+                        <a href="{{ route('admin.blog.create') }}"
+                            class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700">
+                            Create Blog
+                        </a>
+                    @endpermission
 
                 </div>
             </div>
         </div>
 
-
         <!-- Content Area -->
         <div class="">
-
             <!-- Articles List -->
             <div class="overflow-hidden bg-white shadow-sm rounded-xl" id="articlesList">
                 @forelse ($resources['blog'] as $blog)
@@ -54,15 +55,16 @@
                             <div class="mb-2 font-semibold text-gray-900">
                                 {{ $blog->blogCategory?->name ?? 'No Category' }}
                             </div>
-                            <p class="text-sm leading-relaxed text-gray-500">{{ $blog->content }}</p>
+                            <p class="text-sm leading-relaxed text-gray-500">{!! $blog->content !!}</p>
                         </div>
                         <div class="flex flex-col gap-6 items-center">
                             <div class="text-sm text-gray-400">
                                 {{ $blog->created_at }}
                             </div>
-
-                            <a href="{{ route('admin.blog.edit', $blog->id) }}"><i
-                                    class="fas fa-edit pt-2 text-center w-12 h-12 bg-green-300 rounded-full text-2xl hover:bg-blue-400"></i></a>
+                            @permission('admin.blog.edit')
+                                <a href="{{ route('admin.blog.edit', $blog->id) }}"><i
+                                        class="fas fa-edit pt-2 text-center w-12 h-12 bg-green-300 rounded-full text-2xl hover:bg-blue-400"></i></a>
+                            @endpermission
                         </div>
                     </div>
                 @empty

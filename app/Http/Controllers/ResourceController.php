@@ -12,6 +12,25 @@ class ResourceController extends Controller
     public function __construct($services)
     {
         $this->services = $services;
+
+        $this->registerPermissionMiddleware();
+    }
+
+    protected function registerPermissionMiddleware()
+    {
+        $resource = $this->getResourceNames();
+
+        if (!$resource) {
+            return;
+        }
+
+        $this->middleware("permission:$resource.index")->only(['index']);
+        $this->middleware("permission:$resource.create")->only(['create']);
+        $this->middleware("permission:$resource.store")->only(['store']);
+        $this->middleware("permission:$resource.edit")->only(['edit']);
+        $this->middleware("permission:$resource.update")->only(['update']);
+        $this->middleware("permission:$resource.destroy")->only(['destroy']);
+        
     }
 
     public function viewsFolder()
@@ -87,7 +106,7 @@ class ResourceController extends Controller
         } catch (ValidationException $e) {
             return redirect()->back()->withErrors($e->errors());
         } catch (\Throwable $th) {
-            return redirect()->back()->withInput()->withErrors(['error' => 'Something Went Wrong. Unable to store'. $th->getMessage()]);
+            return redirect()->back()->withInput()->withErrors(['error' => 'Something Went Wrong. Unable to store' . $th->getMessage()]);
         }
     }
 
@@ -103,7 +122,7 @@ class ResourceController extends Controller
 
             return view($this->viewsFolder() . '.edit', $resource)->render();
         } catch (\Throwable $th) {
-            return redirect()->back()->withErrors(['error' => 'Something wrong with edit'. $th->getMessage()]);
+            return redirect()->back()->withErrors(['error' => 'Something wrong with edit' . $th->getMessage()]);
         }
     }
 
@@ -151,7 +170,7 @@ class ResourceController extends Controller
             return redirect()
                 ->back()
                 ->withInput()
-                ->withErrors(['error' => "Something went wrong. Can't Update ". $th->getMessage()]);
+                ->withErrors(['error' => "Something went wrong. Can't Update " . $th->getMessage()]);
         }
     }
 
@@ -183,48 +202,47 @@ class ResourceController extends Controller
     // }
 
     public function destroy(string $id)
-{
-    try {
-        $resource = $this->services->getById($id);
+    {
+        try {
+            $resource = $this->services->getById($id);
 
-        if (!$resource) {
-            if (request()->ajax()) {
-                return response()->json(['error' => 'Not found'], 404);
+            if (!$resource) {
+                if (request()->ajax()) {
+                    return response()->json(['error' => 'Not found'], 404);
+                }
+
+                return redirect($this->getUrl())
+                    ->withErrors(['error' => $this->getName() . ' not found.']);
             }
 
-            return redirect($this->getUrl())
-                ->withErrors(['error' => $this->getName() . ' not found.']);
-        }
+            $response = $this->services->delete($id);
 
-        $response = $this->services->delete($id);
+            if (isset($response['error'])) {
+                if (request()->ajax()) {
+                    return response()->json(['error' => $response['error']], 400);
+                }
 
-        if (isset($response['error'])) {
+                return redirect()
+                    ->back()
+                    ->withErrors(['error' => $response['error']]);
+            }
+
+            // If AJAX request → return JSON
             if (request()->ajax()) {
-                return response()->json(['error' => $response['error']], 400);
+                return response()->json(['success' => true]);
+            }
+
+            // If normal browser request → redirect
+            return redirect($this->getUrl())
+                ->with('success', $this->getName() . ' deleted successfully.');
+        } catch (\Throwable $th) {
+            if (request()->ajax()) {
+                return response()->json(['error' => 'Delete failed'], 500);
             }
 
             return redirect()
                 ->back()
-                ->withErrors(['error' => $response['error']]);
+                ->withErrors(['error' => 'There is issues with delete']);
         }
-
-        // If AJAX request → return JSON
-        if (request()->ajax()) {
-            return response()->json(['success' => true]);
-        }
-
-        // If normal browser request → redirect
-        return redirect($this->getUrl())
-            ->with('success', $this->getName() . ' deleted successfully.');
-
-    } catch (\Throwable $th) {
-        if (request()->ajax()) {
-            return response()->json(['error' => 'Delete failed'], 500);
-        }
-
-        return redirect()
-            ->back()
-            ->withErrors(['error' => 'There is issues with delete']);
     }
-}
 }

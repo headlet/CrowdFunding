@@ -38,7 +38,7 @@ class RegisterController extends Controller
                 ->with('success', 'Success. Please check your email...');
         } catch (\Throwable $th) {
             DB::rollback();
-            return redirect('register')->withErrors(['error' => 'Something went wrong. Please try again later.']);
+            return redirect('register')->withErrors(['error' => 'Something went wrong. Please try again later.'. $th->getMessage()]);
         }
     }
 }
