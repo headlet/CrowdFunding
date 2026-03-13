@@ -58,7 +58,7 @@
         <div class="container">
             <div class="menu-area">
                 <div class="header-logo">
-                    <a href="{{ route('index') }}"><img src="{{ asset('storage/' . $generalSettings->header_logo) }}" alt="Donat"></a>
+                    <a href="{{ route('index') }}"><img src="{{ isset($generalSettings->footer_logo) ? asset('storage/' . $generalSettings->footer_logo) : asset('img/logo.png') }}" alt="Donat"></a>
                 </div>
                 <div class="menu-area-wrap">
                     <nav class="main-menu d-none d-lg-block">
