@@ -13,7 +13,7 @@
     <div class="th-menu-area text-center">
         <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
         <div class="mobile-logo">
-            <a href="{{ route('index') }}"><img src="{{ asset('storage/' . $generalSettings->header_logo)}}" alt="Donat"></a>
+            <a href="{{ route('index') }}"><img src="{{ asset('img/logo.png') }}" alt="Donat"></a>
         </div>
         <div class="th-mobile-menu">
             <ul>

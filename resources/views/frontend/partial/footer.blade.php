@@ -39,7 +39,7 @@
                                 <a href="index.html"><img src="{{asset('img/logo-white.png') }}"
                                         alt="Donat"></a>
                             </div>
-                            <p class="about-text"> {{ $generalSettings->about_small_text }}.</p>
+                            {{-- <p class="about-text"> {{ $generalSettings->about_small_text }}.</p> --}}
                             <a href="{{ route('campaign') }}" class="th-btn"><i class="fas fa-heart me-2"></i> Donate
                                 Now</a>
                         </div>
@@ -103,11 +103,11 @@
                                     </div>
                                 </div>
                             @endif
-                            <div class="th-social style2">
+                            {{-- <div class="th-social style2">
                                 <a href="{{ $generalSettings->facebook }}"><i class="fab fa-facebook-f"></i></a>
                                 <a href="{{ $generalSettings->twitter }}"><i class="fab fa-twitter"></i></a>
                                 <a href="{{ $generalSettings->linkedin }}"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
