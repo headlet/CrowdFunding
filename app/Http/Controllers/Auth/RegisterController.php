@@ -23,7 +23,7 @@ class RegisterController extends Controller
             'email'     => 'required|email',
         ]);
         $validation['password'] = uniqid();
-        $validation['role_id'] = 2;
+        $validation['role_id'] = 3;
 
         try {
             DB::beginTransaction();

@@ -24,12 +24,9 @@ class User extends Authenticatable
         'password',
         'role_id',
         'image',
-        'mobile_number',
         'phone_number',
-        'date_of_birth',
         'gender',
         'address',
-        'country',
         'status',
         'email_verified_at',
     ];
@@ -41,18 +38,15 @@ class User extends Authenticatable
 
     public function hasPermission($permission)
     {
-        if (!$this->role) {
-            return false;
-        }
+        if (!$this->role) return false;
 
-        if ($this->role->name === 'Super admin') {
-            return true;
-        }
+        // Super admin bypass
+        if ($this->role->name === 'Super admin') return true;
 
-        return $this->role
-            ->permissions()
-            ->where('name', $permission)
-            ->exists();
+        // Load all permissions once and check in collection
+        $permissions = $this->role->permissions()->pluck('name')->toArray();
+
+        return in_array($permission, $permissions);
     }
 
     /**

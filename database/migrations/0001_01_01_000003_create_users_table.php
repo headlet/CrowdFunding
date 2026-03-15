@@ -18,16 +18,14 @@ return new class extends Migration
             $table->string('password');
             $table->foreignId('role_id')->constrained('roles')->cascadeOnDelete();
             $table->string('image')->nullable();
-            $table->string('mobile_number')->nullable();
             $table->string('phone_number')->nullable();
-            $table->date('date_of_birth')->nullable();
             $table->enum('gender', ['male', 'female', 'other'])->nullable();
             $table->text('address')->nullable();
-            $table->string('country')->nullable();
             $table->tinyInteger('status')->default(1);
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes(); // adds deleted_at column
         });
 
         Schema::create('password_resets', function (Blueprint $table) {
@@ -51,8 +49,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
-        Schema::dropIfExists('password_reset_tokens');
         Schema::dropIfExists('sessions');
+        Schema::dropIfExists('password_resets');
+        Schema::dropIfExists('users');
     }
 };

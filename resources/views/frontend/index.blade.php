@@ -3,7 +3,6 @@
 @section('title')
     Donat - Charity
 @endsection
-
 @section('content')
     {{-- Hero Area --}}
     <div class="th-hero-wrapper hero-4" id="hero">
@@ -15,7 +14,6 @@
                 @forelse ($slider as $slide)
                     <div class="swiper-slide">
                         <div class="hero-inner" data-bg-src="{{ asset('storage/' . $slide->image) }}">
-
                             {{-- Shapes --}}
                             <div class="hero-bg-shape4-1">
                                 <img src="{{ asset('img/hero/hero-bg-shape4-1.png') }}" alt="img">
@@ -32,7 +30,6 @@
                             <div class="hero-bg-shape4-5">
                                 <img src="{{ asset('img/hero/hero-bg-shape4-5.png') }}" alt="img">
                             </div>
-
                             {{-- Content --}}
                             <div class="container">
                                 <div class="row">
@@ -62,10 +59,54 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 @empty
+
+                    <div class="swiper-slide">
+                        <div class="hero-inner" data-bg-src="{{ asset('img/hero/hero_bg_4_1.jpg') }}">
+                            {{-- Shapes --}}
+                            <div class="hero-bg-shape4-1">
+                                <img src="{{ asset('img/hero/hero-bg-shape4-1.png') }}" alt="img">
+                            </div>
+                            <div class="hero-bg-shape4-2 shake">
+                                <img src="{{ asset('img/hero/hero-bg-shape4-2.png') }}" alt="img">
+                            </div>
+                            <div class="hero-bg-shape4-3 jump d-xl-inline-block d-none">
+                                <img src="{{ asset('img/hero/hero-bg-shape4-3.png') }}" alt="img">
+                            </div>
+                            <div class="hero-bg-shape4-4 jump-reverse">
+                                <img src="{{ asset('img/hero/hero-bg-shape4-4.png') }}" alt="img">
+                            </div>
+                            <div class="hero-bg-shape4-5">
+                                <img src="{{ asset('img/hero/hero-bg-shape4-5.png') }}" alt="img">
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xl-9">
+                                        <div class="hero-style4">
+                                            <span class="sub-title after-none" data-ani="slideinup"
+                                                data-ani-delay="0.2s">Making a Difference</span>
+                                            <h1 class="hero-title text-white">
+                                                <span class="title1" data-ani="slideinup" data-ani-delay="0.4s">
+                                                    Changing Lives, One </span>
+                                                <span class="title1" data-ani="slideinup" data-ani-delay="0.4s">
+                                                    Donation at a Time </span>
+                                            </h1>
+                                            <p class="hero-text text-white" data-ani="slideinup" data-ani-delay="0.6s">
+                                                Explore the variety of volunteer opportunities available. From event
+                                                planning and fundraising to fieldwork and administrative support</p>
+                                            <div class="btn-wrap" data-ani="slideinup" data-ani-delay="0.7s">
+                                                <a href="about.html" class="th-btn">Discover Now<i
+                                                        class="fa-solid fa-arrow-up-right ms-2"></i></a>
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 @endforelse
 
             </div>
@@ -78,6 +119,9 @@
                     <img src="{{ asset('storage/' . $slide->image) }}" alt="thumb">
                 </div>
             @empty
+                <div class="tab-btn active">
+                    <img src="{{ asset('img/hero/hero_bg_4_1.jpg') }}" alt="thumb">
+                </div>
             @endforelse
         </div>
 
@@ -91,7 +135,7 @@
             <div class="counter-wrap">
                 <div class="counter-card">
                     <div class="media-body">
-                        <h2 class="box-number text-theme"><span class="counter-number">{{$team_count}}</span><span
+                        <h2 class="box-number text-theme"><span class="counter-number">{{ $team_count }}</span><span
                                 class="fw-light">+</span></h2>
                         <p class="box-text">Incredible Volunteers</p>
                     </div>
@@ -99,7 +143,7 @@
                 <div class="divider"></div>
                 <div class="counter-card">
                     <div class="media-body">
-                        <h2 class="box-number text-theme2"><span class="counter-number">{{$campaign_count}}</span><span
+                        <h2 class="box-number text-theme2"><span class="counter-number">{{ $campaign_count }}</span><span
                                 class="fw-light">+</span></h2>
                         <p class="box-text">Total Campaigns</p>
                     </div>
@@ -107,7 +151,7 @@
                 <div class="divider"></div>
                 <div class="counter-card">
                     <div class="media-body">
-                        <h2 class="box-number text-theme"><span class="counter-number">{{$donor_count}}</span><span
+                        <h2 class="box-number text-theme"><span class="counter-number">{{ $donor_count }}</span><span
                                 class="fw-light">+</span></h2>
                         <p class="box-text">Total Donors</p>
                     </div>
@@ -126,21 +170,22 @@
         </div>
 
         <div class="container">
-            @if (isset($about_charity))
+           
                 <div class="row align-items-center">
                     <div class="col-xl-6 mb-50 mb-xl-0">
                         <div class="img-box4">
                             <div class="img1">
-                                <img src="{{ asset('storage/' . $about_charity->image) }}" alt="About">
+                                <img src="{{ asset(!empty($about_charity->image) ? 'storage/' . $about_charity->image : 'img/normal/about_4_1.png') }}" alt="About">
                             </div>
                         </div>
                     </div>
+                   
                     <div class="col-xl-6">
                         <div class="about-wrap4">
                             <div class="title-area mb-30">
                                 <span class="sub-title before-none">About Charity</span>
-                                <h2 class="sec-title">{{ $about_charity->title }}</h2>
-                                <p class="sec-text">{!! $about_charity->description !!}</p>
+                                <h2 class="sec-title">{{ $about_charity->title ?? 'Making a Difference, One Life at a Time'}}</h2>
+                                <p class="sec-text">{!! $about_charity->description ?? 'Our secure online donation platform allows you to make contributions quickly and safely. Choose from various payment methods and set up one-time or recurring donations with ease. Your support helps us continue our mission.'!!}</p>
                             </div>
                             <div class="about-feature-grid-wrap">
                                 <div class="mb-0 about-feature-grid style2">
@@ -148,7 +193,7 @@
                                         <img src="{{ asset('img/icon/about-icon4-1.svg') }}" alt="icon">
                                     </div>
                                     <div class="media-body">
-                                        <h4 class="box-title">{{ $about_charity->box1_title }}</h4>
+                                        <h4 class="box-title">{{ $about_charity->box1_title ?? 'Be a Hero, Contribute Now' }}</h4>
                                     </div>
                                 </div>
                                 <div class="mb-0 about-feature-grid style2">
@@ -156,14 +201,13 @@
                                         <img src="{{ asset('img/icon/about-icon4-2.svg') }}" alt="icon">
                                     </div>
                                     <div class="media-body">
-                                        <h4 class="box-title">{{ $about_charity->box2_title }}</h4>
+                                        <h4 class="box-title">{{ $about_charity->box2_title ?? 'Help Children with Donations' }}</h4>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            @endif
         </div>
     </div>
 
@@ -223,6 +267,12 @@
                                 </div>
                             </div>
                         @empty
+                            <div class="container">
+                                <div class="title-area text-center">
+                                    <h5 class="sub-title">No Campaigns......</h5>
+
+                                </div>
+                            </div>
                         @endforelse
                     </div>
                 </div>
@@ -248,10 +298,10 @@
                 <img src="{{ asset('img/hero/hero-bg-shape2-1.png') }}" alt="shape">
             </div>
         </div>
-
         <div class="shape-mockup service-shape-3-2 jump-reverse d-lg-block d-none" data-right="3%" data-bottom="5%">
             <img src="{{ asset('img/shape/service_bg_shape4_1.png') }}" alt="shape">
         </div>
+
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-lg-7">
@@ -262,51 +312,29 @@
                 </div>
             </div>
             <div class="row gy-30 gx-30 justify-content-center">
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-card style3">
-                        <div class="box-thumb">
-                            <img src="{{ asset('img/service/service_card_3_1.png') }}" alt="icon">
-                        </div>
-                        <div class="box-icon">
-                            <img src="{{ asset('img/icon/service-icon/service-card-icon1-1.svg') }}" alt="Icon">
-                        </div>
-                        <div class="box-content">
-                            <h3 class="box-title"><a href="about.html">Fund Poor Raised</a></h3>
-                            <p class="box-text">Share stories and experiences from current volunteers to inspire others to
-                                join.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-card style3">
-                        <div class="box-thumb">
-                            <img src="{{ asset('img/service/service_card_3_2.png') }}" alt="icon">
-                        </div>
-                        <div class="box-icon">
-                            <img src="{{ asset('img/icon/service-icon/service-card-icon1-3.svg') }}" alt="Icon">
-                        </div>
-                        <div class="box-content">
-                            <h3 class="box-title"><a href="about.html">Money This Treatment</a></h3>
-                            <p class="box-text">Share stories and experiences from current volunteers to inspire others to
-                                join.</p>
+
+                @foreach ($services as $service)
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-card style3">
+
+                            <div class="box-thumb">
+                                <img src="{{ asset($service['image']) }}" alt="icon">
+                            </div>
+
+                            <div class="box-icon">
+                                <img src="{{ asset($service['icon']) }}" alt="Icon">
+                            </div>
+                            <div class="box-content">
+                                <h3 class="box-title">
+                                    <a href="about.html">{{ $service['title'] }}</a>
+                                </h3>
+                                <p class="box-text">
+                                    {{ $service['desc'] }}
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-card style3">
-                        <div class="box-thumb">
-                            <img src="{{ asset('img/service/service_card_3_3.png') }}" alt="icon">
-                        </div>
-                        <div class="box-icon">
-                            <img src="{{ asset('img/icon/service-icon/service-card-icon1-2.svg') }}" alt="Icon">
-                        </div>
-                        <div class="box-content">
-                            <h3 class="box-title"><a href="about.html">Child Education Raised</a></h3>
-                            <p class="box-text">Share stories and experiences from current volunteers to inspire others to
-                                join.</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -317,79 +345,23 @@
         <div class="p-0 container-fluid">
             <div class="swiper th-slider marquee-slider1"
                 data-slider-options='{"breakpoints":{"0":{"slidesPerView":"auto"}},"autoplay":{"delay":0,"disableOnInteraction":false},"noSwiping":"true","speed":10000,"spaceBetween":20}'>
+
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <a target="_blank" href="home-4.html#"><span class="text-stroke">Medical</span></a>
-                            <span><img src="{{ asset('img/icon/marquee-circle-icon.svg') }}" alt="img"></span>
+
+                    @foreach ($marqueeItems as $index => $item)
+                        <div class="swiper-slide">
+                            <div class="marquee-card">
+                                <a target="_blank" href="#">
+                                    <span class="{{ $index % 2 == 0 ? 'text-stroke' : 'text-theme' }}">
+                                        {{ $item }}
+                                    </span>
+                                </a>
+                                <span>
+                                    <img src="{{ asset('img/icon/marquee-circle-icon.svg') }}" alt="img">
+                                </span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <a target="_blank" href="home-4.html#"><span class="text-theme">Education</span></a>
-                            <span><img src="{{ asset('img/icon/marquee-circle-icon.svg') }}" alt="img"></span>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <a target="_blank" href="home-4.html#"><span class="text-stroke">Foods</span></a>
-                            <span><img src="{{ asset('img/icon/marquee-circle-icon.svg') }}" alt="img"></span>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <a target="_blank" href="home-4.html#"><span class="text-theme">Health</span></a>
-                            <span><img src="{{ asset('img/icon/marquee-circle-icon.svg') }}" alt="img"></span>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <a target="_blank" href="home-4.html#"><span class="text-stroke">Support</span></a>
-                            <span><img src="{{ asset('img/icon/marquee-circle-icon.svg') }}" alt="img"></span>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <a target="_blank" href="home-4.html#"><span class="text-theme">Donation</span></a>
-                            <span><img src="{{ asset('img/icon/marquee-circle-icon.svg') }}" alt="img"></span>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <a target="_blank" href="home-4.html#"><span class="text-stroke">Medical</span></a>
-                            <span><img src="{{ asset('img/icon/marquee-circle-icon.svg') }}" alt="img"></span>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <a target="_blank" href="home-4.html#"><span class="text-theme">Education</span></a>
-                            <span><img src="{{ asset('img/icon/marquee-circle-icon.svg') }}" alt="img"></span>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <a target="_blank" href="home-4.html#"><span class="text-stroke">Foods</span></a>
-                            <span><img src="{{ asset('img/icon/marquee-circle-icon.svg') }}" alt="img"></span>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <a target="_blank" href="home-4.html#"><span class="text-theme">Health</span></a>
-                            <span><img src="{{ asset('img/icon/marquee-circle-icon.svg') }}" alt="img"></span>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <a target="_blank" href="home-4.html#"><span class="text-stroke">Support</span></a>
-                            <span><img src="{{ asset('img/icon/marquee-circle-icon.svg') }}" alt="img"></span>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="marquee-card">
-                            <a target="_blank" href="home-4.html#"><span class="text-theme">Donation</span></a>
-                            <span><img src="{{ asset('img/icon/marquee-circle-icon.svg') }}" alt="img"></span>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -449,36 +421,48 @@
                                 </div>
                             </div>
                         @empty
+                            <div class="container">
+                                <div class="title-area text-center">
+                                    <span class="sub-title after-none before-none"></span>
+                                    <h5 class="sub-title">No Volunteer......</h5>
+                                    <h5 class="sub-title after-none before-none">Please add it in dashboard</h5>
+                                </div>
+                            </div>
                         @endforelse
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     {{-- Story Area --}}
     <div class="overflow-hidden story-area-1 space bg-smoke2">
         <div class="container">
-            @if (isset($success_story))
+          
                 <div class="flex-row-reverse row gy-40 justify-content-between align-items-center">
                     <div class="col-xl-7">
                         <div class="story-img-box1">
                             <div class="box-wrap d-inline-block">
                                 <div class="img1">
-                                    <img src="{{ asset('storage/' . $success_story->image) }}" alt="img">
+                                    <img src="{{ asset(!empty($success_story->image) ? 'storage/' . $success_story->image : 'img/normal/story_1_1.png') }}" alt="img">
                                 </div>
                                 <div class="story-shape1-1 jump-reverse">
                                     <img src="{{ asset('img/shape/story_shape1_1.png') }}" alt="img">
                                 </div>
                                 <div class="story-card movingX">
-                                    <h5 class="box-title">{{ $success_story->volunteer_name }}</h5>
-                                    <p class="box-text">{{ $success_story->sub_description }}</p>
+                                    <h5 class="box-title">{{ $success_story->volunteer_name ?? 'Adam Cruz' }}</h5>
+                                    <p class="box-text">{{ $success_story->sub_description ?? 'Our success stories highlight the
+                                    real life impact of your donations &
+                                    the resilience of those we help.
+                                    These narratives showcase the
+                                    power of compassion.' }}</p>
 
                                 </div>
 
                                 <div class="year-counter">
                                     <p class="year-counter_text">Years of <span>Experience</span></p>
                                     <div class="year-counter_number"><span
-                                            class="counter-number">{{ $success_story->year }}</span></div>
+                                            class="counter-number">{{ $success_story->year ?? '12' }}</span></div>
                                 </div>
                             </div>
                         </div>
@@ -487,14 +471,14 @@
                         <div class="story-wrap1">
                             <div class="mb-0 title-area">
                                 <span class="sub-title before-none">Success Story</span>
-                                <h2 class="sec-title">{{ $success_story->title }}</h2>
-                                <p class="mt-30">{!! $success_story->description !!}</p>
+                                <h2 class="sec-title">{{ $success_story->title ?? 'We Help Fellow Nonprofits Access the Funding Tools, Training' }}</h2>
+                                <p class="mt-30">{!! $success_story->description ?? 'Our secure online donation platform allows you to make contributions quickly and safely. Choose from various payment methods and set up one-time.exactly.' !!}</p>
                             </div>
                         </div>
                     </div>
 
                 </div>
-            @endif
+         
         </div>
     </div>
 
@@ -725,9 +709,9 @@
                 </div>
                 <div class="col-xl-5">
                     <div class="contact-map">
-                        @if (isset($contact->map))
-                            <iframe src="{{ $contact->map }}" allowfullscreen="" loading="lazy"></iframe>
-                        @endif
+                        
+                            <iframe src="{{ $contact->map ?? 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d43279.7362173087!2d85.37892259999998!3d27.6851649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1a419f80aa67%3A0x288ab8841508315f!2sMadhyapur%20Thimi!5e1!3m2!1sen!2snp!4v1773477179850!5m2!1sen!2snp' }}" allowfullscreen="" loading="lazy"></iframe>
+                       
                     </div>
                 </div>
             </div>
@@ -769,6 +753,12 @@
                                 </div>
                             </div>
                         @empty
+                            <div class="container">
+                                <div class="title-area text-center">
+
+                                    <h5 class="sub-title">No Blogs......</h5>
+                                </div>
+                            </div>
                         @endforelse
 
                     </div>

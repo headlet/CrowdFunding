@@ -6,8 +6,8 @@
 
 @section('content')
     <!--==============================
-                Breadcumb
-            ============================== -->
+                                            Breadcumb
+                                        ============================== -->
     <div class="breadcumb-wrapper " data-bg-src="{{ asset('img/bg/breadcumb-bg.jpg') }}" data-overlay="theme">
         <div class="container">
             <div class="breadcumb-content">
@@ -20,9 +20,10 @@
         </div>
     </div>
     <!--==============================
-            About Area
-            ==============================-->
-    <div class="overflow-hidden space space-top" id="about-sec">
+                                        About Area
+                                        ==============================-->
+
+    <div class="overflow-hidden space" id="about-sec">
         <div class="shape-mockup about-bg-shape1-1 jump-reverse" data-top="10%" data-right="5%">
             <img src="{{ asset('img/shape/heart-shape1.png') }}" alt="shape">
         </div>
@@ -31,7 +32,9 @@
                 <div class="col-xl-7">
                     <div class="img-box1">
                         <div class="img1">
-                            <img src="{{ asset('storage/' . $about->about_image) }}" alt="About">
+                            <img src="{{ asset(!empty($about->about_image) ? 'storage/' . $about->about_image : 'img/normal/about_1_1.png') }}"
+                                alt="About">
+
                         </div>
                         <div class="about-shape1-1 jump">
                             <img src="{{ asset('img/shape/about_shape1_1.png') }}" alt="img">
@@ -42,8 +45,11 @@
                     <div class="about-wrap1">
                         <div class="title-area mb-30">
                             <span class="sub-title before-none">About Us Fund</span>
-                            <h2 class="sec-title">{{ $about->title }}</h2>
-                            <p class="">{!! $about->description !!}</p>
+
+                            <h2 class="sec-title">{{ $about->title ?? 'Please Add title in dashboard' }}</h2>
+                            <p class="">{!! $about->description ??
+                                'Donet is the largest global crowdfunding community connecting nonprofits, donors, and companies in nearly every country. We help nonprofits from Afghanistan to Zimbabwe (and hundreds of places in between) access the tools, training, and support they need to be more effective and make our world a better place.' !!}</p>
+
                         </div>
                         {{-- <div class="checklist style2 list-two-column">
                             <ul>
@@ -62,9 +68,10 @@
             </div>
         </div>
     </div>
+
     <!--==============================
-            Feature Area
-            ==============================-->
+                                        Feature Area
+                                        ==============================-->
     <section class="">
         <div class="container">
             <div class="row gy-4 justify-content-center">
@@ -123,10 +130,11 @@
             </div>
         </div>
     </section>
-  
+
     <!--==============================
-            Video Area
-            ==============================-->
+        Video Area
+     ==============================-->
+     @if (isset($about))
     <div class="video-area-3 space-top">
         <div class="shape-mockup video-bg-shape3-1" data-top="0" data-left="0" data-bottom="0">
             <img src="{{ asset('img/shape/video_bg_shape3_1.png') }}" alt="img">
@@ -135,48 +143,18 @@
             <img src="{{ asset('img/shape/video_bg_shape3_2.png') }}" alt="img">
         </div>
         <div class="video-thumb3-1 video-box-center">
-            <img src="{{ asset('storage/' . $about->bg_image) }}" alt="img">
-            <a href="{{ $about->video_link }}" class="play-btn style7 popup-video"><i
-                    class="fa-sharp fa-solid fa-play"></i></a>
+            
+                <img src="{{ asset('storage/' . $about->bg_image) }}" alt="img">
+                <a href="{{ $about->video_link }}" class="play-btn style7 popup-video"><i
+                        class="fa-sharp fa-solid fa-play"></i></a>
+           
         </div>
     </div>
+     @endif
     <!--==============================
-            Counter Area
-            ==============================-->
-    <div class="">
-        <div class="container">
-            <div class="counter-wrap style2 bg-light">
-                <div class="counter-card">
-                    <div class="media-body">
-                        <h2 class="box-number text-white"><span class="counter-number">15</span>k<span
-                                class="fw-light">+</span></h2>
-                        <p class="box-text text-white">Incredible Volunteers</p>
-                    </div>
-                </div>
-                <div class="divider"></div>
-                <div class="counter-card">
-                    <div class="media-body">
-                        <h2 class="box-number text-white"><span class="counter-number">1</span>k<span
-                                class="fw-light">+</span></h2>
-                        <p class="box-text text-white">Successful Campaigns</p>
-                    </div>
-                </div>
-                <div class="divider"></div>
-                <div class="counter-card">
-                    <div class="media-body">
-                        <h2 class="box-number text-white"><span class="counter-number">400</span><span
-                                class="fw-light">+</span></h2>
-                        <p class="box-text text-white">Monthly Donors</p>
-                    </div>
-                </div>
-
-                <div class="divider"></div>
-            </div>
-        </div>
-    </div><!--==============================
-            Process Area
-            ==============================-->
-    <section class="space-top">
+                                        Process Area
+                                        ==============================-->
+    <section class="">
         <div class="shape-mockup process-shape1-1 jump-reverse d-xxl-block d-none" data-top="20%" data-left="0"><img
                 src="{{ asset('img/shape/hand-bg-shape2-1.png') }}" alt="img"></div>
         <div class="container">
@@ -201,7 +179,8 @@
                         </div>
                         <div class="box-content">
                             <h3 class="box-title">Awareness & Engagement</h3>
-                            <p class="box-text">To inform and engage potential donors and supporters about the charity’s
+                            <p class="box-text">To inform and engage potential donors and supporters about the
+                                charity’s
                                 mission and the cause it supports. Utilize various channels such as social media.</p>
                         </div>
                     </div>
@@ -252,12 +231,13 @@
         </div>
     </section>
 
-      <!--==============================
-            Team Area
-            ==============================-->
+    <!--==============================
+                                        Team Area
+                                        ==============================-->
     <section class="space" id="team-sec" data-bg-src="{{ asset('img/bg/gray-bg2.png') }}">
-        <div class="shape-mockup team-bg-shape3-1 d-xxl-block d-none" data-top="0%" data-left="0%" data-bottom="0"><img
-                src="{{ asset('img/shape/team_bg_shape3_1.png') }}" alt="img"></div>
+        <div class="shape-mockup team-bg-shape3-1 d-xxl-block d-none" data-top="0%" data-left="0%" data-bottom="0">
+            <img src="{{ asset('img/shape/team_bg_shape3_1.png') }}" alt="img">
+        </div>
         <div class="shape-mockup team-bg-shape3-2 d-xxl-block d-none" data-top="0%" data-right="0%" data-bottom="0">
             <img src="{{ asset('img/shape/team_bg_shape3_2.png') }}" alt="img">
         </div>
@@ -290,7 +270,7 @@
                     data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"2"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"4"}}}'>
                     <div class="swiper-wrapper">
 
-                        @foreach ($teams as $team)
+                        @forelse($teams as $team)
                             <!-- Single Item -->
                             <div class="swiper-slide">
                                 <div class="th-team team-card3">
@@ -298,7 +278,8 @@
                                         <img src="{{ asset('storage/' . $team->image) }}" alt="Team">
                                     </div>
                                     <div class="team-card-content">
-                                        <h3 class="box-title"><a href="team-details.html">{{ $team->name }}</a></h3>
+                                        <h3 class="box-title"><a href="team-details.html">{{ $team->name }}</a>
+                                        </h3>
                                         <span class="team-desig">Volunteer</span>
                                         <div class="th-social style2">
                                             <a target="_blank" href="https://facebook.com/"><i
@@ -313,11 +294,18 @@
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
+
+                        @empty
+                            <div class="container">
+                                <div class="title-area text-center">
+                                    <span class="sub-title after-none before-none"></span>
+                                    <h5 class="sub-title">No Volunteer......Please add it in dashboard</h5>
+                                </div>
+                            </div>
+                        @endforelse
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
 @endsection

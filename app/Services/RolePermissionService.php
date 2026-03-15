@@ -12,11 +12,16 @@ class RolePermissionService extends Services
         parent::__construct($model);
     }
 
+    public function getAll($pagination = 10)
+    {
+        return $this->model::where('id', '!=', 1)->get();
+    }
+
     public function getById(string $id)
     {
         return [
             'role' => $this->model->with('permissions')->findOrFail($id),
-            'roles' => $this->model->all(),
+            'roles' => $this->model->where('id', '!=', 1)->get(),
             'permissions' => Permission::all()->groupBy('group'),
             'assignedPermissions' => $this->model->findOrFail($id)->permissions->pluck('id')->toArray(),
         ];
@@ -25,7 +30,7 @@ class RolePermissionService extends Services
     public function getCreateData()
     {
         return [
-            'roles' => Role::all(),
+            'roles' => Role::where('id', '!=', 1)->get(), // exclude super-admin
             'permissions' => Permission::all()->groupBy('group')
         ];
     }

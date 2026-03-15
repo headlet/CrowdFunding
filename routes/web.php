@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\public\HomeController;
 use App\Http\Controllers\system\AboutCharityController;
 use App\Http\Controllers\system\AboutController;
+use App\Http\Controllers\system\AccountSettingController;
 use App\Http\Controllers\system\BlogCategoryController;
 use App\Http\Controllers\system\BlogController;
 use App\Http\Controllers\system\CampaignCategoryController;
@@ -64,7 +65,7 @@ Route::middleware('guest')->group(function () {
     Route::post('reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
 });
 
-Route::get('logout', [LoginController::class, 'destroy'])->name('logout');
+Route::post('logout', [LoginController::class, 'destroy'])->name('logout');
 
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 
@@ -84,4 +85,7 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('about-charity', AboutCharityController::class)->except(['show']); //
     Route::resource('success-story', SuccessStoryController::class)->except(['show']);
     Route::resource('general-setting', GeneralSettingController::class)->except(['show']);
+    Route::resource('account_setting', AccountSettingController::class)->except(['show']);
+    Route::post('account_setting/update-password', [AccountSettingController::class, 'updatePassword'])
+    ->name('account_setting.updatePassword');
 });

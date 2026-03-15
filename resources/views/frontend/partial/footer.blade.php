@@ -36,10 +36,12 @@
                     <div class="widget footer-widget">
                         <div class="th-widget-about">
                             <div class="about-logo">
-                                <a href="index.html"><img src="{{asset('img/logo-white.png') }}"
+                                <a href="index.html"><img
+                                        src="{{ asset(!empty($generalSetting) ? 'storage/' . $generalSetting->footer_logo : 'img/logo-white.png') }}"
                                         alt="Donat"></a>
                             </div>
-                            {{-- <p class="about-text"> {{ $generalSettings->about_small_text }}.</p> --}}
+                            <p class="about-text">
+                                {{ !empty($generalSetting) ? $generalSetting->about_small_text : '' }}.</p>
                             <a href="{{ route('campaign') }}" class="th-btn"><i class="fas fa-heart me-2"></i> Donate
                                 Now</a>
                         </div>
@@ -77,37 +79,41 @@
                     <div class="widget footer-widget">
                         <div class="th-widget-contact">
                             <h3 class="widget_title">Contact Us</h3>
-                            @if (isset($contact))
-                                <div class="info-card">
-                                    <div class="box-icon">
-                                        <i class="fal fa-phone"></i>
-                                        <div class="bg-shape1" data-mask-src="{{ asset('') }}"></div>
-                                        <div class="bg-shape2" data-mask-src="{{ asset('') }}"></div>
-                                    </div>
-                                    <div class="box-content">
-                                        <p class="box-text">Call us any time:</p>
-                                        <h4 class="box-title"><a
-                                                href="tel:{{ $contact->phone }}">{{ $contact->phone }}</a></h4>
-                                    </div>
+
+                            <div class="info-card">
+                                <div class="box-icon">
+                                    <i class="fal fa-phone"></i>
                                 </div>
-                                <div class="info-card">
-                                    <div class="box-icon">
-                                        <i class="fal fa-envelope-open"></i>
-                                        <div class="bg-shape1" data-mask-src="{{ asset('') }}"></div>
-                                        <div class="bg-shape2" data-mask-src="{{ asset('') }}"></div>
-                                    </div>
-                                    <div class="box-content">
-                                        <p class="box-text">Email us any time:</p>
-                                        <h4 class="box-title"><a
-                                                href="mailto:{{ $contact->email }}">{{ $contact->email }}</a></h4>
-                                    </div>
+                                <div class="box-content">
+                                    <p class="box-text">Call us any time:</p>
+                                    <h4 class="box-title">
+                                        <a
+                                            href="tel:{{ $contact?->phone }}">{{ $contact?->phone ?? '5984984' }}</a>
+                                    </h4>
                                 </div>
-                            @endif
-                            {{-- <div class="th-social style2">
-                                <a href="{{ $generalSettings->facebook }}"><i class="fab fa-facebook-f"></i></a>
-                                <a href="{{ $generalSettings->twitter }}"><i class="fab fa-twitter"></i></a>
-                                <a href="{{ $generalSettings->linkedin }}"><i class="fab fa-linkedin-in"></i></a>
-                            </div> --}}
+                            </div>
+                            <div class="info-card">
+                                <div class="box-icon">
+                                    <i class="fal fa-envelope-open"></i>
+                                </div>
+                                <div class="box-content">
+                                    <p class="box-text">Email us any time:</p>
+                                    <h4 class="box-title"><a
+                                            href="mailto:{{ $contact?->email }}">{{ $contact->email ?? 'demo@email.com'}}</a></h4>
+                                </div>
+                            </div>
+
+                            <div class="th-social style2">
+                                <a
+                                    href="{{ !empty($generalSetting) ? $generalSetting->facebook : 'www.facebook.com' }}"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a
+                                    href="{{ !empty($generalSetting) ? $generalSetting->twitter : 'www.twitter.com' }}"><i
+                                        class="fab fa-twitter"></i></a>
+                                <a
+                                    href="{{ !empty($generalSetting) ? $generalSetting->linkedin : 'www.linkedin.com' }}"><i
+                                        class="fab fa-linkedin-in"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>

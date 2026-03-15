@@ -21,7 +21,13 @@ class PermissionSeeder extends Seeder
             'blog',
             'blog-category',
             'gallery',
-            'role-permission'
+            'role-permission',
+            'about',
+            'contact',
+            'slider',
+            'about-charity',
+            'success-story',
+            'general-setting',
         ];
 
         $actions = ['index', 'create', 'store', 'edit', 'update', 'destroy'];

@@ -9,12 +9,14 @@ use Illuminate\Http\Request;
 
 class DashboardController extends ResourceController
 {
+       protected bool $skipPermission = true;
+
     function __construct(DashboardService $services)
     {
         return parent::__construct($services);
     }
 
-     public function viewsFolder()
+    public function viewsFolder()
     {
         return 'backend.system.dashboard';
     }

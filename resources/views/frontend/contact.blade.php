@@ -33,7 +33,7 @@ Contact Area
                         <div class="media-body">
                             <h3 class="box-title">Address</h3>
                             <p class="box-text">
-                               {{$contact->address}}
+                               {{$contact->address ?? "Nepal"}}
                             </p>
                         </div>
                     </div>
@@ -43,7 +43,7 @@ Contact Area
                         </div>
                         <div class="media-body">
                             <h3 class="box-title">Phone</h3>
-                            <p class="box-text"><a href="tel:{{$contact->phone}}">{{$contact->phone}}</a></p>
+                            <p class="box-text"><a href="tel:{{$contact->phone ?? 95333333}}">{{$contact->phone ?? 953333333}}</a></p>
                         </div>
                     </div>
                     <div class="contact-feature">
@@ -52,7 +52,7 @@ Contact Area
                         </div>
                         <div class="media-body">
                             <h3 class="box-title">Email</h3>
-                            <p class="box-text"><a href="mailto:{{$contact->email}}">{{$contact->email}}</a></p>
+                            <p class="box-text"><a href="mailto:{{$contact->email ?? 'demoemail@gamil.com'}}">{{$contact->email ?? 'demoemail@gamil.com'}}</a></p>
                         </div>
                     </div>
                     <div class="contact-feature" data-theme-color="#FF5528">
@@ -67,7 +67,7 @@ Contact Area
                 </div>
                 <div class="col-xl-8 col-lg-7">
                     <div class="contact-map">
-                        <iframe src="{{ $contact->map }}" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="{{ $contact->map ?? 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d43279.7362173087!2d85.37892259999998!3d27.6851649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1a419f80aa67%3A0x288ab8841508315f!2sMadhyapur%20Thimi!5e1!3m2!1sen!2snp!4v1773477179850!5m2!1sen!2snp' }}" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>

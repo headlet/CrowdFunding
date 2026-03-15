@@ -6,8 +6,8 @@
 
 @section('content')
     <!--==============================
-        Breadcumb
-    ============================== -->
+            Breadcumb
+        ============================== -->
     <div class="breadcumb-wrapper " data-bg-src="{{ asset('img/bg/breadcumb-bg.jpg') }}" data-overlay="theme">
         <div class="container">
             <div class="breadcumb-content">
@@ -19,32 +19,56 @@
             </div>
         </div>
     </div><!--==============================
-    Blog Area
-    ==============================-->
+        Blog Area
+        ==============================-->
     <section class="th-blog-wrapper space-top space-extra-bottom">
         <div class="container">
             <div class="row gx-40">
                 <div class="col-xxl-8 col-lg-7">
-                    @foreach ($blogs as $blog)
+                    @forelse ($blogs as $blog)
                         <div class="th-blog blog-single has-post-thumbnail">
                             <div class="blog-img">
-                                <a href="blog-details.html"><img src="{{ asset('storage/'. $blog->image) }}"
+                                <a href="blog-details.html"><img src="{{ asset('storage/' . $blog->image) }}"
                                         alt="Blog Image"></a>
                             </div>
                             <div class="blog-content">
                                 <div class="blog-meta">
-                                    <a href="blog.html"><i class="fas fa-calendar-days"></i>{{$blog->published_at}}</a>
-                                    <a href="blog.html"><i class="fas fa-tags"></i>{{$blog->blogCategory->name}}</a>
+                                    <a href="blog.html"><i class="fas fa-calendar-days"></i>{{ $blog->published_at }}</a>
+                                    <a href="blog.html"><i class="fas fa-tags"></i>{{ $blog->blogCategory->name }}</a>
                                     <a href="blog.html"><i class="fas fa-comments"></i>Comments (03)</a>
                                 </div>
-                                <h2 class="blog-title"><a href="blog-details.html">{{$blog->title}}</a>
+                                <h2 class="blog-title"><a href="blog-details.html">{{ $blog->title }}</a>
                                 </h2>
-                                <p class="blog-text">{!!$blog->content!!}</p>
-                                <a href="{{route('blog-details', $blog->id)}}" class="th-btn btn-sm">Read More <i
+                                <p class="blog-text">{!! $blog->content !!}</p>
+                                <a href="{{ route('blog-details', $blog->id) }}" class="th-btn btn-sm">Read More <i
                                         class="fas fa-arrow-up-right ms-2"></i></a>
                             </div>
                         </div>
-                    @endforeach
+                    @empty
+                        <div class="th-blog blog-single has-post-thumbnail">
+                            <div class="blog-img" data-overlay="black" data-opacity="5">
+                                <a href="blog-details.html"><img src="{{ asset('img/blog/blog-s-1-3.jpg') }}" alt="Blog Image"></a>
+                                <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" class="play-btn popup-video"><i
+                                        class="fas fa-play"></i></a>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <a href="blog.html"><i class="fas fa-calendar-days"></i>July 05, 2025</a>
+                                    <a href="blog.html"><i class="fas fa-tags"></i>Education</a>
+                                    <a href="blog.html"><i class="fas fa-comments"></i>Comments (03)</a>
+                                </div>
+                                <h2 class="blog-title"><a href="blog-details.html">Give Time, Change Lives: Volunteer
+                                        Opportunities</a>
+                                </h2>
+                                <p class="blog-text">We prioritize your security. Our donation process uses the latest
+                                    encryption technology to protect your personal and financial information. Donate with
+                                    confidence knowing your data is secure and your contribution is directly benefiting
+                                    those in need.</p>
+                                <a href="blog-details.html" class="th-btn btn-sm">Read More <i
+                                        class="fas fa-arrow-up-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    @endforelse
 
                     <div class="th-pagination ">
                         <ul>
@@ -67,10 +91,10 @@
                             <h3 class="widget_title">Category</h3>
                             <ul>
                                 @foreach ($blogs as $blog)
-                                <li>
-                                    <a href="blog.html">{{$blog->blogCategory->name}}</a>
-                                    <span><i class="fas fa-arrow-right"></i></span>
-                                </li>
+                                    <li>
+                                        <a href="blog.html">{{ $blog->blogCategory->name }}</a>
+                                        <span><i class="fas fa-arrow-right"></i></span>
+                                    </li>
                                 @endforeach
                             </ul>
                         </div>

@@ -33,7 +33,7 @@
         <a href="{{ route('admin.dashboard') }}"
             class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all {{ request()->routeIs('admin.dashboard') ? 'bg-green-700' : 'hover:bg-green-700' }}">
             <i class="flex-shrink-0 w-5 text-lg fas fa-tachometer-alt"></i>
-            <span class="texts whitespace-nowrap">Overview</span>
+            <span class="texts whitespace-nowrap">DashBoard</span>
         </a>
         @permission('admin.campaigns.index')
             <a href="{{ route('admin.campaigns.index') }}"

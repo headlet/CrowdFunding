@@ -46,6 +46,12 @@
                         </div>
                     </div>
                 @empty
+                 <div class="container">
+                            <div class="title-area text-center">
+                                <span class="sub-title after-none before-none"></span>
+                                <h5 class="">No Volunteer......Please add it in dashboard</h5>
+                            </div>
+                         </div>
                 @endforelse
             </div>
         </div>

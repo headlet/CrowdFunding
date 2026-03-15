@@ -23,7 +23,7 @@
     <div class="overflow-hidden space">
         <div class="container">
             <div class="row gy-30 gx-30 filter-active">
-                @foreach ($gallerys as $gallery)
+                @forelse ($gallerys as $gallery)
                     <div class="col-md-6 col-xxl-auto col-lg-4 filter-item">
 
                         <div class="gallery-card">
@@ -35,7 +35,14 @@
                         </div>
 
                     </div>
-                @endforeach
+                @empty
+                 <div class="container">
+                            <div class="title-area text-center">
+                                <span class="sub-title after-none before-none"></span>
+                                <h5 class="sub-title">No picture in gallery......Please add it in dashboard</h5>
+                            </div>
+                         </div>
+                @endforelse
             </div>
         </div>
     </div>

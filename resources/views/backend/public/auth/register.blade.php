@@ -19,6 +19,13 @@
         <section class="px-4 pb-24 -mt-20">
             <div
                 class="max-w-md p-8 mx-auto border shadow-2xl backdrop-blur-xl bg-white/90 rounded-3xl sm:p-10 border-white/40">
+                <!-- HOME BUTTON (INSIDE CARD) -->
+                <div class="mb-6 text-left">
+                    <a href="{{ route('index') }}"
+                        class="inline-flex items-center bg-[#0b3d36] text-white px-4 py-2 rounded-xl hover:bg-[#06201d] transition">
+                        <i class="fa-solid fa-house mr-2"></i> Home
+                    </a>
+                </div>
 
                 <!-- TITLE -->
                 <div class="mb-8 text-center">

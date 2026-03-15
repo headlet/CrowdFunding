@@ -13,7 +13,7 @@
     <div class="th-menu-area text-center">
         <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
         <div class="mobile-logo">
-            <a href="{{ route('index') }}"><img src="{{ asset('img/logo.png') }}" alt="Donat"></a>
+            <a href="{{ route('index') }}"><img src="{{ asset(!empty($generalSetting->header_logo) ? 'storage/'. $generalSetting->header_logo : 'img/logo.png') }}" alt="Donat"></a>
         </div>
         <div class="th-mobile-menu">
             <ul>
@@ -58,7 +58,7 @@
         <div class="container">
             <div class="menu-area">
                 <div class="header-logo">
-                    <a href="{{ route('index') }}"><img src="{{ asset('img/logo.png') }}" alt="Donat"></a>
+                    <a href="{{ route('index') }}"><img src="{{ asset(!empty($generalSetting->header_logo) ? 'storage/'. $generalSetting->header_logo : 'img/logo.png') }}" alt="Donat"></a>
                 </div>
                 <div class="menu-area-wrap">
                     <nav class="main-menu d-none d-lg-block">
@@ -97,16 +97,23 @@
                 <div class="header-button">
                     <div>
                         <div></div>
+                        <div></div>
                     </div>
                     @guest
                         <a href="{{ route('login') }}" class="th-btn style3 d-xl-block d-none"><i
                                 class="fas fa-sign-in me-2"></i> Login</a>
                     @endguest
                     @auth
-                        <a href="{{ route('admin.dashboard') }}"class="th-btn style3 d-xl-block d-none">
-                            <i class="fas fa-sign-in me-2"></i>
-                            Dashboard
-                        </a>
+                     
+
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <button type="submit"
+                                class="th-btn style3 d-xl-block d-none">
+                                <i class="w-4 fa-solid fa-right-from-bracket"></i>
+                                <span class="text-sm font-medium">Logout</span>
+                            </button>
+                        </form>
                     @endauth
                     <button type="button" class="icon-btn th-menu-toggle d-lg-none"><i
                             class="far fa-bars"></i></button>

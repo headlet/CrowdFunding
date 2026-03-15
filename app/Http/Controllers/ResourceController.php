@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Container\Attributes\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 
 class ResourceController extends Controller
 {
     protected $services;
-
+    protected bool $skipPermission = false;
     public function __construct($services)
     {
         $this->services = $services;
@@ -18,11 +19,12 @@ class ResourceController extends Controller
 
     protected function registerPermissionMiddleware()
     {
-        $resource = $this->getResourceNames();
-
-        if (!$resource) {
-            return;
+        if (property_exists($this, 'skipPermission') && $this->skipPermission) {
+            return; // skip attaching permission middleware
         }
+
+        $resource = $this->getResourceNames();
+        if (!$resource) return;
 
         $this->middleware("permission:$resource.index")->only(['index']);
         $this->middleware("permission:$resource.create")->only(['create']);
@@ -173,33 +175,6 @@ class ResourceController extends Controller
                 ->withErrors(['error' => "Something went wrong. Can't Update " . $th->getMessage()]);
         }
     }
-
-    // public function destroy(string $id)
-    // {
-    //     try {
-    //         $resource = $this->services->getById($id);
-
-    //         if (!$resource) {
-    //             return redirect($this->getUrl())
-    //                 ->withErrors(['error' => $this->getName() . ' not found.']);
-    //         }
-
-    //         $response = $this->services->delete($id);
-
-    //         if (isset($response['error'])) {
-    //             return redirect()
-    //                 ->back()
-    //                 ->withErrors(['error' => $response['error']]);
-    //         }
-
-    //         return redirect($this->getUrl())
-    //             ->with('success', $this->getName() . ' deleted successfully.');
-    //     } catch (\Throwable $th) {
-    //         return redirect()
-    //             ->back()
-    //             ->withErrors(['error' => 'There is issues with delete' . $th->getMessage()]);
-    //     }
-    // }
 
     public function destroy(string $id)
     {
