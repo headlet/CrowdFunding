@@ -4,7 +4,7 @@
 @endsection
 
 @section('content')
-    <div class="breadcumb-wrapper " data-bg-src="{{ asset('img/bg/breadcumb-bg.jpg') }}" data-overlay="theme">
+    <div class="breadcumb-wrapper " data-overlay="theme">
         <div class="container">
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Campaigns</h1>
@@ -37,8 +37,7 @@
                                 <div class="donation-card-tag">
                                     {{ number_format(($campaign->raised_amount / $campaign->goal_amount) * 100, 2) }}%
                                 </div>
-                                <div class="donation-card-shape"
-                                    data-mask-src="{{ asset('img/donation/donation-card-shape2-1.png') }}"></div>
+                                <div class="donation-card-shape"></div>
                             </div>
                             <div class="box-content">
                                 <h3 class="box-title"><a href="blog-details.html">{{ $campaign->title }}</a>
@@ -76,8 +75,7 @@
                             <div class="box-thumb">
                                 <img src="{{ asset('img/donation/donation2-1.png') }}" alt="image">
                                 <div class="donation-card-tag">85%</div>
-                                <div class="donation-card-shape"
-                                    data-mask-src="{{ asset('img/donation/donation-card-shape2-1.png') }}"></div>
+                                <div class="donation-card-shape"></div>
                             </div>
                             <div class="box-content">
                                 <h3 class="box-title"><a href="blog-details.html">Your Little Help Can Heal Their Helps</a>

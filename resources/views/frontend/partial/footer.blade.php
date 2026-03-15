@@ -41,7 +41,7 @@
                                         alt="Donat"></a>
                             </div>
                             <p class="about-text">
-                                {{ !empty($generalSetting) ? $generalSetting->about_small_text : '' }}.</p>
+                                {{ !empty($generalSetting) ? $generalSetting->about_small_text : '' }}</p>
                             <a href="{{ route('campaign') }}" class="th-btn"><i class="fas fa-heart me-2"></i> Donate
                                 Now</a>
                         </div>

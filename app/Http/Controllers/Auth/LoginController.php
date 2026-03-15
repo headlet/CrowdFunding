@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,15 +19,29 @@ class LoginController extends Controller
 
     public function login_auth(Request $request)
     {
-        $validation = $request->validate([
+        $request->validate([
             'email' => 'required|email',
             'password' => 'required',
         ]);
-        if (Auth::attempt($validation, $request->boolean('remember'))) {
-            $request->session()->regenerate();
-            return redirect()->route('admin.dashboard')->with('success', 'Login successful');
+
+
+        if (!User::where('email', $request->email)->exists()) {
+            return back()->withErrors([
+                'email' => 'Email does not exist.'
+            ])->withInput($request->only('email'));
         }
-        return redirect('login')->withErrors(['error' => __('Failed to login')])->withInput($request->only('email'));
+
+        // Attempt login
+        if (!Auth::attempt($request->only('email', 'password'), $request->boolean('remember'))) {
+            return back()->withErrors([
+                'password' => 'Incorrect password.'
+            ])->withInput($request->only('email'));
+        }
+
+        $request->session()->regenerate();
+
+        return redirect()->route('admin.dashboard')
+            ->with('success', 'Login successful');
     }
 
     /**

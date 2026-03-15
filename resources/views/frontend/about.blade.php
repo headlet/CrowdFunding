@@ -8,7 +8,7 @@
     <!--==============================
                                             Breadcumb
                                         ============================== -->
-    <div class="breadcumb-wrapper " data-bg-src="{{ asset('img/bg/breadcumb-bg.jpg') }}" data-overlay="theme">
+    <div class="breadcumb-wrapper " data-overlay="theme">
         <div class="container">
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">About Us</h1>
@@ -166,8 +166,7 @@
                 <div class="col-lg-4 col-md-6 process-card-wrap">
                     <div class="process-card">
                         <div class="process-card-thumb-wrap">
-                            <div class="process-card-thumb"
-                                data-mask-src="{{ asset('img/process/process-card-shape.png') }}">
+                            <div class="process-card-thumb">
                                 <img src="{{ asset('img/process/process-card-1-1.png') }}" alt="img">
                             </div>
                             <div class="process-card-icon">
@@ -188,8 +187,7 @@
                 <div class="col-lg-4 col-md-6 process-card-wrap">
                     <div class="process-card">
                         <div class="process-card-thumb-wrap">
-                            <div class="process-card-thumb"
-                                data-mask-src="{{ asset('img/process/process-card-shape.png') }}">
+                            <div class="process-card-thumb">
                                 <img src="{{ asset('img/process/process-card-1-1.png') }}" alt="img">
                             </div>
                             <div class="process-card-icon">
@@ -209,8 +207,7 @@
                 <div class="col-lg-4 col-md-6 process-card-wrap">
                     <div class="process-card">
                         <div class="process-card-thumb-wrap">
-                            <div class="process-card-thumb"
-                                data-mask-src="{{ asset('img/process/process-card-shape.png') }}">
+                            <div class="process-card-thumb">
                                 <img src="{{ asset('img/process/process-card-1-1.png') }}" alt="img">
                             </div>
                             <div class="process-card-icon">
@@ -234,7 +231,7 @@
     <!--==============================
                                         Team Area
                                         ==============================-->
-    <section class="space" id="team-sec" data-bg-src="{{ asset('img/bg/gray-bg2.png') }}">
+    <section class="space" id="team-sec">
         <div class="shape-mockup team-bg-shape3-1 d-xxl-block d-none" data-top="0%" data-left="0%" data-bottom="0">
             <img src="{{ asset('img/shape/team_bg_shape3_1.png') }}" alt="img">
         </div>

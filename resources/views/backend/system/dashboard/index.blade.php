@@ -38,17 +38,20 @@
         </div>
     </div>
 
-    @if (isset($resources['contact']->map))
-        <div class="my-9 border border-gray-300 rounded-xl">
-            <iframe src="{{ $resources['contact']->map }}" width="100%" height="350" style="border:0;" allowfullscreen=""
-                loading="lazy" class="rounded-xl">
-            </iframe>
 
-        </div>
-    @endif
+    <div class="bg-white p-4 rounded shadow mb-6 w-full">
+        <div class="text-xl font-bold p-4">Location</div>
+        <iframe
+            src="{{ $resources['contact']->map ?? 'https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d21637.8176375226!2d85.4032384!3d27.6955136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2snp!4v1773285326399!5m2!1sen!2snp' }}"
+            width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" class="rounded-xl">
+        </iframe>
+
+    </div>
+
 
     <!-- Revenue Chart -->
     <div class="bg-white p-4 rounded shadow mb-6 w-full">
+        <div class="text-xl font-bold py-4">Monthly Donation & Withdraw Report</div>
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-4">
             <div>
                 <p class="text-gray-500 text-sm">Revenue</p>
@@ -68,8 +71,6 @@
             <div id="chart" class="w-full h-full"></div>
         </div>
     </div>
-
-    
 @endsection
 
 @section('script')

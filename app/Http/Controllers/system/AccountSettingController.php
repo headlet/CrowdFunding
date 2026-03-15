@@ -51,7 +51,7 @@ class AccountSettingController extends ResourceController
 
             return redirect()->back()->with('success', 'Password updated successfully.');
         } catch (\Throwable $th) {
-            return redirect()->back()->withErrors(['error' => 'Something went wrong: ' . $th->getMessage()]);
+            return redirect()->back()->withErrors(['error' => 'Something went wrong: ']);
         }
     }
 }

@@ -23,7 +23,7 @@
                 </li>
 
                 <li><a href="{{ route('about') }}">About Us</a></li>
-                <li class="menu-item-has-children">
+                <li >
                     <a href="{{ route('campaign') }}">Campaigns</a>
                 </li>
                 <li class="menu-item-has-children">
@@ -104,16 +104,8 @@
                                 class="fas fa-sign-in me-2"></i> Login</a>
                     @endguest
                     @auth
-                     
-
-                        <form action="{{ route('logout') }}" method="POST">
-                            @csrf
-                            <button type="submit"
-                                class="th-btn style3 d-xl-block d-none">
-                                <i class="w-4 fa-solid fa-right-from-bracket"></i>
-                                <span class="text-sm font-medium">Logout</span>
-                            </button>
-                        </form>
+                        <a href="{{ route('admin.dashboard') }}" class="th-btn style3 d-xl-block d-none"><i
+                                class="fas fa-sign-in me-2"></i>Dashboard</a>
                     @endauth
                     <button type="button" class="icon-btn th-menu-toggle d-lg-none"><i
                             class="far fa-bars"></i></button>
