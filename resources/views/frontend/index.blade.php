@@ -130,7 +130,7 @@
 
     {{-- Counter Area --}}
 
-    <div class="bg-smoke2 pt-80 pb-40">
+    {{-- <div class="bg-smoke2 pt-80 pb-40">
         <div class="container">
             <div class="counter-wrap">
                 <div class="counter-card">
@@ -160,7 +160,42 @@
 
             </div>
         </div>
-    </div>
+    </div> --}}
+
+    <div class="bg-smoke2 pt-80 pb-80">
+        <div class="container">
+            <div class="counter-wrap">
+                <div class="counter-card">
+                    <div class="media-body">
+                        <h2 class="box-number text-theme"><span class="counter-number">15</span>k<span class="fw-light">+</span></h2>
+                        <p class="box-text">Incredible Volunteers</p>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="counter-card">
+                    <div class="media-body">
+                        <h2 class="box-number text-theme2"><span class="counter-number">1</span>k<span class="fw-light">+</span></h2>
+                        <p class="box-text">Successful Campaigns</p>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="counter-card">
+                    <div class="media-body">
+                        <h2 class="box-number text-theme"><span class="counter-number">400</span><span class="fw-light">+</span></h2>
+                        <p class="box-text">Monthly Donors</p>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="counter-card">
+                    <div class="media-body">
+                        <h2 class="box-number text-theme2"><span class="counter-number">35</span>k<span class="fw-light">+</span></h2>
+                        <p class="box-text">Team Support</p>
+                    </div>
+                </div>
+                <div class="divider"></div>
+            </div>
+        </div>
+    </div><!
 
     {{-- About Area --}}
 
