@@ -9,7 +9,7 @@
         {{-- Slider --}}
         <div class="swiper th-slider hero-slider4" id="heroSlider4"
             data-slider-options='{"effect":"fade","autoHeight": "true"}'>
-            <div class="swiper-wrapper">
+            <div class="">
 
                 @forelse ($slider as $slide)
                     <div class="swiper-slide">
@@ -173,7 +173,6 @@
         <div class="shape-mockup about-bg-shape4-1 d-xxl-block d-none jump-reverse" data-bottom="0" data-left="0%">
             <img src="{{ asset('img/shape/about_shape4_1.png') }}" alt="shape">
         </div>
-heelo
         <div class="container">
 
             <div class="row align-items-center">
