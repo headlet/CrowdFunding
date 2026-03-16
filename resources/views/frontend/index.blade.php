@@ -169,7 +169,7 @@
         </div>
     </div>
 
-    <! {{-- About Area --}} <div class="overflow-hidden space" id="about-sec">
+    <div class="overflow-hidden space" id="about-sec">
         <div class="shape-mockup about-bg-shape4-1 d-xxl-block d-none jump-reverse" data-bottom="0" data-left="0%">
             <img src="{{ asset('img/shape/about_shape4_1.png') }}" alt="shape">
         </div>
@@ -468,10 +468,10 @@
                                     <p class="box-text">
                                         {{ $success_story->sub_description ??
                                             'Our success stories highlight the
-                                                                            real life impact of your donations &
-                                                                            the resilience of those we help.
-                                                                            These narratives showcase the
-                                                                            power of compassion.' }}
+                                                                                                                    real life impact of your donations &
+                                                                                                                    the resilience of those we help.
+                                                                                                                    These narratives showcase the
+                                                                                                                    power of compassion.' }}
                                     </p>
 
                                 </div>
