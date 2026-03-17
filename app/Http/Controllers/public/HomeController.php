@@ -78,50 +78,47 @@ class HomeController extends Controller
 
     public function blog(Blog $blog)
     {
-        $contact = Contact::first();
         $blogs = $blog->where('status', 'published')->latest()->get();
-        return view('frontend.blog', compact("blogs", 'contact'));
+        return view('frontend.blog', compact("blogs"));
     }
 
     public function gallery(Gallery $gallerys)
     {
-        $contact = Contact::first();
+  
         $gallerys = $gallerys->where('status', 1)->latest()->get();
-        return view('frontend.gallery', compact("gallerys", 'contact'));
+        return view('frontend.gallery', compact("gallerys"));
     }
 
     public function donation(Campaign $campaign)
     {
-        $contact = Contact::first();
-        return view('frontend.donation.donate-now', compact('campaign', 'contact'));
+    
+        return view('frontend.donation.donate-now', compact('campaign'));
     }
 
     public function campaign(Request $request)
     {
-        $contact = Contact::first();
+
         $campaigns = Campaign::orderBy('title', 'asc')->latest()->get();
-        return view('frontend.campaign', compact('campaigns', 'contact'));
+        return view('frontend.campaign', compact('campaigns'));
     }
 
     public function team(Request $request)
     {
-        $contact = Contact::first();
+        
         $teams = Team::orderBy('id', 'asc')->get();
-        return view('frontend.team.team', compact('teams', 'contact'));
+        return view('frontend.team.team', compact('teams'));
     }
 
     public function campaign_details(Campaign $campaign)
     {
-        $contact = Contact::first();
-        return view('frontend.campaign-details', compact('campaign', 'contact'));
+        
+        return view('frontend.campaign-details', compact('campaign'));
     }
 
     public function blog_details(Blog $blog)
     {
-        $contact = Contact::first();
-        $blogs = Blog::where('status', 'published')->with('blogCategory')
-            ->latest()
-            ->get();
-        return view('frontend.blog-detail', compact('blogs', 'contact'));
+        
+        $blogs = $blog->where('status', 'published')->latest()->get();
+        return view('frontend.blog-detail', compact('blogs' , 'blog'));
     }
 }

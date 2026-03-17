@@ -39,7 +39,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/donation-now/{campaign}', 'donation')->name('donate-now')->middleware('auth');
     Route::get('/all-campaigns', 'campaign')->name('campaign');
     Route::get('/teams', 'team')->name('team');
-    Route::get('/blog-details/{team}', 'team_details')->name('team-details');
+    Route::get('/team-details/{team}', 'team_details')->name('team-details');
     Route::get('/blog', 'blog')->name('blog');
     Route::get('/blog-details/{blog}', 'blog_details')->name('blog-details');
     Route::get('/gallery', 'gallery')->name('gallery');

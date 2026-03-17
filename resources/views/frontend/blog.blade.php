@@ -6,8 +6,8 @@
 
 @section('content')
     <!--==============================
-            Breadcumb
-        ============================== -->
+                Breadcumb
+            ============================== -->
     <div class="breadcumb-wrapper " data-bg-src="{{ asset('img/bg/breadcumb-bg.jpg') }}" data-overlay="theme">
         <div class="container">
             <div class="breadcumb-content">
@@ -19,8 +19,8 @@
             </div>
         </div>
     </div><!--==============================
-        Blog Area
-        ==============================-->
+            Blog Area
+            ==============================-->
     <section class="th-blog-wrapper space-top space-extra-bottom">
         <div class="container">
             <div class="row gx-40">
@@ -28,8 +28,9 @@
                     @forelse ($blogs as $blog)
                         <div class="th-blog blog-single has-post-thumbnail">
                             <div class="blog-img">
-                                <a href="blog-details.html"><img src="{{ asset('storage/' . $blog->image) }}"
-                                        alt="Blog Image"></a>
+                                <a href="{{ route('blog-details', $blog->id) }}"><img src="{{ asset('storage/' . $blog->image) }}"
+                                        alt="Blog Image"
+                                        style="width: 100%; height: 460px; object-fit: cover; border-radius: 20px;"></a>
                             </div>
                             <div class="blog-content">
                                 <div class="blog-meta">
@@ -37,7 +38,7 @@
                                     <a href="blog.html"><i class="fas fa-tags"></i>{{ $blog->blogCategory->name }}</a>
                                     <a href="blog.html"><i class="fas fa-comments"></i>Comments (03)</a>
                                 </div>
-                                <h2 class="blog-title"><a href="blog-details.html">{{ $blog->title }}</a>
+                                <h2 class="blog-title"><a href="{{ route('blog-details', $blog->id) }}">{{ $blog->title }}</a>
                                 </h2>
                                 <p class="blog-text">{!! $blog->content !!}</p>
                                 <a href="{{ route('blog-details', $blog->id) }}" class="th-btn btn-sm">Read More <i
@@ -47,7 +48,8 @@
                     @empty
                         <div class="th-blog blog-single has-post-thumbnail">
                             <div class="blog-img" data-overlay="black" data-opacity="5">
-                                <a href="blog-details.html"><img src="{{ asset('img/blog/blog-s-1-3.jpg') }}" alt="Blog Image"></a>
+                                <a href="blog-details.html"><img src="{{ asset('img/blog/blog-s-1-3.jpg') }}"
+                                        alt="Blog Image"></a>
                                 <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" class="play-btn popup-video"><i
                                         class="fas fa-play"></i></a>
                             </div>
@@ -123,14 +125,15 @@
                                         <div class="recent-post-meta">
                                             <a href="blog.html"><i class="fas fa-calendar-days"></i>22 June, 2025</a>
                                         </div>
-                                        <h4 class="post-title"><a class="text-inherit" href="blog-details.html">Partner for
+                                        <h4 class="post-title"><a class="text-inherit" href="blog-details.html">Partner
+                                                for
                                                 Good Corporate Sponsor</a></h4>
                                     </div>
                                 </div>
                                 <div class="recent-post">
                                     <div class="media-img">
-                                        <a href="blog-details.html"><img src="{{ asset('img/blog/recent-post-1-3.jpg') }}"
-                                                alt="Blog Image"></a>
+                                        <a href="blog-details.html"><img
+                                                src="{{ asset('img/blog/recent-post-1-3.jpg') }}" alt="Blog Image"></a>
                                     </div>
                                     <div class="media-body">
                                         <div class="recent-post-meta">

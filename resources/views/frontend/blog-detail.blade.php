@@ -6,8 +6,8 @@
 
 @section('content')
     <!--==============================
-                Breadcumb
-            ============================== -->
+                    Breadcumb
+                ============================== -->
     <div class="breadcumb-wrapper " data-bg-src="{{ asset('img/bg/breadcumb-bg.jpg') }}" data-overlay="theme">
         <div class="container">
             <div class="breadcumb-content">
@@ -19,15 +19,16 @@
             </div>
         </div>
     </div><!--==============================
-                Blog Area
-            ==============================-->
+                    Blog Area
+                ==============================-->
     <section class="th-blog-wrapper blog-details space-top space-extra2-bottom">
         <div class="container">
             <div class="row gx-40">
                 <div class="col-xxl-8 col-lg-7">
                     <div class="th-blog blog-single">
                         <div class="blog-img">
-                            <img src="{{ asset('storage/' . $blog->image) }}" alt="Blog Image">
+                            <img src="{{ asset('storage/' . $blog->image) }}" alt="Blog Image"
+                                style="width: 100%; height: 460px; object-fit: cover; border-radius: 20px;">
                         </div>
                         <div class="blog-content">
                             <div class="blog-meta">

@@ -29,9 +29,9 @@
                 @forelse ($teams as $team)
                     <div class="col-lg-3 col-md-6">
                         <div class="th-team team-card3">
-                            <div class="team-img">
-                                <img src="{{ asset('storage/' .  $team->image) }}"
-                                    alt="Team">
+                            <div class="team-img" style="text-align: center;">
+                                <img src="{{ asset('storage/' . $team->image) }}" alt="Team"
+                                    style="width: 700px; height: 300px; object-fit: cover; border-radius: 10%; display: block; margin: 0 auto;">
                             </div>
                             <div class="team-card-content">
                                 <h3 class="box-title"><a href="team-details.html">{{ $team->name }}</a></h3>
@@ -46,12 +46,12 @@
                         </div>
                     </div>
                 @empty
-                 <div class="container">
-                            <div class="title-area text-center">
-                                <span class="sub-title after-none before-none"></span>
-                                <h5 class="">No Volunteer......Please add it in dashboard</h5>
-                            </div>
-                         </div>
+                    <div class="container">
+                        <div class="title-area text-center">
+                            <span class="sub-title after-none before-none"></span>
+                            <h5 class="">No Volunteer......Please add it in dashboard</h5>
+                        </div>
+                    </div>
                 @endforelse
             </div>
         </div>

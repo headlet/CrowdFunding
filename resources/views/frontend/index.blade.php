@@ -3,14 +3,14 @@
 @section('title')
     Donat - Charity
 @endsection
+
 @section('content')
     {{-- Hero Area --}}
     <div class="th-hero-wrapper hero-4" id="hero">
         {{-- Slider --}}
         <div class="swiper th-slider hero-slider4" id="heroSlider4"
             data-slider-options='{"effect":"fade","autoHeight": "true"}'>
-            <div class="">
-
+            <div class="swiper-wrapper">
                 @forelse ($slider as $slide)
                     <div class="swiper-slide">
                         <div class="hero-inner" data-bg-src="{{ asset('storage/' . $slide->image) }}">
@@ -30,30 +30,30 @@
                             <div class="hero-bg-shape4-5">
                                 <img src="{{ asset('img/hero/hero-bg-shape4-5.png') }}" alt="img">
                             </div>
+
                             {{-- Content --}}
                             <div class="container">
                                 <div class="row">
                                     <div class="col-xl-9">
                                         <div class="hero-style4">
                                             <span class="sub-title after-none" data-ani="slideinup" data-ani-delay="0.2s">
-                                                {{ $slide->subtitle }}
+                                                {{ $slide->subtitle ?? '' }}
                                             </span>
                                             <h1 class="text-white hero-title">
                                                 <span class="title1" data-ani="slideinup" data-ani-delay="0.4s">
-                                                    {{ $slide->title1 }}
+                                                    {{ $slide->title1 ?? '' }}
                                                 </span>
                                                 <span class="title1" data-ani="slideinup" data-ani-delay="0.4s">
-                                                    {{ $slide->title2 }}
+                                                    {{ $slide->title2 ?? '' }}
                                                 </span>
                                             </h1>
                                             <p class="text-white hero-text" data-ani="slideinup" data-ani-delay="0.6s">
-                                                {{ $slide->description }}
+                                                {{ $slide->description ?? '' }}
                                             </p>
                                             <div class="btn-wrap" data-ani="slideinup" data-ani-delay="0.7s">
-                                                <a href="{{ route('about') }}" class="th-btn">Discover Now<i
-                                                        class="fa-solid fa-arrow-up-right ms-2"></i></a>
-                                                {{-- <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk"
-                                                    class="play-btn style3 popup-video"><i class="fas fa-play"></i></a> --}}
+                                                <a href="{{ route('about') }}" class="th-btn">
+                                                    Discover Now<i class="fa-solid fa-arrow-up-right ms-2"></i>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -62,25 +62,20 @@
                         </div>
                     </div>
                 @empty
-
+                    {{-- Default slide if no slider exists --}}
                     <div class="swiper-slide">
                         <div class="hero-inner" data-bg-src="{{ asset('img/hero/hero_bg_4_1.jpg') }}">
-                            {{-- Shapes --}}
-                            <div class="hero-bg-shape4-1">
-                                <img src="{{ asset('img/hero/hero-bg-shape4-1.png') }}" alt="img">
-                            </div>
-                            <div class="hero-bg-shape4-2 shake">
-                                <img src="{{ asset('img/hero/hero-bg-shape4-2.png') }}" alt="img">
-                            </div>
-                            <div class="hero-bg-shape4-3 jump d-xl-inline-block d-none">
-                                <img src="{{ asset('img/hero/hero-bg-shape4-3.png') }}" alt="img">
-                            </div>
-                            <div class="hero-bg-shape4-4 jump-reverse">
-                                <img src="{{ asset('img/hero/hero-bg-shape4-4.png') }}" alt="img">
-                            </div>
-                            <div class="hero-bg-shape4-5">
-                                <img src="{{ asset('img/hero/hero-bg-shape4-5.png') }}" alt="img">
-                            </div>
+                            <div class="hero-bg-shape4-1"><img src="{{ asset('img/hero/hero-bg-shape4-1.png') }}"
+                                    alt="img"></div>
+                            <div class="hero-bg-shape4-2 shake"><img src="{{ asset('img/hero/hero-bg-shape4-2.png') }}"
+                                    alt="img"></div>
+                            <div class="hero-bg-shape4-3 jump d-xl-inline-block d-none"><img
+                                    src="{{ asset('img/hero/hero-bg-shape4-3.png') }}" alt="img"></div>
+                            <div class="hero-bg-shape4-4 jump-reverse"><img
+                                    src="{{ asset('img/hero/hero-bg-shape4-4.png') }}" alt="img"></div>
+                            <div class="hero-bg-shape4-5"><img src="{{ asset('img/hero/hero-bg-shape4-5.png') }}"
+                                    alt="img"></div>
+
                             <div class="container">
                                 <div class="row">
                                     <div class="col-xl-9">
@@ -88,18 +83,18 @@
                                             <span class="sub-title after-none" data-ani="slideinup"
                                                 data-ani-delay="0.2s">Making a Difference</span>
                                             <h1 class="hero-title text-white">
-                                                <span class="title1" data-ani="slideinup" data-ani-delay="0.4s">
-                                                    Changing Lives, One </span>
-                                                <span class="title1" data-ani="slideinup" data-ani-delay="0.4s">
-                                                    Donation at a Time </span>
+                                                <span class="title1" data-ani="slideinup" data-ani-delay="0.4s">Changing
+                                                    Lives, One</span>
+                                                <span class="title1" data-ani="slideinup" data-ani-delay="0.4s">Donation at
+                                                    a Time</span>
                                             </h1>
                                             <p class="hero-text text-white" data-ani="slideinup" data-ani-delay="0.6s">
                                                 Explore the variety of volunteer opportunities available. From event
-                                                planning and fundraising to fieldwork and administrative support</p>
+                                                planning and fundraising to fieldwork and administrative support.
+                                            </p>
                                             <div class="btn-wrap" data-ani="slideinup" data-ani-delay="0.7s">
-                                                <a href="about.html" class="th-btn">Discover Now<i
+                                                <a href="{{ route('about') }}" class="th-btn">Discover Now<i
                                                         class="fa-solid fa-arrow-up-right ms-2"></i></a>
-
                                             </div>
                                         </div>
                                     </div>
@@ -108,11 +103,10 @@
                         </div>
                     </div>
                 @endforelse
-
             </div>
         </div>
 
-        {{-- Thumbnails --}}
+        {{-- Hero Thumbnails --}}
         <div class="hero-thumb-tab" data-slider-tab=".hero-slider4">
             @forelse ($slider as $index => $slide)
                 <div class="tab-btn {{ $index === 0 ? 'active' : '' }}">
@@ -124,67 +118,59 @@
                 </div>
             @endforelse
         </div>
-
     </div>
-    {{-- Hero Section --}}
 
     {{-- Counter Area --}}
-
     <div class="bg-smoke2 pt-80 pb-40">
         <div class="container">
             <div class="counter-wrap">
                 <div class="counter-card">
                     <div class="media-body">
-                        <h2 class="box-number text-theme"><span class="counter-number">{{ $team_count }}</span><span
-                                class="fw-light">+</span></h2>
+                        <h2 class="box-number text-theme"><span class="counter-number">{{ $team_count ?? 0 }}</span>+
+                        </h2>
                         <p class="box-text">Incredible Volunteers</p>
                     </div>
                 </div>
                 <div class="divider"></div>
                 <div class="counter-card">
                     <div class="media-body">
-                        <h2 class="box-number text-theme2"><span class="counter-number">{{ $campaign_count }}</span><span
-                                class="fw-light">+</span></h2>
+                        <h2 class="box-number text-theme2"><span
+                                class="counter-number">{{ $campaign_count ?? 0 }}</span>+</h2>
                         <p class="box-text">Total Campaigns</p>
                     </div>
                 </div>
                 <div class="divider"></div>
                 <div class="counter-card">
                     <div class="media-body">
-                        <h2 class="box-number text-theme"><span class="counter-number">{{ $donor_count }}</span><span
-                                class="fw-light">+</span></h2>
+                        <h2 class="box-number text-theme"><span class="counter-number">{{ $donor_count ?? 0 }}</span>+
+                        </h2>
                         <p class="box-text">Total Donors</p>
                     </div>
                 </div>
                 <div class="divider"></div>
                 <div class="counter-card">
                     <div class="media-body">
-                        <h2 class="box-number text-theme2"><span class="counter-number">35</span>k<span
-                                class="fw-light">+</span></h2>
+                        <h2 class="box-number text-theme2">35k+</h2>
                         <p class="box-text">Team Support</p>
                     </div>
                 </div>
-                <div class="divider"></div>
             </div>
         </div>
     </div>
 
+    {{-- About Section --}}
     <div class="overflow-hidden space" id="about-sec">
         <div class="shape-mockup about-bg-shape4-1 d-xxl-block d-none jump-reverse" data-bottom="0" data-left="0%">
             <img src="{{ asset('img/shape/about_shape4_1.png') }}" alt="shape">
         </div>
         <div class="container">
-
             <div class="row align-items-center">
                 <div class="col-xl-6 mb-50 mb-xl-0">
                     <div class="img-box4">
-                        <div class="img1">
-                            <img src="{{ asset(!empty($about_charity->image) ? 'storage/' . $about_charity->image : 'img/normal/about_4_1.png') }}"
-                                alt="About">
-                        </div>
+                        <img src="{{ asset(!empty($about_charity->image) ? 'storage/' . $about_charity->image : 'img/normal/about_4_1.png') }}"
+                            alt="About">
                     </div>
                 </div>
-
                 <div class="col-xl-6">
                     <div class="about-wrap4">
                         <div class="title-area mb-30">
@@ -192,22 +178,20 @@
                             <h2 class="sec-title">{{ $about_charity->title ?? 'Making a Difference, One Life at a Time' }}
                             </h2>
                             <p class="sec-text">{!! $about_charity->description ??
-                                'Our secure online donation platform allows you to make contributions quickly and safely. Choose from various payment methods and set up one-time or recurring donations with ease. Your support helps us continue our mission.' !!}</p>
+                                'Our secure online donation platform allows you to make contributions quickly and safely...' !!}</p>
                         </div>
                         <div class="about-feature-grid-wrap">
                             <div class="mb-0 about-feature-grid style2">
-                                <div class="box-icon">
-                                    <img src="{{ asset('img/icon/about-icon4-1.svg') }}" alt="icon">
-                                </div>
+                                <div class="box-icon"><img src="{{ asset('img/icon/about-icon4-1.svg') }}"
+                                        alt="icon"></div>
                                 <div class="media-body">
                                     <h4 class="box-title">{{ $about_charity->box1_title ?? 'Be a Hero, Contribute Now' }}
                                     </h4>
                                 </div>
                             </div>
                             <div class="mb-0 about-feature-grid style2">
-                                <div class="box-icon" data-theme-color="var(--theme-color2)">
-                                    <img src="{{ asset('img/icon/about-icon4-2.svg') }}" alt="icon">
-                                </div>
+                                <div class="box-icon" data-theme-color="var(--theme-color2)"><img
+                                        src="{{ asset('img/icon/about-icon4-2.svg') }}" alt="icon"></div>
                                 <div class="media-body">
                                     <h4 class="box-title">
                                         {{ $about_charity->box2_title ?? 'Help Children with Donations' }}</h4>
@@ -220,67 +204,64 @@
         </div>
     </div>
 
-    {{-- Donation Area --}}
-
-    <section class="overflow-hidden " data-bg-src="{{ asset('') }}" id="donation-sec">
+    {{-- Campaign Slider Section --}}
+    <section class="overflow-hidden" id="donation-sec">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-7">
-                    <div class="text-center title-area">
-                        <span class="sub-title">Start donating poor people</span>
-                        <h2 class="sec-title">Give Now to Help Locate the Well-liked Cause</h2>
-                    </div>
+                <div class="col-lg-7 text-center title-area">
+                    <span class="sub-title">Start donating poor people</span>
+                    <h2 class="sec-title">Give Now to Help Locate the Well-liked Cause</h2>
                 </div>
             </div>
-        </div>
-        <div class="container th-container2">
+
             <div class="slider-area">
                 <div class="swiper th-slider has-shadow" id="donationSlider4"
-                    data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"},"1400":{"slidesPerView":"4"}}, "autoHeight": "true"}'>
-                    <div class="swiper-wrapper w-full">
-
+                    data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":1},"768":{"slidesPerView":2},"992":{"slidesPerView":2},"1200":{"slidesPerView":3},"1400":{"slidesPerView":4}}, "autoHeight": "true"}'>
+                    <div class="swiper-wrapper">
                         @forelse ($campaigns as $campaign)
                             <div class="swiper-slide">
-                                <div class="donation-card style4"
-                                    data-theme-color="{{ $campaign->theme_color ?? 'var(--theme-color2)' }}">
+                                <div
+                                    class="donation-card style4 data-theme-color="{{ $campaign->theme_color ?? 'var(--theme-color2)' }}"">
                                     <div class="box-thumb">
-                                        <img src="{{ asset('storage/' . $campaign->image) }}" alt="image">
+                                        <img src="{{ asset('storage/' . $campaign->image) }}" alt="image"
+                                            style="width: 300px; height: 200px; object-fit: cover;">
                                     </div>
-                                    <h3 class="box-title"><a
-                                            href="{{ route('campaign-details', $campaign->id) }}">{{ $campaign->title }}</a>
+                                    <h3 class="box-title"
+                                        style="font-size: 18px; height: 44px; line-height: 22px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
+                                        <a href="{{ route('campaign-details', $campaign->id) }}"
+                                            style="text-decoration: none; color: inherit;">
+                                            {{ $campaign->title }}
+                                        </a>
                                     </h3>
-                                    <div class="box-content">
+                                    <div class="box-content"
+                                        style="width: 300px; height: 220px; padding: 12px; box-sizing: border-box;">
                                         <h4 class="subtitle">Donation</h4>
                                         <div class="donation-card_progress-wrap">
-
-                                            <div class="progress">
+                                            <div class="progress"
+                                                style="height: 12px; background-color: #e0e0e0; border-radius: 6px; overflow: hidden;">
                                                 <div class="progress-bar"
-                                                    style="width: {{ number_format(($campaign->raised_amount / $campaign->goal_amount) * 100, 2) }}%;">
-                                                    <div class="progress-value">
-                                                        {{ number_format(($campaign->raised_amount / $campaign->goal_amount) * 100, 2) }}%
-
-                                                    </div>
+                                                    style="width: {{ $campaign->goal_amount ? number_format(($campaign->raised_amount / $campaign->goal_amount) * 100, 2) : 0 }}%; 
+                        background-color: #4CAF50; height: 100%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px;">
+                                                    {{ $campaign->goal_amount ? number_format(($campaign->raised_amount / $campaign->goal_amount) * 100, 2) : 0 }}%
                                                 </div>
                                             </div>
-                                            <div class="donation-card_progress-content">
-                                                <span class="donation-card_raise">Raised
-                                                    -{{ __($campaign->raised_amount) }}</span>
+                                            <div class="donation-card_progress-content"
+                                                style="display: flex; justify-content: space-between; margin-top: 5px; font-size: 14px;">
+                                                <span class="donation-card_raise">Raised -
+                                                    {{ $campaign->raised_amount ?? 0 }}</span>
                                                 <span class="donation-card_goal">Goal -
-                                                    {{ __($campaign->goal_amount) }}</span>
+                                                    {{ $campaign->goal_amount ?? 0 }}</span>
                                             </div>
                                         </div>
-                                        <a href="{{ route('campaign-details', $campaign->id) }}"
-                                            class="th-btn style6">Donate Now <i
+                                        <a href="{{ route('campaign-details', $campaign->id) }}" class="th-btn style6"
+                                            style="margin-top: 10px; display: inline-block;">Donate Now <i
                                                 class="fas fa-arrow-up-right ms-2"></i></a>
                                     </div>
                                 </div>
                             </div>
                         @empty
-                            <div class="container">
-                                <div class="title-area text-center">
-                                    <h5 class="sub-title">No Campaigns......</h5>
-
-                                </div>
+                            <div class="col-12 text-center">
+                                <h5 class="sub-title">No Campaigns available</h5>
                             </div>
                         @endforelse
                     </div>
@@ -404,8 +385,9 @@
                             <div class="swiper-slide">
                                 <div class="th-team team-card2">
                                     <div class="img-wrap">
-                                        <div class="team-img">
-                                            <img src="{{ asset('storage/' . $team->image) }}" alt="Team">
+                                        <div class="team-img" style="text-align: center;">
+                                            <img src="{{ asset('storage/' . $team->image) }}" alt="Team"
+                                                style="width: 600px; height: 400px; object-fit: cover; border-radius: 10%; display: block; margin: 0 auto;">
                                         </div>
                                         <div class="team-social-hover">
                                             <a href="home-4.html#" class="team-social-hover_btn">
@@ -424,8 +406,7 @@
                                         </div>
                                     </div>
                                     <div class="team-card-content">
-                                        <h3 class="box-title"><a href="team-details.html">{{ $team->name }}</a>
-                                        </h3>
+                                        <h3 class="box-title"><a href="team-details.html">{{ $team->name }}</a></h3>
                                         <span class="team-desig">Volunteer</span>
                                     </div>
                                 </div>
@@ -464,14 +445,10 @@
                                 <h5 class="box-title">{{ $success_story->volunteer_name ?? 'Adam Cruz' }}</h5>
                                 <p class="box-text">
                                     {{ $success_story->sub_description ??
-                                        'Our success stories highlight the
-                                                                                                                                                        real life impact of your donations &
-                                                                                                                                                        the resilience of those we help.
-                                                                                                                                                        These narratives showcase the
-                                                                                                                                                        power of compassion.' }}
+                                        'Our success stories highlight the real life impact of your donations & the resilience of those we help. These narratives showcase the power of compassion.' }}
                                 </p>
 
-                            </div>
+                            </di
 
                             <div class="year-counter">
                                 <p class="year-counter_text">Years of <span>Experience</span></p>
@@ -752,35 +729,59 @@
                     <div class="swiper-wrapper">
                         @forelse ($blogs as $blog)
                             <div class="swiper-slide">
-                                <div class="blog-card">
-                                    <div class="blog-img">
+                                <div class="blog-card"
+                                    style="height: 100%; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;">
+
+                                    <!-- Image -->
+                                    <div class="blog-img" style="height: 220px; overflow: hidden;">
                                         <a href="blog-details.html">
-                                            <img src="{{ asset('storage/' . $blog->image) }}" alt="blog image">
+                                            <img src="{{ asset('storage/' . $blog->image) }}" alt="blog image"
+                                                style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
                                         </a>
                                     </div>
-                                    <div class="blog-content">
-                                        <div class="blog-meta">
-                                            <a href="blog.html"><i
-                                                    class="fas fa-calendar"></i>{{ $blog->published_at }}</a>
-                                            <a href="blog.html"><i
-                                                    class="fas fa-tags"></i>{{ $blog->blogCategory->name }}</a>
+
+                                    <!-- Content -->
+                                    <div class="blog-content"
+                                        style="padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+
+                                        <div>
+                                            <!-- Meta -->
+                                            <div class="blog-meta"
+                                                style="font-size: 14px; margin-bottom: 10px; color: #777;">
+                                                <a href="blog.html" style="margin-right: 15px;">
+                                                    <i class="fas fa-calendar"></i> {{ $blog->published_at }}
+                                                </a>
+                                                <a href="blog.html">
+                                                    <i class="fas fa-tags"></i> {{ $blog->blogCategory->name }}
+                                                </a>
+                                            </div>
+
+                                            <!-- Title -->
+                                            <h3 class="box-title"
+                                                style="font-size: 20px; line-height: 28px; height: 56px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
+                                                <a href="blog-details.html"
+                                                    style="text-decoration: none; color: inherit;">
+                                                    {{ $blog->title }}
+                                                </a>
+                                            </h3>
                                         </div>
-                                        <h3 class="box-title"><a href="blog-details.html">{{ $blog->title }}</a>
-                                        </h3>
-                                        <a href="blog-details.html" class="th-btn">Read More <i
-                                                class="fas fa-arrow-up-right ms-2"></i></a>
+
+                                        <!-- Button -->
+                                        <a href="blog-details.html" class="th-btn"
+                                            style="margin-top: 15px; border-radius: 30px;">
+                                            Read More <i class="fas fa-arrow-up-right ms-2"></i>
+                                        </a>
+
                                     </div>
                                 </div>
                             </div>
                         @empty
                             <div class="container">
                                 <div class="title-area text-center">
-
                                     <h5 class="sub-title">No Blogs......</h5>
                                 </div>
                             </div>
                         @endforelse
-
                     </div>
                 </div>
                 <button data-slider-prev="#blogSlider1" class="slider-arrow slider-prev"><i
