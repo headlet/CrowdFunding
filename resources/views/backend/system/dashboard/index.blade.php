@@ -16,25 +16,25 @@
 @section('content')
     <!-- Stats Cards -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+
         <div class="bg-white p-4 rounded shadow">
-            <p class="text-sm text-gray-500">Total Donation</p>
-            <p class="text-xl font-semibold">$1,139,240.25</p>
-            <span class="text-green-500 text-xs">+3.4% From last month</span>
+            <p class="text-sm text-gray-500">Total Campaigns</p>
+            <p class="text-xl font-semibold">{{ $resources['campaign_count'] }}</p>
         </div>
         <div class="bg-white p-4 rounded shadow">
-            <p class="text-sm text-gray-500">Avg Donation</p>
-            <p class="text-xl font-semibold">$231.20</p>
-            <span class="text-green-500 text-xs">+1.02% From last month</span>
+            <p class="text-sm text-gray-500">Teams</p>
+            <p class="text-xl font-semibold">{{ $resources['team_count'] }}</p>
+
+        </div>
+        <div class="bg-white p-4 rounded shadow">
+            <p class="text-sm text-gray-500">Total Donation</p>
+            <p class="text-xl font-semibold">{{ $resources['donor_count'] }}</p>
+
         </div>
         <div class="bg-white p-4 rounded shadow">
             <p class="text-sm text-gray-500">Total Revenue</p>
-            <p class="text-xl font-semibold">$500,420.25</p>
-            <span class="text-green-500 text-xs">+2.15% From last month</span>
-        </div>
-        <div class="bg-white p-4 rounded shadow">
-            <p class="text-sm text-gray-500">Total Visitors</p>
-            <p class="text-xl font-semibold">400,000</p>
-            <span class="text-red-500 text-xs">-2.25% From last month</span>
+            <p class="text-xl font-semibold">{{ $resources['totalAmount'] }}</p>
+
         </div>
     </div>
 
@@ -89,11 +89,11 @@
 
             series: [{
                 name: 'Revenue',
-                data: [50000, 55000, 52000, 60000, 75000, 65000, 70000, 72000, 68000]
+                data: {!! json_encode($resources['amounts']) !!}
             }],
 
             xaxis: {
-                categories: ['10 Apr', '26 May', '8 Jun', '22 Jul', '16 Aug', '19 Sept', '5 Oct', '13 Nov', '25 Dec']
+                categories: {!! json_encode($resources['dates']) !!}
             },
 
             stroke: {

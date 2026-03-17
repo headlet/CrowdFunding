@@ -5,14 +5,11 @@
     <div class="p-6 border-b border-green-200/30">
         <div class="flex items-center justify-between">
             <div class="flex items-center gap-3 cmslogo">
-    <!-- Full Logo -->
-    <div class="h-10 w-auto overflow-hidden flex items-center justify-center rounded">
-        <img 
-            src="{{asset('img/logo-white.png') }}" 
-            alt="Logo" 
-            class="h-full object-contain">
-    </div>
-</div>
+                <!-- Full Logo -->
+                <div class="h-10 w-auto overflow-hidden flex items-center justify-center rounded">
+                    <img src="{{ asset('img/logo-white.png') }}" alt="Logo" class="h-full object-contain">
+                </div>
+            </div>
 
             <button class="p-2 transition-colors rounded-lg hover:bg-green-500/30 sidebtn">
                 <i class="text-xl fa-solid fa-bars"></i>
@@ -86,7 +83,8 @@
             <i class="flex-shrink-0 w-5 text-lg fas fa-home"></i>
             <span class="texts whitespace-nowrap">Front CMS</span>
         </a>
-        <a href="{{route('admin.general-setting.index')}}" class="flex items-center gap-3 px-4 py-3 transition-all rounded-lg hover:bg-green-700">
+        <a href="{{ route('admin.general-setting.index') }}"
+            class="flex items-center gap-3 px-4 py-3 transition-all rounded-lg hover:bg-green-700">
             <i class="flex-shrink-0 w-5 text-lg fas fa-cog"></i>
             <span class="texts whitespace-nowrap">Settings</span>
         </a>
@@ -98,6 +96,17 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>
+    function updateLayout() {
+        const sidebar = $('.sidebars');
+        const content = $('.contentss');
+
+        if (sidebar.hasClass('w-20')) {
+            content.removeClass('content-expanded').addClass('content-collapsed');
+        } else {
+            content.removeClass('content-collapsed').addClass('content-expanded');
+        }
+    }
+
     function handleResponsiveSidebar() {
         const sidebar = $('.sidebars');
         const texts = $('.sidebars .texts');
@@ -112,6 +121,8 @@
             texts.removeClass('hidden');
             logo.removeClass('hidden');
         }
+
+        updateLayout(); // 👈 IMPORTANT
     }
 
     $('.sidebtn').on('click', function() {
@@ -128,8 +139,14 @@
             texts.removeClass('hidden');
             logo.removeClass('hidden');
         }
+
+        updateLayout(); // 👈 IMPORTANT
     });
 
-    $(document).ready(handleResponsiveSidebar);
+    $(document).ready(function() {
+        handleResponsiveSidebar();
+        updateLayout(); // 👈 INITIAL FIX
+    });
+
     $(window).on('resize', handleResponsiveSidebar);
 </script>
