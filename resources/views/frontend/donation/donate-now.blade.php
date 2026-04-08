@@ -24,9 +24,7 @@
             <div class="row gx-40">
                 <div class="col-xxl-8 col-lg-7">
                     <div class="donation-form-v1">
-                        <p class="donation-form-notice"><i class="fa-solid fa-triangle-exclamation"></i><span
-                                class="text-title">Notice:</span> Test mode is enabled. While in test mode no live donations
-                            are processed.</p>
+
                         <form action="{{ route('admin.donation.store') }}" method="POST" class="contact-form">
                             @csrf
 
@@ -38,22 +36,6 @@
                                 <span class="icon">$</span>
                             </div>
 
-                            <h5 class="title">Select Payment Method</h5>
-                            <ul class="donate-payment-method list-unstyled">
-                                <li>
-                                    <input type="radio" id="test_donation" name="donate_method" value="test">
-                                    <label for="test_donation">Test Donation</label>
-                                </li>
-                                <li>
-                                    <input type="radio" id="offline_donation" name="donate_method" value="offline"
-                                        checked>
-                                    <label for="offline_donation">Offline Donation</label>
-                                </li>
-                                <li>
-                                    <input type="radio" id="credit_card" name="donate_method" value="card">
-                                    <label for="credit_card">Credit Card</label>
-                                </li>
-                            </ul>
 
                             <h5 class="title mb-25">Personal Info</h5>
                             <div class="row">
@@ -85,28 +67,24 @@
                             <div class="widget-donation-card">
                                 <div class="box-content">
                                     <div class="box-thumb">
-                                        <a href="blog-details.html"><img
-                                                src="{{ asset('img/widget/widget-donation_card1_1.jpg') }}"
-                                                alt="Blog Image"></a>
+                                        <a><img src="{{ asset('storage/' . $campaign->image) }}" alt=""></a>
                                     </div>
-                                    <h4 class="box-title"><a class="text-inherit" href="blog-details.html">Give health
-                                            support for every
-                                            homeless poor children</a></h4>
-                                    <p class="box-text">Join our community of dedicated supporters by
-                                        becoming a member.</p>
+                                    <h4 class="box-title"><a class="text-inherit"
+                                            href="blog-details.html">{{ $campaign->title }}</a></h4>
+                                    <p class="box-text">{{$campaign->short_description}}</p>
                                 </div>
                                 <div class="donation-progress-wrap">
                                     <div class="media-left">
                                         <div class="progress">
-                                            <div class="progress-bar" style="width: 85%;">
-                                                <div class="progress-value">85%</div>
+                                            <div class="progress-bar"
+                                                style="width:   {{ number_format(($campaign->raised_amount / $campaign->goal_amount) * 100, 2) }}%;">
                                             </div>
                                         </div>
                                         <div class="donation-progress-content">
-                                            <span class="donation-card_raise text-title">Raised<span
-                                                    class="ms-1 me-1">-</span>5M</span>
-                                            <span class="donation-card_goal text-theme">Goal<span
-                                                    class="ms-1 me-1">-</span>$10M</span>
+                                            <span class="donation-card_raise">Raised <span
+                                                    class="donation-card_raise-number">{{ $campaign->raised_amount }}</span></span>
+                                            <span class="donation-card_goal">Goal <span
+                                                    class="donation-card_goal-number">{{ $campaign->goal_amount }}</span></span>
                                         </div>
                                     </div>
                                 </div>

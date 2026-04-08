@@ -32,7 +32,6 @@ class ResourceController extends Controller
         $this->middleware("permission:$resource.edit")->only(['edit']);
         $this->middleware("permission:$resource.update")->only(['update']);
         $this->middleware("permission:$resource.destroy")->only(['destroy']);
-        
     }
 
     public function viewsFolder()
@@ -68,7 +67,7 @@ class ResourceController extends Controller
 
             return view($this->viewsFolder() . '.index', ['resources' => $resources]);
         } catch (\Throwable $th) {
-            return redirect()->back()->withErrors(['error' => 'Something went Wrong' ]);
+            return redirect()->back()->withErrors(['error' => 'Something went Wrong']);
         }
     }
 
@@ -101,12 +100,14 @@ class ResourceController extends Controller
             $response = $this->services->store($request);
 
             if (isset($response['error'])) {
-                return redirect()->back()->withErrors(['error' => $response['error']]);
+                return redirect()->back()
+                    ->withErrors(['error' => $response['error']])
+                    ->withInput();
             }
 
             return redirect($this->getUrl())->with('success', $this->getName() . ' created successfully.');
         } catch (ValidationException $e) {
-            return redirect()->back()->withErrors($e->errors());
+            return redirect()->back()->withErrors($e->errors())->withInput();
         } catch (\Throwable $th) {
             return redirect()->back()->withInput()->withErrors(['error' => 'Something Went Wrong. Unable to store']);
         }
@@ -124,7 +125,7 @@ class ResourceController extends Controller
 
             return view($this->viewsFolder() . '.edit', $resource)->render();
         } catch (\Throwable $th) {
-            return redirect()->back()->withErrors(['error' => 'Something wrong with edit' ]);
+            return redirect()->back()->withErrors(['error' => 'Something wrong with edit']);
         }
     }
 
@@ -159,7 +160,7 @@ class ResourceController extends Controller
                 return redirect()
                     ->back()
                     ->withInput()
-                    ->withErrors(['error' => $response['error']]);
+                    ->withErrors(['error' => $response['error']])->withInput();
             }
 
             return redirect($this->getUrl())->with('success', $this->getName() . ' updated successfully.');
@@ -167,7 +168,7 @@ class ResourceController extends Controller
             return redirect()
                 ->back()
                 ->withInput()
-                ->withErrors($e->errors());
+                ->withErrors($e->errors())->withInput();
         } catch (\Throwable $th) {
             return redirect()
                 ->back()

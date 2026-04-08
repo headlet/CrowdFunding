@@ -23,7 +23,7 @@
         <div class="flex flex-col items-stretch justify-between gap-3 mb-6 md:flex-row md:items-center">
             <input type="text" placeholder="Search team members..."
                 class="border border-gray-300 rounded-lg px-4 py-2.5 w-full md:w-1/3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
-    
+
         </div>
 
 
@@ -107,12 +107,11 @@
                             <i class="text-base fas fa-edit"></i>
                         </a>
 
-                        <form action="{{ route('admin.team.destroy', $member->id) }}" method="POST"
-                            onsubmit="return confirm('Are you sure you want to delete this team member?');">
+                        <form action="{{ route('admin.team.destroy', $member->id) }}" method="POST" class="delete-form">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="p-1.5 text-red-600 transition rounded-lg hover:bg-red-100"
-                                title="Delete">
+                            <button type="button"
+                                class="delete-btn p-1.5 text-red-600 transition rounded-lg hover:bg-red-100" title="Delete">
                                 <i class="text-base fas fa-trash"></i>
                             </button>
                         </form>
@@ -141,4 +140,5 @@
     </section>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    @include('backend.component.delete-swal')
 @endsection

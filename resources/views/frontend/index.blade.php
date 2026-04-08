@@ -150,7 +150,7 @@
                 <div class="divider"></div>
                 <div class="counter-card">
                     <div class="media-body">
-                        <h2 class="box-number text-theme2">35k+</h2>
+                        <h2 class="box-number text-theme2">2+</h2>
                         <p class="box-text">Team Support</p>
                     </div>
                 </div>

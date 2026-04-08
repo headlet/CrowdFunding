@@ -57,11 +57,7 @@
                             <th class="px-4 py-4 text-xs font-semibold text-center text-gray-700 uppercase lg:px-6">
                                 Date
                             </th>
-                            @permission('admin.donation.destroy')
-                                <th class="px-4 py-4 text-xs font-semibold text-center text-gray-700 uppercase lg:px-6">
-                                    Actions
-                                </th>
-                            @endpermission
+                            
                         </tr>
                     </thead>
 
@@ -120,24 +116,7 @@
                                     {{ $donation->created_at->format('Y-m-d') }}
                                 </td>
 
-                                <!-- Actions -->
-                                <td class="px-4 py-4 lg:px-6">
-                                    <div class="flex items-center justify-center ">
-                                        @permission('admin.donation.destroy')
-                                            <form action="route('admin.donations.destroy', $donation->id) }}" method="POST"
-                                                onsubmit="return confirm('Are you sure you want to delete this donation?');">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit"
-                                                    class="p-2 text-red-600 transition-colors rounded-lg hover:bg-red-50"
-                                                    title="Delete" disabled>
-                                                    <i class="text-lg fas fa-trash"></i>
-                                                </button>
-                                            </form>
-                                        @endpermission
-                                    </div>
-                                </td>
-
+                        
                             </tr>
                         @empty
                             <tr>

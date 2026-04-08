@@ -51,7 +51,7 @@
                         </label>
                         <input type="text" name="name" value="{{ old('name', $category->name) }}"
                             class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('name') border-red-500 @enderror"
-                            placeholder="Enter category name" required id='title'>
+                            placeholder="Enter category name"  id='title'>
                         @error('name')
                             <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                         @enderror
@@ -63,7 +63,7 @@
                         </label>
                         <input type="text" name="slug" value="{{ old('slug', $category->slug) }}"
                             class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:border-transparent @error('slug') border-red-500 @enderror"
-                            placeholder="category-slug" required id="slug" readonly>
+                            placeholder="category-slug"  id="slug" readonly>
                         @error('slug')
                             <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                         @enderror

@@ -60,7 +60,7 @@
                                 </label>
                                 <input type="text" name="name" value="{{ old('name', $team->name) }}"
                                     class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('name') border-red-500 @enderror"
-                                    placeholder="Enter full name" required>
+                                    placeholder="Enter full name" >
                                 @error('name')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
@@ -73,7 +73,7 @@
                                 <input type="text" name="designation"
                                     value="{{ old('designation', $team->designation) }}"
                                     class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('designation') border-red-500 @enderror"
-                                    placeholder="e.g., CEO, Manager" required>
+                                    placeholder="e.g., CEO, Manager" >
                                 @error('designation')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
@@ -106,7 +106,7 @@
                                 </label>
                                 <select name="status"
                                     class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('status') border-red-500 @enderror"
-                                    required>
+                                    >
                                     <option value="1" {{ old('status', $team->status) == '1' ? 'selected' : '' }}>
                                         Active</option>
                                     <option value="0" {{ old('status', $team->status) == '0' ? 'selected' : '' }}>

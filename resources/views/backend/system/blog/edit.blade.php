@@ -57,7 +57,7 @@
                                 </label>
                                 <input type="text" name="title" value="{{ old('title', $blog->title ?? '') }}"
                                     class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-blue-500"
-                                    required id='title'>
+                                     id='title'>
                             </div>
 
                             <div>
@@ -66,7 +66,7 @@
                                 </label>
                                 <input type="text" name="slug" value="{{ old('slug', $blog->slug ?? '') }}"
                                     class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-blue-500"
-                                    required id="slug" readonly>
+                                     id="slug" readonly>
                             </div>
                         </div>
                     </div>
@@ -85,7 +85,7 @@
                                 </label>
                                 <select name="user_id"
                                     class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-blue-500"
-                                    required>
+                                    >
                                     <option value="">Select Author</option>
                                     @foreach ($users as $user)
                                         <option value="{{ $user->id }}"
@@ -102,7 +102,7 @@
                                 </label>
                                 <select name="category_id"
                                     class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-blue-500"
-                                    required>
+                                    >
                                     <option value="">Select Category</option>
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}"
@@ -126,7 +126,7 @@
                             Excerpt <span class="text-red-500">*</span>
                         </label>
                         <textarea name="excerpt" rows="3"
-                            class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-blue-500" required>{{ old('excerpt', $blog->excerpt ?? '') }}</textarea>
+                            class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-blue-500" >{{ old('excerpt', $blog->excerpt ?? '') }}</textarea>
 
                         <!-- Full Content -->
                         <div>
@@ -150,7 +150,7 @@
                         </label>
                         <select name="status"
                             class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('status') border-red-500 @enderror"
-                            required>
+                            >
                             @foreach (['draft', 'published', 'archived'] as $status)
                                 <option value="{{ $status }}"
                                     {{ old('status', $blog->status ?? 'draft') == $status ? 'selected' : '' }}>

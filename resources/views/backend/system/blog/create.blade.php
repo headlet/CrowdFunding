@@ -72,7 +72,7 @@
                                 </label>
                                 <input type="text" name="title" value="{{ old('title', $resource->title ?? '') }}"
                                     class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('title') border-red-500 @enderror"
-                                    placeholder="Enter blog post title" required id="title">
+                                    placeholder="Enter blog post title"  id="title">
                                 @error('title')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
@@ -83,7 +83,7 @@
                                 </label>
                                 <input type="text" name="slug" value="{{ old('slug', $resource->slug ?? '') }}"
                                     class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('slug') border-red-500 @enderror"
-                                    placeholder="blog-post-slug" required readonly id="slug">
+                                    placeholder="blog-post-slug"  readonly id="slug">
                                 @error('slug')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
@@ -98,7 +98,7 @@
                                 </label>
                                 <select name="user_id"
                                     class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('user_id') border-red-500 @enderror"
-                                    required>
+                                    >
                                     <option value="">Select Author</option>
                                     @foreach ($users as $user)
                                         <option value="{{ $user->id }}"
@@ -117,7 +117,7 @@
                                 </label>
                                 <select name="category_id"
                                     class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('category_id') border-red-500 @enderror"
-                                    required>
+                                    >
                                     <option value="">Select Category</option>
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}"
@@ -147,7 +147,7 @@
                             </label>
                             <textarea name="excerpt" rows="3"
                                 class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('excerpt') border-red-500 @enderror"
-                                placeholder="Brief summary of the blog post" required>{{ old('excerpt', $resource->excerpt ?? '') }}</textarea>
+                                placeholder="Brief summary of the blog post" >{{ old('excerpt', $resource->excerpt ?? '') }}</textarea>
                             @error('excerpt')
                                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                             @enderror
@@ -218,7 +218,7 @@
                                 </label>
                                 <select name="status"
                                     class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('status') border-red-500 @enderror"
-                                    required>
+                                    >
                                     @foreach (['draft', 'published', 'archived'] as $status)
                                         <option value="{{ $status }}"
                                             {{ old('status', $resource->status ?? 'draft') == $status ? 'selected' : '' }}>
