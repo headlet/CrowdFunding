@@ -32,7 +32,7 @@ class ResourceController extends Controller
         $this->middleware("permission:$resource.edit")->only(['edit']);
         $this->middleware("permission:$resource.update")->only(['update']);
         $this->middleware("permission:$resource.destroy")->only(['destroy']);
-        
+
     }
 
     public function viewsFolder()
@@ -64,7 +64,7 @@ class ResourceController extends Controller
     public function index()
     {
         try {
-            $resources = $this->services->getAll(15);
+            $resources = $this->services->getAll(1);
 
             return view($this->viewsFolder() . '.index', ['resources' => $resources]);
         } catch (\Throwable $th) {

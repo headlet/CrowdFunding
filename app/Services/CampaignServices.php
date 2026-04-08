@@ -16,7 +16,7 @@ class CampaignServices extends Services
         parent::__construct($model);
     }
 
-    public function getAll($perPage = 10)
+    public function getAll($perPage = 1)
     {
         $sort = request('sort', 'created_at');
         $direction = request('direction', 'desc');
