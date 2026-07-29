@@ -132,7 +132,7 @@
 
         // Quick Fill Script
         document.getElementById('fillAdminBtn').addEventListener('click', function() {
-            email.value = 'superadmin@example.com';
+            email.value = 'admin@example.com';
             password.value = 'password';
         });
 

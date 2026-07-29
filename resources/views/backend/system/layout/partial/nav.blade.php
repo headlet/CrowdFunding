@@ -1,7 +1,7 @@
 <!-- Top Navbar -->
-<nav class="sticky top-0 z-30 flex items-center h-16 px-4 bg-white border-b border-gray-200 shadow-md md:px-6 w-full">
+<nav class="sticky top-0 z-30 flex items-center w-full h-16 px-4 bg-white border-b border-gray-200 shadow-md md:px-6">
 
-    <div class="flex-1 flex text-gray-800 gap-x-4 m-1">
+    <div class="flex flex-1 m-1 text-gray-800 gap-x-4">
         @yield('link')
     </div>
 
@@ -15,7 +15,7 @@
             <button id="profileDropdownBtn"
                 class="flex items-center gap-3 p-2 transition-colors rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500">
 
-                <img src="{{ asset( 'storage/'. auth()->user()->image ?? 'img/team/team_1_1.png') }}"
+                <img src="{{ asset('storage/' . auth()->user()->image ?? 'img/team/team_1_1.png') }}"
                     class="object-cover border-2 border-gray-200 rounded-full w-9 h-9">
 
                 <div class="flex-col items-start hidden leading-tight md:flex">
@@ -76,9 +76,9 @@
 
 <!-- Change Password Modal -->
 <div id="changePasswordModal"
-    class="fixed inset-0 z-50 hidden items-center justify-center bg-black/40 backdrop-blur-sm">
+    class="fixed inset-0 z-50 items-center justify-center hidden bg-black/40 backdrop-blur-sm">
 
-    <div class="w-full max-w-md p-6 bg-white rounded-2xl shadow-2xl animate-fadeIn">
+    <div class="w-full max-w-md p-6 bg-white shadow-2xl rounded-2xl animate-fadeIn">
 
         <!-- Header -->
         <div class="flex items-center justify-between pb-4 border-b">
@@ -94,8 +94,9 @@
         </div>
 
         <!-- Form -->
-        <form action="{{ route('admin.account_setting.updatePassword') }}" method="POST" class="mt-5 space-y-4">
-
+        {{-- this Following commented form is the real pass changing form --}}
+        {{-- <form action="{{ route('admin.account_setting.updatePassword') }}" method="POST" class="mt-5 space-y-4">  --}}
+        <form action=""  class="mt-5 space-y-4">
             @csrf
             <!-- Current Password -->
             <div>
@@ -126,7 +127,7 @@
                         class="password-input w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none">
 
                     <i
-                        class="togglePassword fa-solid fa-eye absolute text-gray-400 right-3 top-1/2 -translate-y-1/2 cursor-pointer"></i>
+                        class="absolute text-gray-400 -translate-y-1/2 cursor-pointer togglePassword fa-solid fa-eye right-3 top-1/2"></i>
 
                 </div>
 
@@ -146,7 +147,7 @@
                         class="password-input w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none">
 
                     <i
-                        class="togglePassword fa-solid fa-eye absolute text-gray-400 right-3 top-1/2 -translate-y-1/2 cursor-pointer"></i>
+                        class="absolute text-gray-400 -translate-y-1/2 cursor-pointer togglePassword fa-solid fa-eye right-3 top-1/2"></i>
 
                 </div>
 
@@ -166,7 +167,7 @@
                         class="password-input w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none">
 
                     <i
-                        class="togglePassword fa-solid fa-eye absolute text-gray-400 right-3 top-1/2 -translate-y-1/2 cursor-pointer"></i>
+                        class="absolute text-gray-400 -translate-y-1/2 cursor-pointer togglePassword fa-solid fa-eye right-3 top-1/2"></i>
 
                 </div>
 
@@ -180,7 +181,7 @@
                     Discard
                 </button>
 
-                <button type="submit" class="px-5 py-2 text-white transition rounded-lg bg-blue-600 hover:bg-blue-700">
+                <button type="submit" class="px-5 py-2 text-white transition bg-blue-600 rounded-lg hover:bg-blue-700">
                     Save
                 </button>
 
