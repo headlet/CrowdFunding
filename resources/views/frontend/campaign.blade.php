@@ -30,73 +30,77 @@
             </div>
             <div class="row gy-30">
                 @forelse ($campaigns as $campaign)
-                    <div class="col-xl-6">
-                        <div class="donation-card style3">
+                    <div class="col-xl-6 d-flex">
+                        <div class="donation-card style3" style="height: 100%; width: 100%;">
                             <div class="box-thumb">
-                                <img src="{{ asset('storage/' . $campaign->image) }}" alt="image">
-                                <div class="donation-card-tag">
-                                    {{ number_format(($campaign->raised_amount / $campaign->goal_amount) * 100, 2) }}%
-                                </div>
-                                <div class="donation-card-shape"></div>
+                                <a href="{{ route('campaign-details', $campaign->id) }}">
+                                    <img src="{{ asset('storage/' . $campaign->image) }}" alt="image">
+                                    <div class="donation-card-tag">
+                                        {{ number_format(($campaign->raised_amount / $campaign->goal_amount) * 100, 2) }}%
+                                    </div>
+                                    <div class="donation-card-shape"></div>
+                                </a>
                             </div>
-                            <div class="box-content">
-                                <h3 class="box-title"><a href="blog-details.html">{{ $campaign->title }}</a>
-                                </h3>
-                                <p>
-                                <p>
-                                    {{ Str::limit($campaign->short_description, 50) }}
-
-                                </p>
-
-                                </p>
-                                <div class="donation-card_progress-wrap">
-
-                                    <div class="progress">
-                                        <div class="progress-bar"
-                                            style="width:   {{ number_format(($campaign->raised_amount / $campaign->goal_amount) * 100, 2) }}%;">
+                            <div class="box-content"
+                                style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                                <div>
+                                    <h3 class="box-title"><a
+                                            href="{{ route('campaign-details', $campaign->id) }}">{{ $campaign->title }}</a>
+                                    </h3>
+                                    <p>{{ Str::limit($campaign->short_description, 50) }}</p>
+                                </div>
+                                <div>
+                                    <div class="donation-card_progress-wrap">
+                                        <div class="progress">
+                                            <div class="progress-bar"
+                                                style="width: {{ number_format(($campaign->raised_amount / $campaign->goal_amount) * 100, 2) }}%;">
+                                            </div>
+                                        </div>
+                                        <div class="donation-card_progress-content">
+                                            <span class="donation-card_raise">Raised <span
+                                                    class="donation-card_raise-number">{{ $campaign->raised_amount }}</span></span>
+                                            <span class="donation-card_goal">Goal <span
+                                                    class="donation-card_goal-number">{{ $campaign->goal_amount }}</span></span>
                                         </div>
                                     </div>
-                                    <div class="donation-card_progress-content">
-                                        <span class="donation-card_raise">Raised <span
-                                                class="donation-card_raise-number">{{ $campaign->raised_amount }}</span></span>
-                                        <span class="donation-card_goal">Goal <span
-                                                class="donation-card_goal-number">{{ $campaign->goal_amount }}</span></span>
-                                    </div>
+                                    <a href="{{ route('campaign-details', $campaign->id) }}" class="th-btn style6">Donate
+                                        Now <i class="fas fa-arrow-up-right ms-2"></i></a>
                                 </div>
-                                <a href="{{ route('campaign-details', $campaign->id) }}" class="th-btn style6">Donate Now <i
-                                        class="fas fa-arrow-up-right ms-2"></i></a>
                             </div>
                         </div>
                     </div>
 
                 @empty
-                    <div class="col-xl-6">
-                        <div class="donation-card style3">
+                    <div class="col-xl-6 d-flex">
+                        <div class="donation-card style3" style="height: 100%; width: 100%;">
                             <div class="box-thumb">
                                 <img src="{{ asset('img/donation/donation2-1.png') }}" alt="image">
                                 <div class="donation-card-tag">85%</div>
                                 <div class="donation-card-shape"></div>
                             </div>
-                            <div class="box-content">
-                                <h3 class="box-title"><a href="blog-details.html">Your Little Help Can Heal Their Helps</a>
-                                </h3>
-                                <p>Join our community of dedicated supporter by becoming member. Enjoy exclusive benefit.
-                                </p>
-                                <div class="donation-card_progress-wrap">
-
-                                    <div class="progress">
-                                        <div class="progress-bar" style="width: 85%;">
+                            <div class="box-content"
+                                style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                                <div>
+                                    <h3 class="box-title"><a href="blog-details.html">Your Little Help Can Heal Their
+                                            Helps</a></h3>
+                                    <p>Join our community of dedicated supporter by becoming member. Enjoy exclusive
+                                        benefit.</p>
+                                </div>
+                                <div>
+                                    <div class="donation-card_progress-wrap">
+                                        <div class="progress">
+                                            <div class="progress-bar" style="width: 85%;"></div>
+                                        </div>
+                                        <div class="donation-card_progress-content">
+                                            <span class="donation-card_raise">Raised <span
+                                                    class="donation-card_raise-number">$45,000.00</span></span>
+                                            <span class="donation-card_goal">Goal <span
+                                                    class="donation-card_goal-number">$60,000.00</span></span>
                                         </div>
                                     </div>
-                                    <div class="donation-card_progress-content">
-                                        <span class="donation-card_raise">Raised <span
-                                                class="donation-card_raise-number">$45,000.00</span></span>
-                                        <span class="donation-card_goal">Goal <span
-                                                class="donation-card_goal-number">$60,000.00</span></span>
-                                    </div>
+                                    <a href="blog-details.html" class="th-btn style6">Donate Now <i
+                                            class="fas fa-arrow-up-right ms-2"></i></a>
                                 </div>
-                                <a href="blog-details.html" class="th-btn style6">Donate Now <i
-                                        class="fas fa-arrow-up-right ms-2"></i></a>
                             </div>
                         </div>
                     </div>
