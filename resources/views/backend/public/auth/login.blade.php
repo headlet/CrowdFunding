@@ -27,7 +27,7 @@
                 <div class="mb-6 text-left">
                     <a href="{{ route('index') }}"
                         class="inline-flex items-center bg-[#0b3d36] text-white px-4 py-2 rounded-xl hover:bg-[#06201d] transition">
-                        <i class="fa-solid fa-house mr-2"></i> Home
+                        <i class="mr-2 fa-solid fa-house"></i> Home
                     </a>
                 </div>
 
@@ -40,7 +40,8 @@
                     <h2 class="mt-4 text-3xl font-bold">Welcome Back</h2>
                     <p class="mt-1 text-sm text-gray-500">Login to continue your impact</p>
                 </div>
-              
+
+
 
                 <!-- FORM -->
                 <form class="space-y-5" action="{{ route('login_auth') }}" method="POST">
@@ -48,7 +49,7 @@
 
                     <!-- EMAIL -->
                     <div>
-                        <input type="email" name="email" placeholder="Email"
+                        <input type="email" name="email" id="email" placeholder="Email"
                             class="w-full px-4 py-3 rounded-xl border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0b3d36] text-lg">
                     </div>
 
@@ -58,7 +59,7 @@
                             class="w-full px-4 py-3 pr-12 rounded-xl border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0b3d36] text-lg">
 
                         <button type="button" id="togglePassword"
-                            class="absolute inset-y-0 right-3 flex items-center text-gray-500">
+                            class="absolute inset-y-0 flex items-center text-gray-500 right-3">
                             <i class="fa-solid fa-eye"></i>
                         </button>
                     </div>
@@ -84,6 +85,21 @@
                     </button>
                 </form>
 
+                <!-- QUICK DEMO LOGIN BUTTONS -->
+                <div class="m-6 ">
+                    <p class="mb-3 font-semibold text-center">Before Login Click on Following:</p>
+                    <div class="flex gap-3">
+                    <button type="button" id="fillAdminBtn"
+                        class="flex-1 py-2 px-4 bg-[#0b3d36] hover:bg-[#06201d] text-white font-medium rounded-xl text-sm transition">
+                        <i class="mr-1 fa-solid fa-user-shield"></i> Admin
+                    </button>
+                    <button type="button" id="fillUserBtn"
+                        class="flex-1 px-4 py-2 text-sm font-medium text-gray-800 transition bg-gray-200 hover:bg-gray-300 rounded-xl">
+                        <i class="mr-1 fa-solid fa-user"></i> User
+                    </button>
+                </div>
+                </div>
+
                 <!-- FOOTER -->
                 <p class="mt-6 text-sm text-center text-gray-600">
                     Don’t have an account?
@@ -97,10 +113,12 @@
 
     </section>
 
-    <!-- PASSWORD TOGGLE SCRIPT -->
+    <!-- SCRIPTS -->
     <script>
+        // Password Toggle Script
         const togglePassword = document.getElementById('togglePassword');
         const password = document.getElementById('password');
+        const email = document.getElementById('email');
 
         togglePassword.addEventListener('click', function() {
             const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
@@ -110,6 +128,17 @@
             this.innerHTML = type === 'password' ?
                 '<i class="fa-solid fa-eye"></i>' :
                 '<i class="fa-solid fa-eye-slash"></i>';
+        });
+
+        // Quick Fill Script
+        document.getElementById('fillAdminBtn').addEventListener('click', function() {
+            email.value = 'superadmin@example.com';
+            password.value = 'password';
+        });
+
+        document.getElementById('fillUserBtn').addEventListener('click', function() {
+            email.value = 'user@example.com';
+            password.value = 'password';
         });
     </script>
 @endsection
