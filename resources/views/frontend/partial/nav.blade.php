@@ -47,7 +47,7 @@
                 </li>
 
 
-                <div>
+                <li>
                     @guest
                         <a href="{{ route('login') }}" class="th-btn style3 w-100">
                             <i class="fas fa-sign-in-alt me-2"></i> Login
@@ -57,7 +57,7 @@
                             <i class="fas fa-tachometer-alt me-2"></i> Dashboard
                         </a>
                     @endguest
-                </div>
+                </li>
 
             </ul>
 
